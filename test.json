@@ -1,0 +1,15 @@
+{
+  "repository": {
+    "name": "specifications-BASE",
+    "full_name": "openEHR/specifications-BASE",
+    "owner": {
+      "name": "openEHR",
+	  "html_url": "https://github.com/openEHR"
+    }
+  },
+  "organization": {
+    "login": "openEHR",
+    "id": 1481762,
+    "node_id": "MDEyOk9yZ2FuaXphdGlvbjE0ODE3NjI="
+  }
+}
