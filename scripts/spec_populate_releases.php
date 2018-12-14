@@ -72,7 +72,7 @@
 				$cmd_output = '';
 				foreach ($commands AS $command) {
 					exec($command, $cmd_output);
-					$output .= '<pre> ----------- execute ' . $command . ' --------------\n' . implode('\n', $cmd_output) . '\n</pre>';
+					$output .= htmlentities('----------- execute ' . $command . ' --------------' . PHP_EOL . implode(PHP_EOL, $cmd_output) . PHP_EOL);
 				}
 			}
 		}
@@ -92,6 +92,8 @@
 [| <span style="color: #FF0000;">&hearts;    &hearts;</span> |]  | Git openEHR releases publishing Script v0.4 |
  |___==___|  /              &copy; wolandscat 2018 |
 
+<pre>
 <?php echo $output; ?>
+</pre>
 </body>
 </html> 
