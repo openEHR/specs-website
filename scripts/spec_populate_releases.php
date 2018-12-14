@@ -62,6 +62,7 @@
 				$commands = array(
 					'echo $PWD',
 					"whoami",
+					"chmod ug+x spec_populate_releases.sh", // fix get checkout perms change
 					"./spec_populate_releases.sh $repo_name 2>&1"
 					// "./spec_populate_releases.sh $repo_name 2>&1 &" // run in background to avoid GitHub webhook timeout
 				);
@@ -71,8 +72,7 @@
 				$cmd_output = '';
 				foreach ($commands AS $command) {
 					exec($command, $cmd_output);
-					$output .= "<span style=\"color: #6BE234;\">\$</span> <span style=\"color: #729FCF;\">{$command}\n</span>";
-					$output .= htmlentities(implode('\n', $cmd_output)) . "\n";
+					$output .= '<pre> ----------- execute ' . $command . ' --------------\n' . implode('\n', $cmd_output) . '\n</pre>';
 				}
 			}
 		}
@@ -87,14 +87,11 @@
     <title>GIT openEHR Release publishing script</title>
 </head>
 <body style="background-color: #000000; color: #FFFFFF; font-weight: bold; padding: 0 10px;">
-<pre>
  .  ____  .
  |/      \|
 [| <span style="color: #FF0000;">&hearts;    &hearts;</span> |]  | Git openEHR releases publishing Script v0.4 |
  |___==___|  /              &copy; wolandscat 2018 |
 
------------ output --------------
 <?php echo $output; ?>
-</pre>
 </body>
 </html> 
