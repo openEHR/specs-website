@@ -26,10 +26,10 @@
 
 				// Run the commands and collect output
 				$output = '';
-				foreach ($commands AS $command){
-					$tmp = shell_exec($command);
-					$output .= "<span style=\"color: #6BE234;\">\$</span> <span style=\"color: #729FCF;\">{$command}\n</span>";
-					$output .= htmlentities(trim($tmp)) . "\n";
+				$cmd_output = '';
+				foreach ($commands AS $command) {
+					exec($command, $cmd_output);
+					$output .= htmlentities('----------- execute ' . $command . ' --------------' . PHP_EOL . implode(PHP_EOL, $cmd_output) . PHP_EOL);
 				}
 			}
 			else 
@@ -54,13 +54,12 @@
     <title>GIT openEHR Release publishing script</title>
 </head>
 <body style="background-color: #000000; color: #FFFFFF; font-weight: bold; padding: 0 10px;">
-<pre>
  .  ____  .
  |/      \|
 [| <span style="color: #FF0000;">&hearts;    &hearts;</span> |]  | Git openEHR releases publishing Script v0.4 |
  |___==___|  /              &copy; wolandscat 2018 |
 
------------ output --------------
+<pre>
 <?php echo $output; ?>
 ----------- errors --------------
 <?php echo $error; ?>

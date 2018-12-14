@@ -62,7 +62,6 @@
 				$commands = array(
 					'echo $PWD',
 					"whoami",
-					"chmod ug+x spec_populate_releases.sh", // fix get checkout perms change
 					"./spec_populate_releases.sh $repo_name 2>&1"
 					// "./spec_populate_releases.sh $repo_name 2>&1 &" // run in background to avoid GitHub webhook timeout
 				);
