@@ -256,7 +256,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 								<tbody>
 									<tr>
 										<td rowspan="2" style="text-align:left">
-											<a href="/releases/LANG/latest/EL.html" target="_blank"><b>*Expression</b></a>: Expression Language
+											<a href="/releases/LANG/latest/expression_language.html" target="_blank"><b>*Expression Language</b></a>: Expression Language
                                         </td>
 										<td style="text-align:left">
                                             <a href="/releases/LANG/latest/bmm.html" target="_blank"><b>BMM</b></a>: BmmSchema, BmmModel, BmmClass, BmmType, BmmProperty
