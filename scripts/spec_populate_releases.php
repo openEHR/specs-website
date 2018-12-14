@@ -62,15 +62,17 @@
 				$commands = array(
 					'echo $PWD',
 					"whoami",
-					"./spec_populate_releases.sh $repo_name &" // run in background to avoid GitHub webhook timeout
+					"./spec_populate_releases.sh $repo_name 2>&1"
+					// "./spec_populate_releases.sh $repo_name 2>&1 &" // run in background to avoid GitHub webhook timeout
 				);
 
 				// Run the commands and collect output
 				$output = '';
+				$cmd_output = '';
 				foreach ($commands AS $command) {
-					$tmp = shell_exec($command);
+					exec($command, $cmd_output);
 					$output .= "<span style=\"color: #6BE234;\">\$</span> <span style=\"color: #729FCF;\">{$command}\n</span>";
-					$output .= htmlentities(trim($tmp)) . "\n";
+					$output .= htmlentities(trim($cmd_output)) . "\n";
 				}
 			}
 		}
