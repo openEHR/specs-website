@@ -72,7 +72,7 @@
 				foreach ($commands AS $command) {
 					exec($command, $cmd_output);
 					$output .= "<span style=\"color: #6BE234;\">\$</span> <span style=\"color: #729FCF;\">{$command}\n</span>";
-					$output .= htmlentities(implode('\n', $cmd_output) . "\n";
+					$output .= htmlentities(implode('\n', $cmd_output)) . "\n";
 				}
 			}
 		}
