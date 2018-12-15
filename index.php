@@ -249,7 +249,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 
 					<!-------------- LANG --------------->
 					<tr>
-						<td> <a name="LANG"></a><a href="/releases/LANG/latest/index" target="_blank"><b>LANG</b><br>(Generic Languages)</a><br>
+						<td style="white-space: nowrap"> <a name="LANG"></a><a href="/releases/LANG/latest/index" target="_blank"><b>LANG</b><br>(Generic Languages)</a><br>
 						<a href="https://openehr.atlassian.net/issues/?filter=11116" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECLANG?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a></td>
 						<td style="text-align:center">
 							<table>
