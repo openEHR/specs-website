@@ -141,7 +141,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 								<tbody>
 									<tr>
 										<td style="text-align:left">
-                                            <a href="/releases/PROC/latest/task_planning.html" target="_blank"><b>Task Planning</b></a>: Work Plan, Task Plan, Event
+                                            <a href="/releases/PROC/latest/task_planning.html" target="_blank"><b>Task Planning</b></a>: An adaptive, executable, team-based model of workflow -<br> Work Plan, Task Plan, Event
                                         </td>
 									</tr>
 								</tbody>
@@ -201,7 +201,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                                         </td>
 									</tr>
 									<tr>
-										<td colspan="4" style="text-align:left"><a href="/releases/RM/latest/support.html" target="_blank"><b>Support</b></a></td>
+										<td colspan="4" style="text-align:left"><a href="/releases/RM/latest/support.html" target="_blank"><b>Support</b>: Terminology and Measurement service interfaces</a></td>
 									</tr>
 								</tbody>
 							</table>
@@ -240,7 +240,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                                         </td>
 									</tr>
 									<tr>
-										<td colspan="2" style="text-align:left"><a href="/releases/AM/latest/Identification.html" target="_blank"><b>Identification</b></a></td>
+										<td colspan="2" style="text-align:left"><a href="/releases/AM/latest/Identification.html" target="_blank"><b>Identification</b>: archetype / template identifiers; versioning rules</a></td>
 									</tr>
 								</tbody>
 							</table>
@@ -259,7 +259,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 											<a href="/releases/LANG/latest/expression_language.html" target="_blank"><b>*Expression Language</b></a>: Expression Language
                                         </td>
 										<td style="text-align:left">
-                                            <a href="/releases/LANG/latest/bmm.html" target="_blank"><b>BMM</b></a>: BmmSchema, BmmModel, BmmClass, BmmType, BmmProperty
+                                            <a href="/releases/LANG/latest/bmm.html" target="_blank"><b>BMM</b></a>: Basic Meta-Model -<br>BmmSchema, BmmModel, BmmClass, BmmType, BmmProperty
                                         </td>
 										<td rowspan="2" style="text-align:left">
 											<a href="/releases/LANG/latest/odin.html" target="_blank"><b>ODIN</b></a>: Object Data Instance Notation
@@ -267,7 +267,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 									</tr>
 									<tr>
 										<td style="text-align:left">
-                                            <a href="/releases/LANG/latest/bmm_persistence.html" target="_blank"><b>P_BMM</b></a>: PBmmSchema, P_xxx types
+                                            <a href="/releases/LANG/latest/bmm_persistence.html" target="_blank"><b>P_BMM</b></a>: BMM Humanreadable serial format -<br>PBmmSchema, P_xxx types
                                         </td>
 									</tr>
 								</tbody>
@@ -284,7 +284,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 								<tbody>
 									<tr>
 										<td style="text-align:left">
-                                            <a href="/releases/BASE/latest/base_types.html" target="_blank"><b>Base Types</b></a>: Identification
+                                            <a href="/releases/BASE/latest/base_types.html" target="_blank"><b>Base Types</b></a>: Identifiers
                                         </td>
 										<td style="text-align:left">
                                             <a href="/releases/BASE/latest/resource.html" target="_blank"><b>Resource</b></a>: AuthoredResource
