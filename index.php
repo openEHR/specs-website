@@ -96,7 +96,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 
 					<!-------------- SM --------------->
 					<tr>
-						<td> <a name="SM"></a><a href="/releases/SM/latest/index" target="_blank"><b>SM</b><br>(Service Model)</a><br>
+						<td style="white-space: nowrap"> <a name="SM"></a><a href="/releases/SM/latest/index" target="_blank"><b>SM</b><br>(Service Model)</a><br>
 						<a href="https://openehr.atlassian.net/issues/?filter=11104" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECSM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a></td>
 						<td style="text-align:center">
 							<table>
