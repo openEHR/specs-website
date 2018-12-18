@@ -8,9 +8,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 ?>
 
 		<div id="Content">
-<!-- ------------------------------------------- Content starts here ------------------------------------------------- -->
+<!-- ------------------------------------------ Content starts here ------------------------------------------------ -->
 		
-			<!-- ----------------------------------------- Global index ----------------------------------------------- -->
+			<!-- ---------------------------------------- Global index ----------------------------------------------- -->
 			<table class="TableInvisible">
 				<tbody>
 					<tr>
@@ -24,18 +24,21 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 				</tbody>
 			</table>
 
-			<!=============== Implementation Specs ===============>
+			<!-- =============== Implementation Specs =============== -->
 			<table class="TableBasic">
 				<tbody>
 					<tr>
 						<th style="text-align:center"> Component</th>
 						<th style="text-align:center"> Implementation Specifications </th>
+						<th style="text-align:center"> Releases </th>
 					</tr>
 
 					<!-------------- CNF --------------->
 					<tr>
-						<td> <a name="CNF"></a><a href="/releases/CNF/latest/index" target="_blank"><b>CNF</b><br>(Conformance)</a><br>
-						<a href="https://openehr.atlassian.net/issues/?filter=11108" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECCNF?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a></td>
+						<td> 
+							<a name="CNF"></a><a href="/releases/CNF/latest/index" target="_blank"><b>CNF</b><br>(Conformance)</a><br>
+							<a href="https://openehr.atlassian.net/issues/?filter=11108" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECCNF?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+						</td>
 						<td style="text-align:center">
 							<table>
 								<tbody>
@@ -46,6 +49,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 									</tr>
 								</tbody>
 							</table>
+						</td>
+						<td> 
 						</td>
 						
 					</tr>
@@ -59,7 +64,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 							<table>
 								<tbody>
 									<tr>
-										<td colspan="2" style="text-align:left">REST APIs: 
+										<td colspan="2" style="text-align:left"><a href="https://github.com/openEHR/specifications-ITS-REST" target="_blank"><b>REST APIs</b></a>: 
                                             <a href="/releases/ITS-REST/latest/ehr.html" target="_blank"><b>EHR</b></a>, 
                                             <a href="/releases/ITS-REST/latest/query.html" target="_blank"><b>Query</b></a>, 
                                             <a href="/releases/ITS-REST/latest/definitions.html" target="_blank"><b>Definitions</b></a>
@@ -81,17 +86,20 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 								</tbody>
 							</table>
 						</td>
+						<td> 
+						</td>
 						
 					</tr>
 				</tbody>
 			</table>
 
-			<!=============== Formal Specs ===============>
+			<!-- =============== Formal Specs =============== -->
 			<table class="TableBasic">
 				<tbody>
 					<tr>
 						<th style="text-align:center"> Component</th>
 						<th style="text-align:center"> Formal Specifications</th>
+						<th style="text-align:center"> Releases </th>
 					</tr>
 
 					<!-------------- SM --------------->
@@ -109,6 +117,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 								</tbody>
 							</table>
 						</td>
+						<td> 
+						</td>
 					</tr>
 
 					<!-------------- CDS --------------->
@@ -125,6 +135,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 									</tr>
 								</tbody>
 							</table>
+						</td>
+						<td> 
 						</td>
 					</tr>
 
@@ -147,6 +159,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 								</tbody>
 							</table>
 						</td>
+						<td> 
+							<a href="/releases/PROC/Release-1.0.0/docs/index" target="_blank">1.0.0</a> (1 Dec 2017)
+						</td>
 					</tr>
 
 					<!-------------- QUERY --------------->
@@ -163,6 +178,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 									</tr>
 								</tbody>
 							</table>
+						</td>
+						<td> 
+							<a href="/releases/QUERY/Release-1.0.0/docs/index" target="_blank">1.0.0</a> (15 Nov 2017)
 						</td>
 					</tr>
 
@@ -201,10 +219,14 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                                         </td>
 									</tr>
 									<tr>
-										<td colspan="4" style="text-align:left"><a href="/releases/RM/latest/support.html" target="_blank"><b>Support</b>: Terminology and Measurement service interfaces</a></td>
+										<td colspan="4" style="text-align:left"><a href="/releases/RM/latest/support.html" target="_blank"><b>Support</b></a>: Terminology and Measurement service interfaces</td>
 									</tr>
 								</tbody>
 							</table>
+						</td>
+						<td> 
+							<a href="/releases/RM/Release-1.0.3/docs/index" target="_blank">1.0.3</a> (15 Dec 2015)<br>
+							<a href="/releases/RM/Release-1.0.2/docs/index" target="_blank">1.0.2</a> (20 Dec 2008)
 						</td>
 					</tr>
 
@@ -240,10 +262,13 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                                         </td>
 									</tr>
 									<tr>
-										<td colspan="2" style="text-align:left"><a href="/releases/AM/latest/Identification.html" target="_blank"><b>Identification</b>: archetype / template identifiers; versioning rules</a></td>
+										<td colspan="2" style="text-align:left"><a href="/releases/AM/latest/Identification.html" target="_blank"><b>Identification</b></a>: archetype / template identifiers; versioning rules</td>
 									</tr>
 								</tbody>
 							</table>
+						</td>
+							<a href="/releases/AM/Release-2.0.6/docs/index" target="_blank">2.0.6</a> (07 Jan 2017)
+						<td> 
 						</td>
 					</tr>
 
@@ -256,7 +281,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 								<tbody>
 									<tr>
 										<td rowspan="2" style="text-align:left">
-											<a href="/releases/LANG/latest/expression_language.html" target="_blank"><b>*Expression Language</b></a>: Expression Language
+											<a href="/releases/LANG/latest/expression_language.html" target="_blank"><b>*Expression Language</b></a>: a syntax for formal expressions
                                         </td>
 										<td style="text-align:left">
                                             <a href="/releases/LANG/latest/bmm.html" target="_blank"><b>BMM</b></a>: Basic Meta-Model -<br>BmmSchema, BmmModel, BmmClass, BmmType, BmmProperty
@@ -267,11 +292,13 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 									</tr>
 									<tr>
 										<td style="text-align:left">
-                                            <a href="/releases/LANG/latest/bmm_persistence.html" target="_blank"><b>P_BMM</b></a>: BMM Humanreadable serial format -<br>PBmmSchema, P_xxx types
+                                            <a href="/releases/LANG/latest/bmm_persistence.html" target="_blank"><b>P_BMM</b></a>: BMM Human-readable serial format -<br>PBmmSchema, P_xxx types
                                         </td>
 									</tr>
 								</tbody>
 							</table>
+						</td>
+						<td> 
 						</td>
 					</tr>
 
@@ -298,6 +325,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 								</tbody>
 							</table>
 						</td>
+						<td> 
+							<a href="/releases/BASE/Release-1.0.3/docs/index" target="_blank">1.0.3</a> (15 Dec 2015)
+						</td>
 					</tr>
 
 					<!-------------- TERM --------------->
@@ -312,6 +342,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 									</tr>
 								</tbody>
 							</table>
+						</td>
+						<td> 
+							<a href="/releases/TERM/Release-2.1.0/docs/index" target="_blank">2.1.0</a> (08 Nov 2017)
 						</td>
 					</tr>
 				</tbody>
