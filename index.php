@@ -179,7 +179,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 								</tbody>
 							</table>
 						</td>
-						<td> 
+						<td style="white-space: nowrap"> 
 							<a href="/releases/QUERY/Release-1.0.0/docs/index" target="_blank">1.0.0</a> (15 Nov 2017)
 						</td>
 					</tr>
