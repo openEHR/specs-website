@@ -160,7 +160,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 							</table>
 						</td>
 						<td> 
-							<a href="/releases/PROC/Release-1.0.0/docs/index" target="_blank">1.0.0</a> (1 Dec 2017)
+							<a href="/releases/PROC/Release-1.0.0/" target="_blank">1.0.0</a> (1 Dec 2017)
 						</td>
 					</tr>
 
@@ -180,7 +180,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 							</table>
 						</td>
 						<td style="white-space: nowrap"> 
-							<a href="/releases/QUERY/Release-1.0.0/docs/index" target="_blank">1.0.0</a> (15 Nov 2017)
+							<a href="/releases/QUERY/Release-1.0.0/" target="_blank">1.0.0</a> (15 Nov 2017)
 						</td>
 					</tr>
 
@@ -225,8 +225,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 							</table>
 						</td>
 						<td style="white-space: nowrap"> 
-							<a href="/releases/RM/Release-1.0.3/docs/index" target="_blank">1.0.3</a> (15 Dec 2015)<br>
-							<a href="/releases/RM/Release-1.0.2/docs/index" target="_blank">1.0.2</a> (20 Dec 2008)
+							<a href="/releases/RM/Release-1.0.3/" target="_blank">1.0.3</a> (15 Dec 2015)<br>
+							<a href="/releases/RM/Release-1.0.2/" target="_blank">1.0.2</a> (20 Dec 2008)
 						</td>
 					</tr>
 
@@ -267,8 +267,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 								</tbody>
 							</table>
 						</td>
-							<a href="/releases/AM/Release-2.0.6/docs/index" target="_blank">2.0.6</a> (07 Jan 2017)
 						<td> 
+							<a href="/releases/AM/Release-2.0.6/" target="_blank">2.0.6</a> (07 Jan 2017)
+							<a href="/releases/2.0.6/" target="_blank">1.4</a> (31 Dec 2008)
 						</td>
 					</tr>
 
@@ -326,7 +327,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 							</table>
 						</td>
 						<td> 
-							<a href="/releases/BASE/Release-1.0.3/docs/index" target="_blank">1.0.3</a> (15 Dec 2015)
+							<a href="/releases/BASE/Release-1.0.3/" target="_blank">1.0.3</a> (15 Dec 2015)
 						</td>
 					</tr>
 
@@ -344,7 +345,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 							</table>
 						</td>
 						<td> 
-							<a href="/releases/TERM/Release-2.1.0/docs/index" target="_blank">2.1.0</a> (08 Nov 2017)
+							<a href="/releases/TERM/Release-2.1.0/" target="_blank">2.1.0</a> (08 Nov 2017)
 						</td>
 					</tr>
 				</tbody>
