@@ -224,7 +224,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 								</tbody>
 							</table>
 						</td>
-						<td> 
+						<td style="white-space: nowrap"> 
 							<a href="/releases/RM/Release-1.0.3/docs/index" target="_blank">1.0.3</a> (15 Dec 2015)<br>
 							<a href="/releases/RM/Release-1.0.2/docs/index" target="_blank">1.0.2</a> (20 Dec 2008)
 						</td>
