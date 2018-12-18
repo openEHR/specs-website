@@ -51,7 +51,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 							</table>
 						</td>
 						<td style="white-space: nowrap"> 
-							<a href="/releases/ITS-REST/Release-1.0.0/" target="_blank">1.0.0</a> (07 Dec 2018)
 						</td>
 						
 					</tr>
@@ -87,7 +86,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 								</tbody>
 							</table>
 						</td>
-						<td> 
+						<td style="white-space: nowrap"> 
+							<a href="/releases/ITS-REST/Release-1.0.0/" target="_blank">REST 1.0.0</a> (07 Dec 2018)
+							<br>
+							<br>
 						</td>
 						
 					</tr>
