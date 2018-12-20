@@ -88,7 +88,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 						</td>
 						<td style="white-space: nowrap"> 
 							<a href="/releases/ITS-REST/Release-1.0.0/" target="_blank">REST 1.0.0</a> (07 Dec 2018)<br>
-							<a href="https://github.com/openEHR/specifications-ITS-XML/releases/tag/Release-1.0.2" target="_blank">(original) 1.0.2</a> (31 Dec 2008) <br>
+							<a href="https://github.com/openEHR/specifications-ITS-XML/releases/tag/Release-1.0.2" target="_blank">XML 1.0.2</a> (31 Dec 2008) <br>
 						</td>
 						
 					</tr>
@@ -303,6 +303,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 							</table>
 						</td>
 						<td> 
+							<a href="https://openehr.atlassian.net/projects/SPECLANG/versions/12518/tab/release-report-all-issues" target="_blank">1.0.0</a> (cooking)<br>
 						</td>
 					</tr>
 
@@ -330,6 +331,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 							</table>
 						</td>
 						<td> 
+							<a href="https://openehr.atlassian.net/projects/SPECBASE/versions/11760/tab/release-report-all-issues" target="_blank">1.1.0</a> (cooking)<br>
 							<a href="/releases/BASE/Release-1.0.3/" target="_blank">1.0.3</a> (15 Dec 2015)
 						</td>
 					</tr>
