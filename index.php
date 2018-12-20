@@ -272,7 +272,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 						</td>
 						<td> 
 							<a href="/releases/AM/Release-2.0.6/" target="_blank">2.0.6</a> (07 Jan 2017)
-							<a href="/releases/2.0.6/" target="_blank">1.4</a> (31 Dec 2008)
+							<a href="/releases/AM/Release-2.0.6/" target="_blank">1.4</a> (31 Dec 2008)
 						</td>
 					</tr>
 
