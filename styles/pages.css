@@ -187,7 +187,7 @@ img {margin: 10px 0 10px 0;}
 	padding: 3px 5px 3px 5px;
 	border: 1px solid #ccc;
 
-	background: #d2e9f4;
+	background: #98cee6;
 	color: #023760;
 
 	font-weight:900;
@@ -197,6 +197,7 @@ img {margin: 10px 0 10px 0;}
 .TableBasic td {
 	padding: 3px 5px 3px 5px;
 	border: 1px solid #ccc;
+	background: #f0f0f5;
 
 	text-align: left;
 	font-size: 13px;
