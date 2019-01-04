@@ -1,7 +1,7 @@
 ﻿<span><a href="/" <?php if($pageOn == 'index.php'){?> class="active"<?php }?>>Working Baseline</a></span>
 			<ul>
-				<li><a href="/latestreleases" <?php if($pageOn == 'latestreleases.php'){?> class="active"<?php }?>>Latest Releases</a></li>
-				<li><a href="/historicalreleases" <?php if($pageOn == 'historicalreleases.php'){?> class="active"<?php }?>>Historical Releases</a></li>
+				<li><a href="/latest_releases" <?php if($pageOn == 'latest_releases.php'){?> class="active"<?php }?>>Latest Releases</a></li>
+				<li><a href="/historical_releases" <?php if($pageOn == 'historical_releases.php'){?> class="active"<?php }?>>Historical Releases</a></li>
 				<br/>
 				<li><a href="https://openehr.atlassian.net/secure/Dashboard.jspa?selectPageId=10190" target="_blank">Issue Trackers</a></li>
 				<li><a href="https://www.openehr.org/programs/specification/governance" target="_blank">Governance</a></li>
