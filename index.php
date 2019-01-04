@@ -229,7 +229,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 							</table>
 						</td>
 						<td style="white-space: nowrap"> 
-							<a href="https://openehr.atlassian.net/projects/SPECRM/versions/11074/tab/release-report-all-issues" target="_blank">1.0.4</a> (cooking)<br>
+							<a href="https://openehr.atlassian.net/projects/SPECRM/versions/12516/tab/release-report-all-issues" target="_blank">1.1.0</a> (cooking)<br>
+							<a href="/releases/RM/Release-1.0.4/" target="_blank">1.0.4</a> (04 Jan 2019)<br>
 							<a href="/releases/RM/Release-1.0.3/" target="_blank">1.0.3</a> (15 Dec 2015)<br>
 							<a href="/releases/RM/Release-1.0.2/" target="_blank">1.0.2</a> (20 Dec 2008)
 						</td>
