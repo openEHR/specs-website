@@ -11,7 +11,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 <!-- ================================= Content starts here ============================== -->
 		
 			<h1><?php echo "$PageName";?></h1>
-			
+			<p>The following releases were of all openEHR specifications, prior to components being created. All releases are now published as part of a component, and can be seen <a href="/latest_releases">here</a>.</p>
 			<table class="TableBasic">
 				<tbody>
 					<tr>
