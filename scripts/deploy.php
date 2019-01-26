@@ -19,7 +19,7 @@
     $output = '';
 
 	// get directory like /var/www/vhosts/openehr.org/specifications.openehr.org
-    $site_root = getcwd();
+    $site_root = dirname (getcwd());
     $work_tree = dirname (getcwd());
 
 	// get site_name like specifications.openehr.org
