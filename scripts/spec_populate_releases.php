@@ -16,6 +16,8 @@
 	$err_str = "";
 	$checking_hooksecret = true;
 	$hooksecret_passed = false;
+	$github_org_url = 'https://github.com/openEHR';	// invocation must come from this GitHub org
+	$website_str = 'website'; // string in a Git repo name indicates it is a website
 
 	// get the payload
 	$raw_payload = $_REQUEST['payload'];
@@ -52,26 +54,26 @@
 			// check origin and owner - must be Github/openEHR
 			// (could also use just $repo_owner_name = $payload['repository']['owner']['name'];)
 			$html_url = $payload['repository']['owner']['html_url'];
-			if ($html_url !== 'https://github.com/openEHR')
+			if ($html_url !== $github_org_url)
 				throw new \Exception("Wrong caller - " . $html_url);
 			else {
 
 				$repo_name = $payload['repository']['name'];
 
-				// The commands
-				$commands = array(
-					'echo $PWD',
-					"whoami",
-					"./spec_populate_releases.sh $repo_name 2>&1"
-				);
+				exec('echo $PWD');
+				exec('whoami');
 
-				// Run the commands and collect output
+				// Decide wat script to call
+				if (strpos ($repo_name, $website_str) !== False)
+					$command = "./git_update_site.sh $repo_name 2>&1";
+				else
+					$command = "./spec_populate_releases.sh $repo_name 2>&1";
+
+				// Run the script and collect output
 				$output = '';
 				$cmd_output = '';
-				foreach ($commands AS $command) {
-					exec($command, $cmd_output);
-					$output .= htmlentities('----------- execute ' . $command . ' --------------' . PHP_EOL . implode(PHP_EOL, $cmd_output) . PHP_EOL);
-				}
+				exec($command, $cmd_output);
+				$output .= htmlentities('----------- execute ' . $command . ' --------------' . PHP_EOL . implode(PHP_EOL, $cmd_output) . PHP_EOL);
 			}
 		}
 	}
