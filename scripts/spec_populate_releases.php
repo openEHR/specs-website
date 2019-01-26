@@ -17,8 +17,9 @@
 	$err_str = "";
 	$checking_hooksecret = true;
 	$hooksecret_passed = false;
-	$github_org_url = 'https://github.com/openEHR';	// invocation must come from this GitHub org
-	$website_str = 'website'; // string in a Git repo name indicates it is a website
+	$github_org_url = 'https://github.com/openEHR';		// invocation must come from this GitHub org
+	$spec_website_repo = 'specs-website'; 				// Git repo name of specifications.openehr.org website
+	$spec_website_name = 'specifications.openehr.org'; 	// name of specifications.openehr.org website
 
 	// get the payload
 	$raw_payload = $_REQUEST['payload'];
@@ -64,16 +65,16 @@
 				exec('echo $PWD');
 				exec('whoami');
 
-				// Decide wat script to call
-				if (strpos ($repo_name, $website_str) !== False)
-					$command = "./git_update_site.sh $repo_name 2>&1";
+				// Decide what script to call
+				if ($repo_name === $spec_website_repo)
+					$command = "./git_update_site.sh $spec_website_name 2>&1";
 				else
 					$command = "./spec_populate_releases.sh $repo_name 2>&1";
 
 				// Run the script and collect output
 				$output = '';
 				$cmd_output = '';
-				exec($command, $cmd_output);
+				exec ($command, $cmd_output);
 				$output .= htmlentities('----------- execute ' . $command . ' --------------' . PHP_EOL . implode(PHP_EOL, $cmd_output) . PHP_EOL);
 			}
 		}
