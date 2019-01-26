@@ -6,6 +6,7 @@
 #
 # ============== Definitions =============
 #
+populate_releases=$PWD/spec_populate_releases.sh
 git_root=/var/www/git/
 
 #
@@ -13,6 +14,6 @@ git_root=/var/www/git/
 #
 cd $git_root
 ls -d specifications-* | while read git_component_repo; do
-	spec_populate_releases.sh $git_component_repo
+	$populate_releases $git_component_repo
 done
 

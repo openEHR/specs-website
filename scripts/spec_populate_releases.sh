@@ -3,7 +3,7 @@
 # Populate the releases directory from /var/www/git/specifications-XX component repo
 # specified in $1
 # creating the following directory structure:
-#	COMP
+#	COMPONENT
 #	    canonical_release
 #	    canonical_release
 #

@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 # Populate the site releases directory from original specifications /var/www/git/specifications
+# Only populates releases not already there. To force repopulation, manually delete relevant directories.
 #
 
 #
