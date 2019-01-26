@@ -12,14 +12,13 @@
         'git log -n 3',
         'git --work-tree=%work_tree% checkout -f ',
     	'git status',
-        'chmod ug+x %site_root%/scripts/*.sh'
+        'chmod ug+x %work_tree%/scripts/*.sh'
     );
 
     // Run the commands for output
     $output = '';
 
 	// get directory like /var/www/vhosts/openehr.org/specifications.openehr.org
-    $site_root = dirname (getcwd());
     $work_tree = dirname (getcwd());
 
 	// get site_name like specifications.openehr.org
@@ -33,14 +32,14 @@
 
     foreach ($commands AS $command){
 
-        $cmd_str = str_replace ("%work_tree%", $work_tree, $command);
-        $cmd_str = str_replace ("%site_root%", $site_root, $cmd_str);
+        $command = str_replace ("%work_tree%", $work_tree, $command);
 
         // Run it
-        $tmp = shell_exec($cmd_str);
+		$cmd_output = '';
+		exec ($command, $cmd_output);
+
         // Output
-        $output .= "--- {$cmd_str} ---\n";
-        $output .= htmlentities(trim($tmp)) . "\n";
+		$output .= htmlentities('----------- execute ' . $command . ' --------------' . PHP_EOL . implode(PHP_EOL, $cmd_output) . PHP_EOL);
     }
 ?>
 <!DOCTYPE HTML>
