@@ -34,7 +34,7 @@
     foreach ($commands AS $command){
 
         $cmd_str = str_replace ("%work_tree%", $work_tree, $command);
-        $cmd_str = str_replace ("%site_root%", $site_root, $command);
+        $cmd_str = str_replace ("%site_root%", $site_root, $cmd_str);
 
         // Run it
         $tmp = shell_exec($cmd_str);
