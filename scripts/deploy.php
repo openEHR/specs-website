@@ -11,8 +11,8 @@
         'git pull',
         'git log -n 3',
         'git --work-tree=%work_tree% checkout -f ',
-		'git status',
-		'chmod ug+x %site_root%/scripts/*.sh'
+    	'git status',
+        'chmod ug+x %site_root%/scripts/*.sh'
     );
 
     // Run the commands for output
