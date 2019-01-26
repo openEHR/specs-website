@@ -63,7 +63,6 @@
 					'echo $PWD',
 					"whoami",
 					"./spec_populate_releases.sh $repo_name 2>&1"
-					// "./spec_populate_releases.sh $repo_name 2>&1 &" // run in background to avoid GitHub webhook timeout
 				);
 
 				// Run the commands and collect output
@@ -76,8 +75,6 @@
 			}
 		}
 	}
-
-    // Make it pretty for manual user access (and why not?)
 ?>
 <!DOCTYPE HTML>
 <html lang="en-US">
@@ -86,11 +83,6 @@
     <title>GIT openEHR Release publishing script</title>
 </head>
 <body style="background-color: #000000; color: #FFFFFF; font-weight: bold; padding: 0 10px;">
- .  ____  .
- |/      \|
-[| <span style="color: #FF0000;">&hearts;    &hearts;</span> |]  | Git openEHR releases publishing Script v0.4 |
- |___==___|  /              &copy; wolandscat 2018 |
-
 <pre>
 <?php echo $output; ?>
 </pre>

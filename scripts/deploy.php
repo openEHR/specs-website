@@ -10,29 +10,31 @@
         'whoami',
         'git pull',
         'git log -n 3',
-        'git --work-tree=%worktree% checkout -f ',
+        'git --work-tree=%work_tree% checkout -f ',
 		'git status',
-		'chmod ug+x scripts/*.sh'
+		'chmod ug+x %site_root%/scripts/*.sh'
     );
 
     // Run the commands for output
     $output = '';
 
 	// get directory like /var/www/vhosts/openehr.org/specifications.openehr.org
-    $worktree = dirname (getcwd());
+    $site_root = getcwd();
+    $work_tree = dirname (getcwd());
 
-	// get sitename like specifications.openehr.org
-    $sitename = basename ($worktree);
+	// get site_name like specifications.openehr.org
+    $site_name = basename ($work_tree);
 
 	// determine repo location as /var/www/git/specifications.openehr.org
-    $repodir = "/var/www/git/" . $sitename;
+    $repodir = "/var/www/git/" . $site_name;
     chdir ($repodir);
 
     $output .= "chdir (" . $repodir . ")\n";
 
     foreach ($commands AS $command){
 
-        $cmd_str = str_replace ("%worktree%", $worktree, $command);
+        $cmd_str = str_replace ("%work_tree%", $work_tree, $command);
+        $cmd_str = str_replace ("%site_root%", $site_root, $command);
 
         // Run it
         $tmp = shell_exec($cmd_str);
