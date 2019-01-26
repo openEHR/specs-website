@@ -1,7 +1,6 @@
 <?php
     /**
      * GIT DEPLOYMENT SCRIPT
-     *
      */
 
     // The commands
