@@ -1,6 +1,7 @@
 <?php
-    /**
-     * GIT RELEASE EXTRACT WRAPPER SCRIPT
+    /*
+	 * Github updater script. Run on a GitHub push event on any repo in https://github.com/openEHR;
+	 * uses webhook secret for security, then checks which repo and decides what sh script to run.
      *
      */
 
