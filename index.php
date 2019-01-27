@@ -347,7 +347,31 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 							<table>
 								<tbody>
 									<tr>
-										<td style="text-align:left"><a href="/releases/TERM/latest/SupportTerminology.html" target="_blank"><b>openEHR Terminology</b></a></td>
+										<td style="text-align:left"><a href="/releases/TERM/latest/SupportTerminology.html" target="_blank"><b>openEHR Terminology</b></a>:
+											<a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L2" target="_blank">Countries (ISO 3166)</a>|
+											<a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L263" target="_blank">Languages (ISO 639-1)</a>|
+											<a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L250" target="_blank">Character sets (IANA)</a>|
+											<a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L399" target="_blank">Media types (IANA)</a><br>
+
+											<a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L2" target="_blank">Compression algorithms</a>|
+											<a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L9" target="_blank">Integrity check algorithms</a>|
+											<a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L13" target="_blank">Normal statuses</a>|
+											<a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L22" target="_blank">Attestation reason</a>|
+											<a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L26" target="_blank">Audit change type
+											<a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L35" target="_blank">Composition category</a>|
+											<a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L294" target="_blank">Event math function</a>|
+											<a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L218" target="_blank">Instruction states</a>|
+											<a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L230" target="_blank">Instruction transitions</a>|
+											<a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L40" target="_blank">MultiMedia</a>|
+											<a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L178" target="_blank">Null flavours</a>|
+											<a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L253" target="_blank">Participation function</a>|
+											<a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L184" target="_blank">Participation mode</a>|
+											<a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L92" target="_blank">Property</a>|
+											<a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L307" target="_blank">Setting</a>|
+											<a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L251" target="_blank">Subject relationship</a>|
+											<a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L289" target="_blank">Term mapping purpose</a>|
+											<a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L170" target="_blank">Version lifecycle state</a>
+										</td>
 									</tr>
 								</tbody>
 							</table>
