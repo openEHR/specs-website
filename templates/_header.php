@@ -52,7 +52,7 @@
 				
 			<div id="Motto">
 			
-				An open domain-driven platform for developing flexible e-health systems
+				Open industry standards, models and software for e-health
 			
 			</div>
 			
