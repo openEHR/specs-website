@@ -157,7 +157,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 								<tbody>
 									<tr>
 										<td style="text-align:left">
-                                            <a href="/releases/PROC/latest/task_planning.html" target="_blank"><b>Task Planning (TP)</b></a>: An adaptive, executable, team-based model of workflow -<br> Work Plan, Task Plan, Event
+                                            <a href="/releases/PROC/latest/task_planning.html" target="_blank"><b>Task Planning (TP)</b></a>: An adaptive, executable, team-based model of workflow - Work Plan, Task Plan, Event
                                         </td>
 										<td style="text-align:left">
                                             <a href="/releases/PROC/latest/tp_vml.html" target="_blank"><b>TP Visual Modelling Language (TP-VML)</b></a>:<br>A visual modelling language for clinical plans and workflows.
