@@ -52,7 +52,7 @@
 				
 			<div id="Motto">
 			
-				Open industry standards, models and software for e-health
+				Open industry specifications, models and software for e-health
 			
 			</div>
 			
