@@ -21,7 +21,8 @@
 	
 	<link rel="shortcut icon" href="/gui/favicon.ico">
 	<link rel="home" href="/">
-	<link rel="index" href="/using_the_site/sitemap">
+
+	<meta name="google-site-verification" content="zfPZfHQ-5oXYT119aAi7HdZELv8ubHPCxvIFANVPzcU" />
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	
