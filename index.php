@@ -134,7 +134,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 								<tbody>
 									<tr>
 										<td style="text-align:left">
-											<a href="/releases/CDS/latest/GDL.html" target="_blank"><b>GDL</b></a>: Guideline Definition Language
+											<a href="/releases/CDS/latest/GDL2.html" target="_blank"><b>GDL2</b></a>: Guideline Definition Language v2
+										</td>
+										<td style="text-align:left">
+											<a href="/releases/CDS/latest/GDL.html" target="_blank"><b>GDL</b></a>: Guideline Definition Language v1
 										</td>
 									</tr>
 								</tbody>
