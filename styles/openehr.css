@@ -131,7 +131,7 @@ meta.foundation-mq-large { font-family: "only screen and (min-width:1440px)"; wi
 
 html, body { font-size: 100%; }
 
-body { background: white; color: rgba(0, 0, 0, 0.8); padding: 0; margin: 0; font-family: "Noto Serif", "DejaVu Serif", serif; font-weight: normal; font-style: normal; line-height: 1; position: relative; cursor: auto; }
+body { background: white; color: rgba(0, 0, 0, 0.8); padding: 0; margin: 0; font-family: "Georgia", "Times", serif; font-weight: normal; font-style: normal; line-height: 1; position: relative; cursor: auto; }
 
 a:hover { cursor: pointer; }
 
@@ -188,7 +188,7 @@ p { font-family: inherit; font-weight: normal; font-size: 1em; line-height: 1.6;
 p aside { font-size: 0.875em; line-height: 1.35; font-style: italic; }
 
 /* Default header styles */
-h1, h2, h3, #toctitle, .sidebarblock > .content > .title, h4, h5, h6 { font-family: "Open Sans", "DejaVu Sans", sans-serif; font-weight: 300; font-style: normal; color: #0066cc; text-rendering: optimizeLegibility; margin-top: 1em; margin-bottom: 0.5em; line-height: 1.0125em; }
+h1, h2, h3, #toctitle, .sidebarblock > .content > .title, h4, h5, h6 { font-family: "Helvetica", "Arial", sans-serif; font-weight: 300; font-style: normal; color: #0066cc; text-rendering: optimizeLegibility; margin-top: 1em; margin-bottom: 0.5em; line-height: 1.0125em; }
 h1 small, h2 small, h3 small, #toctitle small, .sidebarblock > .content > .title small, h4 small, h5 small, h6 small { font-size: 60%; color: #66b2ff; line-height: 0; }
 
 h1 { font-size: 2.125em; }
@@ -279,7 +279,7 @@ h1 strong, h2 strong, h3 strong, #toctitle strong, .sidebarblock > .content > .t
 
 *:not(pre) > code { font-size: 0.875em; font-style: normal !important; letter-spacing: 0; padding: 0.1em 0.5ex; word-spacing: -0.15em; background-color: #f7f7f8; -webkit-border-radius: 4px; border-radius: 4px; line-height: 1.2; text-rendering: optimizeSpeed; }
 
-pre, pre > code { line-height: 1.25; color: rgba(0, 0, 0, 0.9); font-family: "Droid Sans Mono", "DejaVu Sans Mono", "Monospace", monospace; font-weight: normal; text-rendering: optimizeSpeed; }
+pre, pre > code { line-height: 1.25; color: rgba(0, 0, 0, 0.9); font-family: "Droid Sans Mono", "DejaVu Sans Mono", monospace; font-weight: normal; text-rendering: optimizeSpeed; }
 
 .keyseq { color: rgba(51, 51, 51, 0.8); }
 
@@ -326,7 +326,7 @@ p a > code:hover { color: rgba(0, 0, 0, 0.9); }
 #toc > ul { margin-left: 0.125em; }
 #toc ul.sectlevel0 > li > a { font-style: italic; }
 #toc ul.sectlevel0 ul.sectlevel1 { margin: 0.5em 0; }
-#toc ul { font-family: "Open Sans", "DejaVu Sans", sans-serif; list-style-type: none; }
+#toc ul { font-family: "Helvetica", "Arial", sans-serif; list-style-type: none; }
 #toc li { line-height: 1.3334; margin-top: 0.3334em; }
 #toc a { text-decoration: none; }
 #toc a:active { text-decoration: underline; }
@@ -369,7 +369,7 @@ p a > code:hover { color: rgba(0, 0, 0, 0.9); }
 
 .audioblock, .imageblock, .literalblock, .listingblock, .stemblock, .videoblock { margin-bottom: 1.25em; }
 
-.admonitionblock td.content > .title, .audioblock > .title, .exampleblock > .title, .imageblock > .title, .listingblock > .title, .literalblock > .title, .stemblock > .title, .openblock > .title, .paragraph > .title, .quoteblock > .title, table.tableblock > .title, .verseblock > .title, .videoblock > .title, .dlist > .title, .olist > .title, .ulist > .title, .qlist > .title, .hdlist > .title { text-rendering: optimizeLegibility; text-align: left; font-family: "Noto Serif", "DejaVu Serif", serif; font-size: 1rem; font-style: italic; }
+.admonitionblock td.content > .title, .audioblock > .title, .exampleblock > .title, .imageblock > .title, .listingblock > .title, .literalblock > .title, .stemblock > .title, .openblock > .title, .paragraph > .title, .quoteblock > .title, table.tableblock > .title, .verseblock > .title, .videoblock > .title, .dlist > .title, .olist > .title, .ulist > .title, .qlist > .title, .hdlist > .title { text-rendering: optimizeLegibility; text-align: left; font-family: "Georgia", "Times", serif; font-size: 1rem; font-style: italic; }
 
 table.tableblock > caption.title { white-space: nowrap; overflow: visible; max-width: 0; }
 
@@ -380,7 +380,7 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p { font-si
 .admonitionblock > table { border-collapse: separate; border: 0; background: none; width: 100%; }
 .admonitionblock > table td.icon { text-align: center; width: 80px; }
 .admonitionblock > table td.icon img { max-width: none; }
-.admonitionblock > table td.icon .title { font-weight: bold; font-family: "Open Sans", "DejaVu Sans", sans-serif; text-transform: uppercase; }
+.admonitionblock > table td.icon .title { font-weight: bold; font-family: "Helvetica", "Arial", sans-serif; text-transform: uppercase; }
 .admonitionblock > table td.content { padding-left: 1.125em; padding-right: 1.25em; border-left: 1px solid #ddddd8; color: rgba(0, 0, 0, 0.6); }
 .admonitionblock > table td.content > :last-child > :last-child { margin-bottom: 0; }
 
@@ -686,42 +686,46 @@ h1.sect0 { text-align: center; }
 
 dt, th.tableblock, td.content { text-rendering: optimizeLegibility; }
 
-th.tableblock { background-color: skyblue; font-family: "Open Sans", "DejaVu Sans", sans-serif; }
+th.tableblock { background-color: skyblue; font-family: "Helvetica", "Arial", sans-serif; }
 
-th.tableblock.frontpage { background-color: lightsteelblue; font-family: "Open Sans", "DejaVu Sans", sans-serif; }
+th.tableblock.frontpage { background-color: lightsteelblue; font-family: "Helvetica", "Arial", sans-serif; }
 
 td.hdlist1 { font-weight: bold; padding-bottom: 0.41667em; }
 
 p, td.content { letter-spacing: -0.01em; }
 p strong, td.content strong { letter-spacing: -0.005em; }
 
-p, blockquote, dt, td.content { font-size: 1.125rem; }
+p, blockquote, dt, td.content { font-size: 1.05em; }
 
 p { margin-bottom: 1.25rem; }
 
 ul > li p { margin-bottom: -0.25rem; }
 
-div.xcode a { font-family: "Open Sans", "DejaVu Sans", sans-serif; font-size: 0.9em; }
+div.xcode a { font-family: "Droid Sans Mono", "DejaVu Sans Mono", monospace; font-size: 0.9em; }
 
-div.title-para { text-align: center; font-family: "Open Sans", "DejaVu Sans", sans-serif; font-size: 1rem; }
+div.title-para { text-align: center; font-family: "Helvetica", "Arial", sans-serif; font-size: 1rem; }
 
 code { font-size: 0.875em; }
 
-.sidebarblock p, .sidebarblock dt, .sidebarblock td.content, p.tableblock { font-size: 1em; font-family: "Open Sans", "DejaVu Sans", sans-serif; }
+.sidebarblock p, .sidebarblock dt, .sidebarblock td.content, p.tableblock { font-size: 1em; font-family: "Helvetica", "Arial", sans-serif; }
+
+td:nth-child(2).tableblock p.tableblock strong, td:nth-child(2).tableblock div.paragraph p strong { font-family: "Helvetica", "Arial", sans-serif; font-size: 15px; }
+
+td.tableblock p { margin-bottom: 0; }
 
 .exampleblock > .content { background-color: #fffef7; border-color: #e0e0dc; -webkit-box-shadow: 0 1px 4px #e0e0dc; box-shadow: 0 1px 4px #e0e0dc; }
 
-.paragraph.rule > p { padding-left: 2.5em; text-indent: -2.5em; color: #004c99; font-family: "Open Sans", "DejaVu Sans", sans-serif; }
+.paragraph.rule > p { padding-left: 2.5em; text-indent: -2.5em; color: #004c99; font-family: "Helvetica", "Arial", sans-serif; }
 
-.paragraph.definition > p { padding-left: 2.5em; color: #004c99; font-family: "Open Sans", "DejaVu Sans", sans-serif; }
+.paragraph.definition > p { padding-left: 2.5em; color: #004c99; font-family: "Helvetica", "Arial", sans-serif; }
 
-.paragraph.tbd > p { padding-left: 2.5em; text-indent: -2.5em; color: #cc00cc; font-family: "Open Sans", "DejaVu Sans", sans-serif; }
+.paragraph.tbd > p { padding-left: 2.5em; text-indent: -2.5em; color: #cc00cc; font-family: "Helvetica", "Arial", sans-serif; }
 
-.paragraph.deprecated > p { padding-left: 2.5em; text-indent: -2.5em; color: #663300; font-family: "Open Sans", "DejaVu Sans", sans-serif; }
+.paragraph.deprecated > p { padding-left: 2.5em; text-indent: -2.5em; color: #663300; font-family: "Helvetica", "Arial", sans-serif; }
 
-.paragraph.discussion > p { padding-left: 2.5em; color: #663300; font-family: "Open Sans", "DejaVu Sans", sans-serif; }
+.paragraph.discussion > p { padding-left: 2.5em; color: #663300; font-family: "Helvetica", "Arial", sans-serif; }
 
-.paragraph.principle > p { padding-left: 2.5em; color: #004c99; font-family: "Open Sans", "DejaVu Sans", sans-serif; }
+.paragraph.principle > p { padding-left: 2.5em; color: #004c99; font-family: "Helvetica", "Arial", sans-serif; }
 
 .imageblock.text-center > .title { text-align: center !important; }
 
