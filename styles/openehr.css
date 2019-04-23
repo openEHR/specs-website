@@ -711,7 +711,9 @@ code { font-size: 0.875em; }
 
 td:nth-child(2).tableblock p.tableblock strong, td:nth-child(2).tableblock div.paragraph p strong { font-family: "Helvetica", "Arial", sans-serif; font-size: 15px; }
 
-td.tableblock p { margin-bottom: 0; }
+td.tableblock div.paragraph:last-child p { margin-bottom: 0; }
+
+td.tableblock .hdlist > table { margin-bottom: 0; }
 
 .exampleblock > .content { background-color: #fffef7; border-color: #e0e0dc; -webkit-box-shadow: 0 1px 4px #e0e0dc; box-shadow: 0 1px 4px #e0e0dc; }
 
