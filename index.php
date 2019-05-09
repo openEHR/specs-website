@@ -165,6 +165,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 										<td style="text-align:left">
                                             <a href="/releases/PROC/latest/tp_vml.html" target="_blank"><b>TP Visual Modelling Language (TP-VML)</b></a>:<br>A visual modelling language for clinical plans and workflows.
                                         </td>
+										<td style="text-align:left">
+                                            <a href="/releases/PROC/latest/tp_examples.html" target="_blank"><b>TP Examples</b></a>:<br>Real-world worked TP examples.
+                                        </td>
 									</tr>
 								</tbody>
 							</table>
