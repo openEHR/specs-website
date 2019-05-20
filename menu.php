@@ -6,7 +6,7 @@
 				<li><a href="https://openehr.atlassian.net/secure/Dashboard.jspa?selectPageId=10190" target="_blank">Issue Trackers</a></li>
 				<li><a href="https://www.openehr.org/programs/specification/governance" target="_blank">Governance</a></li>
 				<br/>
-				<li><a href="https://www.openehr.org/programs/specification/iplicense" target="_blank">IP and Licensing</a></li>
-				<li><a href="https://www.openehr.org/programs/specification/mailinglists" target="_blank">Mailing Lists</a></li>
+				<li><a href="https://www.openehr.org/governance/intellectual_property" target="_blank">IP and Licensing</a></li>
+				<li><a href="https://www.openehr.org/digital_media/mailinglists" target="_blank">Mailing Lists</a></li>
 				<li><a href="/wiki/display/spec/Specifications+Home" target="_blank">Wiki</a></li>
 			</ul>
