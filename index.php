@@ -61,7 +61,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 						<a href="/components/ITS/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECITS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
 						</td>
 						<td style="text-align:center">
-							<table>
+							<table class="TableBasic2">
 								<tbody>
 									<tr>
 										<td colspan="2" style="text-align:left"><a href="https://github.com/openEHR/specifications-ITS-REST" target="_blank"><b>REST APIs</b></a>: 
