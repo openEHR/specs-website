@@ -40,7 +40,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 							<a href="/components/CNF/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECCNF?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
 						</td>
 						<td style="text-align:center">
-							<table>
+							<table class="TableBasic2">
 								<tbody>
 									<tr>
 										<td style="text-align:left">
@@ -111,7 +111,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 						<td style="white-space: nowrap"> <a name="SM"></a><a href="/releases/SM/latest/index" target="_blank"><b>SM</b><br>(Service Model)</a><br>
 						<a href="/components/SM/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECSM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a></td>
 						<td style="text-align:center">
-							<table>
+							<table class="TableBasic2">
 								<tbody>
 									<tr>
 										<td style="text-align:left">
@@ -130,7 +130,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 						<td> <a name="CDS"></a><a href="/releases/CDS/latest/index" target="_blank"><b>CDS</b><br>(Clinical Decision Support)</a><br>
 						<a href="/components/CDS/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECCDS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a></td>
 						<td style="text-align:center">
-							<table>
+							<table class="TableBasic2">
 								<tbody>
 									<tr>
 										<td style="text-align:left">
@@ -156,7 +156,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             <a href="https://openehr.atlassian.net/projects/SPECPROC?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </td>
 						<td style="text-align:center">
-							<table>
+							<table class="TableBasic2">
 								<tbody>
 									<tr>
 										<td style="text-align:left">
@@ -182,7 +182,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 						<td> <a name="QUERY"></a><a href="/releases/QUERY/latest/index" target="_blank"><b>QUERY</b><br>(Query language)</a><br>
 						<a href="/components/QUERY/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECQUERY?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a></td>
 						<td style="text-align:center">
-							<table>
+							<table class="TableBasic2">
 								<tbody>
 									<tr>
 										<td style="text-align:left">
@@ -202,7 +202,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 						<td> <a name="RM"></a><a href="/releases/RM/latest/index" target="_blank"><b>RM</b><br>(Reference Model)</a><br>
 						<a href="/components/RM/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECRM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a></td>
 						<td style="text-align:center">
-							<table>
+							<table class="TableBasic2">
 								<tbody>
 									<tr>
 										<td style="text-align:left">
@@ -250,7 +250,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 						<td> <a name="AM"></a><a href="/releases/AM/latest/index" target="_blank"><b>AM</b><br>(Archetype Model)</a><br>
 						<a href="/components/AM/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECAM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a></td>
 						<td style="text-align:center">
-							<table>
+							<table class="TableBasic2">
 								<tbody>
 									<tr>
 										<td style="text-align:left">
@@ -293,7 +293,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 						<td style="white-space: nowrap"> <a name="LANG"></a><a href="/releases/LANG/latest/index" target="_blank"><b>LANG</b><br>(Generic Languages)</a><br>
 						<a href="/components/LANG/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECLANG?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a></td>
 						<td style="text-align:center">
-							<table>
+							<table class="TableBasic2">
 								<tbody>
 									<tr>
 										<td rowspan="2" style="text-align:left">
@@ -324,7 +324,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 						<td> <a name="BASE"></a><a href="/releases/BASE/latest/index" target="_blank"><b>BASE</b><br>(Base models)</a><br>
 							<a href="/components/BASE/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECBASE?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a></td>
 						<td style="text-align:center">
-							<table>
+							<table class="TableBasic2">
 								<tbody>
 									<tr>
 										<td style="text-align:left">
@@ -353,7 +353,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 						<td> <a name="TERM"></a><a href="/releases/TERM/latest/index" target="_blank"><b>TERM</b><br>(Terminology)</a><br>
 							<a href="/components/TERM/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECTERM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a></td>
 						<td style="text-align:center">
-							<table>
+							<table class="TableBasic2">
 								<tbody>
 									<tr>
 										<td style="text-align:left"><a href="/releases/TERM/latest/SupportTerminology.html" target="_blank"><b>openEHR Terminology</b></a>:

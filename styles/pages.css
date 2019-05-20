@@ -175,7 +175,9 @@ img {margin: 10px 0 10px 0;}
 
 
 
-/* Tables style */
+/* ----- Table styles ----- */
+
+/* Table with blue header background, grey cell background */
 .TableBasic {
 	border: 1px solid #ccc;
 
@@ -201,6 +203,34 @@ img {margin: 10px 0 10px 0;}
 
 	text-align: left;
 	font-size: 13px;
+}
+
+/* Table with blue header background, light grey cell background */
+.TableBasic2 {
+	border: 1px solid #ccc;
+
+	margin-top: 15px;
+	margin-bottom: 35px;
+}
+
+.TableBasic2 th {
+	padding: 3px 5px 3px 5px;
+	border: 1px solid #ccc;
+
+	background: #98cee6;
+	color: #023760;
+
+	font-weight:900;
+	font-size: 12px;
+}
+
+.TableBasic2 td {
+	padding: 3px 5px 3px 5px;
+	border: 1px solid #ccc;
+	background: #fafaff;
+
+	text-align: left;
+	font-size: 12px;
 }
 
 
