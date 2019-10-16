@@ -70,7 +70,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                                             <a href="/releases/ITS-REST/latest/definitions.html" target="_blank"><b>Definitions</b></a>
                                         </td>
 										<td style="text-align:left">
-                                            <a href="/releases/ITS-REST/latest/simplified_data_template.html" target="_blank"><b>SDT</b></a>: JSON Data Template
+                                            <a href="/releases/ITS-REST/latest/simplified_data_template.html" target="_blank"><b>SDT</b></a>: Simplified Data Template
                                         </td>
 									</tr>
 									<tr>
