@@ -123,7 +123,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 									</tr>
 									<tr>
 										<td style="text-align:left">
-											<a href="/releases/SM/latest/simplified_im_b.html" target="_blank"><b>SIM-B</b></a>: Simplified Information Model 'B' for use with JSON Data Template
+											<a href="/releases/SM/latest/simplified_im_b.html" target="_blank"><b>SIM-B</b></a>: Simplified Information Model 'B' for use with Simplified Data Template
 										</td>
 									</tr>
 								</tbody>
