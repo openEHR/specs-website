@@ -19,10 +19,17 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 							<a href="/releases/AM/latest/Overview.html" target="_blank"><b>Archetype Technology</b></a> |
 							<a href="/releases/UML/latest" target="_blank"><b>GLOBAL UML</b></a> |
 							<a href="/releases/AA_GLOBAL/latest/index.html" target="_blank"><b>CLASS INDEX</b></a>
+							<a href="https://openehr.atlassian.net/wiki/spaces/spec/pages/357957633/Services+Landscape+for+e-Health" target="_blank"><b>Services Landscape</b></a>
 						</td>
+
 					</tr>
 				</tbody>
 			</table>
+
+			<!-- =============== Diagram =============== -->
+			<div class="imageblock" style="text-align: center">
+				<img src="https://github.com/openEHR/specifications-AA_GLOBAL/blob/master/docs/diagrams/openehr_block_diagram_detailed.svg" alt="openEHR Components" width="60%">
+			</div>
 
 			<!-- =============== Implementation Specs =============== -->
 			<table class="TableBasic">
