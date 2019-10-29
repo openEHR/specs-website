@@ -28,7 +28,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 
 			<!-- =============== Diagram =============== -->
 			<div class="imageblock" style="text-align: center">
-				<img src="https://raw.githubusercontent.com/openEHR/specifications-AA_GLOBAL/master/docs/diagrams/openehr_block_diagram.svg" alt="openEHR Components" width="60%">
+				<img src="/releases/AA_GLOBAL/latest/diagrams/openehr_block_diagram.svg" alt="openEHR Components" width="60%">
 			</div>
 
 			<!-- =============== Implementation Specs =============== -->
