@@ -23,7 +23,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 							<a href="/releases/BASE/latest/architecture_overview.html" target="_blank"><b>Architecture Overview</b></a> |
 							<a href="/releases/AM/latest/Overview.html" target="_blank"><b>Archetype Technology</b></a> |
 							<a href="/releases/UML/latest" target="_blank"><b>GLOBAL UML</b></a> |
-							<a href="/releases/AA_GLOBAL/latest/index.html" target="_blank"><b>CLASS INDEX</b></a>
+							<a href="/releases/AA_GLOBAL/latest/index.html" target="_blank"><b>CLASS INDEX</b></a> |
 							<a href="https://openehr.atlassian.net/wiki/spaces/spec/pages/357957633/Services+Landscape+for+e-Health" target="_blank"><b>Services Landscape</b></a>
 						</td>
 
