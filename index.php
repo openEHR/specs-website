@@ -64,7 +64,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 							<table class="TableBasic2">
 								<tbody>
 									<tr>
-										<td style="text-align:left"><a href="https://github.com/openEHR/specifications-ITS-REST" target="_blank"><b>REST APIs</b></a>: 
+										<td style="text-align:left"><a href="/releases/ITS-REST/latest/index.html" target="_blank"><b>REST APIs</b></a>: 
                                             <a href="/releases/ITS-REST/latest/ehr.html" target="_blank"><b>EHR</b></a>, 
                                             <a href="/releases/ITS-REST/latest/query.html" target="_blank"><b>Query</b></a>, 
                                             <a href="/releases/ITS-REST/latest/definitions.html" target="_blank"><b>Definitions</b></a>
