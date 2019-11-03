@@ -99,6 +99,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 						<td style="white-space: nowrap"> 
 							<a href="https://openehr.atlassian.net/browse/SPECITS/fixforversion/12522" target="_blank">JSON 1.0.0</a> (cooking) <br>
 							<a href="https://openehr.atlassian.net/projects/SPECITS/versions/12520/tab/release-report-all-issues" target="_blank">XML 2.0.0</a> (cooking) <br>
+							<a href="https://openehr.atlassian.net/projects/SPECITS/versions/12529/tab/release-report-all-issues" target="_blank">REST 1.1.0</a> (cooking) <br>
+							<a href="/releases/ITS-REST/Release-1.0.1/" target="_blank">REST 1.0.1</a> (03 Nov 2019)<br>
 							<a href="/releases/ITS-REST/Release-1.0.0/" target="_blank">REST 1.0.0</a> (07 Dec 2018)<br>
 							<a href="https://github.com/openEHR/specifications-ITS-XML/releases/tag/Release-1.0.2" target="_blank">XML 1.0.2</a> (31 Dec 2008)
 						</td>

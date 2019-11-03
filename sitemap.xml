@@ -54,27 +54,32 @@
 </url>
 <url>
   <loc>https://specifications.openehr.org/releases/ITS/latest/index</loc>
-  <lastmod>2019-01-09T12:48:19+00:00</lastmod>
+  <lastmod>2019-11-03T16:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://specifications.openehr.org/releases/ITS-REST/latest/ehr.html</loc>
-  <lastmod>2018-12-16T21:34:30+00:00</lastmod>
+  <lastmod>2019-11-03T16:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://specifications.openehr.org/releases/ITS-REST/latest/query.html</loc>
-  <lastmod>2018-12-16T21:34:30+00:00</lastmod>
+  <lastmod>2019-11-03T16:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://specifications.openehr.org/releases/ITS-REST/latest/definitions.html</loc>
-  <lastmod>2018-12-16T21:34:30+00:00</lastmod>
+  <lastmod>2019-11-03T16:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://specifications.openehr.org/releases/ITS-REST/Release-1.0.0/</loc>
   <lastmod>2018-12-07T14:14:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://specifications.openehr.org/releases/ITS-REST/Release-1.0.1/</loc>
+  <lastmod>2019-11-03T16:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
@@ -464,22 +469,27 @@
 </url>
 <url>
   <loc>https://specifications.openehr.org/releases/ITS-REST/latest/index.html</loc>
-  <lastmod>2018-12-16T21:34:30+00:00</lastmod>
+  <lastmod>2019-11-03T16:00:00+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://specifications.openehr.org/releases/ITS-REST/Release-1.0.0/ehr.html</loc>
-  <lastmod>2018-12-07T14:14:31+00:00</lastmod>
+  <loc>https://specifications.openehr.org/releases/ITS-REST/Release-1.0.1/index.html</loc>
+  <lastmod>2019-11-03T16:00:00+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://specifications.openehr.org/releases/ITS-REST/Release-1.0.0/query.html</loc>
-  <lastmod>2018-12-07T14:14:31+00:00</lastmod>
+  <loc>https://specifications.openehr.org/releases/ITS-REST/Release-1.0.1/ehr.html</loc>
+  <lastmod>2019-11-03T16:00:00+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://specifications.openehr.org/releases/ITS-REST/Release-1.0.0/definitions.html</loc>
-  <lastmod>2018-12-07T14:14:31+00:00</lastmod>
+  <loc>https://specifications.openehr.org/releases/ITS-REST/Release-1.0.1/query.html</loc>
+  <lastmod>2019-11-03T16:00:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://specifications.openehr.org/releases/ITS-REST/Release-1.0.1/definitions.html</loc>
+  <lastmod>2019-11-03T16:00:00+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
