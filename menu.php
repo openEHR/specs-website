@@ -7,6 +7,6 @@
 				<li><a href="https://www.openehr.org/programs/specification/governance" target="_blank">Governance</a></li>
 				<br/>
 				<li><a href="https://www.openehr.org/governance/intellectual_property" target="_blank">IP and Licensing</a></li>
-				<li><a href="https://www.openehr.org/digital_media/mailinglists" target="_blank">Mailing Lists</a></li>
+				<li><a href="https://discourse.openehr.org/c/specifications" target="_blank">Discourse Forum</a></li>
 				<li><a href="/wiki/display/spec/Specifications+Home" target="_blank">Wiki</a></li>
 			</ul>

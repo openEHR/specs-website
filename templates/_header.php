@@ -59,7 +59,7 @@
 			
 			<div id="Utilities">
 				
-				<a href="https://www.openehr.org">openEHR Home</a> | <a href="/wiki" target="_blank">Wiki</a> | <a href="https://openehr.atlassian.net/secure/BrowseProjects.jspa?selectedCategory=all&selectedProjectType=all" target="_blank">Jira</a> | <a href="/ckm">CKM</a>
+				<a href="https://www.openehr.org">openEHR Home</a> | <a href="/wiki" target="_blank">Wiki</a> | <a href="https://openehr.atlassian.net/secure/BrowseProjects.jspa?selectedCategory=all&selectedProjectType=all" target="_blank">Jira</a> | <a href="https://www.openehr.org/ckm">CKM</a>
 				
 				<div id="Search">
 			
