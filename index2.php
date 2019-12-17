@@ -34,7 +34,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			<!-- =============== Implementation Specs =============== -->
 			<table class="TableBasic">
 				<tbody>
-					<tr style="background-color:#d0aaf2">
+					<tr style="background-color:#d0aaf2;">
 						<th style="text-align:center"> Component</th>
 						<th style="text-align:center"> Implementation Specifications </th>
 						<th style="text-align:center"> Releases </th>
@@ -112,7 +112,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			<!-- =============== Formal Specs: Service Models =============== -->
 			<table class="TableBasic">
 				<tbody>
-					<tr style="background-color:#85d48e">
+					<tr style="background-color:#85d48e;">
 						<th style="text-align:center"> Component</th>
 						<th style="text-align:center"> Formal Specifications: Service Models</th>
 						<th style="text-align:center"> Releases </th>
@@ -147,7 +147,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			<!-- =============== Formal Specs: Analytics =============== -->
 			<table class="TableBasic">
 				<tbody>
-					<tr style="background-color:#f0cd5b">
+					<tr style="background-color:#f0cd5b;">
 						<th style="text-align:center"> Component</th>
 						<th style="text-align:center"> Formal Specifications: Analytics</th>
 						<th style="text-align:center"> Releases </th>
@@ -311,7 +311,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			<!-- =============== Formal Specs: Formalisms =============== -->
 			<table class="TableBasic">
 				<tbody>
-					<tr style="background-color:#d9d6cc">
+					<tr style="background-color:#d9d6cc;">
 						<th style="text-align:center"> Component</th>
 						<th style="text-align:center"> Formal Specifications: Formalisms</th>
 						<th style="text-align:center"> Releases </th>
@@ -416,7 +416,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			<!-- =============== Formal Specs: Foundations =============== -->
 			<table class="TableBasic">
 				<tbody>
-					<tr style="background-color:#d9d6cc">
+					<tr style="background-color:#d9d6cc;">
 						<th style="text-align:center"> Component</th>
 						<th style="text-align:center"> Formal Specifications: Foundations</th>
 						<th style="text-align:center"> Releases </th>
