@@ -32,7 +32,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			</table>
 
 			<!-- =============== Implementation Specs =============== -->
-			<table class="TableBasic">
+			<table class="TableBasicITS">
 				<tbody>
 					<tr>
 						<th style="text-align:center"> Component</th>
@@ -110,7 +110,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			</table>
 
 			<!-- =============== Formal Specs: Service Models =============== -->
-			<table class="TableBasic">
+			<table class="TableBasicS">
 				<tbody>
 					<tr>
 						<th style="text-align:center"> Component</th>
@@ -145,7 +145,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			</table>
 			
 			<!-- =============== Formal Specs: Analytics =============== -->
-			<table class="TableBasic">
+			<table class="TableBasicA">
 				<tbody>
 					<tr>
 						<th style="text-align:center"> Component</th>
@@ -309,7 +309,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			</table>
 			
 			<!-- =============== Formal Specs: Formalisms =============== -->
-			<table class="TableBasic">
+			<table class="TableBasicF">
 				<tbody>
 					<tr>
 						<th style="text-align:center"> Component</th>
@@ -414,7 +414,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			</table>
 			
 			<!-- =============== Formal Specs: Foundations =============== -->
-			<table class="TableBasic">
+			<table class="TableBasicF">
 				<tbody>
 					<tr>
 						<th style="text-align:center"> Component</th>

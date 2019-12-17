@@ -205,6 +205,119 @@ img {margin: 10px 0 10px 0;}
 	font-size: 13px;
 }
 
+/* Table with gold header background, grey cell background */
+.TableBasicA {
+	border: 1px solid #ccc;
+
+	margin-top: 15px;
+	margin-bottom: 35px;
+}
+
+.TableBasicA th {
+	padding: 3px 5px 3px 5px;
+	border: 1px solid #ccc;
+
+	background: #f0cd5b;
+	color: #023760;
+
+	font-weight:900;
+	font-size: 13px;
+}
+
+.TableBasicA td {
+	padding: 3px 5px 3px 5px;
+	border: 1px solid #ccc;
+	background: #f6f6ff;
+
+	text-align: left;
+	font-size: 13px;
+}
+
+/* Table with grey header background, grey cell background */
+.TableBasicF {
+	border: 1px solid #ccc;
+
+	margin-top: 15px;
+	margin-bottom: 35px;
+}
+
+.TableBasicF th {
+	padding: 3px 5px 3px 5px;
+	border: 1px solid #ccc;
+
+	background: #d9d6cc;
+	color: #023760;
+
+	font-weight:900;
+	font-size: 13px;
+}
+
+.TableBasicF td {
+	padding: 3px 5px 3px 5px;
+	border: 1px solid #ccc;
+	background: #f6f6ff;
+
+	text-align: left;
+	font-size: 13px;
+}
+
+/* Table with green header background, grey cell background */
+.TableBasicS {
+	border: 1px solid #ccc;
+
+	margin-top: 15px;
+	margin-bottom: 35px;
+}
+
+.TableBasicS th {
+	padding: 3px 5px 3px 5px;
+	border: 1px solid #ccc;
+
+	background: #85d48e;
+	color: #023760;
+
+	font-weight:900;
+	font-size: 13px;
+}
+
+.TableBasicS td {
+	padding: 3px 5px 3px 5px;
+	border: 1px solid #ccc;
+	background: #f6f6ff;
+
+	text-align: left;
+	font-size: 13px;
+}
+
+/* Table with purple header background, grey cell background */
+.TableBasicITS {
+	border: 1px solid #ccc;
+
+	margin-top: 15px;
+	margin-bottom: 35px;
+}
+
+.TableBasicITS th {
+	padding: 3px 5px 3px 5px;
+	border: 1px solid #ccc;
+
+	background: #d0aaf2;
+	color: #023760;
+
+	font-weight:900;
+	font-size: 13px;
+}
+
+.TableBasicITS td {
+	padding: 3px 5px 3px 5px;
+	border: 1px solid #ccc;
+	background: #f6f6ff;
+
+	text-align: left;
+	font-size: 13px;
+}
+
+
 /* Table with blue header background, light grey cell background */
 .TableBasic2 {
 	border: 1px solid #ccc;
