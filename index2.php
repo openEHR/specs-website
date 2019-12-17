@@ -32,9 +32,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			</table>
 
 			<!-- =============== Implementation Specs =============== -->
-			<table class="TableBasicITS">
+			<table class="TableBasic">
 				<tbody>
-					<tr>
+					<tr style="background:#d0aaf2">
 						<th style="text-align:center"> Component</th>
 						<th style="text-align:center"> Implementation Specifications </th>
 						<th style="text-align:center"> Releases </th>
@@ -110,9 +110,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			</table>
 
 			<!-- =============== Formal Specs: Service Models =============== -->
-			<table class="TableBasicS">
+			<table class="TableBasic">
 				<tbody>
-					<tr>
+					<tr style="background:#85d48e">
 						<th style="text-align:center"> Component</th>
 						<th style="text-align:center"> Formal Specifications: Service Models</th>
 						<th style="text-align:center"> Releases </th>
@@ -145,9 +145,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			</table>
 			
 			<!-- =============== Formal Specs: Analytics =============== -->
-			<table class="TableBasicA">
+			<table class="TableBasic">
 				<tbody>
-					<tr>
+					<tr style="background:#f0cd5b">
 						<th style="text-align:center"> Component</th>
 						<th style="text-align:center"> Formal Specifications: Analytics</th>
 						<th style="text-align:center"> Releases </th>
@@ -309,9 +309,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			</table>
 			
 			<!-- =============== Formal Specs: Formalisms =============== -->
-			<table class="TableBasicF">
+			<table class="TableBasic">
 				<tbody>
-					<tr>
+					<tr style="background:#d9d6cc">
 						<th style="text-align:center"> Component</th>
 						<th style="text-align:center"> Formal Specifications: Formalisms</th>
 						<th style="text-align:center"> Releases </th>
@@ -414,9 +414,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			</table>
 			
 			<!-- =============== Formal Specs: Foundations =============== -->
-			<table class="TableBasicF">
+			<table class="TableBasic">
 				<tbody>
-					<tr>
+					<tr style="background:#d9d6cc">
 						<th style="text-align:center"> Component</th>
 						<th style="text-align:center"> Formal Specifications: Foundations</th>
 						<th style="text-align:center"> Releases </th>
