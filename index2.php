@@ -8,14 +8,14 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 ?>
 
 		<div id="Content">
-<!-- ------------------------------------------ Content starts here ------------------------------------------------ -->
+<!-- ----------------------------------------- Content starts here ------------------------------------------------ -->
 		
 			<!-- =============== Diagram =============== -->
 			<div class="imageblock" style="text-align: center">
-				<img src="/openehr_block_diagram.svg" alt="openEHR Components" width="60%">
+				<img src="/openehr_block_diagram3.svg" alt="openEHR Components" width="60%">
 			</div>
 
-			<!-- ---------------------------------------- Global index ----------------------------------------------- -->
+			<!-- --------------------------------------- Global index ----------------------------------------------- -->
 			<table class="TableInvisible">
 				<tbody>
 					<tr>
