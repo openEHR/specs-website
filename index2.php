@@ -109,6 +109,39 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 				</tbody>
 			</table>
 
+			<!-- =============== Formal Specs: Analytics =============== -->
+			<table class="TableBasic">
+				<tbody>
+					<tr style="background-color:#f0cd5b;">
+						<th style="text-align:center"> Component</th>
+						<th style="text-align:center"> Formal Specifications: Analytics</th>
+						<th style="text-align:center"> Releases </th>
+					</tr>
+
+					<!-------------- CDS --------------->
+					<tr>
+						<td> <a name="CDS"></a><a href="/releases/CDS/latest/index" target="_blank"><b>CDS</b><br>(Clinical Decision Support)</a><br>
+						<a href="/components/CDS/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECCDS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a></td>
+						<td style="text-align:center">
+							<table class="TableBasic2">
+								<tbody>
+									<tr>
+										<td style="text-align:left">
+											<a href="/releases/CDS/latest/GDL2.html" target="_blank"><b>GDL2</b></a>: Guideline Definition Language v2
+										</td>
+										<td style="text-align:left">
+											<a href="/releases/CDS/latest/GDL.html" target="_blank"><b>GDL</b></a>: Guideline Definition Language v1
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+						<td> 
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
 			<!-- =============== Formal Specs: Service Models =============== -->
 			<table class="TableBasic">
 				<tbody>
@@ -144,39 +177,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 				</tbody>
 			</table>
 			
-			<!-- =============== Formal Specs: Analytics =============== -->
-			<table class="TableBasic">
-				<tbody>
-					<tr style="background-color:#f0cd5b;">
-						<th style="text-align:center"> Component</th>
-						<th style="text-align:center"> Formal Specifications: Analytics</th>
-						<th style="text-align:center"> Releases </th>
-					</tr>
-
-					<!-------------- CDS --------------->
-					<tr>
-						<td> <a name="CDS"></a><a href="/releases/CDS/latest/index" target="_blank"><b>CDS</b><br>(Clinical Decision Support)</a><br>
-						<a href="/components/CDS/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECCDS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a></td>
-						<td style="text-align:center">
-							<table class="TableBasic2">
-								<tbody>
-									<tr>
-										<td style="text-align:left">
-											<a href="/releases/CDS/latest/GDL2.html" target="_blank"><b>GDL2</b></a>: Guideline Definition Language v2
-										</td>
-										<td style="text-align:left">
-											<a href="/releases/CDS/latest/GDL.html" target="_blank"><b>GDL</b></a>: Guideline Definition Language v1
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</td>
-						<td> 
-						</td>
-					</tr>
-				</tbody>
-			</table>
-
 			<!-- =============== Formal Specs: Content & Process =============== -->
 			<table class="TableBasic">
 				<tbody>
