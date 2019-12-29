@@ -91,12 +91,12 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					<div id="cds" class="box box_row box_one">
 						<p class="component">
                             <a id="CDS"></a>
-                            <a href="/releases/CDS/latest/index" target="_blank"><b>CDS</b><br>(Clinical Decision Support)</a><br>
+                            <a href="/releases/CDS/latest/index" target="_blank">CDS<br>(Clinical Decision Support)</a><br>
 						    <a href="/components/CDS/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECCDS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </p>
 						<p class="specs">
-				            <a href="/releases/CDS/latest/GDL2.html" target="_blank"><b>GDL2</b></a>: Guideline Definition Language v2<br>
-							<a href="/releases/CDS/latest/GDL.html" target="_blank"><b>GDL</b></a>: Guideline Definition Language v1
+				            <a href="/releases/CDS/latest/GDL2.html" target="_blank">GDL2</a>: Guideline Definition Language v2<br>
+							<a href="/releases/CDS/latest/GDL.html" target="_blank">GDL</a>: Guideline Definition Language v1
 						</p>
 						<p class="releases">
 						</p>
@@ -113,12 +113,12 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					<div id="sm" class="box box_row box_one">
 						<p class="component">
                             <a id="SM"></a>
-                            <a href="/releases/SM/latest/index" target="_blank"><b>SM</b><br>(Service Model)</a><br>
+                            <a href="/releases/SM/latest/index" target="_blank">SM(Service Model)</a><br>
 						    <a href="/components/SM/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECSM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </p>
 						<p class="specs">
-							<a href="/releases/SM/latest/openehr_platform.html" target="_blank"><b>Platform Services</b></a>: Ehr, Query, Definitions, EhrIndex, Admin, Demographic, Terminology, Message, SystemLog<br>
-							<a href="/releases/SM/latest/simplified_im_b.html" target="_blank"><b>SIM-B</b></a>: Simplified Information Model 'B' for use with Simplified Data Template
+							<a href="/releases/SM/latest/openehr_platform.html" target="_blank">Platform Services</a>: Ehr, Query, Definitions, EhrIndex, Admin, Demographic, Terminology, Message, SystemLog<br>
+							<a href="/releases/SM/latest/simplified_im_b.html" target="_blank">SIM-B</a>: Simplified Information Model 'B' for use with Simplified Data Template
 						</p>
 						<p class="releases">
 						</p>
