@@ -82,7 +82,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			</div>
         </div>
 
-		<div class="specs_block">
+		<div id="SpecsBlock">
 			<!-- =============== Formal Specs: Analytics =============== -->
 			<div id="analytics">
                 <p class="SpecGroup">Analytics</p>

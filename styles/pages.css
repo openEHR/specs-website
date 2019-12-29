@@ -176,7 +176,7 @@ img {margin: 10px 0 10px 0;}
 
 /* -------------------- Boxes ---------------------*/
 
-.specs_block {
+#SpecsBlock {
     margin-bottom: 2em; 
     max-width: 790px; 
     padding: 0.75em 0.25em 0.25em; 
@@ -184,23 +184,23 @@ img {margin: 10px 0 10px 0;}
     border-radius: 6px; 
     border: 2px solid #668cff; 
 }
-.specs_block p { 
+#SpecsBlock p { 
     margin: 0; 
 }
-.specs_block .box { 
+#SpecsBlock .box { 
     margin: 0 0.5em 0.75em; 
     border: 1px solid grey; 
     border-radius: 3px; 
     background-color: #f7f7f7; 
 }
-.specs_block .box .component { 
+#SpecsBlock .box .component { 
     height: 44px; 
     padding: 6px; 
     font-weight: bold; 
     border-radius: inherit; 
     background-color: white; 
 }
-.specs_block .box .component a { 
+#SpecsBlock .box .component a { 
     display: inline-block; 
     min-height: 32px; 
     padding-left: 38px; 
@@ -209,19 +209,19 @@ img {margin: 10px 0 10px 0;}
     background-position: left top; 
     background-size: 32px 32px; 
 }
-.specs_block .box .component a span { 
+#SpecsBlock .box .component a span { 
     display: inline-block; 
     line-height: 1.4em; 
 }
-.specs_block .box .specs { 
+#SpecsBlock .box .specs { 
     margin: 0; 
     padding: 0.5em 0.75em; 
 }
-.specs_block .box .specs span { 
+#SpecsBlock .box .specs span { 
     display: inline-block; 
     line-height: 1.4em; 
 }
-.specs_block .box_row { 
+#SpecsBlock .box_row { 
     display: -webkit-box; 
     display: -moz-box; 
     display: box; 
@@ -237,7 +237,7 @@ img {margin: 10px 0 10px 0;}
     -ms-flex-wrap: wrap; 
     flex-wrap: wrap; 
 }
-.specs_block .box_one > p { 
+#SpecsBlock .box_one > p { 
     display: table-cell; 
     min-width: 10em; 
     -webkit-box-flex: 1; 
@@ -248,10 +248,10 @@ img {margin: 10px 0 10px 0;}
     -ms-flex: 1 1 10em; 
     flex: 1 1 10em; 
 }
-.specs_block .box_one .component { 
+#SpecsBlock .box_one .component { 
     width: 25%; 
 }
-.specs_block .box_one .specss { 
+#SpecsBlock .box_one .specss { 
     -webkit-box-flex: 4; 
     -moz-box-flex: 4; 
     box-flex: 4; 
@@ -264,11 +264,11 @@ img {margin: 10px 0 10px 0;}
     border-top-left-radius: 0; 
     border-bottom-left-radius: 0; 
 }
-.specs_block .box_more { 
+#SpecsBlock .box_more { 
     border-spacing: 0.75em; 
     border-collapse: separate; 
 }
-.specs_block .box_more .box { 
+#SpecsBlock .box_more .box { 
     display: table-cell; 
     -webkit-box-flex: 1; 
     -moz-box-flex: 1; 
@@ -279,13 +279,13 @@ img {margin: 10px 0 10px 0;}
     flex: 1 1 8em; 
     min-height: 9em; 
 }
-.specs_block .box_more .box .component { 
+#SpecsBlock .box_more .box .component { 
     border-bottom: 1px solid grey; 
     border-bottom-left-radius: 0; 
     border-bottom-right-radius: 0; 
 }
 
-.specs_block .SpecGroup {
+#SpecsBlock .SpecGroup {
     border-bottom: solid grey 1px
 } 
 
