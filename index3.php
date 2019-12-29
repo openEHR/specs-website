@@ -32,7 +32,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 				</tbody>
 			</table>
 
-		<div id="SpecsBlock">
+		<div class="specs_block">
 			<!-- =============== Implementation Specs =============== -->
 			<div id="its_cnf">
                 <p class="SpecGroup">Conformance and Implementation Technologies</p>
@@ -82,7 +82,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			</div>
         </div>
 
-		<div id="SpecsBlock">
+		<div class="specs_block">
 			<!-- =============== Formal Specs: Analytics =============== -->
 			<div id="analytics">
                 <p class="SpecGroup">Analytics</p>
