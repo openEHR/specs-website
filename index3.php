@@ -40,7 +40,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					<!-------------- CNF --------------->
 					<div id="cnf" class="box box_row box_one">
 						<p class="component">
-							<a name="CNF"></a>
+							<a id="CNF"></a>
                             <a href="/releases/CNF/latest/index" target="_blank"><b>CNF</b><br>(Conformance)</a><br>
 							<a href="/components/CNF/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECCNF?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
 						</p>
@@ -55,7 +55,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					<!-------------- ITS --------------->
 					<div id="its" class="box box_row box_one">
 						<p class="component">
-                            <a name="ITS"></a>
+                            <a id="ITS"></a>
                             <a href="/releases/ITS/latest/index" target="_blank"><b>ITS</b><br>(Implementation Technologies)</a><br>
 						    <a href="/components/ITS/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECITS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
 						</p>
@@ -90,7 +90,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					<!-------------- CDS --------------->
 					<div id="cds" class="box box_row box_one">
 						<p class="component">
-                            <a name="CDS"></a>
+                            <a id="CDS"></a>
                             <a href="/releases/CDS/latest/index" target="_blank"><b>CDS</b><br>(Clinical Decision Support)</a><br>
 						    <a href="/components/CDS/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECCDS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </p>
@@ -110,9 +110,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                 <p class="SpecGroup">Platform Service Interface</p>
 				<div>
 					<!-------------- SM --------------->
-					<div id="services" class="box box_row box_one">
+					<div id="sm" class="box box_row box_one">
 						<p class="component">
-                            <a name="SM"></a>
+                            <a id="SM"></a>
                             <a href="/releases/SM/latest/index" target="_blank"><b>SM</b><br>(Service Model)</a><br>
 						    <a href="/components/SM/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECSM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </p>
@@ -133,7 +133,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					<!-------------- PROC --------------->
 					<div id="proc" class="box box_row box_one">
 						<p class="component">
-                            <a name="PROC"></a>
+                            <a id="PROC"></a>
                             <a href="/releases/PROC/latest/index" target="_blank"><b>PROC</b><br>(Process Model)</a><br>
 						    <a href="/components/PROC/open_issues" target="_blank">PRs</a>|
                             <a href="https://openehr.atlassian.net/projects/SPECPROC?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
@@ -151,7 +151,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					<!-------------- RM --------------->
 					<div id="rm" class="box box_row box_one">
 						<p class="component">
-                            <a name="RM"></a><a href="/releases/RM/latest/index" target="_blank"><b>RM</b><br>(Reference Model)</a><br>
+                            <a id="RM"></a><a href="/releases/RM/latest/index" target="_blank"><b>RM</b><br>(Reference Model)</a><br>
 						    <a href="/components/RM/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECRM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </p>
 						<p class="specs">
@@ -175,7 +175,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					<!-------------- TERM --------------->
 					<div id="term" class="box box_row box_one">
 						<p class="component">
-                            <a name="TERM"></a><a href="/releases/TERM/latest/index" target="_blank"><b>TERM</b><br>(Terminology)</a><br>
+                            <a id="TERM"></a><a href="/releases/TERM/latest/index" target="_blank"><b>TERM</b><br>(Terminology)</a><br>
 							<a href="/components/TERM/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECTERM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </p>
 						<p class="specs">
@@ -218,7 +218,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					<!-------------- QUERY --------------->
 					<div id="query" class="box box_row box_one">
 						<p class="component">
-                            <a name="QUERY"></a><a href="/releases/QUERY/latest/index" target="_blank"><b>QUERY</b><br>(Query language)</a><br>
+                            <a id="QUERY"></a><a href="/releases/QUERY/latest/index" target="_blank"><b>QUERY</b><br>(Query language)</a><br>
 						    <a href="/components/QUERY/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECQUERY?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </p>
 						<p class="specs">
@@ -232,7 +232,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					<!-------------- AM --------------->
 					<div id="am" class="box box_row box_one">
 						<p class="component">
-                            <a name="AM"></a><a href="/releases/AM/latest/index" target="_blank"><b>AM</b><br>(Archetype Model)</a><br>
+                            <a id="AM"></a><a href="/releases/AM/latest/index" target="_blank"><b>AM</b><br>(Archetype Model)</a><br>
 						    <a href="/components/AM/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECAM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </p>
 						<p class="specs">
@@ -253,7 +253,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					<!-------------- LANG --------------->
 					<div id="lang" class="box box_row box_one">
 						<p class="component">
-                            <a name="LANG"></a><a href="/releases/LANG/latest/index" target="_blank"><b>LANG</b><br>(Generic Languages)</a><br>
+                            <a id="LANG"></a><a href="/releases/LANG/latest/index" target="_blank"><b>LANG</b><br>(Generic Languages)</a><br>
 						    <a href="/components/LANG/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECLANG?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </p>
 						<p class="specs">
@@ -276,7 +276,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					<!-------------- BASE --------------->
 					<div id="base" class="box box_row box_one">
 						<p class="component">
-                            <a name="BASE"></a>
+                            <a id="BASE"></a>
                             <a href="/releases/BASE/latest/index" target="_blank"><b>BASE</b><br>(Base models)</a><br>
 							<a href="/components/BASE/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECBASE?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </p>
@@ -305,25 +305,25 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 
 					<!-------------- SM --------------->
 					<tr>
-						<td> <a name="SM"></a><a href="/releases/SM/latest/index" target="_blank">SM</a></td>
+						<td> <a id="SM"></a><a href="/releases/SM/latest/index" target="_blank">SM</a></td>
 						<td> <a href="/releases/SM/latest/UML/openEHR_UML-SM.mdzip">openEHR_UML-SM.mdzip</a></td>
 					</tr>
 
 					<!-------------- PROC --------------->
 					<tr>
-						<td> <a name="PROC"></a><a href="/releases/PROC/latest/index" target="_blank">PROC</a></td>
+						<td> <a id="PROC"></a><a href="/releases/PROC/latest/index" target="_blank">PROC</a></td>
 						<td> <a href="/releases/PROC/latest/UML/openEHR_UML-PROC.mdzip">openEHR_UML-PROC.mdzip</a></td>
 					</tr>
 
 					<!-------------- RM --------------->
 					<tr>
-						<td> <a name="RM"></a><a href="/releases/RM/latest/index" target="_blank">RM</a></td>
+						<td> <a id="RM"></a><a href="/releases/RM/latest/index" target="_blank">RM</a></td>
 						<td> <a href="/releases/RM/latest/UML/openEHR_UML-RM.mdzip">openEHR_UML-RM.mdzip</a></td>
 					</tr>
 
 					<!-------------- AM --------------->
 					<tr>
-						<td> <a name="AM"></a><a href="/releases/AM/latest/index" target="_blank">AM</a></td>
+						<td> <a id="AM"></a><a href="/releases/AM/latest/index" target="_blank">AM</a></td>
 						<td> 
 							<a href="/releases/AM/latest/UML/openEHR_UML-AM.mdzip">openEHR_UML-AM.mdzip</a><br>
 							<a href="/releases/AM/latest/UML/openEHR_UML-AM-14.mdzip">openEHR_UML-AM-14.mdzip</a>
@@ -332,13 +332,13 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 
 					<!-------------- LANG --------------->
 					<tr>
-						<td> <a name="LANG"></a><a href="/releases/LANG/latest/index" target="_blank">LANG</a></td>
+						<td> <a id="LANG"></a><a href="/releases/LANG/latest/index" target="_blank">LANG</a></td>
 						<td> <a href="/releases/LANG/latest/UML/openEHR_UML-LANG.mdzip">openEHR_UML-LANG.mdzip</a></td>
 					</tr>
 
 					<!-------------- BASE --------------->
 					<tr>
-						<td> <a name="BASE"></a><a href="/releases/BASE/latest/index" target="_blank">BASE</a></td>
+						<td> <a id="BASE"></a><a href="/releases/BASE/latest/index" target="_blank">BASE</a></td>
 						<td> <a href="/releases/BASE/latest/UML/openEHR_UML-Base.mdzip">openEHR_UML-BASE.mdzip</a></td>
 					</tr>
 
