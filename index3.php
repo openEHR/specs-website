@@ -32,10 +32,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 				</tbody>
 			</table>
 
-		<div id="specs_block">
+		<div id="SpecsBlock">
 			<!-- =============== Implementation Specs =============== -->
 			<div id="its_cnf">
-                <p class="spec_group">Conformance and Implementation Technologies</p>
+                <p class="SpecGroup">Conformance and Implementation Technologies</p>
 				<div>
 					<!-------------- CNF --------------->
 					<div id="cnf" class="box box_row box_one">
@@ -82,10 +82,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			</div>
         </div>
 
-		<div id="specs_block">
+		<div id="SpecsBlock">
 			<!-- =============== Formal Specs: Analytics =============== -->
 			<div id="analytics">
-                <p class="spec_group">Analytics</p>
+                <p class="SpecGroup">Analytics</p>
 				<div>
 					<!-------------- CDS --------------->
 					<div id="cds" class="box box_row box_one">
@@ -107,7 +107,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 
 			<!-- =============== Formal Specs: Service Models =============== -->
 			<div id="services">
-                <p class="spec_group">Platform Service Interface</p>
+                <p class="SpecGroup">Platform Service Interface</p>
 				<div>
 					<!-------------- SM --------------->
 					<div id="services" class="box box_row box_one">
@@ -128,7 +128,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			
 			<!-- =============== Formal Specs: Content & Process =============== -->
 			<div id="content_process">
-                <p class="spec_group">Content and Process</p>
+                <p class="SpecGroup">Content and Process</p>
 				<div>
 					<!-------------- PROC --------------->
 					<div id="proc" class="box box_row box_one">
@@ -213,7 +213,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			
 			<!-- =============== Formal Specs: Formalisms =============== -->
 			<div id="formalisms">
-                <p class="spec_group">Formalisms</p>
+                <p class="SpecGroup">Formalisms</p>
 				<div>
 					<!-------------- QUERY --------------->
 					<div id="query" class="box box_row box_one">
@@ -271,7 +271,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			
 			<!-- =============== Formal Specs: Foundations =============== -->
 			<div id="foundations">
-                <p class="spec_group">Foundations</p>
+                <p class="SpecGroup">Foundations</p>
 				<div>
 					<!-------------- BASE --------------->
 					<div id="base" class="box box_row box_one">
