@@ -272,14 +272,14 @@ img {margin: 10px 0 10px 0;}
     border-radius: 3px; 
     background-color: #f7f7f7; 
 }
-#specs_block .box .head { 
+#specs_block .box .component { 
     height: 44px; 
     padding: 6px; 
     font-weight: bold; 
     border-radius: inherit; 
     background-color: white; 
 }
-#specs_block .box .head a { 
+#specs_block .box .component a { 
     display: inline-block; 
     min-height: 32px; 
     padding-left: 38px; 
@@ -288,15 +288,15 @@ img {margin: 10px 0 10px 0;}
     background-position: left top; 
     background-size: 32px 32px; 
 }
-#specs_block .box .head a span { 
+#specs_block .box .component a span { 
     display: inline-block; 
     line-height: 1.4em; 
 }
-#specs_block .box .content { 
+#specs_block .box .specs { 
     margin: 0; 
     padding: 0.5em 0.75em; 
 }
-#specs_block .box .content span { 
+#specs_block .box .specs span { 
     display: inline-block; 
     line-height: 1.4em; 
 }
@@ -327,10 +327,10 @@ img {margin: 10px 0 10px 0;}
     -ms-flex: 1 1 10em; 
     flex: 1 1 10em; 
 }
-#specs_block .box_one .head { 
+#specs_block .box_one .component { 
     width: 25%; 
 }
-#specs_block .box_one .content { 
+#specs_block .box_one .specss { 
     -webkit-box-flex: 4; 
     -moz-box-flex: 4; 
     box-flex: 4; 
@@ -358,13 +358,13 @@ img {margin: 10px 0 10px 0;}
     flex: 1 1 8em; 
     min-height: 9em; 
 }
-#specs_block .box_more .box .head { 
+#specs_block .box_more .box .component { 
     border-bottom: 1px solid grey; 
     border-bottom-left-radius: 0; 
     border-bottom-right-radius: 0; 
 }
 
-#specs_block .level-text-x {
+#specs_block .spec_group {
     border-bottom: solid grey 1px
 } 
 

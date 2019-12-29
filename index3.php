@@ -35,6 +35,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 		<div id="specs_block">
 			<!-- =============== Implementation Specs =============== -->
 			<div id="its_cnf">
+                <p class="spec_group">Conformance and Implementation Technologies</p>
 				<div>
 					<!-------------- CNF --------------->
 					<div id="cnf" class="box box_row box_one">
