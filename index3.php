@@ -49,7 +49,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                         </div>
                         
                         <div class="specs_flex_box">                        
-                            <p class="specs_item">
+                            <p class="wide_specs_item">
                                 <a href="/releases/CNF/latest/openehr_platform_conformance.html" target="_blank">Platform Conformance</a>: System Under Test (SUT), Conformance Schedule, Profiles, Certification
                             </p>
                         </div>
@@ -312,7 +312,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                         </div>
 
                         <div class="specs_flex_box">                                                
-                            <p class="specs_item">
+                            <p class="wide_specs_item">
                                 <a href="/releases/QUERY/latest/AQL.html" target="_blank">AQL</a>: Archetype Querying Language
                             </p>
                         </div>
