@@ -260,7 +260,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                         </div>
                         
                         <div class="specs_flex_box">                        
-                            <p class="specs_item">
+                            <p class="wide_specs_item">
                                 <a href="/releases/TERM/latest/SupportTerminology.html" target="_blank">openEHR Terminology</a>:
                                 <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L2" target="_blank">Countries (ISO 3166)</a>|
                                 <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L263" target="_blank">Languages (ISO 639-1)</a>|
@@ -376,9 +376,15 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                         
                         <div class="specs_flex_box">                                                
                             <p class="specs_item">
-                                <a href="/releases/LANG/latest/expression_language.html" target="_blank">Expression Language</a>: a syntax for formal expressions<br>
-                                <a href="/releases/LANG/latest/bmm.html" target="_blank">BMM</a>: Basic Meta-Model - BmmSchema, BmmModel, BmmClass, BmmType, BmmProperty<br>
-                                <a href="/releases/LANG/latest/bmm_persistence.html" target="_blank">P_BMM</a>: BMM Human-readable serial format - PBmmSchema, P_xxx types<br>
+                                <a href="/releases/LANG/latest/expression_language.html" target="_blank">Expression Language</a>: a syntax for formal expressions
+                            </p>
+                            <p class="specs_item">
+                                <a href="/releases/LANG/latest/bmm.html" target="_blank">BMM</a>: Basic Meta-Model - BmmSchema, BmmModel, BmmClass, BmmType, BmmProperty
+                            </p>
+                            <p class="specs_item">
+                                <a href="/releases/LANG/latest/bmm_persistence.html" target="_blank">P_BMM</a>: BMM Human-readable serial format - PBmmSchema, P_xxx types
+                            </p>
+                            <p class="specs_item">
                                 <a href="/releases/LANG/latest/odin.html" target="_blank">ODIN</a>: Object Data Instance Notation
                             </p>
                         </div>
@@ -407,8 +413,12 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                         
                         <div class="specs_flex_box">                                                
                             <p class="specs_item">
-                                <a href="/releases/BASE/latest/base_types.html" target="_blank">Base Types</a>: Identifiers<br>
-                                <a href="/releases/BASE/latest/resource.html" target="_blank">Resource</a>: AuthoredResource<br>
+                                <a href="/releases/BASE/latest/base_types.html" target="_blank">Base Types</a>: Identifiers
+                            </p>
+                            <p class="specs_item">
+                                <a href="/releases/BASE/latest/resource.html" target="_blank">Resource</a>: AuthoredResource
+                            </p>
+                            <p class="specs_item">
                                 <a href="/releases/BASE/latest/foundation_types.html" target="_blank">Foundation Types</a>: Primitive types: Values, Structures, Interval, Date/times
                             </p>
                         </div>
