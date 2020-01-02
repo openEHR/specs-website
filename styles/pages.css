@@ -136,15 +136,15 @@ img {margin: 10px 0 10px 0;}
 }
 
 #Content ul {
-	padding-left: 20px;
+	padding-left: 10px;
 	margin: 0 0 0.8em 0;
 
 	list-style: disc;
 	list-style-position: outside;
 }
 
-#Content ul ul{
-	padding-left: 20px;
+#Content ul ul {
+	padding-left: 10px;
 	margin: 0 0 0.8em 0;
 
 	list-style: circle;
@@ -152,31 +152,16 @@ img {margin: 10px 0 10px 0;}
 }
 
 #Content ol {
-	padding-left: 20px;
+	padding-left: 10px;
 
 	list-style-type: decimal;
 	list-style-position: outside;
 }
 
-#Content .InvisibleList ul{
-	padding: 0;
-	margin: 0 0 0.8em 0;
-
-	list-style:none;
-}
-
-#Content .InvisibleList ul li {
-	margin: 0 0 0.2em 0;
-}
-
-#Content .InvisibleList ul ul {
-	padding: 0 0 0 20px;
-}
-
 
 /* -------------------- Boxes ---------------------*/
 
-#SpecsBlock {
+.specs_block {
     margin-bottom: 2em; 
     max-width: 1200px; 
     padding: 0.75em 0.25em 0.25em; 
@@ -184,42 +169,33 @@ img {margin: 10px 0 10px 0;}
     border-radius: 6px; 
     border: 2px solid #123f6d; 
 }
-#SpecsBlock p { 
+.specs_block p { 
     margin: 0; 
 }
-#SpecsBlock .box { 
+.specs_block .box { 
     margin: 0 0.5em 0.75em; 
     border: 1px solid grey; 
     border-radius: 4px; 
     background-color: #f7f7f7; 
 }
-#SpecsBlock .box .component { 
-    height: 44px; 
-    padding: 6px; 
+.specs_block .box .component { 
+    min-height: 44px; 
     font-weight: bold; 
     border-radius: inherit; 
     background-color: white; 
 }
-#SpecsBlock .box .component a { 
+.specs_block .box .component a { 
     display: inline-block; 
     min-height: 32px; 
     background-repeat: no-repeat; 
     background-position: left top; 
     background-size: 32px 32px; 
 }
-#SpecsBlock .box .component a span { 
-    display: inline-block; 
-    line-height: 1.4em; 
-}
-#SpecsBlock .box .specs { 
+.specs_block .box .specs { 
     margin: 0; 
     padding: 0.5em 0.75em; 
 }
-#SpecsBlock .box .specs span { 
-    display: inline-block; 
-    line-height: 1.4em; 
-}
-#SpecsBlock .box_row { 
+.specs_block .box_row { 
     display: -webkit-box; 
     display: -moz-box; 
     display: box; 
@@ -235,7 +211,7 @@ img {margin: 10px 0 10px 0;}
     -ms-flex-wrap: wrap; 
     flex-wrap: wrap; 
 }
-#SpecsBlock .box_one > p { 
+.specs_block .box_one > p { 
     display: table-cell; 
     min-width: 10em; 
     -webkit-box-flex: 1; 
@@ -246,10 +222,13 @@ img {margin: 10px 0 10px 0;}
     -ms-flex: 1 1 10em; 
     flex: 1 1 10em; 
 }
-#SpecsBlock .box_one .component .releases { 
-    width: 16%; 
+.specs_block .box_one .component { 
+    width: 14%; 
 }
-#SpecsBlock .box_one .specs { 
+.specs_block .box_one .releases { 
+    width: 10%; 
+}
+.specs_block .box_one .specs { 
     -webkit-box-flex: 4; 
     -moz-box-flex: 4; 
     box-flex: 4; 
@@ -262,11 +241,11 @@ img {margin: 10px 0 10px 0;}
     border-top-left-radius: 0; 
     border-bottom-left-radius: 0; 
 }
-#SpecsBlock .box_more { 
+.specs_block .box_more { 
     border-spacing: 0.75em; 
     border-collapse: separate; 
 }
-#SpecsBlock .box_more .box { 
+.specs_block .box_more .box { 
     display: table-cell; 
     -webkit-box-flex: 1; 
     -moz-box-flex: 1; 
@@ -277,13 +256,13 @@ img {margin: 10px 0 10px 0;}
     flex: 1 1 8em; 
     min-height: 9em; 
 }
-#SpecsBlock .box_more .box .component { 
+.specs_block .box_more .box .component { 
     border-bottom: 1px solid grey; 
     border-bottom-left-radius: 0; 
     border-bottom-right-radius: 0; 
 }
 
-#SpecsBlock .SpecGroup > p {
+.specs_block .spec_group {
     font-weight: bold; 
     color: #123f6d; 
 } 

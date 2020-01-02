@@ -51,8 +51,8 @@ html,body {
 	
 	color: #222;
 
-	font: 15px "Proxima Nova Regular","Segoe UI",Roboto,"Droid Sans","Helvetica Neue",Arial,sans-serif;
-	line-height: 150%;
+	font: 13px "Proxima Nova Regular","Segoe UI",Roboto,"Droid Sans","Helvetica Neue",Arial,sans-serif;
+	line-height: 120%;
 }
  
 #MainFrame {
@@ -347,7 +347,7 @@ li.menuhover a, li.menuhover span  {
 
 	color:#ff9900;
 
-	font-size:15px;
+	font-size:14px;
 	font-weight:900; 
 	line-height:150%; 
 	text-decoration:none; 
