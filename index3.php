@@ -32,42 +32,64 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 				</tbody>
 			</table>
 
-		<div class="specs_block">
+		<div class="specs_group_box">
 			<!-- =============== Implementation Specs =============== -->
 			<div id="its_cnf">
                 <p class="spec_group">Conformance and Implementation Technologies</p>
 				<div>
 					<!-------------- CNF --------------->
-					<div id="cnf" class="box box_row box_one">
-						<p class="component">
-							<a id="CNF"></a>
-                            <a href="/releases/CNF/latest/index" target="_blank">CNF<br>(Conformance)</a><br>
-							<a href="/components/CNF/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECCNF?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
-						</p>
-						<p class="specs">
-							<a href="/releases/CNF/latest/openehr_platform_conformance.html" target="_blank">Platform Conformance</a>: System Under Test (SUT), Conformance Schedule, Profiles, Certification
-						</p>
+					<div id="cnf" class="component_box flex_box table_cell">
+                        <div>
+                            <p class="component">
+                                <a id="CNF"></a>
+                                <a href="/releases/CNF/latest/index" target="_blank">CNF</a>
+                            </p>
+                            <p>(Conformance)</p>
+                            <a href="/components/CNF/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECCNF?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                        </div>
+                        
+                        <div class="flex_box">                        
+                            <p class="specs_item">
+                                <a href="/releases/CNF/latest/openehr_platform_conformance.html" target="_blank">Platform Conformance</a>: System Under Test (SUT), Conformance Schedule, Profiles, Certification
+                            </p>
+                        </div>
+                        
 						<p class="releases">
 						</p>
 						
 					</div>
 
 					<!-------------- ITS --------------->
-					<div id="its" class="box box_row box_one">
-						<p class="component">
-                            <a id="ITS"></a>
-                            <a href="/releases/ITS/latest/index" target="_blank">ITS<br>(Implementation Technologies)</a><br>
-						    <a href="/components/ITS/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECITS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
-						</p>
-						<p class="specs">
-                            <a href="/releases/ITS-REST/latest/ehr.html" target="_blank">EHR</a>, <br>
-                            <a href="/releases/ITS-REST/latest/query.html" target="_blank">Query</a>, <br>
-                            <a href="/releases/ITS-REST/latest/definitions.html" target="_blank">Definitions</a><br>
-                            <a href="/releases/ITS-REST/latest/simplified_data_template.html" target="_blank">SDT</a>: Simplified Data Template<br>
-                            <a href="https://github.com/openEHR/specifications-ITS-XML" target="_blank">XSDs</a>: XML Schemas for the openEHR RM and AM<br>
-                            <a href="https://github.com/openEHR/specifications-ITS-JSON" target="_blank">JSON schema</a>: JSON Schemas for the openEHR RM and AM<br>
-                            <a href="https://github.com/openEHR/specifications-ITS-BMM" target="_blank">BMMs</a>: BMM schemas for Task Planning, RM, Expressions, BASE
-						</p>
+					<div id="its" class="component_box flex_box table_cell">
+                        <div>
+                            <p class="component">
+                                <a id="ITS"></a>
+                                <a href="/releases/ITS/latest/index" target="_blank">ITS<br>(Implementation<br>Technologies)</a>
+                            </p>
+                            <p>(Implementation<br>Technologies)</p>
+                            <a href="/components/ITS/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECITS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                        </div>
+            
+                        <div class="flex_box">
+                            <p class="specs_item">
+                                <a href="/releases/ITS-REST/latest/index.html" target="_blank">REST APIs</a>: 
+                                <a href="/releases/ITS-REST/latest/ehr.html" target="_blank">EHR</a>, <br>
+                                <a href="/releases/ITS-REST/latest/query.html" target="_blank">Query</a>, <br>
+                                <a href="/releases/ITS-REST/latest/definitions.html" target="_blank">Definitions</a><br>
+                            <p class="specs_item">
+                                <a href="/releases/ITS-REST/latest/simplified_data_template.html" target="_blank">SDT</a>: Simplified Data Template
+                            </p>
+                            <p class="specs_item">
+                                <a href="https://github.com/openEHR/specifications-ITS-XML" target="_blank">XSDs</a>: XML Schemas for the openEHR RM and AM
+                            </p>
+                            <p class="specs_item">
+                                <a href="https://github.com/openEHR/specifications-ITS-JSON" target="_blank">JSON schema</a>: JSON Schemas for the openEHR RM and AM
+                            </p>
+                            <p class="specs_item">
+                                <a href="https://github.com/openEHR/specifications-ITS-BMM" target="_blank">BMMs</a>: BMM schemas for Task Planning, RM, Expressions, BASE
+                            </p>
+                        </div>
+                        
 						<p class="releases">
 							<a href="https://openehr.atlassian.net/browse/SPECITS/fixforversion/12522" target="_blank">JSON 1.0.0</a> (cooking) <br>
 							<a href="https://openehr.atlassian.net/projects/SPECITS/versions/12520/tab/release-report-all-issues" target="_blank">XML 2.0.0</a> (cooking) <br>
@@ -82,23 +104,29 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			</div>
         </div>
 
-		<div class="specs_block">
+		<div class="specs_group_box">
 			<!-- =============== Formal Specs: Analytics =============== -->
 			<div id="analytics">
                 <p class="spec_group">Analytics</p>
 				<div>
 					<!-------------- CDS --------------->
-					<div id="cds" class="box box_row box_one">
+					<div id="cds" class="component_box flex_box table_cell">
 						<p class="component">
                             <a id="CDS"></a>
-                            <a href="/releases/CDS/latest/index" target="_blank">CDS<br>(Clinical Decision Support)</a><br>
-						    <a href="/components/CDS/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECCDS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
-                        </p>
-						<p class="specs">
-				            <a href="/releases/CDS/latest/GDL2.html" target="_blank">GDL2</a>: Guideline Definition Language v2<br>
-							<a href="/releases/CDS/latest/GDL.html" target="_blank">GDL</a>: Guideline Definition Language v1
-						</p>
-						<p class="releases">
+                            <a href="/releases/CDS/latest/index" target="_blank">CDS</a>
+                        </p>(Clinical Decision Support)<p>
+				        <a href="/components/CDS/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECCDS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+
+                        <div class="flex_box">
+                            <p class="specs_item">
+                                <a href="/releases/CDS/latest/GDL2.html" target="_blank">GDL2</a>: Guideline Definition Language v2
+                            </p>
+                            <p class="specs_item">
+                                <a href="/releases/CDS/latest/GDL.html" target="_blank">GDL</a>: Guideline Definition Language v1
+                            </p>
+                        </div>
+
+                        <p class="releases">
 						</p>
 					</div>
                     
@@ -110,17 +138,20 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                 <p class="spec_group">Platform Service Interface</p>
 				<div>
 					<!-------------- SM --------------->
-					<div id="sm" class="box box_row box_one">
-						<p class="component">
+					<div id="sm" class="component_box flex_box table_cell">
+                        <p class="component">
                             <a id="SM"></a>
-                            <a href="/releases/SM/latest/index" target="_blank">SM(Service Model)</a><br>
-						    <a href="/components/SM/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECSM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            <a href="/releases/SM/latest/index" target="_blank">SM</a>
                         </p>
-						<p class="specs">
+                        <p>(Service Model)</p> 
+				        <a href="/components/SM/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECSM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+
+						<p class="specs_item">
 							<a href="/releases/SM/latest/openehr_platform.html" target="_blank">Platform Services</a>: Ehr, Query, Definitions, EhrIndex, Admin, Demographic, Terminology, Message, SystemLog<br>
 							<a href="/releases/SM/latest/simplified_im_b.html" target="_blank">SIM-B</a>: Simplified Information Model 'B' for use with Simplified Data Template
 						</p>
-						<p class="releases">
+
+                        <p class="releases">
 						</p>
 					</div>
 				</div>
@@ -131,30 +162,33 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                 <p class="spec_group">Content and Process</p>
 				<div>
 					<!-------------- PROC --------------->
-					<div id="proc" class="box box_row box_one">
-						<p class="component">
+					<div id="proc" class="component_box flex_box table_cell">
+                        <p class="component">
                             <a id="PROC"></a>
-                            <a href="/releases/PROC/latest/index" target="_blank">PROC<br>(Process Model)</a><br>
-						    <a href="/components/PROC/open_issues" target="_blank">PRs</a>|
-                            <a href="https://openehr.atlassian.net/projects/SPECPROC?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            <a href="/releases/PROC/latest/index" target="_blank">PROC</a>
                         </p>
-						<p class="specs">
+                        <p>(Process Model)</p>
+				        <a href="/components/PROC/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECPROC?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+
+                        <p class="specs_item">
                             <a href="/releases/PROC/latest/task_planning.html" target="_blank">Task Planning (TP)</a>: An adaptive, executable, team-based model of workflow - Work Plan, Task Plan, Event<br>
                             <a href="/releases/PROC/latest/tp_vml.html" target="_blank">TP Visual Modelling Language (TP-VML)</a>:<br>A visual modelling language for clinical plans and workflows.<br>
                             <a href="/releases/PROC/latest/tp_examples.html" target="_blank">TP Examples</a>:<br>Real-world worked TP examples.
 						</p>
-						<p class="releases">
+
+                        <p class="releases">
 							<a href="/releases/PROC/Release-1.0.0/" target="_blank">1.0.0</a> (1 Dec 2017)
 						</p>
 					</div>
 
 					<!-------------- RM --------------->
-					<div id="rm" class="box box_row box_one">
+					<div id="rm" class="component_box flex_box table_cell">
 						<p class="component">
-                            <a id="RM"></a><a href="/releases/RM/latest/index" target="_blank">RM<br>(Reference Model)</a><br>
+                            <a id="RM"></a>
+                            <a href="/releases/RM/latest/index" target="_blank">RM<br>(Reference Model)</a><br>
 						    <a href="/components/RM/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECRM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </p>
-						<p class="specs">
+						<p class="specs_item">
                             <a href="/releases/RM/latest/demographic.html" target="_blank">Demographic</a>: Party, Party_relationship, Actor, Role, Contact, Address<br>
                             <a href="/releases/RM/latest/ehr.html" target="_blank">EHR</a>: Composition, Section, Entry, Observation, Evaluation, Instruction, Action, Admin_entry<br>
                             <a href="/releases/RM/latest/ehr_extract.html" target="_blank">EHR Extract</a>: OpenehrExtract, GenericExtract<br>
@@ -173,12 +207,12 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					</div>
 
 					<!-------------- TERM --------------->
-					<div id="term" class="box box_row box_one">
+					<div id="term" class="component_box flex_box table_cell">
 						<p class="component">
                             <a id="TERM"></a><a href="/releases/TERM/latest/index" target="_blank">TERM<br>(Terminology)</a><br>
 							<a href="/components/TERM/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECTERM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </p>
-						<p class="specs">
+						<p class="specs_item">
                             <a href="/releases/TERM/latest/SupportTerminology.html" target="_blank">openEHR Terminology</a>:
                             <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L2" target="_blank">Countries (ISO 3166)</a>|
                             <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L263" target="_blank">Languages (ISO 639-1)</a>|
@@ -216,12 +250,12 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                 <p class="spec_group">Formalisms</p>
 				<div>
 					<!-------------- QUERY --------------->
-					<div id="query" class="box box_row box_one">
+					<div id="query" class="component_box flex_box table_cell">
 						<p class="component">
                             <a id="QUERY"></a><a href="/releases/QUERY/latest/index" target="_blank">QUERY<br>(Query language)</a><br>
 						    <a href="/components/QUERY/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECQUERY?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </p>
-						<p class="specs">
+						<p class="specs_item">
 							<a href="/releases/QUERY/latest/AQL.html" target="_blank">AQL</a>: Archetype Querying Language
 						</p>
 						<p class="releases">
@@ -230,12 +264,12 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					</div>
 
 					<!-------------- AM --------------->
-					<div id="am" class="box box_row box_one">
+					<div id="am" class="component_box flex_box table_cell">
 						<p class="component">
                             <a id="AM"></a><a href="/releases/AM/latest/index" target="_blank">AM<br>(Archetype Model)</a><br>
 						    <a href="/components/AM/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECAM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </p>
-						<p class="specs">
+						<p class="specs_item">
 							<a href="" target="_blank">OPT 1.4</a>: Operational Template 1.4<br>
                             <a href="/releases/AM/latest/OPT2.html" target="_blank">OPT 2</a>: Operational Template 2<br>
                             <a href="/releases/AM/latest/ADL1.4.html" target="_blank">ADL 1.4</a>: Archetype Definition Language 1.4<br>
@@ -245,18 +279,18 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             <a href="/releases/AM/latest/Identification.html" target="_blank">Identification</a>: archetype / template identifiers; versioning rules
 						</p>
 						<p class="releases">
-							<a href="/releases/AM/Release-2.0.6/" target="_blank">2.0.6</a> (07 Jan 2017)
+							<a href="/releases/AM/Release-2.0.6/" target="_blank">2.0.6</a> (07 Jan 2017)<br>
 							<a href="/releases/AM/Release-2.0.6/" target="_blank">1.4</a> (31 Dec 2008)
 						</p>
 					</div>
 
 					<!-------------- LANG --------------->
-					<div id="lang" class="box box_row box_one">
+					<div id="lang" class="component_box flex_box table_cell">
 						<p class="component">
                             <a id="LANG"></a><a href="/releases/LANG/latest/index" target="_blank">LANG<br>(Generic Languages)</a><br>
 						    <a href="/components/LANG/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECLANG?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </p>
-						<p class="specs">
+						<p class="specs_item">
                             <a href="/releases/LANG/latest/expression_language.html" target="_blank">Expression Language</a>: a syntax for formal expressions<br>
                             <a href="/releases/LANG/latest/bmm.html" target="_blank">BMM</a>: Basic Meta-Model - BmmSchema, BmmModel, BmmClass, BmmType, BmmProperty<br>
                             <a href="/releases/LANG/latest/bmm_persistence.html" target="_blank">P_BMM</a>: BMM Human-readable serial format - PBmmSchema, P_xxx types<br>
@@ -274,13 +308,13 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                 <p class="spec_group">Foundations</p>
 				<div>
 					<!-------------- BASE --------------->
-					<div id="base" class="box box_row box_one">
+					<div id="base" class="component_box flex_box table_cell">
 						<p class="component">
                             <a id="BASE"></a>
                             <a href="/releases/BASE/latest/index" target="_blank">BASE<br>(Base models)</a><br>
 							<a href="/components/BASE/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECBASE?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </p>
-						<p class="specs">
+						<p class="specs_item">
                             <a href="/releases/BASE/latest/base_types.html" target="_blank">Base Types</a>: Identifiers<br>
                             <a href="/releases/BASE/latest/resource.html" target="_blank">Resource</a>: AuthoredResource<br>
                             <a href="/releases/BASE/latest/foundation_types.html" target="_blank">Foundation Types</a>: Primitive types: Values, Structures, Interval, Date/times
