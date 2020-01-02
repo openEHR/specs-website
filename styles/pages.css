@@ -182,7 +182,6 @@ img {margin: 10px 0 10px 0;}
 }
 .specs_group_box .component_box .component { 
     min-height: 32px; 
-    font-weight: bold; 
     border-radius: inherit; 
     background-color: white; 
 }
@@ -214,6 +213,9 @@ img {margin: 10px 0 10px 0;}
 }
 .specs_group_box .table_cell .component { 
     width: 14%; 
+}
+.specs_group_box .table_cell .component .component_name { 
+    font-weight: bold; 
 }
 .specs_group_box .table_cell .releases { 
     width: 10%; 
