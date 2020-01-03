@@ -193,7 +193,7 @@ img {margin: 10px 0 10px 0;}
 }
 
 .component_row .component_cell { 
-    width: 70px; 
+    width: 90px; 
     min-height: 32px; 
     display: table-cell; 
     background-color: white; 
@@ -201,7 +201,7 @@ img {margin: 10px 0 10px 0;}
 }
 
 .component_row .releases { 
-    width: 90px; 
+    width: 150px; 
     border-left: 1px solid grey;
     flex-grow: 0;
 }
@@ -211,9 +211,6 @@ img {margin: 10px 0 10px 0;}
 
 /* ---- flex box for a component specs list ---- */
 .component_row .specs_cell { 
-    display: box; 
-    display: flex; 
-    flex-wrap: wrap;
     flex-grow: 5;
     padding: 0.75em 0.25em 0.25em; 
     border-left: 1px solid grey;

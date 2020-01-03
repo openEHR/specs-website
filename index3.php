@@ -338,7 +338,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 
                         <div class="specs_cell">                                                
                             <p class="specs_item">
-                                <a href="" target="_blank">OPT 1.4</a>: Operational Template 1.4
+                                <a href="/releases/AM/latest/ADL2.html" target="_blank">ADL 2</a>: Archetype Definition Language 2
+                            </p>
+                            <p class="specs_item">
+                                <a href="/releases/AM/latest/AOM2.html" target="_blank">AOM 2</a>: Archetype, AuthoredArchetype,Template, OperationalTemplate, CObject, ArchetypeSlot, CAttribute, CPrimitive
                             </p>
                             <p class="specs_item">
                                 <a href="/releases/AM/latest/OPT2.html" target="_blank">OPT 2</a>: Operational Template 2
@@ -347,13 +350,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                                 <a href="/releases/AM/latest/ADL1.4.html" target="_blank">ADL 1.4</a>: Archetype Definition Language 1.4
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/AM/latest/ADL2.html" target="_blank">ADL 2</a>: Archetype Definition Language 2
-                            </p>
-                            <p class="specs_item">
                                 <a href="/releases/AM/latest/AOM1.4.html" target="_blank">AOM 1.4</a>: Archetype, CObject, ArchetypeSlot, CAttribute, CPrimitive
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/AM/latest/AOM2.html" target="_blank">AOM 2</a>: Archetype, AuthoredArchetype,Template, OperationalTemplate, CObject, ArchetypeSlot, CAttribute, CPrimitive
+                                <a href="" target="_blank">OPT 1.4</a>: Operational Template 1.4
                             </p>
                             <p class="specs_item">
                                 <a href="/releases/AM/latest/Identification.html" target="_blank">Identification</a>: archetype / template identifiers; versioning rules
@@ -402,9 +402,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			<!-- =============== Formal Specs: Foundations =============== -->
 			<div id="foundations">
                 <p class="group_title">Foundations</p>
-				<div>
+				<div class="group_box">
 					<!-------------- BASE --------------->
-					<div id="base" class="group_box component_row table_cell">
+					<div id="base_row" class="component_row">
                         <div class="component_cell">
                             <p class="component_name">
                                 <a id="BASE"></a>
