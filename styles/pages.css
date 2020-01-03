@@ -212,6 +212,9 @@ img {margin: 10px 0 10px 0;}
 
 /* ---- flex box for a component specs list ---- */
 .component_row .specs_cell { 
+    display: box; 
+    display: flex; 
+    flex-flow: row wrap; 
     flex-grow: 4;
     padding: 0.75em 0.25em 0.25em; 
     border-left: 1px solid grey;
