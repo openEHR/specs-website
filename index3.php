@@ -36,8 +36,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			<!-- =============== Conformance Specs =============== -->
 			<div id="cnf_group">
                 <p class="group_title">Conformance</p>
-				<div>
-					<div id="cnf" class="group_box component_row table_cell">
+				<div class="group_box">
+					<div id="cnf_row" class="component_row">
                         <div class="component_cell">
                             <p class="component_name">
                                 <a id="CNF"></a>
@@ -62,7 +62,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			<!-- =============== ITS Specs =============== -->
 			<div id="its_group">
                 <p class="group_title">Implementation Technologies</p>
-					<div id="its" class="group_box component_row table_cell">
+				<div class="group_box">
+                    <div id="its_row" class="component_row">
                         <div class="component_cell">
                             <p class="component_name">
                                 <a id="ITS"></a>
@@ -71,7 +72,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             <p>(Implementation<br>Technologies)</p>
                             <a href="/components/ITS/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECITS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </div>
-            
+
                         <div class="specs_cell">
                             <p class="specs_item">
                                 <a href="/releases/ITS-REST/latest/index.html" target="_blank">REST APIs</a>: 
@@ -92,28 +93,28 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                                 <a href="https://github.com/openEHR/specifications-ITS-BMM" target="_blank">BMMs</a>: BMM schemas for Task Planning, RM, Expressions, BASE
                             </p>
                         </div>
-                        
-						<p class="releases">
-							<a href="https://openehr.atlassian.net/browse/SPECITS/fixforversion/12522" target="_blank">JSON 1.0.0</a> (cooking) <br>
-							<a href="https://openehr.atlassian.net/projects/SPECITS/versions/12520/tab/release-report-all-issues" target="_blank">XML 2.0.0</a> (cooking) <br>
-							<a href="https://openehr.atlassian.net/projects/SPECITS/versions/12529/tab/release-report-all-issues" target="_blank">REST 1.1.0</a> (cooking) <br>
-							<a href="/releases/ITS-REST/Release-1.0.1/" target="_blank">REST 1.0.1</a> (03 Nov 2019)<br>
-							<a href="/releases/ITS-REST/Release-1.0.0/" target="_blank">REST 1.0.0</a> (07 Dec 2018)<br>
-							<a href="https://github.com/openEHR/specifications-ITS-XML/releases/tag/Release-1.0.2" target="_blank">XML 1.0.2</a> (31 Dec 2008)
-						</p>
-						
-					</div>
-				</div>
-			</div>
+
+                        <p class="releases">
+                            <a href="https://openehr.atlassian.net/browse/SPECITS/fixforversion/12522" target="_blank">JSON 1.0.0</a> (cooking) <br>
+                            <a href="https://openehr.atlassian.net/projects/SPECITS/versions/12520/tab/release-report-all-issues" target="_blank">XML 2.0.0</a> (cooking) <br>
+                            <a href="https://openehr.atlassian.net/projects/SPECITS/versions/12529/tab/release-report-all-issues" target="_blank">REST 1.1.0</a> (cooking) <br>
+                            <a href="/releases/ITS-REST/Release-1.0.1/" target="_blank">REST 1.0.1</a> (03 Nov 2019)<br>
+                            <a href="/releases/ITS-REST/Release-1.0.0/" target="_blank">REST 1.0.0</a> (07 Dec 2018)<br>
+                            <a href="https://github.com/openEHR/specifications-ITS-XML/releases/tag/Release-1.0.2" target="_blank">XML 1.0.2</a> (31 Dec 2008)
+                        </p>
+
+                    </div>
+                </div>
+            </div>
         </div>
 
 		<div class="specs_category_box">
 			<!-- =============== Formal Specs: Analytics =============== -->
 			<div id="analytics">
                 <p class="group_title">Analytics</p>
-				<div>
+				<div class="group_box">
 					<!-------------- CDS --------------->
-					<div id="cds" class="group_box component_row table_cell">
+					<div id="cds_row" class="component_row">
                         <div class="component_cell">
                             <p class="component_name">
                                 <a id="CDS"></a>
@@ -141,9 +142,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			<!-- =============== Formal Specs: Service Models =============== -->
 			<div id="services">
                 <p class="group_title">Platform Service Interface</p>
-				<div>
+				<div class="group_box">
 					<!-------------- SM --------------->
-					<div id="sm" class="group_box component_row table_cell">
+					<div id="sm_row" class="component_row">
                         <div class="component_cell">
                             <p class="component_name">
                                 <a id="SM"></a>
@@ -171,9 +172,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			<!-- =============== Formal Specs: Content & Process =============== -->
 			<div id="content_process">
                 <p class="group_title">Content and Process</p>
-				<div>
+				<div class="group_box">
 					<!-------------- PROC --------------->
-					<div id="proc" class="group_box component_row table_cell">
+					<div id="proc_row" class="component_row">
                         <div class="component_cell">
                             <p class="component_name">
                                 <a id="PROC"></a>
@@ -201,7 +202,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					</div>
 
 					<!-------------- RM --------------->
-					<div id="rm" class="group_box component_row table_cell">
+					<div id="rm_row" class="component_row">
                         <div class="component_cell">
                             <p class="component_name">
                                 <a id="RM"></a>
@@ -249,7 +250,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					</div>
 
 					<!-------------- TERM --------------->
-					<div id="term" class="group_box component_row table_cell">
+					<div id="term_row" class="component_row">
                         <div class="component_cell">
                             <p class="component_name">
                                 <a id="TERM"></a>
@@ -300,7 +301,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			<!-- =============== Formal Specs: Formalisms =============== -->
 			<div id="formalisms_group">
                 <p class="group_title">Formalisms</p>
-				<div class="group_box group_table">
+				<div class="group_box">
 					<!-------------- QUERY --------------->
 					<div id="query" class="component_row">
                         <div class="component_cell">
