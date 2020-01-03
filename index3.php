@@ -32,14 +32,13 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 				</tbody>
 			</table>
 
-		<div class="specs_group_box">
-			<!-- =============== Implementation Specs =============== -->
-			<div id="its_cnf">
-                <p class="spec_group">Conformance and Implementation Technologies</p>
+		<div class="specs_category_box">
+			<!-- =============== Conformance Specs =============== -->
+			<div id="cnf_group">
+                <p class="group_title">Conformance</p>
 				<div>
-					<!-------------- CNF --------------->
-					<div id="cnf" class="component_box flex_box table_cell">
-                        <div class="component">
+					<div id="cnf" class="group_box component_row table_cell">
+                        <div class="component_cell">
                             <p class="component_name">
                                 <a id="CNF"></a>
                                 <a href="/releases/CNF/latest/index" target="_blank">CNF</a>
@@ -48,7 +47,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             <a href="/components/CNF/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECCNF?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </div>
                         
-                        <div class="specs_flex_box">                        
+                        <div class="specs_cell">                        
                             <p class="wide_specs_item">
                                 <a href="/releases/CNF/latest/openehr_platform_conformance.html" target="_blank">Platform Conformance</a>: System Under Test (SUT), Conformance Schedule, Profiles, Certification
                             </p>
@@ -56,12 +55,15 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                         
 						<p class="releases">
 						</p>
-						
 					</div>
-
-					<!-------------- ITS --------------->
-					<div id="its" class="component_box flex_box table_cell">
-                        <div class="component">
+                </div>
+            </div>
+            
+			<!-- =============== ITS Specs =============== -->
+			<div id="its_group">
+                <p class="group_title">Implementation Technologies</p>
+					<div id="its" class="group_box component_row table_cell">
+                        <div class="component_cell">
                             <p class="component_name">
                                 <a id="ITS"></a>
                                 <a href="/releases/ITS/latest/index" target="_blank">ITS</a>
@@ -70,7 +72,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             <a href="/components/ITS/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECITS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </div>
             
-                        <div class="specs_flex_box">
+                        <div class="specs_cell">
                             <p class="specs_item">
                                 <a href="/releases/ITS-REST/latest/index.html" target="_blank">REST APIs</a>: 
                                 <a href="/releases/ITS-REST/latest/ehr.html" target="_blank">EHR</a>, 
@@ -105,14 +107,14 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			</div>
         </div>
 
-		<div class="specs_group_box">
+		<div class="specs_category_box">
 			<!-- =============== Formal Specs: Analytics =============== -->
 			<div id="analytics">
-                <p class="spec_group">Analytics</p>
+                <p class="group_title">Analytics</p>
 				<div>
 					<!-------------- CDS --------------->
-					<div id="cds" class="component_box flex_box table_cell">
-                        <div class="component">
+					<div id="cds" class="group_box component_row table_cell">
+                        <div class="component_cell">
                             <p class="component_name">
                                 <a id="CDS"></a>
                                 <a href="/releases/CDS/latest/index" target="_blank">CDS</a>
@@ -120,7 +122,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             <a href="/components/CDS/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECCDS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </div>
 
-                        <div class="specs_flex_box">
+                        <div class="specs_cell">
                             <p class="specs_item">
                                 <a href="/releases/CDS/latest/GDL2.html" target="_blank">GDL2</a>: Guideline Definition Language v2
                             </p>
@@ -138,11 +140,11 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 
 			<!-- =============== Formal Specs: Service Models =============== -->
 			<div id="services">
-                <p class="spec_group">Platform Service Interface</p>
+                <p class="group_title">Platform Service Interface</p>
 				<div>
 					<!-------------- SM --------------->
-					<div id="sm" class="component_box flex_box table_cell">
-                        <div class="component">
+					<div id="sm" class="group_box component_row table_cell">
+                        <div class="component_cell">
                             <p class="component_name">
                                 <a id="SM"></a>
                                 <a href="/releases/SM/latest/index" target="_blank">SM</a>
@@ -151,7 +153,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             <a href="/components/SM/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECSM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </div>
 
-                        <div class="specs_flex_box">
+                        <div class="specs_cell">
                             <p class="specs_item">
                                 <a href="/releases/SM/latest/openehr_platform.html" target="_blank">Platform Services</a>: Ehr, Query, Definitions, EhrIndex, Admin, Demographic, Terminology, Message, SystemLog<br>
                             </p>
@@ -168,11 +170,11 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			
 			<!-- =============== Formal Specs: Content & Process =============== -->
 			<div id="content_process">
-                <p class="spec_group">Content and Process</p>
+                <p class="group_title">Content and Process</p>
 				<div>
 					<!-------------- PROC --------------->
-					<div id="proc" class="component_box flex_box table_cell">
-                        <div class="component">
+					<div id="proc" class="group_box component_row table_cell">
+                        <div class="component_cell">
                             <p class="component_name">
                                 <a id="PROC"></a>
                                 <a href="/releases/PROC/latest/index" target="_blank">PROC</a>
@@ -181,7 +183,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             <a href="/components/PROC/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECPROC?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </div>
 
-                        <div class="specs_flex_box">
+                        <div class="specs_cell">
                             <p class="specs_item">
                                 <a href="/releases/PROC/latest/task_planning.html" target="_blank">Task Planning (TP)</a>: An adaptive, executable, team-based model of workflow - Work Plan, Task Plan, Event
                             </p>
@@ -199,8 +201,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					</div>
 
 					<!-------------- RM --------------->
-					<div id="rm" class="component_box flex_box table_cell">
-                        <div class="component">
+					<div id="rm" class="group_box component_row table_cell">
+                        <div class="component_cell">
                             <p class="component_name">
                                 <a id="RM"></a>
                                 <a href="/releases/RM/latest/index" target="_blank">RM</a>
@@ -211,7 +213,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             </p>
                         </div>
                         
-                        <div class="specs_flex_box">                        
+                        <div class="specs_cell">                        
                             <p class="specs_item">
                                 <a href="/releases/RM/latest/demographic.html" target="_blank">Demographic</a>: Party, Party_relationship, Actor, Role, Contact, Address
                             </p>
@@ -247,8 +249,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					</div>
 
 					<!-------------- TERM --------------->
-					<div id="term" class="component_box flex_box table_cell">
-                        <div class="component">
+					<div id="term" class="group_box component_row table_cell">
+                        <div class="component_cell">
                             <p class="component_name">
                                 <a id="TERM"></a>
                                 <a href="/releases/TERM/latest/index" target="_blank">TERM</a>
@@ -259,7 +261,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             </p>
                         </div>
                         
-                        <div class="specs_flex_box">                        
+                        <div class="specs_cell">                        
                             <p class="wide_specs_item">
                                 <a href="/releases/TERM/latest/SupportTerminology.html" target="_blank">openEHR Terminology</a>:
                                 <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L2" target="_blank">Countries (ISO 3166)</a>|
@@ -296,12 +298,12 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			</div>
 			
 			<!-- =============== Formal Specs: Formalisms =============== -->
-			<div id="formalisms">
-                <p class="spec_group">Formalisms</p>
-				<div>
+			<div id="formalisms_group">
+                <p class="group_title">Formalisms</p>
+				<div class="group_box group_table">
 					<!-------------- QUERY --------------->
-					<div id="query" class="component_box flex_box table_cell">
-                        <div class="component">
+					<div id="query" class="component_row">
+                        <div class="component_cell">
                             <p class="component_name">
                                 <a id="QUERY"></a><a href="/releases/QUERY/latest/index" target="_blank">QUERY</a>
                             </p>
@@ -311,7 +313,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             </p>
                         </div>
 
-                        <div class="specs_flex_box">                                                
+                        <div class="specs_cell">                                                
                             <p class="wide_specs_item">
                                 <a href="/releases/QUERY/latest/AQL.html" target="_blank">AQL</a>: Archetype Querying Language
                             </p>
@@ -323,8 +325,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					</div>
 
 					<!-------------- AM --------------->
-					<div id="am" class="component_box flex_box table_cell">
-                        <div class="component">
+					<div id="am" class="component_row">
+                        <div class="component_cell">
                             <p class="component_name">
                                 <a id="AM"></a>
                                 <a href="/releases/AM/latest/index" target="_blank">AM</a>
@@ -333,7 +335,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             <a href="/components/AM/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECAM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </div>
 
-                        <div class="specs_flex_box">                                                
+                        <div class="specs_cell">                                                
                             <p class="specs_item">
                                 <a href="" target="_blank">OPT 1.4</a>: Operational Template 1.4
                             </p>
@@ -364,8 +366,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					</div>
 
 					<!-------------- LANG --------------->
-					<div id="lang" class="component_box flex_box table_cell">
-                        <div class="component">
+					<div id="lang" class="component_row">
+                        <div class="component_cell">
                             <p class="component_name">
                                 <a id="LANG"></a>
                                 <a href="/releases/LANG/latest/index" target="_blank">LANG</a>
@@ -374,7 +376,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 						    <a href="/components/LANG/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECLANG?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </div>
                         
-                        <div class="specs_flex_box">                                                
+                        <div class="specs_cell">                                                
                             <p class="specs_item">
                                 <a href="/releases/LANG/latest/expression_language.html" target="_blank">Expression Language</a>: a syntax for formal expressions
                             </p>
@@ -398,11 +400,11 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			
 			<!-- =============== Formal Specs: Foundations =============== -->
 			<div id="foundations">
-                <p class="spec_group">Foundations</p>
+                <p class="group_title">Foundations</p>
 				<div>
 					<!-------------- BASE --------------->
-					<div id="base" class="component_box flex_box table_cell">
-                        <div class="component">
+					<div id="base" class="group_box component_row table_cell">
+                        <div class="component_cell">
                             <p class="component_name">
                                 <a id="BASE"></a>
                                 <a href="/releases/BASE/latest/index" target="_blank">BASE</a>
@@ -411,7 +413,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 							<a href="/components/BASE/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECBASE?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </div>
                         
-                        <div class="specs_flex_box">                                                
+                        <div class="specs_cell">                                                
                             <p class="specs_item">
                                 <a href="/releases/BASE/latest/base_types.html" target="_blank">Base Types</a>: Identifiers
                             </p>

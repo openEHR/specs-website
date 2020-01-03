@@ -163,7 +163,7 @@ img {margin: 10px 0 10px 0;}
  * -------------------- Boxes ---------------------
  */
 
-.specs_group_box {
+.specs_category_box {
     margin-bottom: 2em; 
     max-width: 1200px; 
     padding: 0.75em 0.25em 0.25em; 
@@ -171,87 +171,64 @@ img {margin: 10px 0 10px 0;}
     border-radius: 6px; 
     border: 2px solid #123f6d; 
 }
-.specs_group_box p { 
+.specs_category_box p { 
     margin: 0; 
 }
-.specs_group_box .component_box { 
+.specs_category_box .group_title {
+    font-weight: bold; 
+    color: #123f6d; 
+} 
+.specs_category_box .group_box { 
     margin: 0 0.5em 0.75em; 
     border: 1px solid grey; 
     border-radius: 4px; 
     padding: 0.5em 0.25em 0.25em; 
     background-color: #f7f7f7; 
 }
-.specs_group_box .component_box .component { 
-    min-height: 32px; 
-    border-radius: inherit; 
-    background-color: white; 
-}
 
 /* ---- flex box for a component ---- */
-.specs_group_box .flex_box { 
-    display: -webkit-box; 
-    display: -moz-box; 
-    display: box; 
-    display: -webkit-flex; 
-    display: -moz-flex; 
-    display: -ms-flexbox; 
+.group_box .component_row { 
     display: flex; 
-    -webkit-flex-wrap: wrap; 
-    -moz-flex-wrap: wrap; 
-    -ms-flex-wrap: wrap; 
     flex-wrap: wrap; 
 }
-.specs_group_box .table_cell > p { 
+
+.component_row .component_cell { 
+    width: 70px; 
+    min-height: 32px; 
     display: table-cell; 
-    min-width: 10em; 
-    -webkit-box-flex: 1; 
-    -moz-box-flex: 1; 
-    box-flex: 1; 
-    -webkit-flex: 1 1 10em; 
-    -moz-flex: 1 1 10em; 
-    -ms-flex: 1 1 10em; 
-    flex: 1 1 10em; 
+    background-color: white; 
+    flex-grow: 0;
 }
-.specs_group_box .table_cell .component { 
-    width: 50px; 
-}
-.specs_group_box .table_cell .releases { 
-    width: 60px; 
+
+.component_row .releases { 
+    width: 90px; 
     border-left: 1px solid grey;
+    flex-grow: 0;
 }
-.specs_group_box .table_cell .component .component_name { 
+.component_cell .component_name { 
     font-weight: bold; 
 }
 
 /* ---- flex box for a component specs list ---- */
-.component_box .specs_flex_box { 
-    display: -webkit-box; 
-    display: -moz-box; 
+.component_row .specs_cell { 
     display: box; 
-    display: -webkit-flex; 
-    display: -moz-flex; 
-    display: -ms-flexbox; 
     display: flex; 
-    -webkit-flex-wrap: wrap; 
-    -moz-flex-wrap: wrap; 
-    -ms-flex-wrap: wrap; 
     flex-wrap: wrap;
-    flex-grow: 1;
+    flex-grow: 5;
     padding: 0.75em 0.25em 0.25em; 
     border-left: 1px solid grey;
 }
 
-.specs_group_box .specs_flex_box .specs_item { 
+.specs_cell .specs_item { 
     margin-bottom: 1em; 
     max-width: 100px; 
     padding: 0.5em 0.25em 0.25em; 
     background-color: white; 
     border-radius: 4px; 
     border: 1px solid #123f6d;
-    border-spacing: 4px;
 }
 
-.specs_group_box .specs_flex_box .wide_specs_item { 
+.specs_cell .wide_specs_item { 
     margin-bottom: 1em; 
     max-width: 700px; 
     padding: 0.75em 0.25em 0.25em; 
@@ -260,11 +237,12 @@ img {margin: 10px 0 10px 0;}
     border: 1px solid #123f6d; 
 }
 
-.specs_group_box .spec_group {
+.specs_cell .specs_item > a { 
     font-weight: bold; 
-    color: #123f6d; 
-} 
-
+}
+.specs_cell .wide_specs_item > a { 
+    font-weight: bold; 
+}
 
 /* ----- Table styles ----- */
 
