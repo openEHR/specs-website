@@ -188,14 +188,13 @@ img {margin: 10px 0 10px 0;}
 /* ---- flex box for a component ---- */
 .group_box .component_row { 
     display: flex; 
-    flex-flow: row wrap; 
+    flex-direction: row; 
 }
 
 .component_row .component_cell { 
     width: 100px; 
     min-height: 32px; 
     background-color: white; 
-    padding: 0.5em 0.25em 0.25em; 
     flex-grow: 0;
 }
 
@@ -203,7 +202,6 @@ img {margin: 10px 0 10px 0;}
     width: 160px;
     border-left: 1px solid grey;
     background-color: white; 
-    padding: 0.5em 0.25em 0.25em; 
     flex-grow: 0;
 }
 .component_cell .component_name { 
@@ -222,7 +220,7 @@ img {margin: 10px 0 10px 0;}
 
 .specs_cell .specs_item { 
     margin-bottom: 1em; 
-    max-width: 100px; 
+    max-width: 300px; 
     padding: 0.5em 0.25em 0.25em; 
     background-color: white; 
     border-radius: 4px; 
