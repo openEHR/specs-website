@@ -49,7 +49,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                         
                         <div class="specs_cell">                        
                             <p class="wide_specs_item">
-                                <a href="/releases/CNF/latest/openehr_platform_conformance.html" target="_blank">Platform Conformance</a>: System Under Test (SUT), Conformance Schedule, Profiles, Certification
+                                <a href="/releases/CNF/latest/openehr_platform_conformance.html" target="_blank">Platform Conformance</a><br>System Under Test (SUT), Conformance Schedule, Profiles, Certification
                             </p>
                         </div>
                         
@@ -65,8 +65,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 				<div class="group_box">
                     <div id="its_row" class="component_row">
                         <div class="component_cell">
-                            <p class="component_name">
-                                <a id="ITS"></a>
+                            <p id="ITS" class="component_name">
                                 <a href="/releases/ITS/latest/index" target="_blank">ITS</a>
                             </p>
                             <p>(Implementation<br>Technologies)</p>
@@ -75,22 +74,22 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 
                         <div class="specs_cell">
                             <p class="specs_item">
-                                <a href="/releases/ITS-REST/latest/index.html" target="_blank">REST APIs</a>: 
+                                <a href="/releases/ITS-REST/latest/index.html" target="_blank">REST APIs</a><br>
                                 <a href="/releases/ITS-REST/latest/ehr.html" target="_blank">EHR</a>, 
                                 <a href="/releases/ITS-REST/latest/query.html" target="_blank">Query</a>,
                                 <a href="/releases/ITS-REST/latest/definitions.html" target="_blank">Definitions</a>
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/ITS-REST/latest/simplified_data_template.html" target="_blank">SDT</a>: Simplified Data Template
+                                <a href="/releases/ITS-REST/latest/simplified_data_template.html" target="_blank">SDT</a><br>Simplified Data Template
                             </p>
                             <p class="specs_item">
-                                <a href="https://github.com/openEHR/specifications-ITS-XML" target="_blank">XSDs</a>: XML Schemas for the openEHR RM and AM
+                                <a href="https://github.com/openEHR/specifications-ITS-XML" target="_blank">XSDs</a><br>XML Schemas for the openEHR RM and AM
                             </p>
                             <p class="specs_item">
-                                <a href="https://github.com/openEHR/specifications-ITS-JSON" target="_blank">JSON schema</a>: JSON Schemas for the openEHR RM and AM
+                                <a href="https://github.com/openEHR/specifications-ITS-JSON" target="_blank">JSON schema</a><br>JSON Schemas for the openEHR RM and AM
                             </p>
                             <p class="specs_item">
-                                <a href="https://github.com/openEHR/specifications-ITS-BMM" target="_blank">BMMs</a>: BMM schemas for Task Planning, RM, Expressions, BASE
+                                <a href="https://github.com/openEHR/specifications-ITS-BMM" target="_blank">BMMs</a><br>BMM schemas for Task Planning, RM, Expressions, BASE
                             </p>
                         </div>
 
@@ -116,8 +115,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					<!-------------- CDS --------------->
 					<div id="cds_row" class="component_row">
                         <div class="component_cell">
-                            <p class="component_name">
-                                <a id="CDS"></a>
+                            <p id="CDS" class="component_name">
                                 <a href="/releases/CDS/latest/index" target="_blank">CDS</a>
                             </p>
                             <p>(Clinical<br>Decision<br>Support)</p>
@@ -126,10 +124,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 
                         <div class="specs_cell">
                             <p class="specs_item">
-                                <a href="/releases/CDS/latest/GDL2.html" target="_blank">GDL2</a>: Guideline Definition Language v2
+                                <a href="/releases/CDS/latest/GDL2.html" target="_blank">GDL2</a><br>Guideline Definition Language v2
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/CDS/latest/GDL.html" target="_blank">GDL</a>: Guideline Definition Language v1
+                                <a href="/releases/CDS/latest/GDL.html" target="_blank">GDL</a><br>Guideline Definition Language v1
                             </p>
                         </div>
 
@@ -147,8 +145,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					<!-------------- SM --------------->
 					<div id="sm_row" class="component_row">
                         <div class="component_cell">
-                            <p class="component_name">
-                                <a id="SM"></a>
+                            <p id="SM" class="component_name">
                                 <a href="/releases/SM/latest/index" target="_blank">SM</a>
                             </p>
                             <p>(Service Model)</p> 
@@ -157,10 +154,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 
                         <div class="specs_cell">
                             <p class="specs_item">
-                                <a href="/releases/SM/latest/openehr_platform.html" target="_blank">Platform Services</a>: Ehr, Query, Definitions, EhrIndex, Admin, Demographic, Terminology, Message, SystemLog<br>
+                                <a href="/releases/SM/latest/openehr_platform.html" target="_blank">Platform Services</a><br>Ehr, Query, Definitions, EhrIndex, Admin, Demographic, Terminology, Message, SystemLog<br>
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/SM/latest/simplified_im_b.html" target="_blank">SIM-B</a>: Simplified Information Model 'B' for use with Simplified Data Template
+                                <a href="/releases/SM/latest/simplified_im_b.html" target="_blank">SIM-B</a><br>Simplified Information Model 'B' for use with Simplified Data Template
                             </p>
                         </div>
 
@@ -177,8 +174,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					<!-------------- PROC --------------->
 					<div id="proc_row" class="component_row">
                         <div class="component_cell">
-                            <p class="component_name">
-                                <a id="PROC"></a>
+                            <p id="PROC" class="component_name">
                                 <a href="/releases/PROC/latest/index" target="_blank">PROC</a>
                             </p>
                             <p>(Process Model)</p>
@@ -187,13 +183,13 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 
                         <div class="specs_cell">
                             <p class="specs_item">
-                                <a href="/releases/PROC/latest/task_planning.html" target="_blank">Task Planning (TP)</a>: An adaptive, executable, team-based model of workflow - Work Plan, Task Plan, Event
+                                <a href="/releases/PROC/latest/task_planning.html" target="_blank">Task Planning (TP)</a><br>An adaptive, executable, team-based model of workflow - Work Plan, Task Plan, Event
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/PROC/latest/tp_vml.html" target="_blank">TP Visual Modelling Language (TP-VML)</a>:<br>A visual modelling language for clinical plans and workflows.
+                                <a href="/releases/PROC/latest/tp_vml.html" target="_blank">TP Visual Modelling<br>Language (TP-VML)</a><br>A visual modelling language for clinical plans and workflows.
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/PROC/latest/tp_examples.html" target="_blank">TP Examples</a>:<br>Real-world worked TP examples.
+                                <a href="/releases/PROC/latest/tp_examples.html" target="_blank">TP Examples</a><br>Real-world worked TP examples.
                             </p>
                         </div>
 
@@ -205,8 +201,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					<!-------------- RM --------------->
 					<div id="rm_row" class="component_row">
                         <div class="component_cell">
-                            <p class="component_name">
-                                <a id="RM"></a>
+                            <p id="RM" class="component_name">
                                 <a href="/releases/RM/latest/index" target="_blank">RM</a>
                             </p>
                             <p>(Reference Model)</p>
@@ -217,28 +212,28 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                         
                         <div class="specs_cell">                        
                             <p class="specs_item">
-                                <a href="/releases/RM/latest/demographic.html" target="_blank">Demographic</a>: Party, PartyRelationship, Actor, Role, Contact, Address
+                                <a href="/releases/RM/latest/demographic.html" target="_blank">Demographic</a><br>Party, PartyRelationship, Actor, Role, Contact, Address
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/RM/latest/ehr.html" target="_blank">EHR</a>: Composition, Section, Entry, Observation, Evaluation, Instruction, Action, AdminEntry
+                                <a href="/releases/RM/latest/ehr.html" target="_blank">EHR</a><br>Composition, Section, Entry, Observation, Evaluation, Instruction, Action, AdminEntry
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/RM/latest/ehr_extract.html" target="_blank">EHR Extract</a>: OpenEhrExtract, GenericExtract, ExtractRequest, ExtractSpec
+                                <a href="/releases/RM/latest/ehr_extract.html" target="_blank">EHR Extract</a><br>OpenEhrExtract, GenericExtract, ExtractRequest, ExtractSpec
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/RM/latest/common.html" target="_blank">Common</a>: VersionedObject, Version, PartySelf, AuditDetails
+                                <a href="/releases/RM/latest/common.html" target="_blank">Common</a><br>VersionedObject, Version, PartySelf, AuditDetails
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/RM/latest/integration.html" target="_blank">Integration</a>: IntegrationEntry
+                                <a href="/releases/RM/latest/integration.html" target="_blank">Integration</a><br>IntegrationEntry
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/RM/latest/data_structures.html" target="_blank">Data Structures</a>: History, Event, ItemTree, Cluster, Element
+                                <a href="/releases/RM/latest/data_structures.html" target="_blank">Data Structures</a><br>History, Event, ItemTree, Cluster, Element
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/RM/latest/data_types.html" target="_blank">Data Types</a>: DvBoolean, DvText, DvCodedText, DvUri, DvQuantity, DvDate/Time types, DvMultimedia
+                                <a href="/releases/RM/latest/data_types.html" target="_blank">Data Types</a><br>DvBoolean, DvText, DvCodedText, DvUri, DvQuantity, DvDate/Time types, DvMultimedia
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/RM/latest/support.html" target="_blank">Support</a>: Terminology and Measurement service interfaces
+                                <a href="/releases/RM/latest/support.html" target="_blank">Support</a><br>Terminology and Measurement service interfaces
                             </p>
                         </div>
                         
@@ -253,8 +248,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					<!-------------- TERM --------------->
 					<div id="term_row" class="component_row">
                         <div class="component_cell">
-                            <p class="component_name">
-                                <a id="TERM"></a>
+                            <p id="TERM" class="component_name">
                                 <a href="/releases/TERM/latest/index" target="_blank">TERM</a>
                             </p>
                             <p>(Terminology)</p>
@@ -306,8 +300,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					<!-------------- QUERY --------------->
 					<div id="query" class="component_row">
                         <div class="component_cell">
-                            <p class="component_name">
-                                <a id="QUERY"></a><a href="/releases/QUERY/latest/index" target="_blank">QUERY</a>
+                            <p id="QUERY" class="component_name">
+                                <a href="/releases/QUERY/latest/index" target="_blank">QUERY</a>
                             </p>
                             <p>(Query language)</p>
                             <p>
@@ -317,7 +311,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 
                         <div class="specs_cell">                                                
                             <p class="wide_specs_item">
-                                <a href="/releases/QUERY/latest/AQL.html" target="_blank">AQL</a>: Archetype Querying Language
+                                <a href="/releases/QUERY/latest/AQL.html" target="_blank">AQL</a><br>Archetype Querying Language
                             </p>
                         </div>
                         
@@ -329,8 +323,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					<!-------------- AM --------------->
 					<div id="am" class="component_row">
                         <div class="component_cell">
-                            <p class="component_name">
-                                <a id="AM"></a>
+                            <p id="AM" class="component_name">
                                 <a href="/releases/AM/latest/index" target="_blank">AM</a>
                             </p>
                             <p>(Archetype Model)</p>
@@ -339,25 +332,25 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 
                         <div class="specs_cell">                                                
                             <p class="specs_item">
-                                <a href="/releases/AM/latest/ADL2.html" target="_blank">ADL 2</a>: Archetype Definition Language 2
+                                <a href="/releases/AM/latest/ADL2.html" target="_blank">ADL 2</a><br>Archetype Definition Language 2
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/AM/latest/AOM2.html" target="_blank">AOM 2</a>: Archetype, AuthoredArchetype,Template, OperationalTemplate, CObject, ArchetypeSlot, CAttribute, CPrimitive
+                                <a href="/releases/AM/latest/AOM2.html" target="_blank">AOM 2</a><br>Archetype, AuthoredArchetype,Template, OperationalTemplate, CObject, ArchetypeSlot, CAttribute, CPrimitive
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/AM/latest/OPT2.html" target="_blank">OPT 2</a>: Operational Template 2
+                                <a href="/releases/AM/latest/OPT2.html" target="_blank">OPT 2</a><br>Operational Template 2
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/AM/latest/ADL1.4.html" target="_blank">ADL 1.4</a>: Archetype Definition Language 1.4
+                                <a href="/releases/AM/latest/ADL1.4.html" target="_blank">ADL 1.4</a><br>Archetype Definition Language 1.4
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/AM/latest/AOM1.4.html" target="_blank">AOM 1.4</a>: Archetype, CObject, ArchetypeSlot, CAttribute, CPrimitive
+                                <a href="/releases/AM/latest/AOM1.4.html" target="_blank">AOM 1.4</a><br>Archetype, CObject, ArchetypeSlot, CAttribute, CPrimitive
                             </p>
                             <p class="specs_item">
-                                <a href="" target="_blank">OPT 1.4</a>: Operational Template 1.4
+                                <a href="" target="_blank">OPT 1.4</a><br>Operational Template 1.4
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/AM/latest/Identification.html" target="_blank">Identification</a>: archetype / template identifiers; versioning rules
+                                <a href="/releases/AM/latest/Identification.html" target="_blank">Identification</a><br>archetype / template identifiers; versioning rules
                             </p>
                         </div>
                         
@@ -370,8 +363,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					<!-------------- LANG --------------->
 					<div id="lang" class="component_row">
                         <div class="component_cell">
-                            <p class="component_name">
-                                <a id="LANG"></a>
+                            <p id="LANG" class="component_name">
                                 <a href="/releases/LANG/latest/index" target="_blank">LANG</a>
                             </p>
                             <p>(Generic Languages)</p>
@@ -380,16 +372,16 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                         
                         <div class="specs_cell">                                                
                             <p class="specs_item">
-                                <a href="/releases/LANG/latest/expression_language.html" target="_blank">Expression Language</a>: a syntax for formal expressions
+                                <a href="/releases/LANG/latest/expression_language.html" target="_blank">Expression Language</a><br>a syntax for formal expressions
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/LANG/latest/bmm.html" target="_blank">BMM</a>: Basic Meta-Model - BmmSchema, BmmModel, BmmClass, BmmType, BmmProperty
+                                <a href="/releases/LANG/latest/bmm.html" target="_blank">BMM</a><br>Basic Meta-Model - BmmSchema, BmmModel, BmmClass, BmmType, BmmProperty
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/LANG/latest/bmm_persistence.html" target="_blank">P_BMM</a>: BMM Human-readable serial format - PBmmSchema, P_xxx types
+                                <a href="/releases/LANG/latest/bmm_persistence.html" target="_blank">P_BMM</a><br>BMM Human-readable serial format - PBmmSchema, P_xxx types
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/LANG/latest/odin.html" target="_blank">ODIN</a>: Object Data Instance Notation
+                                <a href="/releases/LANG/latest/odin.html" target="_blank">ODIN</a><br>Object Data Instance Notation
                             </p>
                         </div>
                         
@@ -407,8 +399,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					<!-------------- BASE --------------->
 					<div id="base_row" class="component_row">
                         <div class="component_cell">
-                            <p class="component_name">
-                                <a id="BASE"></a>
+                            <p id="BASE" class="component_name">
                                 <a href="/releases/BASE/latest/index" target="_blank">BASE</a>
                             </p>
                             <p>(Base models)</p>
@@ -417,13 +408,13 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                         
                         <div class="specs_cell">                                                
                             <p class="specs_item">
-                                <a href="/releases/BASE/latest/base_types.html" target="_blank">Base Types</a>: Identifiers
+                                <a href="/releases/BASE/latest/base_types.html" target="_blank">Base Types</a><br>Identifiers
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/BASE/latest/resource.html" target="_blank">Resource</a>: AuthoredResource
+                                <a href="/releases/BASE/latest/resource.html" target="_blank">Resource</a><br>AuthoredResource
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/BASE/latest/foundation_types.html" target="_blank">Foundation Types</a>: Primitive types: Values, Structures, Interval, Date/times
+                                <a href="/releases/BASE/latest/foundation_types.html" target="_blank">Foundation Types</a><br>Primitive types: Values, Structures, Interval, Date/times
                             </p>
                         </div>
                         
