@@ -173,7 +173,6 @@ img {margin: 10px 0 10px 0;}
 }
 .specs_category_box p { 
     margin: 0; 
-    padding: 0.5em 0.25em 0.25em; 
 }
 .specs_category_box .group_title {
     font-weight: bold; 
@@ -216,7 +215,7 @@ img {margin: 10px 0 10px 0;}
 .component_row .specs_cell { 
     display: flex; 
     flex-flow: row wrap;
-    justify-content: space-between;
+    align-content: space-between;
     flex-grow: 3;
     padding: 0.5em 0.25em 0.25em; 
     border-left: 1px solid grey;
@@ -224,7 +223,8 @@ img {margin: 10px 0 10px 0;}
 
 .specs_cell .specs_item { 
     margin-bottom: 1em; 
-    max-width: 300px; 
+    max-width: 300px;
+    min-height: 80px;
     padding: 0.5em 0.25em 0.25em; 
     background-color: white; 
     border-radius: 4px; 

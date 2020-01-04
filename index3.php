@@ -44,7 +44,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                                 <a href="/releases/CNF/latest/index" target="_blank">CNF</a>
                             </p>
                             <p>(Conformance)</p>
-                            <a href="/components/CNF/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECCNF?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            <a href="/components/CNF/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECCNF?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </div>
                         
                         <div class="specs_cell">                        
@@ -70,7 +70,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                                 <a href="/releases/ITS/latest/index" target="_blank">ITS</a>
                             </p>
                             <p>(Implementation<br>Technologies)</p>
-                            <a href="/components/ITS/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECITS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            <a href="/components/ITS/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECITS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </div>
 
                         <div class="specs_cell">
@@ -119,8 +119,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             <p class="component_name">
                                 <a id="CDS"></a>
                                 <a href="/releases/CDS/latest/index" target="_blank">CDS</a>
-                            </p>(Clinical<br>Decision<br>Support)<p>
-                            <a href="/components/CDS/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECCDS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            </p>
+                            <p>(Clinical<br>Decision<br>Support)</p>
+                            <a href="/components/CDS/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECCDS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </div>
 
                         <div class="specs_cell">
@@ -151,7 +152,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                                 <a href="/releases/SM/latest/index" target="_blank">SM</a>
                             </p>
                             <p>(Service Model)</p> 
-                            <a href="/components/SM/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECSM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            <a href="/components/SM/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECSM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </div>
 
                         <div class="specs_cell">
@@ -181,7 +182,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                                 <a href="/releases/PROC/latest/index" target="_blank">PROC</a>
                             </p>
                             <p>(Process Model)</p>
-                            <a href="/components/PROC/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECPROC?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            <a href="/components/PROC/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECPROC?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </div>
 
                         <div class="specs_cell">
@@ -210,7 +211,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             </p>
                             <p>(Reference Model)</p>
                             <p>
-                                <a href="/components/RM/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECRM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                                <a href="/components/RM/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECRM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                             </p>
                         </div>
                         
@@ -258,35 +259,35 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             </p>
                             <p>(Terminology)</p>
                             <p>
-                                <a href="/components/TERM/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECTERM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                                <a href="/components/TERM/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECTERM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                             </p>
                         </div>
                         
                         <div class="specs_cell">                        
                             <p class="wide_specs_item">
                                 <a href="/releases/TERM/latest/SupportTerminology.html" target="_blank">openEHR Terminology</a>:
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L2" target="_blank">Countries (ISO 3166)</a>|
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L263" target="_blank">Languages (ISO 639-1)</a>|
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L250" target="_blank">Character sets (IANA)</a>|
+                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L2" target="_blank">Countries (ISO 3166)</a> |
+                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L263" target="_blank">Languages (ISO 639-1)</a> |
+                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L250" target="_blank">Character sets (IANA)</a> |
                                 <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L399" target="_blank">Media types (IANA)</a><br>
 
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L22" target="_blank">Attestation reason</a>|
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L26" target="_blank">Audit change type</a>|
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L35" target="_blank">Composition category</a>|
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L2" target="_blank">Compression algorithms</a>|
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L294" target="_blank">Event math function</a>|
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L218" target="_blank">Instruction states</a>|
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L230" target="_blank">Instruction transitions</a>|
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L9" target="_blank">Integrity check algorithms</a>|
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L40" target="_blank">MultiMedia</a>|
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L13" target="_blank">Normal statuses</a>|
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L178" target="_blank">Null flavours</a>|
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L253" target="_blank">Participation function</a>|
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L184" target="_blank">Participation mode</a>|
+                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L22" target="_blank">Attestation reason</a> |
+                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L26" target="_blank">Audit change type</a> |
+                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L35" target="_blank">Composition category</a> |
+                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L2" target="_blank">Compression algorithms</a> |
+                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L294" target="_blank">Event math function</a> |
+                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L218" target="_blank">Instruction states</a> |
+                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L230" target="_blank">Instruction transitions</a> |
+                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L9" target="_blank">Integrity check algorithms</a> |
+                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L40" target="_blank">MultiMedia</a> |
+                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L13" target="_blank">Normal statuses</a> |
+                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L178" target="_blank">Null flavours</a> |
+                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L253" target="_blank">Participation function</a> |
+                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L184" target="_blank">Participation mode</a> |
                                 <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L92" target="_blank">Property</a>|
                                 <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L307" target="_blank">Setting</a>|
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L251" target="_blank">Subject relationship</a>|
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L289" target="_blank">Term mapping purpose</a>|
+                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L251" target="_blank">Subject relationship</a> |
+                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L289" target="_blank">Term mapping purpose</a> |
                                 <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L170" target="_blank">Version lifecycle state</a>
                             </p>
                         </div>
@@ -310,7 +311,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             </p>
                             <p>(Query language)</p>
                             <p>
-                                <a href="/components/QUERY/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECQUERY?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                                <a href="/components/QUERY/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECQUERY?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                             </p>
                         </div>
 
@@ -333,7 +334,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                                 <a href="/releases/AM/latest/index" target="_blank">AM</a>
                             </p>
                             <p>(Archetype Model)</p>
-                            <a href="/components/AM/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECAM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            <a href="/components/AM/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECAM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </div>
 
                         <div class="specs_cell">                                                
@@ -374,7 +375,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                                 <a href="/releases/LANG/latest/index" target="_blank">LANG</a>
                             </p>
                             <p>(Generic Languages)</p>
-						    <a href="/components/LANG/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECLANG?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+						    <a href="/components/LANG/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECLANG?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </div>
                         
                         <div class="specs_cell">                                                
@@ -410,8 +411,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                                 <a id="BASE"></a>
                                 <a href="/releases/BASE/latest/index" target="_blank">BASE</a>
                             </p>
-                            <p><br>(Base models)</p>
-							<a href="/components/BASE/open_issues" target="_blank">PRs</a>|<a href="https://openehr.atlassian.net/projects/SPECBASE?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            <p>(Base models)</p>
+							<a href="/components/BASE/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECBASE?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </div>
                         
                         <div class="specs_cell">                                                
