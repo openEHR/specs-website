@@ -194,7 +194,6 @@ img {margin: 10px 0 10px 0;}
 .component_row .component_cell { 
     width: 100px; 
     min-height: 32px; 
-    display: table-cell; 
     background-color: white; 
     padding: 0.5em 0.25em 0.25em; 
     flex-grow: 0;
