@@ -183,7 +183,6 @@ img {margin: 10px 0 10px 0;}
     border: 1px solid grey; 
     border-radius: 4px; 
     background-color: #f7f7f7;
-    display: table-row;
 }
 
 /* ---- flex box for a component ---- */
