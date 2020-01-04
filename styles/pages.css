@@ -182,8 +182,8 @@ img {margin: 10px 0 10px 0;}
     margin: 0 0.5em 0.75em; 
     border: 1px solid grey; 
     border-radius: 4px; 
-    padding: 0.5em 0.25em 0.25em; 
-    background-color: #f7f7f7; 
+    background-color: #f7f7f7;
+    display: table-row;
 }
 
 /* ---- flex box for a component ---- */
@@ -197,6 +197,7 @@ img {margin: 10px 0 10px 0;}
     min-height: 32px; 
     display: table-cell; 
     background-color: white; 
+    padding: 0.5em 0.25em 0.25em; 
     flex-grow: 0;
 }
 
@@ -204,6 +205,7 @@ img {margin: 10px 0 10px 0;}
     width: 160px;
     border-left: 1px solid grey;
     background-color: white; 
+    padding: 0.5em 0.25em 0.25em; 
     flex-grow: 0;
 }
 .component_cell .component_name { 
@@ -212,10 +214,10 @@ img {margin: 10px 0 10px 0;}
 
 /* ---- flex box for a component specs list ---- */
 .component_row .specs_cell { 
-    display: box; 
     display: flex; 
-    flex-flow: row wrap; 
-    flex-grow: 4;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    flex-grow: 3;
     padding: 0.75em 0.25em 0.25em; 
     border-left: 1px solid grey;
 }

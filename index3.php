@@ -216,16 +216,16 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                         
                         <div class="specs_cell">                        
                             <p class="specs_item">
-                                <a href="/releases/RM/latest/demographic.html" target="_blank">Demographic</a>: Party, Party_relationship, Actor, Role, Contact, Address
+                                <a href="/releases/RM/latest/demographic.html" target="_blank">Demographic</a>: Party, PartyRelationship, Actor, Role, Contact, Address
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/RM/latest/ehr.html" target="_blank">EHR</a>: Composition, Section, Entry, Observation, Evaluation, Instruction, Action, Admin_entry
+                                <a href="/releases/RM/latest/ehr.html" target="_blank">EHR</a>: Composition, Section, Entry, Observation, Evaluation, Instruction, Action, AdminEntry
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/RM/latest/ehr_extract.html" target="_blank">EHR Extract</a>: OpenehrExtract, GenericExtract
+                                <a href="/releases/RM/latest/ehr_extract.html" target="_blank">EHR Extract</a>: OpenEhrExtract, GenericExtract, ExtractRequest, ExtractSpec
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/RM/latest/common.html" target="_blank">Common</a>: Versioned_object, Version, Party_self, Audit_details
+                                <a href="/releases/RM/latest/common.html" target="_blank">Common</a>: VersionedObject, Version, PartySelf, AuditDetails
                             </p>
                             <p class="specs_item">
                                 <a href="/releases/RM/latest/integration.html" target="_blank">Integration</a>: IntegrationEntry
