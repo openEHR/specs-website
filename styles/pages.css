@@ -184,12 +184,13 @@ img {margin: 10px 0 10px 0;}
     padding: 0.25em 0.25em; 
     border: 1px solid #123f6d; 
     border-radius: 6px; 
+    background-color: white; 
 }
 
 /* ---- table row for a component ---- */
 .group_box .component_row { 
-    display: table-row;
-    border-collapse: collapse;    
+    display: flex;
+    flex-flow: row;
 }
 
 .component_row .component_cell { 
@@ -198,14 +199,18 @@ img {margin: 10px 0 10px 0;}
     min-height: 32px; 
     background-color: white; 
     padding: 0.5em 0.25em 0.25em; 
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 
 .component_row .releases { 
     display: table-cell; 
     width: 160px;
-    border: 1px solid #123f6d;
+    border-left: 1px solid #123f6d;
     background-color: white; 
-    padding: 0.5em 0.25em 0.25em; 
+    padding: 0.5em 0.25em 0.25em;
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 .component_cell .component_name { 
     font-weight: bold; 
@@ -216,7 +221,7 @@ img {margin: 10px 0 10px 0;}
     display: flex; 
     flex-flow: row wrap;
     padding: 0.5em 0.25em 0.25em; 
-    border: 1px solid #123f6d;
+    border-left: 1px solid #123f6d;
 }
 
 .specs_cell .specs_item { 
