@@ -177,7 +177,7 @@ img {margin: 10px 0 10px 0;}
 .specs_category_box .group_title {
     font-weight: bold; 
     color: #123f6d; 
-    padding: 0.75em 0.25em 0.25em; 
+    padding: 0.5em 0.25em 0.25em; 
 } 
 .specs_category_box .group_box { 
     margin: 0 0.5em 0.75em; 
@@ -187,8 +187,10 @@ img {margin: 10px 0 10px 0;}
 
 /* ---- table row for a component ---- */
 .group_box .component_row { 
+    border-bottom: 1px solid #123f6d; 
     display: flex;
     flex-flow: row;
+    padding: 0.5em 0.25em 0.25em; 
 }
 
 .component_row .component_cell { 
