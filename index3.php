@@ -210,7 +210,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             </p>
                         </div>
                         
-                        <div class="specs_cell">                        
+                        <div class="specs_cell" style="background-color:#ACDCE8;">                        
                             <p class="specs_item">
                                 <a href="/releases/RM/latest/demographic.html" target="_blank">Demographic</a><br>Party, PartyRelationship, Actor, Role, Contact, Address
                             </p>
@@ -257,7 +257,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             </p>
                         </div>
                         
-                        <div class="specs_cell">                        
+                        <div class="specs_cell" style="background-color:#ACDCE8;">                        
                             <p class="wide_specs_item">
                                 <a href="/releases/TERM/latest/SupportTerminology.html" target="_blank">openEHR Terminology</a>:
                                 <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L2" target="_blank">Countries (ISO 3166)</a> |
@@ -330,7 +330,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             <a href="/components/AM/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECAM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </div>
 
-                        <div class="specs_cell">                                                
+                        <div class="specs_cell" style="background-color:#E3E4E5;">                                                
                             <p class="specs_item">
                                 <a href="/releases/AM/latest/ADL2.html" target="_blank">ADL 2</a><br>Archetype Definition Language 2
                             </p>
@@ -370,7 +370,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 						    <a href="/components/LANG/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECLANG?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                         </div>
                         
-                        <div class="specs_cell">                                                
+                        <div class="specs_cell" style="background-color:#E3E4E5;">                                                
                             <p class="specs_item">
                                 <a href="/releases/LANG/latest/expression_language.html" target="_blank">Expression Language</a><br>a syntax for formal expressions
                             </p>

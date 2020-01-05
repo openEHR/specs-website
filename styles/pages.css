@@ -180,16 +180,16 @@ img {margin: 10px 0 10px 0;}
     padding: 0.75em 0.25em 0.25em; 
 } 
 .specs_category_box .group_box { 
-    padding: 0.5em 0.25em 0.25em; 
     margin: 0 0.5em 0.75em; 
     border: 1px solid grey;
     border-radius: 6px; 
     background-color: #f7f7f7;
 }
 
-/* ---- flex box for a component ---- */
+/* ---- table row for a component ---- */
 .group_box .component_row { 
     display: table-row; 
+    border-bottom: 1px solid grey;
 }
 
 .component_row .component_cell { 
@@ -201,6 +201,7 @@ img {margin: 10px 0 10px 0;}
 }
 
 .component_row .releases { 
+    display: table-cell; 
     width: 160px;
     border-left: 1px solid grey;
     background-color: white; 
