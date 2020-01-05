@@ -44,7 +44,6 @@ img {margin: 10px 0 10px 0;}
 
 #MainArea a:hover {
 	color: #3386ae;
-
 	text-decoration: underline;
 }
 
@@ -175,9 +174,10 @@ img {margin: 10px 0 10px 0;}
     margin: 0; 
 }
 .specs_category_box .group_title {
-    font-weight: bold; 
+    font-size: 14px;
+    font-weight: bold;
     color: #123f6d; 
-    padding: 0.5em 0.25em 0.25em; 
+    padding: 0.5em 0.25em 0.5em 0.25em; 
 } 
 .specs_category_box .group_box { 
     margin: 0 0.5em 0.75em; 
@@ -199,7 +199,7 @@ img {margin: 10px 0 10px 0;}
 
 .component_row .component_cell { 
     display: table-cell; 
-    width: 100px; 
+    width: 110px; 
     min-height: 32px; 
     background-color: white; 
     padding: 0.5em 0.25em 0.25em; 
@@ -216,6 +216,10 @@ img {margin: 10px 0 10px 0;}
     flex-grow: 0;
     flex-shrink: 0;
 }
+.component_cell > p { 
+    margin: 00.25em 0.5em 0.25em; 
+}
+
 .component_cell .component_name { 
     font-weight: bold; 
 }
@@ -239,7 +243,17 @@ img {margin: 10px 0 10px 0;}
     border: 1px solid #123f6d;
 }
 
-.specs_cell .wide_specs_item { 
+.specs_cell .specs_item_narrow { 
+    margin: 0.25em 0.25em; 
+    max-width: 80px;
+    min-height: 80px;
+    padding: 0.25em 0.25em; 
+    background-color: white; 
+    border-radius: 4px; 
+    border: 1px solid #123f6d;
+}
+
+.specs_cell .specs_item_wide { 
     margin: 0.25em 0.25em; 
     max-width: 720px; 
     padding: 0.5em 0.25em 0.25em; 

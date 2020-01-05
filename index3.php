@@ -11,26 +11,45 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 <!-- ----------------------------------------- Content starts here ------------------------------------------------ -->
 
 
-			<!-- =============== Diagram =============== -->
-			<div class="imageblock" style="text-align: center">
-				<img src="/openehr_block_diagram3.svg" alt="openEHR Components" width="45%">
-			</div>
+		<!-- =============== Diagram =============== -->
+		<div class="imageblock" style="text-align: center">
+		  <img src="/openehr_block_diagram3.svg" alt="openEHR Components" width="45%">
+		</div>
 
-			<!-- --------------------------------------- Global index ----------------------------------------------- -->
-			<table class="TableInvisible">
-				<tbody>
-					<tr>
-						<td valign="top">
-							<a href="/releases/BASE/latest/architecture_overview.html" target="_blank">Architecture Overview</a> |
-							<a href="/releases/AM/latest/Overview.html" target="_blank">Archetype Technology</a> |
-							<a href="/releases/UML/latest" target="_blank">GLOBAL UML</a> |
-							<a href="/releases/AA_GLOBAL/latest/index.html" target="_blank">CLASS INDEX</a> |
-							<a href="https://openehr.atlassian.net/wiki/spaces/spec/pages/357957633/Services+Landscape+for+e-Health" target="_blank">Services Landscape</a>
-						</td>
-
-					</tr>
-				</tbody>
-			</table>
+        <div class="specs_category_box" style="background-color: #ACDCE8;">
+			<!-- =============== Conformance Specs =============== -->
+			<div id="global_group">
+                <p class="group_title">Start Here</p>
+				<div class="group_box">
+					<div id="global_row" class="component_row">
+                        <div class="component_cell">
+                            <p class="component_name">GLOBAL</p>
+                        </div>
+                        
+                        <div class="specs_cell" style="background-color:#ffeecc;">                        
+                            <p class="specs_item">
+                                <a href="/releases/BASE/latest/architecture_overview.html" target="_blank">Architecture Overview</a>
+                            </p>
+                            <p class="specs_item">
+                                <a href="/releases/AM/latest/Overview.html" target="_blank">Archetype Technology</a>
+                            </p>
+                            <p class="specs_item">
+                                <a href="/releases/UML/latest" target="_blank">GLOBAL UML</a>
+                            </p>
+                            <p class="specs_item">
+                                <a href="/releases/AA_GLOBAL/latest/index.html" target="_blank">CLASS INDEX</a>
+                            </p>
+                            <p class="specs_item">
+                                <a href="https://openehr.atlassian.net/wiki/spaces/spec/pages/357957633/Services+Landscape+for+e-Health" target="_blank">Services Landscape</a>
+                            </p>
+                        </div>
+                        
+						<p class="releases">
+						</p>
+					</div>
+                </div>
+            </div>
+        </div>
 
 		<div class="specs_category_box">
 			<!-- =============== Conformance Specs =============== -->
@@ -50,7 +69,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                         </div>
                         
                         <div class="specs_cell" style="background-color:white;">                        
-                            <p class="wide_specs_item">
+                            <p class="specs_item_wide">
                                 <a href="/releases/CNF/latest/openehr_platform_conformance.html" target="_blank">Platform Conformance</a><br>System Under Test (SUT), Conformance Schedule, Profiles, Certification
                             </p>
                         </div>
@@ -122,7 +141,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             <p id="CDS" class="component_name">
                                 <a href="/releases/CDS/latest/index" target="_blank">CDS</a>
                             </p>
-                            <p>(Clinical<br>Decision<br>Support)</p>
+                            <p>(Clinical Decision<br>Support)</p>
                             <p>
                                 <a href="/components/CDS/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECCDS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                             </p>
@@ -130,10 +149,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                         </div>
 
                         <div class="specs_cell" style="background-color:#AEDFB3;">
-                            <p class="wide_specs_item">
+                            <p class="specs_item_wide">
                                 <a href="/releases/CDS/latest/GDL2.html" target="_blank">GDL2</a><br>Guideline Definition Language v2
                             </p>
-                            <p class="wide_specs_item">
+                            <p class="specs_item_wide">
                                 <a href="/releases/CDS/latest/GDL.html" target="_blank">GDL</a><br>Guideline Definition Language v1
                             </p>
                         </div>
@@ -163,10 +182,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                         </div>
 
                         <div class="specs_cell" style="background-color:#FAE665;">
-                            <p class="wide_specs_item">
+                            <p class="specs_item_wide">
                                 <a href="/releases/SM/latest/openehr_platform.html" target="_blank">Platform Services</a><br>Ehr, Query, Definitions, EhrIndex, Admin, Demographic, Terminology, Message, SystemLog<br>
                             </p>
-                            <p class="wide_specs_item">
+                            <p class="specs_item_wide">
                                 <a href="/releases/SM/latest/simplified_im_b.html" target="_blank">SIM-B</a><br>Simplified Information Model 'B' for use with Simplified Data Template
                             </p>
                         </div>
@@ -272,7 +291,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                         </div>
                         
                         <div class="specs_cell" style="background-color:#ACDCE8;">                        
-                            <p class="wide_specs_item">
+                            <p class="specs_item_wide">
                                 <a href="/releases/TERM/latest/SupportTerminology.html" target="_blank">openEHR Terminology</a>:
                                 <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L2" target="_blank">Countries (ISO 3166)</a> |
                                 <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L263" target="_blank">Languages (ISO 639-1)</a> |
@@ -324,7 +343,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                         </div>
 
                         <div class="specs_cell" style="background-color:#E3E4E5;">                                                
-                            <p class="wide_specs_item">
+                            <p class="specs_item_wide">
                                 <a href="/releases/QUERY/latest/AQL.html" target="_blank">AQL</a><br>Archetype Querying Language
                             </p>
                         </div>
@@ -352,22 +371,22 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                         </div>
 
                         <div class="specs_cell" style="background-color:#E3E4E5;">                                                
-                            <p class="specs_item">
+                            <p class="specs_item_narrow">
                                 <a href="/releases/AM/latest/ADL2.html" target="_blank">ADL 2</a><br>Archetype Definition Language 2
                             </p>
                             <p class="specs_item">
                                 <a href="/releases/AM/latest/AOM2.html" target="_blank">AOM 2</a><br>Archetype, AuthoredArchetype, Template, OperationalTemplate, CObject, ArchetypeSlot, CAttribute, CPrimitive
                             </p>
-                            <p class="specs_item">
+                            <p class="specs_item_narrow">
                                 <a href="/releases/AM/latest/OPT2.html" target="_blank">OPT 2</a><br>Operational Template 2
                             </p>
-                            <p class="specs_item">
+                            <p class="specs_item_narrow">
                                 <a href="/releases/AM/latest/ADL1.4.html" target="_blank">ADL 1.4</a><br>Archetype Definition Language 1.4
                             </p>
                             <p class="specs_item">
                                 <a href="/releases/AM/latest/AOM1.4.html" target="_blank">AOM 1.4</a><br>Archetype, CObject, ArchetypeSlot, CAttribute, CPrimitive
                             </p>
-                            <p class="specs_item">
+                            <p class="specs_item_narrow">
                                 <a href="" target="_blank">OPT 1.4</a><br>Operational Template 1.4
                             </p>
                             <p class="specs_item">
@@ -435,13 +454,13 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                         
                         <div class="specs_cell" style="background-color:#F3F4F5;">                                                
                             <p class="specs_item">
-                                <a href="/releases/BASE/latest/base_types.html" target="_blank">Base Types</a><br>Identifiers
+                                <a href="/releases/BASE/latest/base_types.html" target="_blank">Base Types</a><br>Definitions, Identifiers
                             </p>
                             <p class="specs_item">
                                 <a href="/releases/BASE/latest/resource.html" target="_blank">Resource</a><br>AuthoredResource
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/BASE/latest/foundation_types.html" target="_blank">Foundation Types</a><br>Primitive types: Values, Structures, Interval, Date/times
+                                <a href="/releases/BASE/latest/foundation_types.html" target="_blank">Foundation Types</a><br>Values, Structures, Interval, Date/times
                             </p>
                         </div>
                         
