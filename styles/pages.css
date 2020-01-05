@@ -182,7 +182,8 @@ img {margin: 10px 0 10px 0;}
 .specs_category_box .group_box { 
     margin: 0 0.5em 0.75em; 
     border: 1px solid #123f6d; 
-    border-radius: 6px; 
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 /* ---- table row for a component ---- */
@@ -192,14 +193,7 @@ img {margin: 10px 0 10px 0;}
     flex-flow: row;
 }
 
-.group_box .component_row:first-child { 
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-}
-
 .group_box .component_row:last-child { 
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
     border-bottom: none; 
 }
 

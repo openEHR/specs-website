@@ -44,7 +44,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                                 <a href="/releases/CNF/latest/index" target="_blank">CNF</a>
                             </p>
                             <p>(Conformance)</p>
-                            <a href="/components/CNF/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECCNF?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            <p>
+                                <a href="/components/CNF/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECCNF?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            </p>
                         </div>
                         
                         <div class="specs_cell" style="background-color:white;">                        
@@ -69,7 +71,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                                 <a href="/releases/ITS/latest/index" target="_blank">ITS</a>
                             </p>
                             <p>(Implementation<br>Technologies)</p>
-                            <a href="/components/ITS/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECITS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            <p>
+                                <a href="/components/ITS/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECITS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            </p>
                         </div>
 
                         <div class="specs_cell" style="background-color:#F2D5F4;">
@@ -119,7 +123,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                                 <a href="/releases/CDS/latest/index" target="_blank">CDS</a>
                             </p>
                             <p>(Clinical<br>Decision<br>Support)</p>
-                            <a href="/components/CDS/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECCDS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            <p>
+                                <a href="/components/CDS/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECCDS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            </p>
+                            <p><a href="/releases/CDS/latest/UML/openEHR_UML-CDS.mdzip">UML</a></p>
                         </div>
 
                         <div class="specs_cell" style="background-color:#AEDFB3;">
@@ -148,11 +155,14 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             <p id="SM" class="component_name">
                                 <a href="/releases/SM/latest/index" target="_blank">SM</a>
                             </p>
-                            <p>(Service Model)</p> 
-                            <a href="/components/SM/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECSM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            <p>(Service Model)</p>
+                            <p>
+                                <a href="/components/SM/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECSM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            </p>
+                            <p><a href="/releases/SM/latest/UML/openEHR_UML-SM.mdzip">UML</a></p>
                         </div>
 
-                        <div class="specs_cell" style="background-color:#ECDB6D;">
+                        <div class="specs_cell" style="background-color:#FAE665;">
                             <p class="wide_specs_item">
                                 <a href="/releases/SM/latest/openehr_platform.html" target="_blank">Platform Services</a><br>Ehr, Query, Definitions, EhrIndex, Admin, Demographic, Terminology, Message, SystemLog<br>
                             </p>
@@ -178,7 +188,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                                 <a href="/releases/PROC/latest/index" target="_blank">PROC</a>
                             </p>
                             <p>(Process Model)</p>
-                            <a href="/components/PROC/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECPROC?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            <p>
+                                <a href="/components/PROC/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECPROC?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            </p>
+                            <p><a href="/releases/PROC/latest/UML/openEHR_UML-PROC.mdzip">UML</a></p>
                         </div>
 
                         <div class="specs_cell" style="background-color:#ACDCE8;">
@@ -208,6 +221,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             <p>
                                 <a href="/components/RM/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECRM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
                             </p>
+                            <p><a href="/releases/RM/latest/UML/openEHR_UML-RM.mdzip">UML</a></p>
                         </div>
                         
                         <div class="specs_cell" style="background-color:#ACDCE8;">                        
@@ -327,7 +341,14 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                                 <a href="/releases/AM/latest/index" target="_blank">AM</a>
                             </p>
                             <p>(Archetype Model)</p>
-                            <a href="/components/AM/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECAM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            <p>
+                                <a href="/components/AM/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECAM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            </p>
+                            <p>
+                                <a href="/releases/AM/latest/UML/openEHR_UML-AM.mdzip">AOM2 UML</a><br>
+                                <a href="/releases/AM/latest/UML/openEHR_UML-AM-14.mdzip">AOM1.4 UML</a>
+
+                            </p>
                         </div>
 
                         <div class="specs_cell" style="background-color:#E3E4E5;">                                                
@@ -367,7 +388,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                                 <a href="/releases/LANG/latest/index" target="_blank">LANG</a>
                             </p>
                             <p>(Generic Languages)</p>
-						    <a href="/components/LANG/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECLANG?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            <p>
+                                <a href="/components/LANG/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECLANG?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            </p>
+                            <p><a href="/releases/LANG/latest/UML/openEHR_UML-LANG.mdzip">UML</a></p>
                         </div>
                         
                         <div class="specs_cell" style="background-color:#E3E4E5;">                                                
@@ -403,7 +427,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                                 <a href="/releases/BASE/latest/index" target="_blank">BASE</a>
                             </p>
                             <p>(Base models)</p>
-							<a href="/components/BASE/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECBASE?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            <p>
+							     <a href="/components/BASE/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECBASE?   orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            </p>
+                            <p><a href="/releases/BASE/latest/UML/openEHR_UML-Base.mdzip">UML</a></p>
                         </div>
                         
                         <div class="specs_cell" style="background-color:#F3F4F5;">                                                
@@ -426,57 +453,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 				</div>
 			</div>
 		</div>
-			
-			<!-- ------------------------------ UML quick access ------------------------------------------- -->
-			<h2>UML Model Files</h2>
-			<table class="TableBasic">
-				<tbody>
-					<tr>
-						<th style="text-align:center"> Component </th>
-						<th style="text-align:center"> UML source </th>
-					</tr>
-
-					<!-------------- SM --------------->
-					<tr>
-						<td> <a id="SM"></a><a href="/releases/SM/latest/index" target="_blank">SM</a></td>
-						<td> <a href="/releases/SM/latest/UML/openEHR_UML-SM.mdzip">openEHR_UML-SM.mdzip</a></td>
-					</tr>
-
-					<!-------------- PROC --------------->
-					<tr>
-						<td> <a id="PROC"></a><a href="/releases/PROC/latest/index" target="_blank">PROC</a></td>
-						<td> <a href="/releases/PROC/latest/UML/openEHR_UML-PROC.mdzip">openEHR_UML-PROC.mdzip</a></td>
-					</tr>
-
-					<!-------------- RM --------------->
-					<tr>
-						<td> <a id="RM"></a><a href="/releases/RM/latest/index" target="_blank">RM</a></td>
-						<td> <a href="/releases/RM/latest/UML/openEHR_UML-RM.mdzip">openEHR_UML-RM.mdzip</a></td>
-					</tr>
-
-					<!-------------- AM --------------->
-					<tr>
-						<td> <a id="AM"></a><a href="/releases/AM/latest/index" target="_blank">AM</a></td>
-						<td> 
-							<a href="/releases/AM/latest/UML/openEHR_UML-AM.mdzip">openEHR_UML-AM.mdzip</a><br>
-							<a href="/releases/AM/latest/UML/openEHR_UML-AM-14.mdzip">openEHR_UML-AM-14.mdzip</a>
-						</td>
-					</tr>
-
-					<!-------------- LANG --------------->
-					<tr>
-						<td> <a id="LANG"></a><a href="/releases/LANG/latest/index" target="_blank">LANG</a></td>
-						<td> <a href="/releases/LANG/latest/UML/openEHR_UML-LANG.mdzip">openEHR_UML-LANG.mdzip</a></td>
-					</tr>
-
-					<!-------------- BASE --------------->
-					<tr>
-						<td> <a id="BASE"></a><a href="/releases/BASE/latest/index" target="_blank">BASE</a></td>
-						<td> <a href="/releases/BASE/latest/UML/openEHR_UML-Base.mdzip">openEHR_UML-BASE.mdzip</a></td>
-					</tr>
-
-				</tbody>
-			</table>
 
 
 <!-- ------------------------------------------- Content ends here ------------------------------------------------- -->
