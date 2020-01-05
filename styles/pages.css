@@ -193,12 +193,11 @@ img {margin: 10px 0 10px 0;}
 }
 
 .component_row .component_cell { 
+    display: table-cell; 
     width: 100px; 
     min-height: 32px; 
     background-color: white; 
     padding: 0.5em 0.25em 0.25em; 
-    flex-grow: 0;
-    flex-shrink: 0;
 }
 
 .component_row .releases { 
@@ -206,8 +205,6 @@ img {margin: 10px 0 10px 0;}
     border-left: 1px solid grey;
     background-color: white; 
     padding: 0.5em 0.25em 0.25em; 
-    flex-grow: 0;
-    flex-shrink: 0;
 }
 .component_cell .component_name { 
     font-weight: bold; 
@@ -217,13 +214,12 @@ img {margin: 10px 0 10px 0;}
 .component_row .specs_cell { 
     display: flex; 
     flex-flow: row wrap;
-    flex-grow: 3;
     padding: 0.5em 0.25em 0.25em; 
     border-left: 1px solid grey;
 }
 
 .specs_cell .specs_item { 
-    margin: 0.5em 0.5em; 
+    margin: 0.25em 0.25em; 
     max-width: 125px;
     min-height: 80px;
     padding: 0.25em 0.25em; 
@@ -233,7 +229,7 @@ img {margin: 10px 0 10px 0;}
 }
 
 .specs_cell .wide_specs_item { 
-    margin: 0.5em 0.5em; 
+    margin: 0.25em 0.25em; 
     max-width: 720px; 
     padding: 0.5em 0.25em 0.25em; 
     background-color: white; 
