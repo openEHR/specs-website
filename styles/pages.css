@@ -190,7 +190,17 @@ img {margin: 10px 0 10px 0;}
     border-bottom: 1px solid #123f6d; 
     display: flex;
     flex-flow: row;
-    padding: 0.5em 0.25em 0.25em; 
+}
+
+.group_box .component_row:first-child { 
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.group_box .component_row:last-child { 
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom: none; 
 }
 
 .component_row .component_cell { 
