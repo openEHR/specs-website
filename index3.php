@@ -16,36 +16,29 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 		  <img src="/openehr_block_diagram3.svg" alt="openEHR Components" width="45%">
 		</div>
 
-        <div class="specs_category_box" style="background-color: #ACDCE8;">
+        <div class="specs_category_box" style="background-color: #C6F0FA;">
 			<!-- =============== Conformance Specs =============== -->
 			<div id="global_group">
                 <p class="group_title">Start Here</p>
 				<div class="group_box">
 					<div id="global_row" class="component_row">
-                        <div class="component_cell">
-                            <p class="component_name">GLOBAL</p>
-                        </div>
-                        
                         <div class="specs_cell" style="background-color:#ffeecc;">                        
-                            <p class="specs_item">
-                                <a href="/releases/BASE/latest/architecture_overview.html" target="_blank">Architecture Overview</a>
+                            <p class="specs_item_wide">
+                                <a href="/releases/BASE/latest/architecture_overview.html" target="_blank">Architecture Overview</a><br>Global description of openEHR design principles and architecture
+                            </p>
+                            <p class="specs_item_wide">
+                                <a href="/releases/AM/latest/Overview.html" target="_blank">Archetype Technology</a><br>Business case for archetyping; overview of archetype specifications
+                            </p>
+                            <p class="specs_item_wide">
+                                <a href="https://openehr.atlassian.net/wiki/spaces/spec/pages/357957633/Services+Landscape+for+e-Health" target="_blank">Services Landscape</a><br>Map of e-health services at enterprise, community and region levels
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/AM/latest/Overview.html" target="_blank">Archetype Technology</a>
+                                <a href="/releases/UML/latest" target="_blank">GLOBAL UML</a><br>Generated global UML website
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/UML/latest" target="_blank">GLOBAL UML</a>
-                            </p>
-                            <p class="specs_item">
-                                <a href="/releases/AA_GLOBAL/latest/index.html" target="_blank">CLASS INDEX</a>
-                            </p>
-                            <p class="specs_item">
-                                <a href="https://openehr.atlassian.net/wiki/spaces/spec/pages/357957633/Services+Landscape+for+e-Health" target="_blank">Services Landscape</a>
+                                <a href="/releases/AA_GLOBAL/latest/index.html" target="_blank">CLASS INDEX</a><br>Global openEHR class link list
                             </p>
                         </div>
-                        
-						<p class="releases">
-						</p>
 					</div>
                 </div>
             </div>
