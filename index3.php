@@ -22,7 +22,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                 <p class="group_title">Start Here</p>
 				<div class="group_box">
 					<div id="global_row" class="component_row">
-                        <div class="specs_cell" style="background-color:#ffeecc;">                        
+                        <div class="specs_cell" style="background-color:#ffeecc; border-left:none; flex-flow: row;">                        
                             <p class="specs_item_wide">
                                 <a href="/releases/BASE/latest/architecture_overview.html" target="_blank">Architecture Overview</a><br>Global description of openEHR design principles and architecture
                             </p>

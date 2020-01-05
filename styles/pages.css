@@ -217,7 +217,7 @@ img {margin: 10px 0 10px 0;}
     flex-shrink: 0;
 }
 .component_cell > p { 
-    margin: 00.25em 0.5em 0.25em; 
+    margin: 0.25em 0.5em 0.5em; 
 }
 
 .component_cell .component_name { 
@@ -265,9 +265,13 @@ img {margin: 10px 0 10px 0;}
 .specs_cell .specs_item > a { 
     font-weight: bold; 
 }
-.specs_cell .wide_specs_item > a { 
+.specs_cell .specs_item_wide > a { 
     font-weight: bold; 
 }
+.specs_cell .specs_item_narrow > a { 
+    font-weight: bold; 
+}
+
 
 /* ----- Table styles ----- */
 
