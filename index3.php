@@ -13,7 +13,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 
 			<!-- =============== Diagram =============== -->
 			<div class="imageblock" style="text-align: center">
-				<img src="/openehr_block_diagram3.svg" alt="openEHR Components" width="60%">
+				<img src="/openehr_block_diagram3.svg" alt="openEHR Components" width="45%">
 			</div>
 
 			<!-- --------------------------------------- Global index ----------------------------------------------- -->
@@ -36,7 +36,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			<!-- =============== Conformance Specs =============== -->
 			<div id="cnf_group">
                 <p class="group_title">Conformance</p>
-				<div class="group_box">
+				<div class="group_box" style="background-color:white;">
 					<div id="cnf_row" class="component_row">
                         <div class="component_cell">
                             <p class="component_name">
@@ -62,7 +62,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			<!-- =============== ITS Specs =============== -->
 			<div id="its_group">
                 <p class="group_title">Implementation Technologies</p>
-				<div class="group_box">
+				<div class="group_box" style="background-color:#F2D5F4;">
                     <div id="its_row" class="component_row">
                         <div class="component_cell">
                             <p id="ITS" class="component_name">
@@ -111,7 +111,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			<!-- =============== Formal Specs: Analytics =============== -->
 			<div id="analytics">
                 <p class="group_title">Analytics</p>
-				<div class="group_box">
+				<div class="group_box" style="background-color:#AEDFB3;">
 					<!-------------- CDS --------------->
 					<div id="cds_row" class="component_row">
                         <div class="component_cell">
@@ -141,7 +141,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			<!-- =============== Formal Specs: Service Models =============== -->
 			<div id="services">
                 <p class="group_title">Platform Service Interface</p>
-				<div class="group_box">
+				<div class="group_box" style="background-color:#ECDB6D;">
 					<!-------------- SM --------------->
 					<div id="sm_row" class="component_row">
                         <div class="component_cell">
@@ -170,7 +170,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			<!-- =============== Formal Specs: Content & Process =============== -->
 			<div id="content_process">
                 <p class="group_title">Content and Process</p>
-				<div class="group_box">
+				<div class="group_box" style="background-color:#ACDCE8;">
 					<!-------------- PROC --------------->
 					<div id="proc_row" class="component_row">
                         <div class="component_cell">
@@ -296,7 +296,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			<!-- =============== Formal Specs: Formalisms =============== -->
 			<div id="formalisms_group">
                 <p class="group_title">Formalisms</p>
-				<div class="group_box">
+				<div class="group_box" style="background-color:#E3E4E5;">
 					<!-------------- QUERY --------------->
 					<div id="query" class="component_row">
                         <div class="component_cell">
@@ -335,7 +335,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                                 <a href="/releases/AM/latest/ADL2.html" target="_blank">ADL 2</a><br>Archetype Definition Language 2
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/AM/latest/AOM2.html" target="_blank">AOM 2</a><br>Archetype, AuthoredArchetype,Template, OperationalTemplate, CObject, ArchetypeSlot, CAttribute, CPrimitive
+                                <a href="/releases/AM/latest/AOM2.html" target="_blank">AOM 2</a><br>Archetype, AuthoredArchetype, Template, OperationalTemplate, CObject, ArchetypeSlot, CAttribute, CPrimitive
                             </p>
                             <p class="specs_item">
                                 <a href="/releases/AM/latest/OPT2.html" target="_blank">OPT 2</a><br>Operational Template 2
@@ -395,7 +395,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			<!-- =============== Formal Specs: Foundations =============== -->
 			<div id="foundations">
                 <p class="group_title">Foundations</p>
-				<div class="group_box">
+				<div class="group_box" style="background-color:#F3F4F5;">
 					<!-------------- BASE --------------->
 					<div id="base_row" class="component_row">
                         <div class="component_cell">
