@@ -181,10 +181,8 @@ img {margin: 10px 0 10px 0;}
 } 
 .specs_category_box .group_box { 
     margin: 0 0.5em 0.75em; 
-    padding: 0.25em 0.25em; 
     border: 1px solid #123f6d; 
     border-radius: 6px; 
-    background-color: white; 
 }
 
 /* ---- table row for a component ---- */
@@ -222,6 +220,7 @@ img {margin: 10px 0 10px 0;}
     flex-flow: row wrap;
     padding: 0.5em 0.25em 0.25em; 
     border-left: 1px solid #123f6d;
+    flex-grow: 3;
 }
 
 .specs_cell .specs_item { 
