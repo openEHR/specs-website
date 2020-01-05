@@ -123,10 +123,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                         </div>
 
                         <div class="specs_cell" style="background-color:#AEDFB3;">
-                            <p class="specs_item">
+                            <p class="wide_specs_item">
                                 <a href="/releases/CDS/latest/GDL2.html" target="_blank">GDL2</a><br>Guideline Definition Language v2
                             </p>
-                            <p class="specs_item">
+                            <p class="wide_specs_item">
                                 <a href="/releases/CDS/latest/GDL.html" target="_blank">GDL</a><br>Guideline Definition Language v1
                             </p>
                         </div>
@@ -153,10 +153,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                         </div>
 
                         <div class="specs_cell" style="background-color:#ECDB6D;">
-                            <p class="specs_item">
+                            <p class="wide_specs_item">
                                 <a href="/releases/SM/latest/openehr_platform.html" target="_blank">Platform Services</a><br>Ehr, Query, Definitions, EhrIndex, Admin, Demographic, Terminology, Message, SystemLog<br>
                             </p>
-                            <p class="specs_item">
+                            <p class="wide_specs_item">
                                 <a href="/releases/SM/latest/simplified_im_b.html" target="_blank">SIM-B</a><br>Simplified Information Model 'B' for use with Simplified Data Template
                             </p>
                         </div>
