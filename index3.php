@@ -11,6 +11,11 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 <!-- ----------------------------------------- Content starts here ------------------------------------------------ -->
 
 
+		<!-- =============== Diagram =============== -->
+		<div class="imageblock" style="text-align: center">
+		  <img src="/openehr_block_diagram3.svg" alt="openEHR Components" width="50%">
+		</div>
+
         <div class="specs_category_box" style="background-color: #C6F0FA;">
 			<!-- =============== Conformance Specs =============== -->
 			<div id="global_group">
@@ -39,10 +44,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
             </div>
         </div>
 
-		<!-- =============== Diagram =============== -->
-		<div class="imageblock" style="text-align: center">
-		  <img src="/openehr_block_diagram3.svg" alt="openEHR Components" width="45%">
-		</div>
 
 		<div class="specs_category_box">
 			<!-- =============== Conformance Specs =============== -->
