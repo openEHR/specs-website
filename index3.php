@@ -13,7 +13,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 
 		<!-- =============== Diagram =============== -->
 		<div class="imageblock" style="text-align: center">
-		  <img src="/openehr_block_diagram3.svg" alt="openEHR Components" width="50%">
+		  <img src="/openehr_block_diagram.svg" alt="openEHR Components" width="50%">
 		</div>
 
         <div class="specs_category_box" style="background-color: #C6F0FA;">
@@ -125,39 +125,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
         </div>
 
 		<div class="specs_category_box">
-			<!-- =============== Formal Specs: Analytics =============== -->
-			<div id="analytics">
-                <p class="group_title">Analytics</p>
-				<div class="group_box">
-					<!-------------- CDS --------------->
-					<div id="cds_row" class="component_row">
-                        <div class="component_cell">
-                            <p id="CDS" class="component_name">
-                                <a href="/releases/CDS/latest/index" target="_blank">CDS</a>
-                            </p>
-                            <p>(Clinical Decision<br>Support)</p>
-                            <p>
-                                <a href="/components/CDS/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECCDS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
-                            </p>
-                            <p><a href="/releases/CDS/latest/UML/openEHR_UML-CDS.mdzip">UML</a></p>
-                        </div>
-
-                        <div class="specs_cell" style="background-color:#AEDFB3;">
-                            <p class="specs_item_wide">
-                                <a href="/releases/CDS/latest/GDL2.html" target="_blank">GDL2</a><br>Guideline Definition Language v2
-                            </p>
-                            <p class="specs_item_wide">
-                                <a href="/releases/CDS/latest/GDL.html" target="_blank">GDL</a><br>Guideline Definition Language v1
-                            </p>
-                        </div>
-
-                        <p class="releases">
-						</p>
-					</div>
-                    
-				</div>
-			</div>
-
 			<!-- =============== Formal Specs: Service Models =============== -->
 			<div id="services">
                 <p class="group_title">Platform Service Interface</p>
@@ -190,10 +157,36 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 				</div>
 			</div>
 			
-			<!-- =============== Formal Specs: Content & Process =============== -->
-			<div id="content_process">
-                <p class="group_title">Content and Process</p>
+			<!-- =============== Formal Specs: Process & CDS =============== -->
+			<div id="analytics">
+                <p class="group_title">Process and CDS</p>
 				<div class="group_box">
+					<!-------------- CDS --------------->
+					<div id="cds_row" class="component_row">
+                        <div class="component_cell">
+                            <p id="CDS" class="component_name">
+                                <a href="/releases/CDS/latest/index" target="_blank">CDS</a>
+                            </p>
+                            <p>(Clinical Decision<br>Support)</p>
+                            <p>
+                                <a href="/components/CDS/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECCDS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+                            </p>
+                            <p><a href="/releases/CDS/latest/UML/openEHR_UML-CDS.mdzip">UML</a></p>
+                        </div>
+
+                        <div class="specs_cell" style="background-color:#AEDFB3;">
+                            <p class="specs_item_wide">
+                                <a href="/releases/CDS/latest/GDL2.html" target="_blank">GDL2</a><br>Guideline Definition Language v2
+                            </p>
+                            <p class="specs_item_wide">
+                                <a href="/releases/CDS/latest/GDL.html" target="_blank">GDL</a><br>Guideline Definition Language v1
+                            </p>
+                        </div>
+
+                        <p class="releases">
+						</p>
+					</div>
+                    
 					<!-------------- PROC --------------->
 					<div id="proc_row" class="component_row">
                         <div class="component_cell">
@@ -223,6 +216,13 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 							<a href="/releases/PROC/Release-1.0.0/" target="_blank">1.0.0</a> (1 Dec 2017)
 						</p>
 					</div>
+				</div>
+			</div>
+
+			<!-- =============== Formal Specs: Content =============== -->
+			<div id="content">
+                <p class="group_title">Content</p>
+				<div class="group_box">
 
 					<!-------------- RM --------------->
 					<div id="rm_row" class="component_row">
