@@ -13,7 +13,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 
 		<!-- =============== Diagram =============== -->
 		<div class="imageblock" style="text-align: center">
-		  <img src="/openehr_block_diagram.svg" alt="openEHR Components" width="50%">
+		  <img src="/openehr_block_diagram.svg" alt="openEHR Components" width="65%">
 		</div>
 
         <div class="specs_category_box" style="background-color: #C6F0FA;">
