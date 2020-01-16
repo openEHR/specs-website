@@ -73,7 +73,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					</div>
                 </div>
             </div>
-            
+        </div>
+
+		<div class="specs_category_box">
 			<!-- =============== ITS Specs =============== -->
 			<div id="its_group">
                 <p class="group_title">Implementation Technologies</p>
@@ -89,7 +91,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             </p>
                         </div>
 
-                        <div class="specs_cell" style="background-color:#F2D5F4;">
+                        <div class="specs_cell" style="background-color:#CDA2BE;">
                             <p class="specs_item">
                                 <a href="/releases/ITS-REST/latest/index.html" target="_blank">REST APIs</a><br>
                                 <a href="/releases/ITS-REST/latest/ehr.html" target="_blank">EHR</a>, 
@@ -142,7 +144,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             <p><a href="/releases/SM/latest/UML/openEHR_UML-SM.mdzip">UML</a></p>
                         </div>
 
-                        <div class="specs_cell" style="background-color:#FAE665;">
+                        <div class="specs_cell" style="background-color:#FFD966;">
                             <p class="specs_item_wide">
                                 <a href="/releases/SM/latest/openehr_platform.html" target="_blank">Platform Services</a><br>Ehr, Query, Definitions, EhrIndex, Admin, Demographic, Terminology, Message, SystemLog<br>
                             </p>
@@ -174,7 +176,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             <p><a href="/releases/CDS/latest/UML/openEHR_UML-CDS.mdzip">UML</a></p>
                         </div>
 
-                        <div class="specs_cell" style="background-color:#AEDFB3;">
+                        <div class="specs_cell" style="background-color:#B9E0A5;">
                             <p class="specs_item_wide">
                                 <a href="/releases/CDS/latest/GDL2.html" target="_blank">GDL2</a><br>Guideline Definition Language v2
                             </p>
@@ -200,7 +202,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             <p><a href="/releases/PROC/latest/UML/openEHR_UML-PROC.mdzip">UML</a></p>
                         </div>
 
-                        <div class="specs_cell" style="background-color:#ACDCE8;">
+                        <div class="specs_cell" style="background-color:#B9E0A5;">
                             <p class="specs_item">
                                 <a href="/releases/PROC/latest/task_planning.html" target="_blank">Task Planning (TP)</a><br>An adaptive, executable, team-based model of workflow - Work Plan, Task Plan, Event
                             </p>
@@ -237,7 +239,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             <p><a href="/releases/RM/latest/UML/openEHR_UML-RM.mdzip">UML</a></p>
                         </div>
                         
-                        <div class="specs_cell" style="background-color:#ACDCE8;">                        
+                        <div class="specs_cell" style="background-color:#A9C4EB;">                        
                             <p class="specs_item">
                                 <a href="/releases/RM/latest/demographic.html" target="_blank">Demographic</a><br>Party, PartyRelationship, Actor, Role, Contact, Address
                             </p>
@@ -284,7 +286,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             </p>
                         </div>
                         
-                        <div class="specs_cell" style="background-color:#ACDCE8;">                        
+                        <div class="specs_cell" style="background-color:#A9C4EB;">                        
                             <p class="specs_item_wide">
                                 <a href="/releases/TERM/latest/SupportTerminology.html" target="_blank">openEHR Terminology</a>:
                                 <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L2" target="_blank">Countries (ISO 3166)</a> |
@@ -336,7 +338,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             </p>
                         </div>
 
-                        <div class="specs_cell" style="background-color:#E3E4E5;">                                                
+                        <div class="specs_cell" style="background-color:#D9D9D9;">                                                
                             <p class="specs_item_wide">
                                 <a href="/releases/QUERY/latest/AQL.html" target="_blank">AQL</a><br>Archetype Querying Language
                             </p>
@@ -364,7 +366,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             </p>
                         </div>
 
-                        <div class="specs_cell" style="background-color:#E3E4E5;">                                                
+                        <div class="specs_cell" style="background-color:#D9D9D9;">                                                
                             <p class="specs_item_narrow">
                                 <a href="/releases/AM/latest/ADL2.html" target="_blank">ADL 2</a><br>Archetype Definition Language 2
                             </p>
@@ -407,7 +409,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             <p><a href="/releases/LANG/latest/UML/openEHR_UML-LANG.mdzip">UML</a></p>
                         </div>
                         
-                        <div class="specs_cell" style="background-color:#E3E4E5;">                                                
+                        <div class="specs_cell" style="background-color:#D9D9D9;">                                                
                             <p class="specs_item">
                                 <a href="/releases/LANG/latest/expression_language.html" target="_blank">Expression Language</a><br>a syntax for formal expressions
                             </p>
