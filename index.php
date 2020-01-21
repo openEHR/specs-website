@@ -93,9 +93,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 
                         <div class="specs_cell" style="background-color:#CDA2BE;">
                             <p class="specs_item">
-                                <a href="/releases/ITS-REST/latest/index.html" target="_blank">REST APIs</a><br>
-                                <a href="/releases/ITS-REST/latest/ehr.html" target="_blank">EHR</a>, 
-                                <a href="/releases/ITS-REST/latest/query.html" target="_blank">Query</a>,
+                                <a href="/releases/ITS-REST/latest/index.html" target="_blank">REST APIs</a>:<br>
+                                <a href="/releases/ITS-REST/latest/ehr.html" target="_blank">EHR</a>,<br> 
+                                <a href="/releases/ITS-REST/latest/query.html" target="_blank">Query</a>,<br>
                                 <a href="/releases/ITS-REST/latest/definitions.html" target="_blank">Definitions</a>
                             </p>
                             <p class="specs_item">
