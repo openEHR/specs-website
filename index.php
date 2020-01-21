@@ -129,6 +129,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 		<div class="specs_category_box">
 			<!-- =============== Formal Specs: Service Models =============== -->
 			<div id="services">
+                <p class="category_title">Abstract Specifications</p>
+                <p class="category_sub_title">Technology-independent primary specifications for the openEHR health computing platform</p>
                 <p class="group_title">Platform Service Interface</p>
 				<div class="group_box">
 					<!-------------- SM --------------->
