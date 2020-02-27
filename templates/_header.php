@@ -19,8 +19,10 @@
 	<link rel="stylesheet" href="/styles/basic.css"  type="text/css">
 	<link rel="stylesheet" href="/styles/pages.css"  type="text/css"> 
 	
-	<link rel="shortcut icon" href="/favicon.png">
-	<link rel="home" href="/">
+	<link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" sizes="16x16 32x32" href="/favicon.ico">
+
+    <link rel="home" href="/">
 
 	<meta name="google-site-verification" content="zfPZfHQ-5oXYT119aAi7HdZELv8ubHPCxvIFANVPzcU" />
 
