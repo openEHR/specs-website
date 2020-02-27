@@ -169,7 +169,7 @@ html,body {
 	width: 415px;
 	height: 50px;
 	
-	background: url("../gui/Logo.png")no-repeat;
+	background: url("../images/Logo.png")no-repeat;
 }
 
 #Logo a {
