@@ -3,10 +3,10 @@
             <ul>
                 <li><a href="/latest_releases" <?php if($pageOn == 'latest_releases.php'){?> class="active"<?php }?>>Latest Releases</a></li>
                 <li><a href="/historical_releases" <?php if($pageOn == 'historical_releases.php'){?> class="active"<?php }?>>Historical Releases</a></li>
-                <br/>
+                <li></li>
                 <li><a href="https://openehr.atlassian.net/secure/Dashboard.jspa?selectPageId=10190" target="_blank">Issue Trackers</a></li>
                 <li><a href="https://www.openehr.org/programs/specification/governance" target="_blank">Governance</a></li>
-                <br/>
+                <li></li>
                 <li><a href="https://www.openehr.org/governance/intellectual_property" target="_blank">IP and Licensing</a></li>
                 <li><a href="https://discourse.openehr.org/c/specifications" target="_blank">Discourse Forum</a></li>
                 <li><a href="/wiki/display/spec/Specifications+Home" target="_blank">Wiki</a></li>
@@ -62,7 +62,7 @@
                 <li><a href="/releases/CDS/latest/GDL.html" target="_blank">GDL</a></li>
                 <li><a href="/components/CDS/open_issues" target="_blank">PRs</a></li>
                 <li><a href="https://openehr.atlassian.net/projects/SPECCDS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a></li>
-                <br/>
+                <li></li>
                 <li><a href="/releases/PROC/latest/index" target="_blank">PROC</a></li>
                 <li><a href="/releases/PROC/latest/task_planning.html" target="_blank">Task Planning (TP)</a></li>
                 <li><a href="/releases/PROC/latest/tp_vml.html" target="_blank">TP Visual Modelling<br>Language (TP-VML)</a></li>
@@ -86,7 +86,7 @@
                 <li><a href="/releases/RM/latest/support.html" target="_blank">Support</a></li>
                 <li><a href="/components/RM/open_issues" target="_blank">PRs</a></li>
                 <li><a href="https://openehr.atlassian.net/projects/SPECRM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a></li>
-                <br/>
+                <li></li>
                 <li><a href="/releases/TERM/latest/index" target="_blank">TERM</a></li>
                 <li><a href="/releases/TERM/latest/SupportTerminology.html" target="_blank">openEHR Terminology</a></li>
                 <li><a href="/components/TERM/open_issues" target="_blank">PRs</a></li>
@@ -100,7 +100,7 @@
                 <li><a href="/releases/QUERY/latest/AQL.html" target="_blank">AQL</a></li>
                 <li><a href="/components/QUERY/open_issues" target="_blank">PRs</a></li>
                 <li><a href="https://openehr.atlassian.net/projects/SPECQUERY?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a></li>
-                <br/>
+                <li></li>
 
                 <li><a href="/releases/AM/latest/index" target="_blank">AM</a></li>
                 <li><a href="/releases/AM/latest/ADL2.html" target="_blank">ADL 2</a></li>
@@ -112,7 +112,7 @@
                 <li><a href="/releases/AM/latest/Identification.html" target="_blank">Identification</a></li>
                 <li><a href="/components/AM/open_issues" target="_blank">PRs</a></li>
                 <li><a href="https://openehr.atlassian.net/projects/SPECAM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a></li>
-                <br/>
+                <li></li>
                 <li><a href="/releases/LANG/latest/index" target="_blank">LANG</a></li>
                 <li><a href="/releases/LANG/latest/expression_language.html" target="_blank">Expression Language</a></li>
                 <li><a href="/releases/LANG/latest/bmm.html" target="_blank">BMM</a></li>
