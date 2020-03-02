@@ -1,5 +1,4 @@
-﻿<span><a href="/" <?php if($pageOn == 'index.php'){?> class="active"<?php }?>>Working Baseline</a></span>
-    <ul id="menu" class="menu">
+﻿    <ul id="menu" class="menu">
         <li>Home
             <ul>
                 <li><a href="/latest_releases" <?php if($pageOn == 'latest_releases.php'){?> class="active"<?php }?>>Latest Releases</a></li>
