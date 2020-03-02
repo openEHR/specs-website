@@ -10,11 +10,7 @@
                 <li><a href="https://www.openehr.org/governance/intellectual_property" target="_blank">IP and Licensing</a></li>
                 <li><a href="https://discourse.openehr.org/c/specifications" target="_blank">Discourse Forum</a></li>
                 <li><a href="/wiki/display/spec/Specifications+Home" target="_blank">Wiki</a></li>
-            </ul>
-        </li>
-
-        <li>Start
-            <ul>
+                <li></li>
                 <li><a href="/releases/BASE/latest/architecture_overview.html" target="_blank">Architecture Overview</a></li>
                 <li><a href="/releases/AM/latest/Overview.html" target="_blank">Archetype Technology</a></li>
                 <li><a href="https://openehr.atlassian.net/wiki/spaces/spec/pages/357957633/Services+Landscape+for+e-Health" target="_blank">Services Landscape</a></li>
