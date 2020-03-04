@@ -214,6 +214,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             <p class="specs_item">
                                 <a href="/releases/PROC/latest/tp_examples.html" target="_blank">TP Examples</a><br>Real-world worked TP examples.
                             </p>
+                            <p class="specs_item">
+                                <a href="/releases/PROC/latest/decision_language.html" target="_blank">Decision Language (DL)</a><br>Language for use with GDL, TP.
+                            </p>
                         </div>
 
                         <p class="releases">

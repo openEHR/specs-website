@@ -231,8 +231,8 @@ html,body {
 	float: left;
 	
 	display: block;
-	width: 16%;
-	min-width: 160px;
+	width: 10%;
+	min-width: 70px;
 }
 
 .menu li li {
