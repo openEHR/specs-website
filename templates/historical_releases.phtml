@@ -1,16 +1,4 @@
-﻿<?php
-require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_functions.php');
-
-//Change page name here:
-$PageName = 'Historical Releases';
-
-require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
-?>
-
-		<div id="Content">
-<!-- ================================= Content starts here ============================== -->
-		
-			<h1><?php echo "$PageName";?></h1>
+﻿			<h1><?=$title;?></h1>
 			<p>The following releases were of all openEHR specifications, prior to components being created. All releases are now published as part of a component, and can be seen <a href="/latest_releases">here</a>.</p>
 			<table class="TableBasic">
 				<tbody>
@@ -51,7 +39,3 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 					</tr>
 				</tbody>
 			</table>
-		
-<!-- =========================================== Content ends here =============================================== -->
-		</div>	
-<?php require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_footer.php');?>
