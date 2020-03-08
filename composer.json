@@ -4,7 +4,6 @@
     "require": {
         "php": "^7.2",
         "php-di/php-di": "^6.0",
-        "selective/config": "^0.1.1",
         "slim/http": "^1.0",
         "slim/php-view": "^2.2",
         "slim/psr7": "^1.0",

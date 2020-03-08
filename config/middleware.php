@@ -1,6 +1,6 @@
 <?php
 
-use Selective\Config\Configuration;
+use App\Configuration;
 use Slim\App;
 
 return function (App $app) {
@@ -10,13 +10,11 @@ return function (App $app) {
     // Add routing middleware
     $app->addRoutingMiddleware();
 
-    $container = $app->getContainer();
-
     // Add error handler middleware
-    $settings = $container->get(Configuration::class)->getArray('error_handler_middleware');
-    $displayErrorDetails = (bool)$settings['display_error_details'];
-    $logErrors = (bool)$settings['log_errors'];
-    $logErrorDetails = (bool)$settings['log_error_details'];
+    $settings = $app->getContainer()->get(Configuration::class)->error_handler_middleware;
+    $displayErrorDetails = (bool)$settings->display_error_details;
+    $logErrors = (bool)$settings->log_errors;
+    $logErrorDetails = (bool)$settings->log_error_details;
 
     $app->addErrorMiddleware($displayErrorDetails, $logErrors, $logErrorDetails);
 };

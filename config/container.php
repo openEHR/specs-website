@@ -1,7 +1,7 @@
 <?php
 
 use Psr\Container\ContainerInterface;
-use Selective\Config\Configuration;
+use App\Configuration;
 use Slim\App;
 use Slim\Factory\AppFactory;
 use Slim\Views\PhpRenderer;
@@ -22,7 +22,7 @@ return [
         return $app;
     },
 
-    'view' => function () {
+    PhpRenderer::class => function () {
         $attributes = [
             'title' => '',
             'page' => '',

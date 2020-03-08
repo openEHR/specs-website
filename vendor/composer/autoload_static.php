@@ -10,7 +10,6 @@ class ComposerStaticInita1f6c0506eba66933ac1277253470953
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
-        '34122c0574b76bf21c9a8db62b5b9cf3' => __DIR__ . '/..' . '/cakephp/chronos/src/carbon_compat.php',
         'b33e3d135e5d9e47d845c576147bda89' => __DIR__ . '/..' . '/php-di/php-di/src/functions.php',
     );
 
@@ -24,7 +23,6 @@ class ComposerStaticInita1f6c0506eba66933ac1277253470953
             'Slim\\Psr7\\' => 10,
             'Slim\\Http\\' => 10,
             'Slim\\' => 5,
-            'Selective\\Config\\' => 17,
         ),
         'P' => 
         array (
@@ -46,10 +44,6 @@ class ComposerStaticInita1f6c0506eba66933ac1277253470953
         'D' => 
         array (
             'DI\\' => 3,
-        ),
-        'C' => 
-        array (
-            'Cake\\Chronos\\' => 13,
         ),
         'A' => 
         array (
@@ -85,10 +79,6 @@ class ComposerStaticInita1f6c0506eba66933ac1277253470953
         'Slim\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/slim/Slim',
-        ),
-        'Selective\\Config\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/selective/config/src',
         ),
         'Psr\\Http\\Server\\' => 
         array (
@@ -127,10 +117,6 @@ class ComposerStaticInita1f6c0506eba66933ac1277253470953
         'DI\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-di/php-di/src',
-        ),
-        'Cake\\Chronos\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/cakephp/chronos/src',
         ),
         'App\\' => 
         array (

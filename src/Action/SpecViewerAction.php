@@ -2,25 +2,23 @@
 
 namespace App\Action;
 
-use Psr\Container\ContainerInterface;
-use Selective\Config\Configuration;
+use App\Configuration;
 use Slim\Exception\HttpNotFoundException;
 use Slim\Http\Response;
 use Slim\Http\ServerRequest;
 
 final class SpecViewerAction
 {
-    protected $container;
+    protected $settings;
 
-    public function __construct(ContainerInterface $container)
+    public function __construct(Configuration $settings)
     {
-        $this->container = $container;
+        $this->settings = $settings;
     }
 
     public function pages(ServerRequest $request, Response $response, array $args): Response
     {
-        $settings = $this->container->get(Configuration::class);
-        $sites_root = $settings->getString('sites_root');
+        $sites_root = $this->settings->sites_root;
         $specs_root = "{$sites_root}/releases";
         $component = $args['component'];
         $release = $args['release'];
@@ -35,8 +33,7 @@ final class SpecViewerAction
 
     public function diagrams(ServerRequest $request, Response $response, array $args): Response
     {
-        $settings = $this->container->get(Configuration::class);
-        $sites_root = $settings->getString('sites_root');
+        $sites_root = $this->settings->sites_root;
         $specs_root = "{$sites_root}/releases";
         $component = $args['component'];
         $release = $args['release'];
@@ -50,7 +47,7 @@ final class SpecViewerAction
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
         $contentType = finfo_file($finfo, $diagram_file);
         $time = filemtime($diagram_file);
-        return $response->withHeader('Cache-Control', 'public, max-age=' . $settings->getInt('cache_max-age'))
+        return $response->withHeader('Cache-Control', 'public, max-age=' . (int)$this->settings->cache_max_age)
             ->withHeader('Last-Modified', gmdate('D, d M Y H:i:s T', $time))
             ->withHeader('Content-Type', $contentType)
             ->withHeader('Content-Length', mb_strlen($content));

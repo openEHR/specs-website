@@ -5,7 +5,7 @@ error_reporting(0);
 ini_set('display_errors', '0');
 
 // Timezone
-date_default_timezone_set('Europe/Berlin');
+date_default_timezone_set('UTC');
 
 // Settings
 $settings = [];
@@ -16,7 +16,7 @@ $settings['temp'] = $settings['root'] . '/tmp';
 $settings['public'] = $settings['root'] . '/public';
 $settings['git_root'] = '/var/www/git';
 $settings['sites_root'] = '/var/www/vhosts/openehr.org';
-$settings['cache_max-age'] = 3600;
+$settings['cache_max_age'] = 3600;
 
 // Error Handling Middleware settings
 $settings['error_handler_middleware'] = [
