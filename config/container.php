@@ -4,7 +4,7 @@ use Psr\Container\ContainerInterface;
 use App\Configuration;
 use Slim\App;
 use Slim\Factory\AppFactory;
-use Slim\Views\PhpRenderer;
+use App\View;
 
 return [
     Configuration::class => function () {
@@ -22,12 +22,12 @@ return [
         return $app;
     },
 
-    PhpRenderer::class => function () {
+    View::class => function () {
         $attributes = [
             'title' => '',
             'page' => '',
         ];
-        return new PhpRenderer(__DIR__ . '/../templates/', $attributes, 'layout.phtml');
+        return new View(__DIR__ . '/../templates/', $attributes, 'layout.phtml');
     },
 
 ];
