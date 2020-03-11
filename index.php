@@ -371,7 +371,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                             </p>
                         </div>
 
-                        <div class="specs_cell" style="background-color:#D9D9D9;">                                                
+                        <div class="specs_cell" style="background-color:#D9D9D9;">
+                            <p class="specs_item">
+                                <a href="/releases/AM/latest/Overview.html" target="_blank">Archetype Technology</a><br>Business case for archetyping; overview of archetype specifications
+                            </p>
                             <p class="specs_item_narrow">
                                 <a href="/releases/AM/latest/ADL2.html" target="_blank">ADL 2</a><br>Archetype Definition Language 2
                             </p>
