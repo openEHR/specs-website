@@ -1,0 +1,42 @@
+<div id="<?= $id ?>" class="component_row">
+    <div class="component_cell">
+        <p class="component_name">
+            <a href="/releases/<?= $id ?>/latest/index" target="_blank"><?= $id ?></a>
+        </p>
+        <p>(<?= $title ?>)</p>
+        <p>
+            <a href="/components/<?= $id ?>/open_issues" target="_blank">PRs</a> |
+            <a href="https://openehr.atlassian.net/projects/SPEC<?= $id ?>?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+        </p>
+        <p>
+        <?php foreach ($expressions as $expr) {
+            if ($expr['type'] === 'uml') {
+                $expr['link'] = $expr['link'] ?? "/releases/{$id}/latest/UML/{$expr['link']}";
+            ?>
+            <a href="<?= $expr['link'] ?>" target="_blank" title="<?= $expr['description'] ?>"><?= $expr['title'] ?></a><br/>
+            <?php }
+        } ?>
+        </p>
+    </div>
+    <div class="specs_cell">
+        <?php foreach ($specifications as $spec) {
+            $spec['link'] = $spec['link'] ?? "/releases/{$id}/latest/{$spec['id']}.html";
+            $spec['tooltip'] = "{$spec['title']} - {$spec['description']}";
+            ?>
+            <p class="specs_item" alt="<?= $spec['tooltip'] ?>">
+                <a href="<?= $spec['link'] ?>" target="_blank"><?= $spec['title_short'] ?></a><br/>
+                <?= $spec['keywords'] ?>
+            </p>
+        <?php } ?>
+    </div>
+    <p class="releases">
+        <?php foreach ($releases as $release) {
+        $release['link'] = $release['link'] ?? "/releases/{$id}/Release-{$release['id']}";
+        $release['title'] = $release['title'] ?? $release['id'];
+        $release['date'] = !empty($release['date']) ? (new \DateTime($release['date']))->format('d-M-Y') : 'cooking';
+        ?>
+            <a href="<?= $release['link'] ?>" target="_blank"><?= $release['title'] ?></a>
+            (<?= $release['date'] ?>)<br/>
+        <?php } ?>
+    </p>
+</div>

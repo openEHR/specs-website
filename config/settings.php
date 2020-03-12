@@ -12,7 +12,7 @@ $settings = [];
 
 // Path settings
 $settings['root'] = dirname(__DIR__);
-$settings['temp'] = $settings['root'] . '/tmp';
+$settings['temp'] = '/tmp';
 $settings['public'] = $settings['root'] . '/public';
 $settings['git_root'] = '/var/www/git';
 $settings['sites_root'] = '/var/www/vhosts/openehr.org';

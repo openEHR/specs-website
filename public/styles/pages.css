@@ -244,6 +244,31 @@ img {margin: 10px 0 10px 0;}
     flex-grow: 3;
 }
 
+#global_group .specs_cell {
+	background-color: #ffeecc;
+}
+#cnf_group .specs_cell {
+	background-color: white;
+}
+#its_group .specs_cell {
+	background-color: #cda2be;
+}
+#services_group .specs_cell {
+	background-color: #ffd966;
+}
+#analytics_group .specs_cell {
+	background-color: #b9e0a5;
+}
+#content_group .specs_cell {
+	background-color: #a9c4eb;
+}
+#formalisms_group .specs_cell {
+	background-color: #d9d9d9;
+}
+#foundations_group .specs_cell {
+	background-color: #f3f4f5;
+}
+
 .specs_cell .specs_item { 
     margin: 0.25em 0.25em; 
     max-width: 125px;

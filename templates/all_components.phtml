@@ -1,14 +1,3 @@
-﻿<?php
-require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_functions.php');
-
-//Change page name here:
-$PageName = 'Working Baseline';
-
-require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
-?>
-
-    <div id="Content">
-<!-- ----------------------------------------- Content starts here ------------------------------------------------ -->
 
 
 		<!-- =============== Diagram =============== -->
@@ -128,7 +117,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 
 		<div class="specs_category_box">
 			<!-- =============== Formal Specs: Service Models =============== -->
-			<div id="services">
+			<div id="services_group">
                 <p class="category_title">Abstract Specifications</p>
                 <p class="category_sub_title">Technology-independent primary specifications for the openEHR health computing platform</p>
                 <p class="group_title">Platform Service Interface</p>
@@ -162,7 +151,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			</div>
 			
 			<!-- =============== Formal Specs: Process & CDS =============== -->
-			<div id="analytics">
+			<div id="analytics_group">
                 <p class="group_title">Process and CDS</p>
 				<div class="group_box">
 					<!-------------- CDS --------------->
@@ -227,10 +216,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			</div>
 
 			<!-- =============== Formal Specs: Content =============== -->
-			<div id="content">
+			<div id="content_group">
                 <p class="group_title">Content</p>
-				<div class="group_box">
-
+				<div class="group_box"><?= $this->fetch('component_row.phtml', $RM) ?>
 					<!-------------- RM --------------->
 					<div id="rm_row" class="component_row">
                         <div class="component_cell">
@@ -331,6 +319,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			<div id="formalisms_group">
                 <p class="group_title">Formalisms</p>
 				<div class="group_box">
+                    <?=$this->fetch('component_row.phtml', $QUERY); ?>
 					<!-------------- QUERY --------------->
 					<div id="query" class="component_row">
                         <div class="component_cell">
@@ -354,7 +343,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 						</p>
 					</div>
 
-					<!-------------- AM --------------->
+
+                    <?=$this->fetch('component_row.phtml', $AM); ?>
+                    <!-------------- AM --------------->
 					<div id="am" class="component_row">
                         <div class="component_cell">
                             <p id="AM" class="component_name">
@@ -474,7 +465,3 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 			</div>
 		</div>
 
-
-<!-- ------------------------------------------- Content ends here ------------------------------------------------- -->
-		</div>	
-<?php require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_footer.php');?>

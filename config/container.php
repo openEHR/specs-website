@@ -2,6 +2,7 @@
 
 use Psr\Container\ContainerInterface;
 use App\Configuration;
+use App\Domain\ComponentService;
 use Slim\App;
 use Slim\Factory\AppFactory;
 use App\View;
@@ -29,5 +30,9 @@ return [
         ];
         return new View(__DIR__ . '/../templates/', $attributes, 'layout.phtml');
     },
+
+    ComponentService::class => function (ContainerInterface $container) {
+        return new ComponentService($container->get(Configuration::class));
+    }
 
 ];
