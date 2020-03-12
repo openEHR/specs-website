@@ -166,10 +166,18 @@ class View
      */
     public function fetch($template, $data = [])
     {
+        if (!$template) {
+            throw new \RuntimeException("View cannot render unspecified template `$template`.");
+        }
+        $template = $this->templatePath . $template;
+        if (!is_file($template) || !is_readable($template)) {
+            throw new \RuntimeException("Cannot render `$template`, the template does not exist or is not readable.");
+        }
         $data = array_merge($this->attributes, (array)$data);
         try {
+            extract($data, EXTR_SKIP & EXTR_PREFIX_INVALID, 'var');
             ob_start();
-            $this->protectedIncludeScope($template, $data);
+            include $template;
             $output = ob_get_clean();
         } catch (\Throwable $e) {
             ob_end_clean();
@@ -178,21 +186,4 @@ class View
         return (string)$output;
     }
 
-    /**
-     * @param string $template
-     * @param array $data
-     * @throws \RuntimeException if $templatePath . $template does not exist or is not readable
-     */
-    protected function protectedIncludeScope($template = '', array $data = [])
-    {
-        if (!$template) {
-            throw new \RuntimeException("View cannot render unspecified template `$template`.");
-        }
-        $template = $this->templatePath . $template;
-        if (!is_file($template) || !is_readable($template)) {
-            throw new \RuntimeException("Cannot render `$template`, the template does not exist or is not readable.");
-        }
-        extract($data, EXTR_SKIP & EXTR_PREFIX_INVALID, 'var');
-        include $template;
-    }
 }
