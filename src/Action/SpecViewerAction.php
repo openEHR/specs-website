@@ -16,14 +16,14 @@ final class SpecViewerAction
         $this->settings = $settings;
     }
 
-    public function pages(ServerRequest $request, Response $response, array $args): Response
+    public function specs(ServerRequest $request, Response $response, array $args): Response
     {
         $sites_root = $this->settings->sites_root;
         $specs_root = "{$sites_root}/releases";
         $component = $args['component'];
         $release = $args['release'];
-        $page = $args['page'] ?: 'index.html';
-        $spec_file = "{$specs_root}/{$component}/{$release}/docs/{$page}";
+        $spec = $args['spec'] ?: 'index.html';
+        $spec_file = "{$specs_root}/{$component}/{$release}/docs/{$spec}";
         if (!is_readable($spec_file) || !($content = file_get_contents($spec_file))) {
             throw new HttpNotFoundException($request, 'Invalid specification URL: ' . $spec_file);
         }
@@ -37,9 +37,9 @@ final class SpecViewerAction
         $specs_root = "{$sites_root}/releases";
         $component = $args['component'];
         $release = $args['release'];
-        $im = $args['im'];
+        $spec = $args['spec'];
         $diagram = $args['diagram'];
-        $diagram_file = "{$specs_root}/{$component}/{$release}/docs/{$im}/diagrams/{$diagram}";
+        $diagram_file = "{$specs_root}/{$component}/{$release}/docs/{$spec}/diagrams/{$diagram}";
         if (!is_readable($diagram_file) || !($content = file_get_contents($diagram_file))) {
             throw new HttpNotFoundException($request);
         }
