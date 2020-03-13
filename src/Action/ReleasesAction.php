@@ -20,12 +20,11 @@ final class ReleasesAction
 
     public function __invoke(ServerRequest $request, Response $response): Response
     {
-        $response->getBody()->write('releases');
-
         $data = [
-                'title' => 'Latest Releases',
-                'page' => 'latest_releases',
-            ] + $this->componentService->getComponents();
+            'title' => 'Latest Releases',
+            'page' => 'latest_releases',
+            'releases' => $this->componentService->getReleases(),
+        ];
         return $this->view->render($response, 'latest_releases.phtml', $data);
     }
 

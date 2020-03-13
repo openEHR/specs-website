@@ -29,7 +29,7 @@ final class WorkingBaselineAction
 
     public function manifest(ServerRequest $request, Response $response): Response
     {
-        $data = $this->componentService->buildComponents()->getComponents();
+        $data = $this->componentService->build()->getData();
         return $response->withJson($data);
     }
 }

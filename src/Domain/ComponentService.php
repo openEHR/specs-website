@@ -18,16 +18,18 @@ class ComponentService
         $this->settings = $settings;
         $file = $this->getCacheFile();
         if (!is_readable($file) || !($data = file_get_contents($file)) || !($this->data = unserialize($data))) {
-            $this->buildComponents();
+            $this->build();
         }
     }
 
-    private function getCacheFile() {
+    private function getCacheFile()
+    {
         $file = "{$this->settings->temp}/ComponentService.sdata";
         return $file;
     }
 
-    public function buildComponents() {
+    public function build()
+    {
         $this->data = [];
         $releasesRoot = "{$this->settings->sites_root}/releases";
         if (!is_readable($releasesRoot) || !is_dir($releasesRoot)) {
@@ -36,10 +38,27 @@ class ComponentService
         foreach (glob("{$releasesRoot}/*/*/manifest.json") as $file) {
             if (is_readable($file) && ($content = file_get_contents($file)) && ($data = json_decode($content, true))) {
                 if (($key = $data['id'])) {
-                    $this->data[$key] = $data;
+                    foreach ($data['releases'] as $i => $releaseData) {
+                        $release = (new Release($this->settings))($releaseData);
+                        $release->setComponent($key);
+                        $data['releases'][$i] = $release;
+                        if ($release->isReleased()) {
+                            $this->data['releases'][] = $release;
+                        }
+                    }
+                    $this->data['components'][$key] = $data;
                 }
             }
         }
+        usort(
+            $this->data['releases'],
+            function ($r1, $r2) {
+                if ($r1->date === $r2->date) {
+                    return 0;
+                }
+                return ($r1->date > $r2->date) ? -1 : 1;
+            }
+        );
         $file = $this->getCacheFile();
         if ((file_exists($file) && !is_writable($file)) || !is_writable(dirname($file))) {
             throw new \DomainException("Bad configuration for cache file [{$file}].");
@@ -50,8 +69,19 @@ class ComponentService
         return $this;
     }
 
-    public function getComponents() {
+    public function getData()
+    {
         return $this->data;
+    }
+
+    public function getComponents()
+    {
+        return $this->data['components'];
+    }
+
+    public function getReleases()
+    {
+        return $this->data['releases'];
     }
 
 }

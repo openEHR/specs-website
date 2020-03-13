@@ -4,6 +4,7 @@
     "require": {
         "php": "^7.2",
         "ext-json": "^1.7",
+        "ext-fileinfo": "^7.3",
         "php-di/php-di": "^6.0",
         "slim/http": "^1.0",
         "slim/psr7": "^1.0",

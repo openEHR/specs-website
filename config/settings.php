@@ -30,4 +30,7 @@ $settings['error_handler_middleware'] = [
     'log_error_details' => true,
 ];
 
+$settings['jira_home'] = 'https://openehr.atlassian.net';
+$settings['jira_projects'] = $settings['jira_home'] . '/projects';
+
 return $settings;

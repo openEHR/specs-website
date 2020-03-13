@@ -31,12 +31,9 @@
     </div>
     <p class="releases">
         <?php foreach ($releases as $release) {
-        $release['link'] = $release['link'] ?? "/releases/{$id}/Release-{$release['id']}";
-        $release['title'] = $release['title'] ?? $release['id'];
-        $release['date'] = !empty($release['date']) ? (new \DateTime($release['date']))->format('d-M-Y') : 'cooking';
         ?>
-            <a href="<?= $release['link'] ?>" target="_blank"><?= $release['title'] ?></a>
-            (<?= $release['date'] ?>)<br/>
+            <a href="<?= $release->getLink() ?>" target="_blank"><?= $release->id ?></a>
+            (<?= $release->date instanceof \DateTime ? $release->date->format('d-M-Y') : 'cooking' ?>)<br/>
         <?php } ?>
     </p>
 </div>
