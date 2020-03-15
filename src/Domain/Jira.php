@@ -19,22 +19,42 @@ class Jira
         $this->settings = $settings;
     }
 
-    public function __invoke(array $args = [])
+    public function __invoke(array $args = []): Jira
     {
-        $this->setCrs($args['crs'] ?? null);
-        $this->setPrs($args['prs'] ?? null);
+        if (!empty($args['crs'])) {
+            $this->setCrs($args['crs']);
+        } elseif (!empty($args['open_issues'])) {
+            $this->setOpenIssues($args['open_issues']);
+        }
+        if (!empty($args['prs'])) {
+            $this->setPrs($args['prs']);
+        } elseif (!empty($args['roadmap'])) {
+            $this->setRoadmap($args['roadmap']);
+        }
         return $this;
     }
 
-    public function setCrs($value = null)
+    public function setCrs(string $value): Jira
     {
-        $this->crs = "{$this->settings->jira_projects}/{$value}";
+        $this->crs = sprintf($this->settings->jira_projects, $value);
         return $this;
     }
 
-    public function setPrs($value = null)
+    public function setOpenIssues(string $value): Jira
     {
-        $this->prs = "{$this->settings->jira_projects}/{$value}";
+        $this->crs = sprintf($this->settings->jira_filter, $value);
+        return $this;
+    }
+
+    public function setPrs(string $value): Jira
+    {
+        $this->prs = sprintf($this->settings->jira_projects, $value);
+        return $this;
+    }
+
+    public function setRoadmap(string $value): Jira
+    {
+        $this->prs = sprintf($this->settings->jira_roadmap, $value);
         return $this;
     }
 }

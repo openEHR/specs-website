@@ -5,12 +5,13 @@ namespace App\Domain;
 
 
 use App\Configuration;
+use App\File;
 
 class ComponentService
 {
-
+    /** @var Configuration */
     protected $settings;
-
+    /** @var array */
     protected $data;
 
     public function __construct(Configuration $settings)
@@ -22,31 +23,29 @@ class ComponentService
         }
     }
 
-    private function getCacheFile()
+    private function getCacheFile(): ComponentService
     {
         $file = "{$this->settings->temp}/ComponentService.sdata";
         return $file;
     }
 
-    public function build()
+    public function build(): ComponentService
     {
         $this->data = [];
         $releasesRoot = "{$this->settings->sites_root}/releases";
         if (!is_readable($releasesRoot) || !is_dir($releasesRoot)) {
             throw new \DomainException("Bad configuration for [sites_root={$this->settings->sites_root}].");
         }
-        foreach (glob("{$releasesRoot}/*/*/manifest.json") as $file) {
+        foreach (glob("{$releasesRoot}/*/latest/manifest.json") as $file) {
             if (is_readable($file) && ($content = file_get_contents($file)) && ($data = json_decode($content, true))) {
                 if (($key = $data['id'])) {
-                    foreach ($data['releases'] as $i => $releaseData) {
-                        $release = (new Release($this->settings))($releaseData);
-                        $release->setComponent($key);
-                        $data['releases'][$i] = $release;
+                    $component = (new Component($this->settings))($data);
+                    $this->data['components'][$key] = $component;
+                    foreach ($component->releases as $i => $release) {
                         if ($release->isReleased()) {
                             $this->data['releases'][] = $release;
                         }
                     }
-                    $this->data['components'][$key] = $data;
                 }
             }
         }
@@ -69,19 +68,31 @@ class ComponentService
         return $this;
     }
 
-    public function getData()
+    public function getData(): array
     {
         return $this->data;
     }
 
-    public function getComponents()
+    public function getComponents(): array
     {
         return $this->data['components'];
     }
 
-    public function getReleases()
+    public function getReleases(): array
     {
         return $this->data['releases'];
+    }
+
+    public function getSpecFile(string $component, string $release, string $spec): File
+    {
+        $filename = "{$this->settings->sites_root}/releases/{$component}/{$release}/docs/{$spec}";
+        return new File($filename);
+    }
+
+    public function getDiagramFile(string $component, string $release, string $spec, string $diagram): File
+    {
+        $filename = "{$this->settings->sites_root}/releases/{$component}/{$release}/docs/{$spec}/diagrams/{$diagram}";
+        return new File($filename);
     }
 
 }

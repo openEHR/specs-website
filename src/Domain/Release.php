@@ -4,12 +4,17 @@
 namespace App\Domain;
 
 use App\Configuration;
+use DateTime;
 
 class Release
 {
+    /** @var string */
     public $id;
+    /** @var DateTime */
     public $date;
+    /** @var Jira */
     public $jira;
+
     public $component;
 
     protected $settings;
@@ -30,40 +35,45 @@ class Release
         return $this;
     }
 
-    public function setId($value = null)
+    public function setId($value): Release
     {
         $this->id = $value;
         return $this;
     }
 
-    public function setComponent($value = null)
+    public function setComponent($value = null): Release
     {
         $this->component = $value;
         return $this;
     }
 
-    public function setDate($value = null)
+    public function setDate($value = null): Release
     {
         try {
-            $this->date = $value ? new \DateTime($value) : null;
+            $this->date = $value ? new DateTime($value) : null;
         } catch (\Exception $e) {
         }
         return $this;
     }
 
-    public function setJira(array $args = [])
+    public function setJira(array $value = []): Release
     {
         $jira = new Jira($this->settings);
-        $this->jira = $jira($args);
+        $this->jira = $jira($value);
         return $this;
     }
 
-    public function isReleased()
+    public function isReleased(): bool
     {
-        return $this->id && ($this->date instanceof \DateTime);
+        return $this->id && ($this->date instanceof DateTime);
     }
 
-    public function getLink()
+    public function isLatest(): bool
+    {
+        return $this->id === 'latest';
+    }
+
+    public function getLink(): string
     {
         if ($this->isReleased()) {
             return "/releases/{$this->component}/Release-{$this->id}";

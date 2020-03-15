@@ -1,12 +1,12 @@
 <div id="<?= $id ?>" class="component_row">
     <div class="component_cell">
         <p class="component_name">
-            <a href="/releases/<?= $id ?>/latest/index" target="_blank"><?= $id ?></a>
+            <a href="/releases/<?= $id ?>/latest" target="_blank"><?= $id ?></a>
         </p>
         <p>(<?= $title ?>)</p>
         <p>
-            <a href="/components/<?= $id ?>/open_issues" target="_blank">PRs</a> |
-            <a href="https://openehr.atlassian.net/projects/SPEC<?= $id ?>?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
+            <a href="<?= $jira->prs ?>" target="_blank">PRs</a> |
+            <a href="<?= $jira->crs ?>" target="_blank">CRs</a>
         </p>
         <p>
         <?php foreach ($expressions as $expr) {
