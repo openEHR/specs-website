@@ -18,6 +18,8 @@ class Component
     public $expressions;
     /** @var Release[] */
     public $releases;
+    /** @var Release */
+    public $release;
 
     protected $settings;
 
@@ -91,6 +93,24 @@ class Component
             $release->setComponent($this->id);
             $this->releases[$i] = $release;
         }
+        return $this;
+    }
+
+    public function setRelease($releaseId = 'latest'): Component
+    {
+        foreach ($this->releases as $release) {
+            if ($release->id === $releaseId) {
+                $this->release = $release;
+                return $this;
+            }
+        }
+        $this->release = (new Release($this->settings))(
+            [
+                'id' => $releaseId,
+                'component' => $this->id
+            ]
+        );
+        $this->release->jira = $this->jira;
         return $this;
     }
 }

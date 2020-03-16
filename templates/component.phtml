@@ -4,11 +4,8 @@
     <?= $title ?> (<?= $id ?>) Component - <?= $release->id ?>
 </h1>
 <div class="openblock partintro title-para">
-    <div class="content">
-        <a href="https://specifications.openehr.org/components/RM/open_issues" target="_blank" rel="noopener">Open Issues</a> |
-        <a href="https://specifications.openehr.org/components/RM/roadmap" target="_blank" rel="noopener">Roadmap</a> |
-        <a href="https://specifications.openehr.org/components/RM/history" target="_blank" rel="noopener">Previous Releases</a>
-    </div>
+        <a href="<?= $release->jira->prs ?>" target="_blank"><?= $release->isLatest() ? 'Open Issues' : 'Issues Fixed' ?></a> |
+        <a href="<?= $release->jira->crs ?>" target="_blank"><?= $release->isLatest() ? 'Roadmap' : 'Changes Implemented' ?></a>
 </div>
 <div class="sect1">
     <h2 id="_specifications"><a class="anchor" href="#_specifications"></a>Specifications</h2>

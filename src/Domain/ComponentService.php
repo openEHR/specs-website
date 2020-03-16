@@ -23,7 +23,7 @@ class ComponentService
         }
     }
 
-    private function getCacheFile(): ComponentService
+    private function getCacheFile(): string
     {
         $file = "{$this->settings->temp}/ComponentService.sdata";
         return $file;
@@ -73,11 +73,17 @@ class ComponentService
         return $this->data;
     }
 
+    /**
+     * @return Component[]
+     */
     public function getComponents(): array
     {
         return $this->data['components'];
     }
 
+    /**
+     * @return Release[]
+     */
     public function getReleases(): array
     {
         return $this->data['releases'];
