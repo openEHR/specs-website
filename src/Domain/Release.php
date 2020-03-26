@@ -1,12 +1,11 @@
 <?php
 
-
 namespace App\Domain;
 
 use App\Configuration;
 use DateTime;
 
-class Release
+class Release extends AbstractModel implements \JsonSerializable
 {
     /** @var string */
     public $id;
@@ -14,26 +13,8 @@ class Release
     public $date;
     /** @var Jira */
     public $jira;
-
+    /** @var Component */
     public $component;
-
-    protected $settings;
-
-    public function __construct(Configuration $settings)
-    {
-        $this->settings = $settings;
-    }
-
-    public function __invoke(array $args = [])
-    {
-        if (!empty($args['id'])) {
-            $this->setId($args['id']);
-            $this->setComponent($args['component'] ?? null);
-            $this->setDate($args['date'] ?? null);
-            $this->setJira($args['jira'] ?? []);
-        }
-        return $this;
-    }
 
     public function setId($value): Release
     {
@@ -41,9 +22,10 @@ class Release
         return $this;
     }
 
-    public function setComponent($value = null): Release
+    public function setComponent(array $value = []): Release
     {
-        $this->component = $value;
+        $component = new Component($this->settings);
+        $this->component = $component($value);
         return $this;
     }
 
@@ -73,13 +55,34 @@ class Release
         return $this->id === 'latest';
     }
 
-    public function getLink(): string
+    public function makeLatest(): Release
     {
-        if ($this->isReleased()) {
-            return "/releases/{$this->component}/Release-{$this->id}";
-        } else {
-            return $this->jira->crs;
-        }
+        $this->id = 'latest';
+        return $this;
     }
 
+    public function getLink(): string
+    {
+        if ($this->id && $this->component) {
+            if ($this->isReleased()) {
+                return "{$this->component->getLink()}/Release-{$this->id}";
+            } elseif ($this->isLatest()) {
+                return "{$this->component->getLink()}/latest";
+            }
+        }
+        return '';
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function jsonSerialize()
+    {
+        return [
+            'id' => $this->id,
+            'date' => $this->date,
+            'jira' => $this->jira,
+            'getLink()' => $this->getLink(),
+        ];
+    }
 }

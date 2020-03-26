@@ -31,20 +31,22 @@ class ComponentService
 
     public function build(): ComponentService
     {
-        $this->data = [];
+        $this->data = [
+            'components' => [],
+            'releases' => [],
+        ];
         $releasesRoot = "{$this->settings->sites_root}/releases";
         if (!is_readable($releasesRoot) || !is_dir($releasesRoot)) {
             throw new \DomainException("Bad configuration for [sites_root={$this->settings->sites_root}].");
         }
         foreach (glob("{$releasesRoot}/*/latest/manifest.json") as $file) {
             if (is_readable($file) && ($content = file_get_contents($file)) && ($data = json_decode($content, true))) {
-                if (($key = $data['id'])) {
-                    $component = (new Component($this->settings))($data);
-                    $this->data['components'][$key] = $component;
-                    foreach ($component->releases as $i => $release) {
-                        if ($release->isReleased()) {
-                            $this->data['releases'][] = $release;
-                        }
+                $component = (new Component($this->settings))($data);
+                $component->setLatestRelease();
+                $this->data['components'][$component->id] = $component;
+                foreach ($component->releases as $i => $release) {
+                    if ($release->isReleased()) {
+                        $this->data['releases'][] = $release;
                     }
                 }
             }

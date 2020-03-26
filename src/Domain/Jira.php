@@ -6,18 +6,12 @@ namespace App\Domain;
 
 use App\Configuration;
 
-class Jira
+class Jira extends AbstractModel
 {
-
+    /** @var string */
     public $crs;
+    /** @var string */
     public $prs;
-
-    protected $settings;
-
-    public function __construct(Configuration $settings)
-    {
-        $this->settings = $settings;
-    }
 
     public function __invoke(array $args = []): Jira
     {

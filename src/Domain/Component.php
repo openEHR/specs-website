@@ -1,47 +1,29 @@
 <?php
 
-
 namespace App\Domain;
-
 
 use App\Configuration;
 
-class Component
+class Component extends AbstractModel
 {
+    /** @var string */
     public $id;
+    /** @var string */
     public $title;
+    /** @var string */
     public $description;
+    /** @var string */
     public $keywords;
     /** @var Jira */
     public $jira;
+    /** @var Specification[] */
     public $specifications;
+    /** @var Expression[] */
     public $expressions;
     /** @var Release[] */
     public $releases;
     /** @var Release */
     public $release;
-
-    protected $settings;
-
-    public function __construct(Configuration $settings)
-    {
-        $this->settings = $settings;
-    }
-
-    public function __invoke(array $args = [])
-    {
-        if (!empty($args['id'])) {
-            $this->setId($args['id']);
-            $this->setTitle($args['title'] ?? null);
-            $this->setDescription($args['description'] ?? null);
-            $this->setKeywords($args['keywords'] ?? null);
-            $this->setJira($args['jira'] ?? []);
-            $this->setSpecifications($args['specifications'] ?? []);
-            $this->setExpressions($args['expressions'] ?? []);
-            $this->setReleases($args['releases'] ?? []);
-        }
-        return $this;
-    }
 
     public function setId(string $value = null): Component
     {
@@ -76,27 +58,35 @@ class Component
 
     public function setSpecifications(array $value = []): Component
     {
-        $this->specifications = $value;
+        foreach ($value as $i => $data) {
+            $specification = (new Specification($this->settings))($data);
+            $specification->component = $this;
+            $this->specifications[$i] = $specification;
+        }
         return $this;
     }
 
     public function setExpressions(array $value = []): Component
     {
-        $this->expressions = $value;
+        foreach ($value as $i => $data) {
+            $expression = (new Expression($this->settings))($data);
+            $expression->component = $this;
+            $this->expressions[$i] = $expression;
+        }
         return $this;
     }
 
     public function setReleases(array $value = []): Component
     {
-        foreach ($value as $i => $releaseData) {
-            $release = (new Release($this->settings))($releaseData);
-            $release->setComponent($this->id);
+        foreach ($value as $i => $data) {
+            $release = (new Release($this->settings))($data);
+            $release->component = $this;
             $this->releases[$i] = $release;
         }
         return $this;
     }
 
-    public function setRelease($releaseId = 'latest'): Component
+    public function setRelease(string $releaseId): Component
     {
         foreach ($this->releases as $release) {
             if ($release->id === $releaseId) {
@@ -104,13 +94,23 @@ class Component
                 return $this;
             }
         }
-        $this->release = (new Release($this->settings))(
-            [
-                'id' => $releaseId,
-                'component' => $this->id
-            ]
-        );
+        $this->setLatestRelease();
+        return $this;
+    }
+    
+    public function setLatestRelease() {
+        $this->release = new Release($this->settings);
+        $this->release->makeLatest();
+        $this->release->component = $this;
         $this->release->jira = $this->jira;
         return $this;
+    }
+
+    public function getLink(): string
+    {
+        if ($this->id) {
+            return "/releases/{$this->id}";
+        }
+        return '';
     }
 }

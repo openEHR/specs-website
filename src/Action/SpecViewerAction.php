@@ -29,7 +29,9 @@ final class SpecViewerAction
             throw new HttpNotFoundException($request, 'Invalid specification component: ' . $args['component']);
         }
         $component = $components[$args['component']];
-        $component->setRelease($args['release'] ?? 'latest');
+        if (!empty($args['release'])) {
+            $component->setRelease($args['release']);
+        }
         $data = (array)$component + [
                 'page' => "{$component->id}_component",
             ];

@@ -1,7 +1,12 @@
+<?php 
+/** @var \App\Domain\Release $release */
+/** @var \App\Domain\Jira $jira */
+/** @var \App\Domain\Specification $spec */
+?>
 <div id="<?= $id ?>" class="component_row">
     <div class="component_cell">
         <p class="component_name">
-            <a href="/releases/<?= $id ?>/latest" target="_blank"><?= $id ?></a>
+            <a href="<?= $release->getLink() ?>" target="_blank"><?= $id ?></a>
         </p>
         <p>(<?= $title ?>)</p>
         <p>
@@ -11,7 +16,7 @@
         <p>
         <?php foreach ($expressions as $expr) {
             if ($expr['type'] === 'uml') {
-                $expr['link'] = $expr['link'] ?? "/releases/{$id}/latest/UML/{$expr['link']}";
+                $expr['link'] = $expr['link'] ?? "/releases/{$id}/latest/UML/{$expr['id']}";
             ?>
             <a href="<?= $expr['link'] ?>" target="_blank" title="<?= $expr['description'] ?>"><?= $expr['title'] ?></a><br/>
             <?php }
@@ -20,20 +25,18 @@
     </div>
     <div class="specs_cell">
         <?php foreach ($specifications as $spec) {
-            $spec['link'] = $spec['link'] ?? "/releases/{$id}/latest/{$spec['id']}.html";
-            $spec['tooltip'] = "{$spec['title']} - {$spec['description']}";
             ?>
-            <p class="specs_item" alt="<?= $spec['tooltip'] ?>">
-                <a href="<?= $spec['link'] ?>" target="_blank"><?= $spec['title_short'] ?></a><br/>
-                <?= $spec['keywords'] ?>
+            <p class="specs_item" title="<?= $spec->title ?> - <?= $spec->description ?>">
+                <a href="<?= $spec->getLink() ?>" target="_blank"><?= $spec->title_short ?></a><br/>
+                <?= $spec->keywords ?>
             </p>
         <?php } ?>
     </div>
     <p class="releases">
         <?php foreach ($releases as $release) {
         ?>
-            <a href="<?= $release->getLink() ?>" target="_blank"><?= $release->id ?></a>
-            (<?= $release->date instanceof \DateTime ? $release->date->format('d-M-Y') : 'cooking' ?>)<br/>
+            <a href="<?= $release->isReleased() ? $release->getLink() : $release->jira->crs ?>" target="_blank"><?= $release->id ?></a>
+            (<?= $release->isReleased() ? $release->date->format('d-M-Y') : 'cooking' ?>)<br/>
         <?php } ?>
     </p>
 </div>
