@@ -1,11 +1,12 @@
 <?php
 
 
-namespace App\Domain;
+namespace App\Domain\Service;
 
 
 use App\Configuration;
 use App\File;
+use App\Domain\Data\Component;
 
 class ComponentService
 {

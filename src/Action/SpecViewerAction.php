@@ -3,7 +3,7 @@
 namespace App\Action;
 
 use App\Configuration;
-use App\Domain\ComponentService;
+use App\Domain\Service\ComponentService;
 use App\View;
 use Slim\Exception\HttpNotFoundException;
 use Slim\Http\Response;

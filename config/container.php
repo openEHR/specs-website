@@ -2,7 +2,7 @@
 
 use Psr\Container\ContainerInterface;
 use App\Configuration;
-use App\Domain\ComponentService;
+use App\Domain\Service\ComponentService;
 use Slim\App;
 use Slim\Factory\AppFactory;
 use App\View;

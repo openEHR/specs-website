@@ -2,7 +2,7 @@
 
 namespace App\Action;
 
-use App\Domain\ComponentService;
+use App\Domain\Service\ComponentService;
 use App\View;
 use Slim\Http\Response;
 use Slim\Http\ServerRequest;
