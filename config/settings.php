@@ -35,4 +35,13 @@ $settings['jira_projects'] = $settings['jira_home'] . '/projects/%s';
 $settings['jira_filter'] = $settings['jira_home'] . '/issues/?filter=%s';
 $settings['jira_roadmap'] = $settings['jira_home'] . '/projects/%s?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&status=released-unreleased';
 
+$settings['view'] = [
+    'templates' => $settings['root'] . '/templates',
+    'layout' => 'layout.phtml',
+    'attributes' => [
+        'title' => '',
+        'page' => '',
+    ],
+];
+
 return $settings;

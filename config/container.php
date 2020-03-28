@@ -23,12 +23,9 @@ return [
         return $app;
     },
 
-    View::class => function () {
-        $attributes = [
-            'title' => '',
-            'page' => '',
-        ];
-        return new View(__DIR__ . '/../templates/', $attributes, 'layout.phtml');
+    View::class => function (ContainerInterface $container) {
+        $settings = $container->get(Configuration::class);
+        return new View($settings->templates, $settings->attributes, $settings->layout);
     },
 
     ComponentService::class => function (ContainerInterface $container) {
