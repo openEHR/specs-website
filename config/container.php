@@ -24,8 +24,8 @@ return [
     },
 
     View::class => function (ContainerInterface $container) {
-        $settings = $container->get(Configuration::class);
-        return new View($settings->templates, $settings->attributes, $settings->layout);
+        $settings = $container->get(Configuration::class)->view;
+        return new View($settings->templates, (array)$settings->attributes, $settings->layout);
     },
 
     ComponentService::class => function (ContainerInterface $container) {
