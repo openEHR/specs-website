@@ -28,7 +28,7 @@ class View
      * @param array $attributes
      * @param string $layout
      */
-    public function __construct($templatePath = '', array $attributes = [], $layout = '')
+    public function __construct(string $templatePath = '', array $attributes = [], string $layout = '')
     {
         $this->setTemplatePath($templatePath);
         $this->setAttributes($attributes);
@@ -50,7 +50,7 @@ class View
      * @throws \RuntimeException if $templatePath . $template does not exist
      * @throws \Throwable
      */
-    public function render(ResponseInterface $response, $template, $data = []): ResponseInterface
+    public function render(ResponseInterface $response, string $template, $data = []): ResponseInterface
     {
         $output = $this->fetch($template, $data);
         if ($this->layout) {
@@ -67,7 +67,7 @@ class View
      *
      * @return string
      */
-    public function getLayout()
+    public function getLayout(): string
     {
         return $this->layout;
     }
@@ -89,7 +89,7 @@ class View
      *
      * @return array
      */
-    public function getAttributes()
+    public function getAttributes(): array
     {
         return $this->attributes;
     }
@@ -109,11 +109,11 @@ class View
     /**
      * Add an attribute
      *
-     * @param $key
-     * @param $value
+     * @param string $key
+     * @param mixed $value
      * @return View
      */
-    public function addAttribute($key, $value): View
+    public function addAttribute(string $key, $value): View
     {
         $this->attributes[$key] = $value;
         return $this;
@@ -122,10 +122,10 @@ class View
     /**
      * Retrieve an attribute
      *
-     * @param $key
+     * @param string $key
      * @return mixed
      */
-    public function getAttribute($key)
+    public function getAttribute(string $key)
     {
         return $this->attributes[$key] ?? null;
     }
@@ -135,7 +135,7 @@ class View
      *
      * @return string
      */
-    public function getTemplatePath()
+    public function getTemplatePath(): string
     {
         return $this->templatePath;
     }
@@ -146,7 +146,7 @@ class View
      * @param string $templatePath
      * @return View
      */
-    public function setTemplatePath($templatePath = ''): View
+    public function setTemplatePath(string $templatePath = ''): View
     {
         $this->templatePath = rtrim((string)$templatePath, '/\\') . '/';
         return $this;
@@ -164,7 +164,7 @@ class View
      *
      * @throws \Throwable
      */
-    public function fetch($template, $data = [])
+    public function fetch(string $template, $data = []): string
     {
         if (!$template) {
             throw new \RuntimeException("View cannot render unspecified template `$template`.");
