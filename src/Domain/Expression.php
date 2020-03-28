@@ -14,6 +14,8 @@ class Expression extends AbstractModel implements \JsonSerializable
     public $description;
     /** @var string */
     public $link;
+    /** @var array */
+    public $dependency;
     /** @var Component */
     public $component;
 
@@ -47,12 +49,23 @@ class Expression extends AbstractModel implements \JsonSerializable
         return $this;
     }
 
+    public function setDependency(array $value = []): Expression
+    {
+        $this->dependency = $value;
+        return $this;
+    }
+
+    public function isOwned(): bool
+    {
+        return empty($this->dependency);
+    }
+
     public function getLink(): string
     {
         if ($this->link) {
             return $this->link;
         } elseif ($this->id && $this->component && $this->component->release) {
-            return "{$this->component->release->getLink()}/{$this->id}";
+            return "{$this->component->release->getLink()}/UML/{$this->id}";
         }
         return '';
     }
@@ -67,6 +80,7 @@ class Expression extends AbstractModel implements \JsonSerializable
             'title' => $this->title,
             'type' => $this->type,
             'description' => $this->description,
+            'dependency' => $this->dependency,
             'getLink()' => $this->getLink(),
         ];
     }

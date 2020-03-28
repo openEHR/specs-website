@@ -2,6 +2,7 @@
 /** @var \App\Domain\Release $release */
 /** @var \App\Domain\Jira $jira */
 /** @var \App\Domain\Specification $spec */
+/** @var \App\Domain\Expression $expr */
 ?>
 <div id="<?= $id ?>" class="component_row">
     <div class="component_cell">
@@ -15,10 +16,9 @@
         </p>
         <p>
         <?php foreach ($expressions as $expr) {
-            if ($expr['type'] === 'uml') {
-                $expr['link'] = $expr['link'] ?? "/releases/{$id}/latest/UML/{$expr['id']}";
+            if ($expr->isOwned()) {
             ?>
-            <a href="<?= $expr['link'] ?>" target="_blank" title="<?= $expr['description'] ?>"><?= $expr['title'] ?></a><br/>
+            <a href="<?= $expr->getLink() ?>" target="_blank" title="<?= $expr->description ?>"><?= $expr->title ?></a><br/>
             <?php }
         } ?>
         </p>

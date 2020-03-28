@@ -34,6 +34,7 @@ class ComponentService
         $this->data = [
             'components' => [],
             'releases' => [],
+            'expressions' => [],
         ];
         $releasesRoot = "{$this->settings->sites_root}/releases";
         if (!is_readable($releasesRoot) || !is_dir($releasesRoot)) {
@@ -47,6 +48,11 @@ class ComponentService
                 foreach ($component->releases as $i => $release) {
                     if ($release->isReleased()) {
                         $this->data['releases'][] = $release;
+                    }
+                }
+                foreach ($component->expressions as $i => $expression) {
+                    if ($expression->isOwned()) {
+                        $this->data['expressions'][$expression->id] = $expression;
                     }
                 }
             }
