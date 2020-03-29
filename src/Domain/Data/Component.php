@@ -25,6 +25,17 @@ class Component extends AbstractModel
     /** @var Release */
     public $release;
 
+    public function __invoke(array $args = [])
+    {
+        parent::__invoke($args);
+        if (!$this->release) {
+            $this->release = new Release($this->settings);
+            $this->release->component = $this;
+            $this->release->makeLatest();
+        }
+        return $this;
+    }
+
     public function setId(string $value = null): Component
     {
         $this->id = $value;
@@ -66,6 +77,16 @@ class Component extends AbstractModel
         return $this;
     }
 
+    public function getSpecificationById(string $id = ''): Specification
+    {
+        foreach ($this->specifications as $specification) {
+            if ($specification->is($id)) {
+                return $specification;
+            }
+        }
+        throw new \DomainException("Invalid specification: $id.");
+    }
+
     public function setExpressions(array $value = []): Component
     {
         foreach ($value as $i => $data) {
@@ -86,23 +107,22 @@ class Component extends AbstractModel
         return $this;
     }
 
-    public function setRelease(string $releaseId): Component
+    public function getReleaseById(string $id = ''): Release
     {
+        if ($this->release && $this->release->is($id)) {
+            return $this->release;
+        }
         foreach ($this->releases as $release) {
-            if ($release->id === $releaseId) {
-                $this->release = $release;
-                return $this;
+            if ($release->is($id)) {
+                return $release;
             }
         }
-        $this->setLatestRelease();
-        return $this;
+        throw new \DomainException("Invalid release: $id.");
     }
-    
-    public function setLatestRelease() {
-        $this->release = new Release($this->settings);
-        $this->release->makeLatest();
-        $this->release->component = $this;
-        $this->release->jira = $this->jira;
+
+    public function setRelease(string $releaseId): Component
+    {
+        $this->release = $this->getReleaseById($releaseId);
         return $this;
     }
 
@@ -113,4 +133,22 @@ class Component extends AbstractModel
         }
         return '';
     }
+
+    public function getDirectory(): string
+    {
+        if ($this->id) {
+            return "{$this->settings->sites_root}/releases/{$this->id}";
+        }
+        return '';
+    }
+
+    public function getAssetFilename(string $asset = ''): string
+    {
+        if ($asset && $this->id && $this->release) {
+            $asset = preg_replace('/\.{2,}/', '.', $asset);
+            return "{$this->release->getDirectory()}/docs/{$asset}";
+        }
+        return '';
+    }
+
 }

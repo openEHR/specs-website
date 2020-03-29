@@ -4,6 +4,7 @@ namespace App\Action;
 
 use App\Configuration;
 use App\Domain\Service\ComponentService;
+use App\File;
 use App\View;
 use Slim\Exception\HttpNotFoundException;
 use Slim\Http\Response;
@@ -24,14 +25,7 @@ final class SpecViewerAction
 
     public function index(ServerRequest $request, Response $response, array $args): Response
     {
-        $components = $this->componentService->getComponents();
-        if (!isset($components[$args['component']])) {
-            throw new HttpNotFoundException($request, 'Invalid specification component: ' . $args['component']);
-        }
-        $component = $components[$args['component']];
-        if (!empty($args['release'])) {
-            $component->setRelease($args['release']);
-        }
+        $component = $this->componentService->getComponent($args['component'], $args['release']);
         $data = (array)$component + [
                 'page' => "{$component->id}_component",
             ];
@@ -40,19 +34,21 @@ final class SpecViewerAction
 
     public function specs(ServerRequest $request, Response $response, array $args): Response
     {
-        $file = $this->componentService->getSpecFile($args['component'], $args['release'], $args['spec']);
+        $specification = $this->componentService->getComponent($args['component'], $args['release'])->getSpecificationById($args['spec']);
+        $file = new File($specification->getFilename());
         if (!$file->isValid() || !$file->hasContents()) {
-            throw new HttpNotFoundException($request, 'Specification file not found.');
+            throw new HttpNotFoundException($request, "Specification file ({$args['component']},{$args['release']},{$args['spec']}) not found.");
         }
         $response->getBody()->write($file->getContents());
         return $response->withHeader('Last-Modified', gmdate('D, d M Y H:i:s T', $file->getLastModified()));
     }
 
-    public function diagrams(ServerRequest $request, Response $response, array $args): Response
+    public function assets(ServerRequest $request, Response $response, array $args): Response
     {
-        $file = $this->componentService->getDiagramFile($args['component'], $args['release'], $args['spec'], $args['diagram']);
+        $component = $this->componentService->getComponent($args['component'], $args['release']);
+        $file = new File($component->getAssetFilename($args['asset']));
         if (!$file->isValid() || !$file->hasContents()) {
-            throw new HttpNotFoundException($request, 'Diagram file not found.');
+            throw new HttpNotFoundException($request, "Asset file ({$args['component']},{$args['release']},{$args['asset']}) not found.");
         }
         $response->getBody()->write($file->getContents());
         return $response->withHeader('Last-Modified', gmdate('D, d M Y H:i:s T', $file->getLastModified()))

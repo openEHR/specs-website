@@ -16,6 +16,7 @@ class Expression extends AbstractModel implements \JsonSerializable
     public $link;
     /** @var array */
     public $dependency;
+    
     /** @var Component */
     public $component;
 
@@ -52,6 +53,7 @@ class Expression extends AbstractModel implements \JsonSerializable
     public function setDependency(array $value = []): Expression
     {
         $this->dependency = $value;
+        //todo
         return $this;
     }
 
@@ -81,7 +83,8 @@ class Expression extends AbstractModel implements \JsonSerializable
             'type' => $this->type,
             'description' => $this->description,
             'dependency' => $this->dependency,
-            'getLink()' => $this->getLink(),
+            '_component' => $this->component->id,
+            '_getLink()' => $this->getLink(),
         ];
     }
 }

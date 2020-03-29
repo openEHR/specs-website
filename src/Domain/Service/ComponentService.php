@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Domain\Service;
-
 
 use App\Configuration;
 use App\File;
@@ -44,7 +42,6 @@ class ComponentService
         foreach (glob("{$releasesRoot}/*/latest/manifest.json") as $file) {
             if (is_readable($file) && ($content = file_get_contents($file)) && ($data = json_decode($content, true))) {
                 $component = (new Component($this->settings))($data);
-                $component->setLatestRelease();
                 $this->data['components'][$component->id] = $component;
                 foreach ($component->releases as $i => $release) {
                     if ($release->isReleased()) {
@@ -98,16 +95,17 @@ class ComponentService
         return $this->data['releases'];
     }
 
-    public function getSpecFile(string $component, string $release, string $spec): File
+    public function getComponent(string $componentId, string $releaseId = ''): Component
     {
-        $filename = "{$this->settings->sites_root}/releases/{$component}/{$release}/docs/{$spec}";
-        return new File($filename);
-    }
-
-    public function getDiagramFile(string $component, string $release, string $spec, string $diagram): File
-    {
-        $filename = "{$this->settings->sites_root}/releases/{$component}/{$release}/docs/{$spec}/diagrams/{$diagram}";
-        return new File($filename);
+        if (!isset($this->data['components'][$componentId])) {
+            throw new \DomainException('Invalid specification component: ' . $componentId);
+        }
+        /** @var Component $component */
+        $component = $this->data['components'][$componentId];
+        if (!empty($releaseId)) {
+            $component->setRelease($releaseId);
+        }
+        return $component;
     }
 
 }

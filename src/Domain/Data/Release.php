@@ -13,6 +13,7 @@ class Release extends AbstractModel implements \JsonSerializable
     public $date;
     /** @var Jira */
     public $jira;
+
     /** @var Component */
     public $component;
 
@@ -22,11 +23,19 @@ class Release extends AbstractModel implements \JsonSerializable
         return $this;
     }
 
-    public function setComponent(array $value = []): Release
+    public function isLatest(): bool
     {
-        $component = new Component($this->settings);
-        $this->component = $component($value);
-        return $this;
+        return $this->id === 'latest';
+    }
+
+    public function getId(): string
+    {
+        return $this->id === 'latest' ? 'latest' : "Release-{$this->id}";
+    }
+
+    public function is(string $id): bool
+    {
+        return strcasecmp($this->id, $id) === 0 || strcasecmp($this->getId(), $id) === 0;
     }
 
     public function setDate($value = null): Release
@@ -50,25 +59,25 @@ class Release extends AbstractModel implements \JsonSerializable
         return $this->id && ($this->date instanceof DateTime);
     }
 
-    public function isLatest(): bool
-    {
-        return $this->id === 'latest';
-    }
-
     public function makeLatest(): Release
     {
         $this->id = 'latest';
+        $this->jira = $this->component->jira;
         return $this;
     }
 
     public function getLink(): string
     {
         if ($this->id && $this->component) {
-            if ($this->isReleased()) {
-                return "{$this->component->getLink()}/Release-{$this->id}";
-            } elseif ($this->isLatest()) {
-                return "{$this->component->getLink()}/latest";
-            }
+            return "{$this->component->getLink()}/{$this->getId()}";
+        }
+        return '';
+    }
+
+    public function getDirectory(): string
+    {
+        if ($this->id && $this->component) {
+            return "{$this->component->getDirectory()}/{$this->getId()}";
         }
         return '';
     }
@@ -82,7 +91,8 @@ class Release extends AbstractModel implements \JsonSerializable
             'id' => $this->id,
             'date' => $this->date,
             'jira' => $this->jira,
-            'getLink()' => $this->getLink(),
+            '_component' => $this->component->id,
+            '_getLink()' => $this->getLink(),
         ];
     }
 }

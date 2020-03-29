@@ -18,6 +18,7 @@ class Specification extends AbstractModel implements \JsonSerializable
     public $keywords;
     /** @var string */
     public $link;
+
     /** @var Component */
     public $component;
 
@@ -34,6 +35,16 @@ class Specification extends AbstractModel implements \JsonSerializable
     {
         $this->id = $value;
         return $this;
+    }
+
+    public function getBasename(): string
+    {
+        return "{$this->id}.html";
+    }
+
+    public function is(string $id): bool
+    {
+        return strcasecmp($this->id, $id) === 0 || strcasecmp($this->getBasename(), $id) === 0;
     }
 
     public function setTitle(string $value = null): Specification
@@ -60,13 +71,6 @@ class Specification extends AbstractModel implements \JsonSerializable
         return $this;
     }
 
-    public function setComponent(array $value = []): Specification
-    {
-        $component = new Component($this->settings);
-        $this->component = $component($value);
-        return $this;
-    }
-
     public function setLink(string $value = null): Specification
     {
         $this->link = $value;
@@ -78,7 +82,23 @@ class Specification extends AbstractModel implements \JsonSerializable
         if ($this->link) {
             return $this->link;
         } elseif ($this->id && $this->component && $this->component->release) {
-            return "{$this->component->release->getLink()}/{$this->id}.html";
+            return "{$this->component->release->getLink()}/{$this->getBasename()}";
+        }
+        return '';
+    }
+
+    public function getDirectory(): string
+    {
+        if ($this->id && $this->component && $this->component->release) {
+            return "{$this->component->release->getDirectory()}/docs/{$this->id}";
+        }
+        return '';
+    }
+
+    public function getFilename(): string
+    {
+        if ($this->id && $this->component && $this->component->release) {
+            return "{$this->component->release->getDirectory()}/docs/{$this->getBasename()}";
         }
         return '';
     }
@@ -94,7 +114,8 @@ class Specification extends AbstractModel implements \JsonSerializable
             'title_short' => $this->title_short,
             'description' => $this->description,
             'keywords' => $this->keywords,
-            'getLink()' => $this->getLink(),
+            '_component' => $this->component->id,
+            '_getLink()' => $this->getLink(),
         ];
     }
 
