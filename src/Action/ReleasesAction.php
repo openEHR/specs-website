@@ -18,7 +18,7 @@ final class ReleasesAction
         $this->componentService = $components;
     }
 
-    public function __invoke(ServerRequest $request, Response $response): Response
+    public function __invoke(ServerRequest $request, Response $response, array $args): Response
     {
         $data = [
             'title' => 'Latest Releases',
