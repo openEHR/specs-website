@@ -151,4 +151,13 @@ class Component extends AbstractModel
         return '';
     }
 
+    public function getUMLFilename(string $asset = ''): string
+    {
+        if ($asset && $this->id && $this->release) {
+            $asset = preg_replace('/\.{2,}/', '.', $asset);
+            return "{$this->release->getDirectory()}/computable/UML/{$asset}";
+        }
+        return '';
+    }
+
 }

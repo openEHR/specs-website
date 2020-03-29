@@ -7,6 +7,7 @@ use App\Action;
 
 return function (App $app) {
     $app->get('/releases/{component}[/[{release}[/[index[.html]]]]]', Action\SpecViewerAction::class . ':index');
+    $app->get('/releases/{component}/{release}/UML/{asset:.+\.mdzip}', Action\SpecViewerAction::class . ':uml');
     $app->get('/releases/{component}/{release}/{asset:.+\.(?:png|svg|html|xml|drawio|docx)}', Action\SpecViewerAction::class . ':assets');
     $app->get('/releases/{component}/{release}/{spec}', Action\SpecViewerAction::class . ':specs');
     $app->get('/', Action\WorkingBaselineAction::class);
