@@ -16,7 +16,7 @@ class Expression extends AbstractModel implements \JsonSerializable
     public $link;
     /** @var array */
     public $dependency;
-    
+
     /** @var Component */
     public $component;
 
@@ -64,10 +64,19 @@ class Expression extends AbstractModel implements \JsonSerializable
 
     public function getLink(): string
     {
-        if ($this->link) {
-            return $this->link;
-        } elseif ($this->id && $this->component && $this->component->release) {
-            return "{$this->component->release->getLink()}/UML/{$this->id}";
+        if ($this->id && $this->component && $this->component->release) {
+            $file = $this->link ?: $this->id;
+            switch ($this->type) {
+                case 'uml':
+                    return "{$this->component->release->getLink()}/UML/{$file}";
+                    break;
+                case 'file':
+                    return "{$this->component->release->getLink()}/docs/{$file}";
+                    break;
+                case 'url':
+                    return $this->link;
+                    break;
+            }
         }
         return '';
     }

@@ -146,6 +146,7 @@ class Component extends AbstractModel
     {
         if ($asset && $this->id && $this->release) {
             $asset = preg_replace('/\.{2,}/', '.', $asset);
+            $asset = preg_replace('/^docs\//', '', $asset);
             return "{$this->release->getDirectory()}/docs/{$asset}";
         }
         return '';
