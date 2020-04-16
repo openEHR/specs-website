@@ -391,7 +391,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                                 <a href="/releases/AM/latest/AOM1.4.html" target="_blank">AOM 1.4</a><br>Archetype, CObject, ArchetypeSlot, CAttribute, CPrimitive
                             </p>
                             <p class="specs_item_narrow">
-                                <a href="" target="_blank">OPT 1.4</a><br>Operational Template 1.4
+                                <a href="/releases/ITS-XML/latest/components/AM/Release-1.4/" target="_blank">OPT 1.4</a><br>Operational Template 1.4
                             </p>
                             <p class="specs_item">
                                 <a href="/releases/AM/latest/Identification.html" target="_blank">Identification</a><br>archetype / template identifiers; versioning rules
