@@ -15,6 +15,8 @@ class Specification extends AbstractModel implements \JsonSerializable
     /** @var string */
     public $description;
     /** @var string */
+    public $summary;
+    /** @var string */
     public $keywords;
     /** @var string */
     public $link;
@@ -62,6 +64,12 @@ class Specification extends AbstractModel implements \JsonSerializable
     public function setDescription(string $value = null): Specification
     {
         $this->description = $value;
+        return $this;
+    }
+
+    public function setSummary(string $value = null): Specification
+    {
+        $this->summary = $value;
         return $this;
     }
 
@@ -113,6 +121,7 @@ class Specification extends AbstractModel implements \JsonSerializable
             'title' => $this->title,
             'title_short' => $this->title_short,
             'description' => $this->description,
+            'summary' => $this->summary,
             'keywords' => $this->keywords,
             '_component' => $this->component->id,
             '_getLink()' => $this->getLink(),
