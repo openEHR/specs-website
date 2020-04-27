@@ -53,6 +53,35 @@ foreach ($specifications as $spec) {
     </table>
 </div>
 <div>
+    <h2><a href="#_releases"></a>Releases</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Release</th>
+            <th>Date</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($releases as $release) {
+            if (!$release->isReleased()) { ?>
+            <tr>
+                <td><a>Release <?= $release->id ?></a></td>
+                <td>cooking</td>
+                <td><a href="<?= $release->jira->crs ?>" target="_blank">Release notes</a></td>
+            </tr>
+            <?php } else {?>
+            <tr>
+                <td><a href="<?= $release->getLink() ?>" target="_blank">Release <?= $release->id ?></a></td>
+                <td><?= $release->date->format('d-M-Y') ?></td>
+                <td><a href="<?= $release->jira->crs ?>" target="_blank">Release notes</a></td>
+            </tr>
+            <?php } ?>
+        <?php } ?>
+        </tbody>
+    </table>
+</div>
+<div>
     <h2><a href="#_computable_expressions"></a>Computable Expressions</h2>
     <table>
         <thead>
