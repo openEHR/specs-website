@@ -3,6 +3,16 @@
 /** @var \App\Domain\Data\Jira $jira */
 /** @var \App\Domain\Data\Specification $spec */
 /** @var \App\Domain\Data\Expression $expr */
+/** @var \App\Domain\Data\Note $note */
+
+$hasSpecificationsWithNotes = false;
+foreach ($specifications as $spec) {
+    if ($spec->notes) {
+        $hasSpecificationsWithNotes = true;
+        break;
+    }
+}
+
 ?>
 <img src="<?= $release->getLink() ?>/openehr_block_diagram.svg" alt="openEHR components" width="60%">
 <h1>
@@ -19,6 +29,9 @@
         <tr>
             <th>Specification</th>
             <th>Description</th>
+            <?php if ($hasSpecificationsWithNotes) { ?>
+            <th>Notes</th>
+            <?php } ?>
         </tr>
         </thead>
         <tbody>
@@ -27,6 +40,13 @@
             <tr>
                 <td><a href="<?= $spec->getLink() ?>" title="<?= $spec->description ?>" target="_blank"><?= $spec->title_short ?></a></td>
                 <td><?= $spec->summary ?></td>
+                <?php if ($hasSpecificationsWithNotes) { ?>
+                <td>
+                    <?php foreach ($spec->notes as $note) { ?>
+                    <a href="<?= $note->link ?>" target="_blank"><?= $note->text ?></a>
+                    <?php } ?>
+                </td>
+                <?php } ?>
             </tr>
         <?php } ?>
         </tbody>

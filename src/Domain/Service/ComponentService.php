@@ -95,7 +95,7 @@ class ComponentService
         return $this->data['releases'];
     }
 
-    public function getComponent(string $componentId, string $releaseId = ''): Component
+    public function getComponent(string $componentId, ?string $releaseId): Component
     {
         if (!isset($this->data['components'][$componentId])) {
             throw new \DomainException('Invalid specification component: ' . $componentId);

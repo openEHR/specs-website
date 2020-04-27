@@ -18,6 +18,8 @@ class Specification extends AbstractModel implements \JsonSerializable
     public $summary;
     /** @var string */
     public $keywords;
+    /** @var Note[] */
+    public $notes;
     /** @var string */
     public $link;
 
@@ -78,6 +80,16 @@ class Specification extends AbstractModel implements \JsonSerializable
         $this->keywords = $value;
         return $this;
     }
+    
+    public function setNotes(array $value = []): Specification
+    {
+        foreach ($value as $i => $data) {
+            $note = (new Note($this->settings))($data);
+            $note->specification = $this;
+            $this->notes[$i] = $note;
+        }
+        return $this;
+    }
 
     public function setLink(string $value = null): Specification
     {
@@ -123,6 +135,7 @@ class Specification extends AbstractModel implements \JsonSerializable
             'description' => $this->description,
             'summary' => $this->summary,
             'keywords' => $this->keywords,
+            'notes' => $this->notes,
             '_component' => $this->component->id,
             '_getLink()' => $this->getLink(),
         ];
