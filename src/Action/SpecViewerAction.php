@@ -36,7 +36,7 @@ final class SpecViewerAction
     {
         $specification = $this->componentService->getComponent($args['component'])->useRelease($args['release'])->getSpecificationById($args['spec']);
         $file = new File($specification->getFilename());
-        if (!$file->isValid() || !$file->hasContents()) {
+        if (!$file->hasContents()) {
             throw new HttpNotFoundException($request, "Specification file ({$args['component']},{$args['release']},{$args['spec']}) not found.");
         }
         $response->getBody()->write($file->getContents());
@@ -47,7 +47,7 @@ final class SpecViewerAction
     {
         $component = $this->componentService->getComponent($args['component'])->useRelease($args['release']);
         $file = new File($component->getAssetFilename($args['asset']));
-        if (!$file->isValid() || !$file->hasContents()) {
+        if (!$file->hasContents()) {
             throw new HttpNotFoundException($request, "Asset file ({$args['component']},{$args['release']},{$args['asset']}) not found.");
         }
         $response->getBody()->write($file->getContents());
@@ -60,7 +60,7 @@ final class SpecViewerAction
     {
         $component = $this->componentService->getComponent($args['component'])->useRelease($args['release']);
         $file = new File($component->getUMLFilename($args['asset']));
-        if (!$file->isValid() || !$file->hasContents()) {
+        if (!$file->hasContents()) {
             throw new HttpNotFoundException($request, "UML file ({$args['component']},{$args['release']},{$args['asset']}) not found.");
         }
         $response->getBody()->write($file->getContents());
