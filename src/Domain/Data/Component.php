@@ -107,7 +107,7 @@ class Component extends AbstractModel
         return $this;
     }
 
-    public function getReleaseById(string $id = ''): Release
+    public function getReleaseById(string $id): Release
     {
         if ($this->release && $this->release->is($id)) {
             return $this->release;
@@ -120,9 +120,9 @@ class Component extends AbstractModel
         throw new \DomainException("Invalid release: $id.");
     }
 
-    public function setRelease(string $releaseId): Component
+    public function useRelease(?string $releaseId): Component
     {
-        $this->release = $this->getReleaseById($releaseId);
+        $this->release = $this->getReleaseById($releaseId ?: Release::LATEST);
         return $this;
     }
 

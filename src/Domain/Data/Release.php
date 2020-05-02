@@ -7,6 +7,8 @@ use DateTime;
 
 class Release extends AbstractModel implements \JsonSerializable
 {
+    public const LATEST = 'latest';
+
     /** @var string */
     public $id;
     /** @var DateTime */
@@ -25,12 +27,12 @@ class Release extends AbstractModel implements \JsonSerializable
 
     public function isLatest(): bool
     {
-        return $this->id === 'latest';
+        return $this->id === self::LATEST;
     }
 
     public function getId(): string
     {
-        return $this->id === 'latest' ? 'latest' : "Release-{$this->id}";
+        return $this->id === self::LATEST ? self::LATEST : "Release-{$this->id}";
     }
 
     public function is(string $id): bool
@@ -61,7 +63,7 @@ class Release extends AbstractModel implements \JsonSerializable
 
     public function makeLatest(): Release
     {
-        $this->id = 'latest';
+        $this->id = self::LATEST;
         $this->jira = $this->component->jira;
         return $this;
     }

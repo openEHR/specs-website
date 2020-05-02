@@ -25,7 +25,7 @@ final class SpecViewerAction
 
     public function index(ServerRequest $request, Response $response, array $args): Response
     {
-        $component = $this->componentService->getComponent($args['component'], $args['release']);
+        $component = $this->componentService->getComponent($args['component'])->useRelease($args['release']);
         $data = (array)$component + [
                 'page' => "{$component->id}_component",
             ];
@@ -34,7 +34,7 @@ final class SpecViewerAction
 
     public function specs(ServerRequest $request, Response $response, array $args): Response
     {
-        $specification = $this->componentService->getComponent($args['component'], $args['release'])->getSpecificationById($args['spec']);
+        $specification = $this->componentService->getComponent($args['component'])->useRelease($args['release'])->getSpecificationById($args['spec']);
         $file = new File($specification->getFilename());
         if (!$file->isValid() || !$file->hasContents()) {
             throw new HttpNotFoundException($request, "Specification file ({$args['component']},{$args['release']},{$args['spec']}) not found.");
@@ -45,7 +45,7 @@ final class SpecViewerAction
 
     public function assets(ServerRequest $request, Response $response, array $args): Response
     {
-        $component = $this->componentService->getComponent($args['component'], $args['release']);
+        $component = $this->componentService->getComponent($args['component'])->useRelease($args['release']);
         $file = new File($component->getAssetFilename($args['asset']));
         if (!$file->isValid() || !$file->hasContents()) {
             throw new HttpNotFoundException($request, "Asset file ({$args['component']},{$args['release']},{$args['asset']}) not found.");
@@ -58,7 +58,7 @@ final class SpecViewerAction
 
     public function uml(ServerRequest $request, Response $response, array $args): Response
     {
-        $component = $this->componentService->getComponent($args['component'], $args['release']);
+        $component = $this->componentService->getComponent($args['component'])->useRelease($args['release']);
         $file = new File($component->getUMLFilename($args['asset']));
         if (!$file->isValid() || !$file->hasContents()) {
             throw new HttpNotFoundException($request, "UML file ({$args['component']},{$args['release']},{$args['asset']}) not found.");

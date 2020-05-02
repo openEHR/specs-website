@@ -3,7 +3,7 @@
 namespace App\Domain\Service;
 
 use App\Configuration;
-use App\File;
+use App\Domain\Data\Release;
 use App\Domain\Data\Component;
 
 class ComponentService
@@ -42,12 +42,7 @@ class ComponentService
         foreach (glob("{$releasesRoot}/*/latest/manifest.json") as $file) {
             if (is_readable($file) && ($content = file_get_contents($file)) && ($data = json_decode($content, true))) {
                 $component = (new Component($this->settings))($data);
-                $this->data['components'][$component->id] = $component;
-                foreach ($component->releases as $i => $release) {
-                    if ($release->isReleased()) {
-                        $this->data['releases'][] = $release;
-                    }
-                }
+                $this->registerComponent($component);
                 foreach ($component->expressions as $i => $expression) {
                     if ($expression->isOwned()) {
                         $this->data['expressions'][$expression->id] = $expression;
@@ -55,15 +50,8 @@ class ComponentService
                 }
             }
         }
-        usort(
-            $this->data['releases'],
-            function ($r1, $r2) {
-                if ($r1->date === $r2->date) {
-                    return 0;
-                }
-                return ($r1->date > $r2->date) ? -1 : 1;
-            }
-        );
+        $this->buildComponents();
+        $this->buildReleases();
         $file = $this->getCacheFile();
         if ((file_exists($file) && !is_writable($file)) || !is_writable(dirname($file))) {
             throw new \DomainException("Bad configuration for cache file [{$file}].");
@@ -80,11 +68,46 @@ class ComponentService
     }
 
     /**
+     * @param Component $component
+     * @return $this
+     */
+    private function registerComponent(Component $component): ComponentService
+    {
+        $this->data['components'][$component->id] = $component;
+        return $this;
+    }
+
+    /**
      * @return Component[]
      */
     public function getComponents(): array
     {
         return $this->data['components'];
+    }
+
+    /**
+     * @return ComponentService
+     */
+    private function buildComponents(): ComponentService
+    {
+        foreach ($this->data['components'] as $component) {
+            foreach ($component->releases as $release) {
+                $this->registerRelease($release);
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * @param Release $release
+     * @return ComponentService
+     */
+    private function registerRelease(Release $release): ComponentService
+    {
+        if ($release->isReleased()) {
+            $this->data['releases'][] = $release;
+        }
+        return $this;
     }
 
     /**
@@ -95,16 +118,30 @@ class ComponentService
         return $this->data['releases'];
     }
 
-    public function getComponent(string $componentId, ?string $releaseId): Component
+    /**
+     * @return ComponentService
+     */
+    private function buildReleases(): ComponentService
+    {
+        usort(
+            $this->data['releases'],
+            function ($r1, $r2) {
+                if ($r1->date === $r2->date) {
+                    return 0;
+                }
+                return ($r1->date > $r2->date) ? -1 : 1;
+            }
+        );
+        return $this;
+    }
+
+    public function getComponent(string $componentId): Component
     {
         if (!isset($this->data['components'][$componentId])) {
             throw new \DomainException('Invalid specification component: ' . $componentId);
         }
         /** @var Component $component */
         $component = $this->data['components'][$componentId];
-        if (!empty($releaseId)) {
-            $component->setRelease($releaseId);
-        }
         return $component;
     }
 
