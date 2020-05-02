@@ -7,14 +7,14 @@ class Expression extends AbstractModel implements \JsonSerializable
     /** @var string */
     public $id;
     /** @var string */
-    public $title;
-    /** @var string */
     public $type;
+    /** @var string */
+    public $title;
     /** @var string */
     public $description;
     /** @var string */
     public $link;
-    /** @var array */
+    /** @var Dependency */
     public $dependency;
 
     /** @var Component */
@@ -24,6 +24,11 @@ class Expression extends AbstractModel implements \JsonSerializable
     {
         $this->id = $value;
         return $this;
+    }
+
+    public function is(string $id): bool
+    {
+        return strcasecmp($this->id, $id) === 0;
     }
 
     public function setTitle(string $value = null): Expression
@@ -52,14 +57,23 @@ class Expression extends AbstractModel implements \JsonSerializable
 
     public function setDependency(array $value = []): Expression
     {
-        $this->dependency = $value;
-        //todo
+        $this->dependency = (new Dependency($this->settings))($value);
+        $this->dependency->expression = $this;
         return $this;
     }
 
     public function isOwned(): bool
     {
         return empty($this->dependency);
+    }
+
+    public function depends(Expression $supplier): Expression
+    {
+        $this->setType('dependency');
+        $this->setTitle($supplier->title);
+        $this->setDescription($supplier->description);
+        $this->setLink($supplier->getLink());
+        return $this;
     }
 
     public function getLink(): string
@@ -74,6 +88,7 @@ class Expression extends AbstractModel implements \JsonSerializable
                     return "{$this->component->release->getLink()}/docs/{$file}";
                     break;
                 case 'url':
+                case 'dependency':
                     return $this->link;
                     break;
             }
@@ -88,8 +103,8 @@ class Expression extends AbstractModel implements \JsonSerializable
     {
         return [
             'id' => $this->id,
-            'title' => $this->title,
             'type' => $this->type,
+            'title' => $this->title,
             'description' => $this->description,
             'dependency' => $this->dependency,
             '_component' => $this->component->id,

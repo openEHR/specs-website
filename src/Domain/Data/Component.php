@@ -97,6 +97,15 @@ class Component extends AbstractModel
         return $this;
     }
 
+    public function getExpressionById(string $id): Expression {
+        foreach ($this->expressions as $expression) {
+            if ($expression->is($id)) {
+                return $expression;
+            }
+        }
+        throw new \DomainException("Invalid expression: $id.");
+    }
+
     public function setReleases(array $value = []): Component
     {
         foreach ($value as $i => $data) {

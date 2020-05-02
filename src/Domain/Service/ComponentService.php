@@ -3,6 +3,7 @@
 namespace App\Domain\Service;
 
 use App\Configuration;
+use App\Domain\Data\Expression;
 use App\Domain\Data\Release;
 use App\Domain\Data\Component;
 
@@ -43,15 +44,11 @@ class ComponentService
             if (is_readable($file) && ($content = file_get_contents($file)) && ($data = json_decode($content, true))) {
                 $component = (new Component($this->settings))($data);
                 $this->registerComponent($component);
-                foreach ($component->expressions as $i => $expression) {
-                    if ($expression->isOwned()) {
-                        $this->data['expressions'][$expression->id] = $expression;
-                    }
-                }
             }
         }
         $this->buildComponents();
         $this->buildReleases();
+        $this->buildExpressions();
         $file = $this->getCacheFile();
         if ((file_exists($file) && !is_writable($file)) || !is_writable(dirname($file))) {
             throw new \DomainException("Bad configuration for cache file [{$file}].");
@@ -94,6 +91,9 @@ class ComponentService
             foreach ($component->releases as $release) {
                 $this->registerRelease($release);
             }
+            foreach ($component->expressions as $expression) {
+                $this->registerExpression($expression);
+            }
         }
         return $this;
     }
@@ -135,6 +135,39 @@ class ComponentService
         return $this;
     }
 
+    /**
+     * @param Expression $expression
+     * @return ComponentService
+     */
+    private function registerExpression(Expression $expression): ComponentService
+    {
+        if ($expression->isOwned()) {
+            $this->data['expressions'][$expression->component->id][$expression->component->release->id] = $expression;
+        }
+        return $this;
+    }
+
+    /**
+     * @return ComponentService
+     */
+    private function buildExpressions(): ComponentService {
+        foreach ($this->data['components'] as $component) {
+            foreach ($component->expressions as $expression) {
+                if (!$expression->isOwned()) {
+                    $supplierComponent = clone $this->getComponent($expression->dependency->component);
+                    $supplierComponent->useRelease($expression->dependency->release);
+                    $supplierExpression = $supplierComponent->getExpressionById($expression->id);
+                    $expression->depends($supplierExpression);
+                }
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * @param string $componentId
+     * @return Component
+     */
     public function getComponent(string $componentId): Component
     {
         if (!isset($this->data['components'][$componentId])) {
