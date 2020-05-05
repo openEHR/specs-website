@@ -220,7 +220,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
                         </div>
 
                         <p class="releases">
-							<a href="/releases/PROC/Release-1.0.0/" target="_blank">1.0.0</a> (1 Dec 2017)
+							<a href="https://openehr.atlassian.net/projects/SPECPROC/versions/12506/tab/release-report-all-issues" target="_blank">2.0.0</a> (cooking)<br>
+							<a href="/releases/PROC/Release-1.5.0/" target="_blank">1.5.0</a> (05 May 2020)
+							<a href="/releases/PROC/Release-1.0.0/" target="_blank">1.0.0</a> (01 Dec 2017)
 						</p>
 					</div>
 				</div>
