@@ -16,5 +16,6 @@ return function (App $app) {
     $app->get('/manifest', Action\WorkingBaselineAction::class . ':manifest');
     $app->get('/latest_releases', Action\ReleasesAction::class);
     $app->get('/historical_releases', Action\ReleasesAction::class . ':historical');
-//    $app->redirect('/from', '/to', 301);
+    // redirects
+    $app->redirect('/wiki/display/spec/Specifications+Home', 'https://openehr.atlassian.net/wiki/spaces/spec/overview', 301);
 };
