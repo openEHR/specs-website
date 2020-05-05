@@ -151,7 +151,8 @@ class ComponentService
     /**
      * @return ComponentService
      */
-    private function buildExpressions(): ComponentService {
+    private function buildExpressions(): ComponentService
+    {
         foreach ($this->data['components'] as $component) {
             foreach ($component->expressions as $expression) {
                 if (!$expression->isOwned()) {

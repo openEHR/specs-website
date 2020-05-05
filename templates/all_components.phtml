@@ -218,7 +218,8 @@
 			<!-- =============== Formal Specs: Content =============== -->
 			<div id="content_group">
                 <p class="group_title">Content</p>
-				<div class="group_box"><?= $this->fetch('component_row.phtml', $RM) ?>
+				<div class="group_box">
+                    <?= $this->fetch('component_row.phtml', $RM) ?>
 					<!-------------- RM --------------->
 					<div id="rm_row" class="component_row">
                         <div class="component_cell">
@@ -431,6 +432,7 @@
 			<div id="foundations">
                 <p class="group_title">Foundations</p>
 				<div class="group_box">
+                    <?= $this->fetch('component_row.phtml', $BASE) ?>
 					<!-------------- BASE --------------->
 					<div id="base_row" class="component_row">
                         <div class="component_cell">

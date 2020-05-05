@@ -101,7 +101,8 @@ class Component extends AbstractModel
         return $this;
     }
 
-    public function getExpressionById(string $id): Expression {
+    public function getExpressionById(string $id): Expression
+    {
         foreach ($this->expressions as $expression) {
             if ($expression->is($id)) {
                 return $expression;

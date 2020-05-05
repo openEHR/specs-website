@@ -83,7 +83,7 @@ class Specification extends AbstractModel implements \JsonSerializable
         $this->keywords = $value;
         return $this;
     }
-    
+
     public function setNotes(array $value = []): Specification
     {
         foreach ($value as $i => $data) {
