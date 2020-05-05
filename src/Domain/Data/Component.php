@@ -189,6 +189,19 @@ class Component extends AbstractModel
         return $this;
     }
 
+    public function getTypeByName(string $typeName): Type
+    {
+        if ($this->types[$typeName]) {
+            return $this->types[$typeName];
+        }
+        foreach ($this->types as $type) {
+            if ($type->is($typeName)) {
+                return $type;
+            }
+        }
+        throw new \DomainException("Invalid type: $typeName.");
+    }
+
     public function getLink(): string
     {
         if ($this->id) {

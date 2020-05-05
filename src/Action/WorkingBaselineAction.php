@@ -32,4 +32,26 @@ final class WorkingBaselineAction
         $data = $this->componentService->build()->getData();
         return $response->withJson($data);
     }
+
+    public function classes(ServerRequest $request, Response $response, array $args): Response
+    {
+        $components = $this->componentService->getComponents();
+        if (!empty($args['class'])) {
+            foreach ($components as $component) {
+                try {
+                    $type = $component->getTypeByName($args['class']);
+                    return $response->withStatus(301)->withHeader('Location', $type->getLink());
+                } catch (\Exception $e) {
+                    // silently do nothing
+                }
+            }
+        }
+        $data = [
+            'title' => 'Class Index',
+            'page' => 'class_index',
+            'components' => $components,
+        ];
+        return $this->view->render($response, 'class_index.phtml', $data);
+    }
+
 }

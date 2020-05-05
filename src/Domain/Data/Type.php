@@ -39,6 +39,15 @@ class Type extends AbstractModel implements \JsonSerializable
     }
 
     /**
+     * @param string $name
+     * @return bool
+     */
+    public function is(string $name): bool
+    {
+        return strcasecmp($this->name, $name) === 0;
+    }
+
+    /**
      * @param string $fragment
      * @return $this
      */

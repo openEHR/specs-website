@@ -1,0 +1,37 @@
+<?php
+/** @var \App\Domain\Data\Component $component */
+/** @var \App\Domain\Data\Package $package */
+/** @var \App\Domain\Data\Type $type */
+?>
+<h1>
+    <?= $title ?>
+</h1>
+<?php foreach ($components as $component) { ?>
+<?php   if ($component->packages) { ?>
+<div>
+    <h2><a name="<?=$component->id?>"/><a href="<?=$component->getLink()?>" target="_blank"><?=$component->title?></a></h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Packages</th>
+                <th>Classes</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($component->packages as $package) { ?>
+            <tr>
+                <td><a name="_package_<?= $package->name ?>"/><?= $package->name ?></td>
+                <td>
+                    <ul>
+                        <?php foreach ($package->types as $type) { ?>
+                            <li><a name="<?= $type->fragment ?>"/><a href="<?= $type->getLink() ?>" target="_blank"><?= $type->name ?></a></li>
+                        <?php } ?>
+                    </ul>
+                </td>
+            </tr>
+        <?php } ?>
+        </tbody>
+    </table>
+</div>
+<?php    } ?>
+<?php } ?>
