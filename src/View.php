@@ -78,7 +78,7 @@ class View
      * @param string $layout
      * @return View
      */
-    public function setLayout($layout = ''): View
+    public function setLayout(string $layout = ''): View
     {
         $this->layout = $layout ?: '';
         return $this;
@@ -148,7 +148,7 @@ class View
      */
     public function setTemplatePath(string $templatePath = ''): View
     {
-        $this->templatePath = rtrim((string)$templatePath, '/\\') . '/';
+        $this->templatePath = rtrim($templatePath, '/\\') . '/';
         return $this;
     }
 
