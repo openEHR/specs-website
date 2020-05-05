@@ -4,6 +4,8 @@
 /** @var \App\Domain\Data\Specification $spec */
 /** @var \App\Domain\Data\Expression $expr */
 /** @var \App\Domain\Data\Note $note */
+/** @var \App\Domain\Data\Package $package */
+/** @var \App\Domain\Data\Type $type */
 
 $hasSpecificationsWithNotes = false;
 foreach ($specifications as $spec) {
@@ -101,3 +103,31 @@ foreach ($specifications as $spec) {
         </tbody>
     </table>
 </div>
+ <?php if ($packages) { ?>
+<div>
+    <h2><a href="#_types"></a>Class Index</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Packages</th>
+            <th>Classes</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($packages as $package) {
+            ?>
+            <tr>
+                <td><a href="#_package_<?= $package->name ?>">Package <?= $package->name ?></a></td>
+                <td>
+                    <ul>
+                        <?php foreach ($package->types as $type) { ?>
+                            <li><a href="<?= $type->getLink() ?>" target="_blank"><?= $type->name ?></a></li>
+                        <?php } ?>
+                    </ul>
+                </td>
+            </tr>
+        <?php } ?>
+        </tbody>
+    </table>
+</div>
+ <?php } ?>

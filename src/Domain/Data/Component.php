@@ -24,6 +24,10 @@ class Component extends AbstractModel
     public $releases;
     /** @var Release */
     public $release;
+    /** @var Types[] */
+    public $types;
+    /** @var Package[] */
+    public $packages;
 
     public function __invoke(array $args = [])
     {
@@ -132,6 +136,55 @@ class Component extends AbstractModel
     public function useRelease(?string $releaseId): Component
     {
         $this->release = $this->getReleaseById($releaseId ?: Release::LATEST);
+        return $this;
+    }
+
+    public function registerPackage(Package $package): Component
+    {
+        $this->packages[$package->name] = $package;
+        return $this;
+    }
+
+    public function getPackageByName(string $packageName): Package
+    {
+        if ($this->packages[$packageName]) {
+            return $this->packages[$packageName];
+        }
+        foreach ($this->packages as $package) {
+            if ($package->is($packageName)) {
+                return $package;
+            }
+        }
+        throw new \DomainException("Invalid package: $packageName.");
+    }
+
+    public function registerType(Type $type): Component
+    {
+        $this->types[$type->name] = $type;
+        try {
+            $specification = $this->getSpecificationById($type->specificationId);
+            $specification->registerType($type);
+            try {
+                $package = $this->getPackageByName($type->packageName);
+                $package->registerType($type);
+            } catch (\Exception $e) {
+                $package = (new Package($this->settings))(['name' => $type->packageName]);
+                $this->registerPackage($package);
+                $package->registerType($type);
+            }
+            $type->component = $this;
+        } catch (\Exception $e) {
+            // silently do nothing
+        }
+        return $this;
+    }
+
+    public function setTypes(array $types): Component
+    {
+        foreach ($types as $data) {
+            $type = (new Type($this->settings))($data);
+            $this->registerType($type);
+        }
         return $this;
     }
 

@@ -49,6 +49,7 @@ class ComponentService
         $this->buildComponents();
         $this->buildReleases();
         $this->buildExpressions();
+        $this->buildTypes();
         $file = $this->getCacheFile();
         if ((file_exists($file) && !is_writable($file)) || !is_writable(dirname($file))) {
             throw new \DomainException("Bad configuration for cache file [{$file}].");
@@ -160,6 +161,16 @@ class ComponentService
                     $expression->depends($supplierExpression);
                 }
             }
+        }
+        return $this;
+    }
+
+    private function buildTypes(): ComponentService
+    {
+        foreach ($this->data['components'] as $component) {
+            $typeService = new TypeService($component->getAssetFilename('UML/class_index.adoc'));
+            $typeService->build();
+            $component->setTypes($typeService->types);
         }
         return $this;
     }

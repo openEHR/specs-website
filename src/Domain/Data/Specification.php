@@ -23,6 +23,9 @@ class Specification extends AbstractModel implements \JsonSerializable
     /** @var string */
     public $link;
 
+    /** @var Types[] */
+    public $types;
+
     /** @var Component */
     public $component;
 
@@ -97,6 +100,13 @@ class Specification extends AbstractModel implements \JsonSerializable
         return $this;
     }
 
+    public function registerType(Type $type): Specification
+    {
+        $this->types[$type->name] = $type;
+        $type->specification = $this;
+        return $this;
+    }
+
     public function getLink(): string
     {
         if ($this->link) {
@@ -136,6 +146,7 @@ class Specification extends AbstractModel implements \JsonSerializable
             'summary' => $this->summary,
             'keywords' => $this->keywords,
             'notes' => $this->notes,
+            'types' => $this->types,
             '_component' => $this->component->id,
             '_getLink()' => $this->getLink(),
         ];
