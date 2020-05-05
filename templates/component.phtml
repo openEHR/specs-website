@@ -25,7 +25,7 @@ foreach ($specifications as $spec) {
     <a href="<?= $release->jira->crs ?>" target="_blank"><?= $release->isLatest() ? 'Roadmap' : 'Changes Implemented' ?></a>
 </div>
 <div>
-    <h2><a href="#_specifications"></a>Specifications</h2>
+    <h2><a name="_specifications"/>Specifications</h2>
     <table>
         <thead>
         <tr>
@@ -55,7 +55,7 @@ foreach ($specifications as $spec) {
     </table>
 </div>
 <div>
-    <h2><a href="#_releases"></a>Releases</h2>
+    <h2><a name="_releases"/>Releases</h2>
     <table>
         <thead>
         <tr>
@@ -84,7 +84,7 @@ foreach ($specifications as $spec) {
     </table>
 </div>
 <div>
-    <h2><a href="#_computable_expressions"></a>Computable Expressions</h2>
+    <h2><a name="_computable_expressions"/>Computable Expressions</h2>
     <table>
         <thead>
         <tr>
@@ -103,9 +103,9 @@ foreach ($specifications as $spec) {
         </tbody>
     </table>
 </div>
- <?php if ($packages) { ?>
+<?php if ($packages) { ?>
 <div>
-    <h2><a href="#_types"></a>Class Index</h2>
+    <h2><a name="_class_index"/>Class Index</h2>
     <table>
         <thead>
         <tr>
@@ -114,14 +114,13 @@ foreach ($specifications as $spec) {
         </tr>
         </thead>
         <tbody>
-        <?php foreach ($packages as $package) {
-            ?>
+        <?php foreach ($packages as $package) { ?>
             <tr>
-                <td><a href="#_package_<?= $package->name ?>">Package <?= $package->name ?></a></td>
+                <td><a name="_package_<?= $package->name ?>"/><?= $package->name ?></td>
                 <td>
                     <ul>
                         <?php foreach ($package->types as $type) { ?>
-                            <li><a href="<?= $type->getLink() ?>" target="_blank"><?= $type->name ?></a></li>
+                            <li><a name="<?= $type->fragment ?>"/><a href="<?= $type->getLink() ?>" target="_blank"><?= $type->name ?></a></li>
                         <?php } ?>
                     </ul>
                 </td>
