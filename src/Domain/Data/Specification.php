@@ -17,14 +17,21 @@ class Specification extends AbstractModel implements \JsonSerializable
     /** @var string */
     public $summary;
     /** @var string */
+    public $micro_summary;
+    /** @var array */
+    public $classes;
+    /** @var string */
     public $keywords;
     /** @var Note[] */
-    public $notes;
+    public $notes = array();
     /** @var string */
     public $link;
 
     /** @var Types[] */
-    public $types;
+    public $types = array();
+
+    /** @var Types[] */
+    public $summary_types = array();
 
     /** @var Component */
     public $component;
@@ -33,7 +40,10 @@ class Specification extends AbstractModel implements \JsonSerializable
     {
         parent::__invoke($args);
         if (isset($args['title_short'])) {
-            $this->setTitleShort($args['title_short'] ?? null);
+            $this->setTitleShort($args['title_short']);
+        }
+        if (isset($args['micro_summary'])) {
+            $this->setMicroSummary($args['micro_summary']);
         }
         return $this;
     }
@@ -78,6 +88,18 @@ class Specification extends AbstractModel implements \JsonSerializable
         return $this;
     }
 
+    public function setMicroSummary(string $value = null): Specification
+    {
+        $this->micro_summary = $value;
+        return $this;
+    }
+
+    public function setClasses(array $value = []): Specification
+    {
+        $this->classes = $value;
+        return $this;
+    }
+
     public function setKeywords(string $value = null): Specification
     {
         $this->keywords = $value;
@@ -104,6 +126,14 @@ class Specification extends AbstractModel implements \JsonSerializable
     {
         $this->types[$type->name] = $type;
         $type->specification = $this;
+        if ($this->classes) {
+            foreach ($this->classes as $class) {
+                if ($type->is($class)) {
+                    $this->summary_types[$class] = $type;
+                    break;
+                }
+            }
+        }
         return $this;
     }
 
@@ -144,9 +174,12 @@ class Specification extends AbstractModel implements \JsonSerializable
             'title_short' => $this->title_short,
             'description' => $this->description,
             'summary' => $this->summary,
+            'micro_summary' => $this->micro_summary,
+            'classes' => $this->classes,
             'keywords' => $this->keywords,
             'notes' => $this->notes,
             'types' => $this->types,
+            'summary_types' => $this->summary_types,
             '_component' => $this->component->id,
             '_getLink()' => $this->getLink(),
         ];

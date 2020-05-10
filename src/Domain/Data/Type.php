@@ -106,8 +106,8 @@ class Type extends AbstractModel implements \JsonSerializable
         return [
             'name' => $this->name,
             'fragment' => $this->fragment,
-            'package' => $this->package->name,
-            'specification' => $this->specification->id,
+            'package' => is_object($this->package) ? $this->package->name : null,
+            'specification' => is_object($this->specification) ? $this->specification->id : null,
             '_getLink()' => $this->getLink(),
         ];
     }

@@ -3,6 +3,13 @@
 /** @var \App\Domain\Data\Jira $jira */
 /** @var \App\Domain\Data\Specification $spec */
 /** @var \App\Domain\Data\Expression $expr */
+/** @var \App\Domain\Data\Type $type */
+
+$spec_blacklist = [
+    'architecture_overview',
+    'iso_18308_conformance_statement',
+    'archetype_profile',
+]
 ?>
 <div id="<?= $id ?>" class="component_row">
     <div class="component_cell">
@@ -25,12 +32,20 @@
     </div>
     <div class="specs_cell">
         <?php foreach ($specifications as $spec) {
-            ?>
-            <p class="specs_item" title="<?= $spec->title ?> - <?= $spec->description ?>">
+            if (!in_array($spec->id, $spec_blacklist)) { ?>
+            <p class="specs_item" title="<?= $spec->description ?>">
                 <a href="<?= $spec->getLink() ?>" target="_blank"><?= $spec->title_short ?></a><br/>
-                <?= $spec->keywords ?>
-            </p>
-        <?php } ?>
+                <?php if ($spec->micro_summary) { ?>
+                    <?= $spec->micro_summary ?><br/>
+                <?php } ?>
+                <?php foreach ($spec->summary_types as $i => $type) { ?>
+                    <a href="<?=$type->getLink()?>" target="_blank"><?= $type->name ?></a><?php
+                        if ($i<count($spec->summary_types)-1) {
+                            ?>, <?php
+                        } ?>
+                <?php } ?>
+            </p><?php }
+        } ?>
     </div>
     <p class="releases">
         <?php foreach ($releases as $release) {

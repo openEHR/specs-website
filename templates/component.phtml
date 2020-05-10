@@ -25,7 +25,7 @@ foreach ($specifications as $spec) {
     <a href="<?= $release->jira->crs ?>" target="_blank"><?= $release->isLatest() ? 'Roadmap' : 'Changes Implemented' ?></a>
 </div>
 <div>
-    <h2><a name="_specifications"/>Specifications</h2>
+    <h2><a name="_specifications"></a>Specifications</h2>
     <table>
         <thead>
         <tr>
@@ -55,7 +55,7 @@ foreach ($specifications as $spec) {
     </table>
 </div>
 <div>
-    <h2><a name="_releases"/>Releases</h2>
+    <h2><a name="_releases"></a>Releases</h2>
     <table>
         <thead>
         <tr>
@@ -84,7 +84,7 @@ foreach ($specifications as $spec) {
     </table>
 </div>
 <div>
-    <h2><a name="_computable_expressions"/>Computable Expressions</h2>
+    <h2><a name="_computable_expressions"></a>Computable Expressions</h2>
     <table>
         <thead>
         <tr>
@@ -105,7 +105,7 @@ foreach ($specifications as $spec) {
 </div>
 <?php if ($packages) { ?>
 <div>
-    <h2><a name="_class_index"/>Class Index</h2>
+    <h2><a name="_class_index"></a>Class Index</h2>
     <table>
         <thead>
         <tr>
@@ -116,7 +116,7 @@ foreach ($specifications as $spec) {
         <tbody>
         <?php foreach ($packages as $package) { ?>
             <tr>
-                <td><a name="_package_<?= $package->name ?>"/><?= $package->name ?></td>
+                <td><a name="_package_<?= $package->name ?>"></a><?= $package->name ?></td>
                 <td>
                     <ul>
                         <?php foreach ($package->types as $type) { ?>

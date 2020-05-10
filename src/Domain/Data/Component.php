@@ -25,9 +25,9 @@ class Component extends AbstractModel
     /** @var Release */
     public $release;
     /** @var Types[] */
-    public $types;
+    public $types = array();
     /** @var Package[] */
-    public $packages;
+    public $packages = array();
 
     public function __invoke(array $args = [])
     {
@@ -148,7 +148,7 @@ class Component extends AbstractModel
 
     public function getPackageByName(string $packageName): Package
     {
-        if ($this->packages[$packageName]) {
+        if (isset($this->packages[$packageName])) {
             return $this->packages[$packageName];
         }
         foreach ($this->packages as $package) {
