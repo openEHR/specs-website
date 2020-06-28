@@ -17,11 +17,11 @@ class Component extends AbstractModel
     /** @var Jira */
     public $jira;
     /** @var Specification[] */
-    public $specifications;
+    public $specifications = array();
     /** @var Expression[] */
-    public $expressions;
+    public $expressions = array();
     /** @var Release[] */
-    public $releases;
+    public $releases = array();
     /** @var Release */
     public $release;
     /** @var Types[] */
