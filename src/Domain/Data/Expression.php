@@ -43,6 +43,10 @@ class Expression extends AbstractModel implements \JsonSerializable
         return $this;
     }
 
+    public function isUML(): bool {
+        return $this->type === 'uml';
+    }
+
     public function setDescription(string $value = null): Expression
     {
         $this->description = $value;

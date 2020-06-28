@@ -23,7 +23,7 @@ $spec_blacklist = [
         </p>
         <p>
         <?php foreach ($expressions as $expr) {
-            if ($expr->isOwned()) {
+            if ($expr->isOwned() && $expr->isUML()) {
             ?>
             <a href="<?= $expr->getLink() ?>" target="_blank" title="<?= $expr->description ?>"><?= $expr->title ?></a><br/>
             <?php }
