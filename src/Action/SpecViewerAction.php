@@ -25,7 +25,11 @@ final class SpecViewerAction
 
     public function index(ServerRequest $request, Response $response, array $args): Response
     {
+        $args['release'] = $args['release'] ?? '';
         $component = $this->componentService->getComponent($args['component'])->useRelease($args['release']);
+        if ($request->getRequestTarget() !== $component->release->getLink()) {
+            return $response->withHeader('Location', $component->release->getLink())->withStatus(301);
+        }
         $data = (array)$component + [
                 'page' => "{$component->id}_component",
             ];
@@ -68,4 +72,5 @@ final class SpecViewerAction
             ->withHeader('Cache-Control', 'public, max-age=' . (int)$this->settings->cache_max_age)
             ->withHeader('Content-Type', $file->getContentType());
     }
+
 }
