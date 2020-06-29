@@ -9,6 +9,7 @@ return function (App $app) {
     $app->redirect('/releases/AA_GLOBAL/latest/[index.html]', '/classes', 301);
     $app->get('/releases/{component}[/[{release}[/[index[.html]]]]]', Action\SpecViewerAction::class . ':index');
     $app->get('/releases/{component}/{release}/UML/{asset:.+\.mdzip}', Action\SpecViewerAction::class . ':uml');
+    $app->get('/releases/{component:ITS-XML|ITS-JSON}/{release}/components[/[{asset:.+}]]', Action\ITSDirViewerAction::class);
     $app->get('/releases/{component}/{release}/{asset:.+\.(?:png|svg|html|xml|drawio|docx|g)}', Action\SpecViewerAction::class . ':assets');
     $app->get('/releases/{component}/{release}/{spec}', Action\SpecViewerAction::class . ':specs');
     $app->get('/', Action\WorkingBaselineAction::class);

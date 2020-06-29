@@ -134,7 +134,7 @@ class Component extends AbstractModel
         throw new \DomainException("Invalid release: $id.");
     }
 
-    public function useRelease(?string $releaseId): Component
+    public function useRelease(string $releaseId): Component
     {
         $this->release = $this->getReleaseById($releaseId ?: Release::LATEST);
         return $this;
@@ -218,23 +218,38 @@ class Component extends AbstractModel
         return '';
     }
 
+    public function getFilename(string $filename = ''): string
+    {
+        if ($filename && $this->id && $this->release) {
+            $filename = preg_replace('/\.{2,}/', '.', $filename);
+            return "{$this->release->getDirectory()}/{$filename}";
+        }
+        return '';
+    }
+
     public function getAssetFilename(string $asset = ''): string
     {
-        if ($asset && $this->id && $this->release) {
-            $asset = preg_replace('/\.{2,}/', '.', $asset);
+        if ($asset) {
             $asset = preg_replace('/^docs\//', '', $asset);
-            return "{$this->release->getDirectory()}/docs/{$asset}";
+            return $this->getFilename("docs/{$asset}");
         }
         return '';
     }
 
     public function getUMLFilename(string $asset = ''): string
     {
-        if ($asset && $this->id && $this->release) {
-            $asset = preg_replace('/\.{2,}/', '.', $asset);
-            return "{$this->release->getDirectory()}/computable/UML/{$asset}";
+        if ($asset) {
+            return $this->getFilename("computable/UML/{$asset}");
         }
         return '';
+    }
+
+    public function getITSAsset(string $asset = ''): ITSAsset
+    {
+        $filename = $this->getFilename("components/{$asset}");
+        $itsAsset = new ITSAsset($filename);
+        $itsAsset->setComponent($this);
+        return $itsAsset;
     }
 
 }
