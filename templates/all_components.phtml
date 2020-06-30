@@ -15,155 +15,105 @@ $architecture_overview = $BASE->getSpecificationById('architecture_overview');
 $archetype_technology = $AM->getSpecificationById('Overview');
 
 ?>
-		<!-- =============== Diagram =============== -->
-		<div class="imageblock" style="text-align: center">
-		  <img src="/openehr_block_diagram.svg" alt="openEHR Components" width="60%">
-		</div>
+<div class="imageblock" style="text-align: center">
+    <!-- =============== Diagram =============== -->
+    <img src="/openehr_block_diagram.svg" alt="openEHR Components" width="60%">
+</div>
 
-        <div class="specs_category_box" style="background-color: #C6F0FA;">
-			<!-- =============== Conformance Specs =============== -->
-			<div id="global_group">
-                <p class="group_title">Start Here</p>
-				<div class="group_box">
-					<div id="global_row" class="component_row">
-                        <div class="specs_cell" style="background-color:#ffeecc; border-left:none; flex-flow: row;">
-                            <p class="specs_item_wide">
-                                <a href="<?= $architecture_overview->getLink() ?>" target="_blank"><?= $architecture_overview->title_short ?></a><br>
-                                <?= $architecture_overview->micro_summary ?>
-                            </p>
-                            <p class="specs_item_wide">
-                                <a href="<?= $archetype_technology->getLink() ?>" target="_blank"><?= $archetype_technology->title_short ?></a><br>
-                                <?= $archetype_technology->micro_summary ?>
-                            </p>
-                            <p class="specs_item_wide">
-                                <a href="/Services+Landscape+for+e-Health" target="_blank">Services Landscape</a><br>
-                                Map of e-health services at enterprise, community and region levels
-                            </p>
-                            <p class="specs_item">
-                                <a href="/releases/UML/latest/index.html">GLOBAL UML</a><br>
-                                Generated global UML website
-                            </p>
-                            <p class="specs_item">
-                                <a href="/classes">CLASS INDEX</a><br>
-                                Global openEHR class link list
-                            </p>
-                        </div>
-					</div>
+<div class="specs_category_box" style="background-color: #C6F0FA;">
+    <!-- =============== intro Specs =============== -->
+    <div id="global_group">
+        <p class="group_title">Start Here</p>
+        <div class="group_box">
+            <div id="global_row" class="component_row">
+                <div class="specs_cell" style="background-color:#ffeecc; border-left:none; flex-flow: row;">
+                    <p class="specs_item_wide">
+                        <a href="<?= $architecture_overview->getLink() ?>" target="_blank"><?= $architecture_overview->title_short ?></a><br>
+                        <?= $architecture_overview->micro_summary ?>
+                    </p>
+                    <p class="specs_item_wide">
+                        <a href="<?= $archetype_technology->getLink() ?>" target="_blank"><?= $archetype_technology->title_short ?></a><br>
+                        <?= $archetype_technology->micro_summary ?>
+                    </p>
+                    <p class="specs_item_wide">
+                        <a href="/Services+Landscape+for+e-Health" target="_blank">Services Landscape</a><br>
+                        Map of e-health services at enterprise, community and region levels
+                    </p>
+                    <p class="specs_item">
+                        <a href="/releases/UML/latest/index.html">GLOBAL UML</a><br>
+                        Generated global UML website
+                    </p>
+                    <p class="specs_item">
+                        <a href="/classes">CLASS INDEX</a><br>
+                        Global openEHR class link list
+                    </p>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
-
-		<div class="specs_category_box">
-			<!-- =============== Conformance Specs =============== -->
-			<div id="cnf_group">
-                <p class="group_title">Conformance</p>
-				<div class="group_box">
-                    <?= $this->fetch('component_row.phtml', $CNF) ?>
-                </div>
-            </div>
+<div class="specs_category_box">
+    <!-- =============== Conformance Specs =============== -->
+    <div id="cnf_group">
+        <p class="group_title">Conformance</p>
+        <div class="group_box">
+            <?= $this->fetch('component_row.phtml', $CNF) ?>
         </div>
+    </div>
+</div>
 
-		<div class="specs_category_box">
-			<!-- =============== ITS Specs =============== -->
-			<div id="its_group">
-                <p class="group_title">Implementation Technologies</p>
-				<div class="group_box">
-                    <?= $this->fetch('component_row.phtml', $ITS) ?>
-                </div>
-            </div>
+<div class="specs_category_box">
+    <!-- =============== ITS Specs =============== -->
+    <div id="its_group">
+        <p class="group_title">Implementation Technologies</p>
+        <div class="group_box">
+            <?= $this->fetch('component_row.phtml', $ITS) ?>
         </div>
+    </div>
+</div>
 
-		<div class="specs_category_box">
-			<!-- =============== Formal Specs: Service Models =============== -->
-			<div id="services_group">
-                <p class="category_title">Abstract Specifications</p>
-                <p class="category_sub_title">Technology-independent primary specifications for the openEHR health computing platform</p>
-                <p class="group_title">Platform Service Interface</p>
-				<div class="group_box">
-                    <?= $this->fetch('component_row.phtml', $SM) ?>
-				</div>
-			</div>
-			
-			<!-- =============== Formal Specs: Process & CDS =============== -->
-			<div id="analytics_group">
-                <p class="group_title">Process and CDS</p>
-				<div class="group_box">
-                    <?= $this->fetch('component_row.phtml', $CDS) ?>
-                    <?= $this->fetch('component_row.phtml', $PROC) ?>
-				</div>
-			</div>
-
-			<!-- =============== Formal Specs: Content =============== -->
-			<div id="content_group">
-                <p class="group_title">Content</p>
-				<div class="group_box">
-                    <?= $this->fetch('component_row.phtml', $RM) ?>
-
-					<!-------------- TERM --------------->
-					<div id="term_row" class="component_row">
-                        <div class="component_cell">
-                            <p id="TERM" class="component_name">
-                                <a href="/releases/TERM/latest/index" target="_blank">TERM</a>
-                            </p>
-                            <p>(Terminology)</p>
-                            <p>
-                                <a href="/components/TERM/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECTERM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
-                            </p>
-                        </div>
-                        
-                        <div class="specs_cell" style="background-color:#A9C4EB;">                        
-                            <p class="specs_item_wide">
-                                <a href="/releases/TERM/latest/SupportTerminology.html" target="_blank">openEHR Terminology</a>:
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L2" target="_blank">Countries (ISO 3166)</a> |
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L263" target="_blank">Languages (ISO 639-1)</a> |
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L250" target="_blank">Character sets (IANA)</a> |
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L399" target="_blank">Media types (IANA)</a><br>
-
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L22" target="_blank">Attestation reason</a> |
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L26" target="_blank">Audit change type</a> |
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L35" target="_blank">Composition category</a> |
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L2" target="_blank">Compression algorithms</a> |
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L294" target="_blank">Event math function</a> |
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L218" target="_blank">Instruction states</a> |
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L230" target="_blank">Instruction transitions</a> |
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L9" target="_blank">Integrity check algorithms</a> |
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L40" target="_blank">MultiMedia</a> |
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L13" target="_blank">Normal statuses</a> |
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L178" target="_blank">Null flavours</a> |
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L253" target="_blank">Participation function</a> |
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L184" target="_blank">Participation mode</a> |
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L92" target="_blank">Property</a> |
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L307" target="_blank">Setting</a> |
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L251" target="_blank">Subject relationship</a> |
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L289" target="_blank">Term mapping purpose</a> |
-                                <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L170" target="_blank">Version lifecycle state</a>
-                            </p>
-                        </div>
-                    
-						<p class="releases">
-							<a href="/releases/TERM/Release-2.1.0/" target="_blank">2.1.0</a> (08 Nov 2017)
-						</p>
-					</div>
-				</div>
-			</div>
-			
-			<!-- =============== Formal Specs: Formalisms =============== -->
-			<div id="formalisms_group">
-                <p class="group_title">Formalisms</p>
-				<div class="group_box">
-                    <?= $this->fetch('component_row.phtml', $QUERY)  ?>
-                    <?= $this->fetch('component_row.phtml', $AM) ?>
-                    <?= $this->fetch('component_row.phtml', $LANG) ?>
-				</div>
-			</div>
-			
-			<!-- =============== Formal Specs: Foundations =============== -->
-			<div id="foundations">
-                <p class="group_title">Foundations</p>
-				<div class="group_box">
-                    <?= $this->fetch('component_row.phtml', $BASE) ?>
-				</div>
-			</div>
-		</div>
+<div class="specs_category_box">
+    <p class="category_title">Abstract Specifications</p>
+    <p class="category_sub_title">Technology-independent primary specifications for the openEHR health computing platform</p>
+    <!-- =============== Formal Specs: Service Models =============== -->
+    <div id="services_group">
+        <p class="group_title">Platform Service Interface</p>
+        <div class="group_box">
+            <?= $this->fetch('component_row.phtml', $SM) ?>
+        </div>
+    </div>
+    <!-- =============== Formal Specs: Process & CDS =============== -->
+    <div id="analytics_group">
+        <p class="group_title">Process and CDS</p>
+        <div class="group_box">
+            <?= $this->fetch('component_row.phtml', $CDS) ?>
+            <?= $this->fetch('component_row.phtml', $PROC) ?>
+        </div>
+    </div>
+    <!-- =============== Formal Specs: Content =============== -->
+    <div id="content_group">
+        <p class="group_title">Content</p>
+        <div class="group_box">
+            <?= $this->fetch('component_row.phtml', $RM) ?>
+            <?= $this->fetch('component_row.phtml', $TERM) ?>
+        </div>
+    </div>
+    <!-- =============== Formal Specs: Formalisms =============== -->
+    <div id="formalisms_group">
+        <p class="group_title">Formalisms</p>
+        <div class="group_box">
+            <?= $this->fetch('component_row.phtml', $QUERY) ?>
+            <?= $this->fetch('component_row.phtml', $AM) ?>
+            <?= $this->fetch('component_row.phtml', $LANG) ?>
+        </div>
+    </div>
+    <!-- =============== Formal Specs: Foundations =============== -->
+    <div id="foundations">
+        <p class="group_title">Foundations</p>
+        <div class="group_box">
+            <?= $this->fetch('component_row.phtml', $BASE) ?>
+        </div>
+    </div>
+</div>
 
