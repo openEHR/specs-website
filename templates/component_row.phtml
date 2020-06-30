@@ -38,9 +38,9 @@ $spec_blacklist = [
                 <?php if ($spec->micro_summary) { ?>
                     <?= $spec->micro_summary ?><br/>
                 <?php } ?>
-                <?php foreach ($spec->summary_types as $i => $type) { ?>
+                <?php while ($type = current($spec->summary_types)) { ?>
                     <a href="<?=$type->getLink()?>" target="_blank"><?= $type->name ?></a><?php
-                        if ($i<count($spec->summary_types)-1) {
+                        if (next($spec->summary_types)) {
                             ?>, <?php
                         } ?>
                 <?php } ?>

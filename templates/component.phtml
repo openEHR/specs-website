@@ -45,7 +45,7 @@ foreach ($specifications as $spec) {
                 <?php if ($hasSpecificationsWithNotes) { ?>
                 <td>
                     <?php foreach ($spec->notes as $note) { ?>
-                    <a href="<?= $note->link ?>" target="_blank"><?= $note->text ?></a>
+                    <a href="<?= $note->link ?>" target="_blank"><?= $note->text ?></a><br/>
                     <?php } ?>
                 </td>
                 <?php } ?>
