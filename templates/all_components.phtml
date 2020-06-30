@@ -1,5 +1,20 @@
+<?php
+/** @var \App\Domain\Data\Component $CNF */
+/** @var \App\Domain\Data\Component $ITS */
+/** @var \App\Domain\Data\Component $SM */
+/** @var \App\Domain\Data\Component $CDS */
+/** @var \App\Domain\Data\Component $PROC */
+/** @var \App\Domain\Data\Component $RM */
+/** @var \App\Domain\Data\Component $TERM */
+/** @var \App\Domain\Data\Component $QUERY */
+/** @var \App\Domain\Data\Component $AM */
+/** @var \App\Domain\Data\Component $LANG */
+/** @var \App\Domain\Data\Component $BASE */
 
+$architecture_overview = $BASE->getSpecificationById('architecture_overview');
+$archetype_technology = $AM->getSpecificationById('Overview');
 
+?>
 		<!-- =============== Diagram =============== -->
 		<div class="imageblock" style="text-align: center">
 		  <img src="/openehr_block_diagram.svg" alt="openEHR Components" width="60%">
@@ -11,21 +26,26 @@
                 <p class="group_title">Start Here</p>
 				<div class="group_box">
 					<div id="global_row" class="component_row">
-                        <div class="specs_cell" style="background-color:#ffeecc; border-left:none; flex-flow: row;">                        
+                        <div class="specs_cell" style="background-color:#ffeecc; border-left:none; flex-flow: row;">
                             <p class="specs_item_wide">
-                                <a href="/releases/BASE/latest/architecture_overview.html" target="_blank">Architecture Overview</a><br>Global description of openEHR design principles and architecture
+                                <a href="<?= $architecture_overview->getLink() ?>" target="_blank"><?= $architecture_overview->title_short ?></a><br>
+                                <?= $architecture_overview->micro_summary ?>
                             </p>
                             <p class="specs_item_wide">
-                                <a href="/releases/AM/latest/Overview.html" target="_blank">Archetype Technology</a><br>Business case for archetyping; overview of archetype specifications
+                                <a href="<?= $archetype_technology->getLink() ?>" target="_blank"><?= $archetype_technology->title_short ?></a><br>
+                                <?= $archetype_technology->micro_summary ?>
                             </p>
                             <p class="specs_item_wide">
-                                <a href="https://openehr.atlassian.net/wiki/spaces/spec/pages/357957633/Services+Landscape+for+e-Health" target="_blank">Services Landscape</a><br>Map of e-health services at enterprise, community and region levels
+                                <a href="/Services+Landscape+for+e-Health" target="_blank">Services Landscape</a><br>
+                                Map of e-health services at enterprise, community and region levels
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/UML/latest" target="_blank">GLOBAL UML</a><br>Generated global UML website
+                                <a href="/releases/UML/latest/index.html">GLOBAL UML</a><br>
+                                Generated global UML website
                             </p>
                             <p class="specs_item">
-                                <a href="/releases/AA_GLOBAL/latest/index.html" target="_blank">CLASS INDEX</a><br>Global openEHR class link list
+                                <a href="/classes">CLASS INDEX</a><br>
+                                Global openEHR class link list
                             </p>
                         </div>
 					</div>
@@ -39,27 +59,7 @@
 			<div id="cnf_group">
                 <p class="group_title">Conformance</p>
 				<div class="group_box">
-					<div id="cnf_row" class="component_row">
-                        <div class="component_cell">
-                            <p class="component_name">
-                                <a id="CNF"></a>
-                                <a href="/releases/CNF/latest/index" target="_blank">CNF</a>
-                            </p>
-                            <p>(Conformance)</p>
-                            <p>
-                                <a href="/components/CNF/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECCNF?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
-                            </p>
-                        </div>
-                        
-                        <div class="specs_cell" style="background-color:white;">                        
-                            <p class="specs_item_wide">
-                                <a href="/releases/CNF/latest/openehr_platform_conformance.html" target="_blank">Platform Conformance</a><br>System Under Test (SUT), Conformance Schedule, Profiles, Certification
-                            </p>
-                        </div>
-                        
-						<p class="releases">
-						</p>
-					</div>
+                    <?= $this->fetch('component_row.phtml', $CNF) ?>
                 </div>
             </div>
         </div>
@@ -69,48 +69,7 @@
 			<div id="its_group">
                 <p class="group_title">Implementation Technologies</p>
 				<div class="group_box">
-                    <div id="its_row" class="component_row">
-                        <div class="component_cell">
-                            <p id="ITS" class="component_name">
-                                <a href="/releases/ITS/latest/index" target="_blank">ITS</a>
-                            </p>
-                            <p>(Implementation<br>Technologies)</p>
-                            <p>
-                                <a href="/components/ITS/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECITS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
-                            </p>
-                        </div>
-
-                        <div class="specs_cell" style="background-color:#CDA2BE;">
-                            <p class="specs_item">
-                                <a href="/releases/ITS-REST/latest/index.html" target="_blank">REST APIs</a>:<br>
-                                <a href="/releases/ITS-REST/latest/ehr.html" target="_blank">EHR</a>,<br> 
-                                <a href="/releases/ITS-REST/latest/query.html" target="_blank">Query</a>,<br>
-                                <a href="/releases/ITS-REST/latest/definitions.html" target="_blank">Definitions</a>
-                            </p>
-                            <p class="specs_item">
-                                <a href="/releases/ITS-REST/latest/simplified_data_template.html" target="_blank">SDT</a><br>Simplified Data Template
-                            </p>
-                            <p class="specs_item">
-                                <a href="https://github.com/openEHR/specifications-ITS-XML" target="_blank">XSDs</a><br>XML Schemas for the openEHR RM and AM
-                            </p>
-                            <p class="specs_item">
-                                <a href="https://github.com/openEHR/specifications-ITS-JSON" target="_blank">JSON schema</a><br>JSON Schemas for the openEHR RM and AM
-                            </p>
-                            <p class="specs_item">
-                                <a href="https://github.com/openEHR/specifications-ITS-BMM" target="_blank">BMMs</a><br>BMM schemas for Task Planning, RM, Expressions, BASE
-                            </p>
-                        </div>
-
-                        <p class="releases">
-                            <a href="https://openehr.atlassian.net/browse/SPECITS/fixforversion/12522" target="_blank">JSON 1.0.0</a> (cooking) <br>
-                            <a href="https://openehr.atlassian.net/projects/SPECITS/versions/12520/tab/release-report-all-issues" target="_blank">XML 2.0.0</a> (cooking) <br>
-                            <a href="https://openehr.atlassian.net/projects/SPECITS/versions/12529/tab/release-report-all-issues" target="_blank">REST 1.1.0</a> (cooking) <br>
-                            <a href="/releases/ITS-REST/Release-1.0.1/" target="_blank">REST 1.0.1</a> (03 Nov 2019)<br>
-                            <a href="/releases/ITS-REST/Release-1.0.0/" target="_blank">REST 1.0.0</a> (07 Dec 2018)<br>
-                            <a href="https://github.com/openEHR/specifications-ITS-XML/releases/tag/Release-1.0.2" target="_blank">XML 1.0.2</a> (31 Dec 2008)
-                        </p>
-
-                    </div>
+                    <?= $this->fetch('component_row.phtml', $ITS) ?>
                 </div>
             </div>
         </div>
@@ -122,31 +81,7 @@
                 <p class="category_sub_title">Technology-independent primary specifications for the openEHR health computing platform</p>
                 <p class="group_title">Platform Service Interface</p>
 				<div class="group_box">
-					<!-------------- SM --------------->
-					<div id="sm_row" class="component_row">
-                        <div class="component_cell">
-                            <p id="SM" class="component_name">
-                                <a href="/releases/SM/latest/index" target="_blank">SM</a>
-                            </p>
-                            <p>(Service Model)</p>
-                            <p>
-                                <a href="/components/SM/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECSM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
-                            </p>
-                            <p><a href="/releases/SM/latest/UML/openEHR_UML-SM.mdzip">UML</a></p>
-                        </div>
-
-                        <div class="specs_cell" style="background-color:#FFD966;">
-                            <p class="specs_item_wide">
-                                <a href="/releases/SM/latest/openehr_platform.html" target="_blank">Platform Services</a><br>Ehr, Query, Definitions, EhrIndex, Admin, Demographic, Terminology, Message, SystemLog<br>
-                            </p>
-                            <p class="specs_item_wide">
-                                <a href="/releases/SM/latest/simplified_im_b.html" target="_blank">SIM-B</a><br>Simplified Information Model 'B' for use with Simplified Data Template
-                            </p>
-                        </div>
-
-                        <p class="releases">
-						</p>
-					</div>
+                    <?= $this->fetch('component_row.phtml', $SM) ?>
 				</div>
 			</div>
 			
@@ -154,64 +89,8 @@
 			<div id="analytics_group">
                 <p class="group_title">Process and CDS</p>
 				<div class="group_box">
-					<!-------------- CDS --------------->
-					<div id="cds_row" class="component_row">
-                        <div class="component_cell">
-                            <p id="CDS" class="component_name">
-                                <a href="/releases/CDS/latest/index" target="_blank">CDS</a>
-                            </p>
-                            <p>(Clinical Decision<br>Support)</p>
-                            <p>
-                                <a href="/components/CDS/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECCDS?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
-                            </p>
-                            <p><a href="/releases/CDS/latest/UML/openEHR_UML-CDS.mdzip">UML</a></p>
-                        </div>
-
-                        <div class="specs_cell" style="background-color:#B9E0A5;">
-                            <p class="specs_item_wide">
-                                <a href="/releases/CDS/latest/GDL2.html" target="_blank">GDL2</a><br>Guideline Definition Language v2
-                            </p>
-                            <p class="specs_item_wide">
-                                <a href="/releases/CDS/latest/GDL.html" target="_blank">GDL</a><br>Guideline Definition Language v1
-                            </p>
-                        </div>
-
-                        <p class="releases">
-						</p>
-					</div>
-                    
-					<!-------------- PROC --------------->
-					<div id="proc_row" class="component_row">
-                        <div class="component_cell">
-                            <p id="PROC" class="component_name">
-                                <a href="/releases/PROC/latest/index" target="_blank">PROC</a>
-                            </p>
-                            <p>(Process Model)</p>
-                            <p>
-                                <a href="/components/PROC/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECPROC?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
-                            </p>
-                            <p><a href="/releases/PROC/latest/UML/openEHR_UML-PROC.mdzip">UML</a></p>
-                        </div>
-
-                        <div class="specs_cell" style="background-color:#B9E0A5;">
-                            <p class="specs_item">
-                                <a href="/releases/PROC/latest/task_planning.html" target="_blank">Task Planning (TP)</a><br>An adaptive, executable, team-based model of workflow - Work Plan, Task Plan, Event
-                            </p>
-                            <p class="specs_item">
-                                <a href="/releases/PROC/latest/tp_vml.html" target="_blank">TP Visual Modelling<br>Language (TP-VML)</a><br>A visual modelling language for clinical plans and workflows.
-                            </p>
-                            <p class="specs_item">
-                                <a href="/releases/PROC/latest/tp_examples.html" target="_blank">TP Examples</a><br>Real-world worked TP examples.
-                            </p>
-                            <p class="specs_item">
-                                <a href="/releases/PROC/latest/decision_language.html" target="_blank">Decision Language (DL)</a><br>Language for use with GDL, TP.
-                            </p>
-                        </div>
-
-                        <p class="releases">
-							<a href="/releases/PROC/Release-1.0.0/" target="_blank">1.0.0</a> (1 Dec 2017)
-						</p>
-					</div>
+                    <?= $this->fetch('component_row.phtml', $CDS) ?>
+                    <?= $this->fetch('component_row.phtml', $PROC) ?>
 				</div>
 			</div>
 
@@ -220,53 +99,6 @@
                 <p class="group_title">Content</p>
 				<div class="group_box">
                     <?= $this->fetch('component_row.phtml', $RM) ?>
-					<!-------------- RM --------------->
-					<div id="rm_row" class="component_row">
-                        <div class="component_cell">
-                            <p id="RM" class="component_name">
-                                <a href="/releases/RM/latest/index" target="_blank">RM</a>
-                            </p>
-                            <p>(Reference Model)</p>
-                            <p>
-                                <a href="/components/RM/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECRM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
-                            </p>
-                            <p><a href="/releases/RM/latest/UML/openEHR_UML-RM.mdzip">UML</a></p>
-                        </div>
-                        
-                        <div class="specs_cell" style="background-color:#A9C4EB;">                        
-                            <p class="specs_item">
-                                <a href="/releases/RM/latest/demographic.html" target="_blank">Demographic</a><br>Party, PartyRelationship, Actor, Role, Contact, Address
-                            </p>
-                            <p class="specs_item">
-                                <a href="/releases/RM/latest/ehr.html" target="_blank">EHR</a><br>Composition, Section, Entry, Observation, Evaluation, Instruction, Action, AdminEntry
-                            </p>
-                            <p class="specs_item">
-                                <a href="/releases/RM/latest/ehr_extract.html" target="_blank">EHR Extract</a><br>OpenEhrExtract, GenericExtract, ExtractRequest, ExtractSpec
-                            </p>
-                            <p class="specs_item">
-                                <a href="/releases/RM/latest/common.html" target="_blank">Common</a><br>VersionedObject, Version, PartySelf, AuditDetails
-                            </p>
-                            <p class="specs_item">
-                                <a href="/releases/RM/latest/integration.html" target="_blank">Integration</a><br>IntegrationEntry
-                            </p>
-                            <p class="specs_item">
-                                <a href="/releases/RM/latest/data_structures.html" target="_blank">Data Structures</a><br>History, Event, ItemTree, Cluster, Element
-                            </p>
-                            <p class="specs_item">
-                                <a href="/releases/RM/latest/data_types.html" target="_blank">Data Types</a><br>DvBoolean, DvText, DvCodedText, DvUri, DvQuantity, DvDate/Time types, DvMultimedia
-                            </p>
-                            <p class="specs_item">
-                                <a href="/releases/RM/latest/support.html" target="_blank">Support</a><br>Terminology and Measurement service interfaces
-                            </p>
-                        </div>
-                        
-						<p class="releases">
-							<a href="https://openehr.atlassian.net/projects/SPECRM/versions/12516/tab/release-report-all-issues" target="_blank">1.1.0</a> (cooking)<br>
-							<a href="/releases/RM/Release-1.0.4/" target="_blank">1.0.4</a> (04 Jan 2019)<br>
-							<a href="/releases/RM/Release-1.0.3/" target="_blank">1.0.3</a> (15 Dec 2015)<br>
-							<a href="/releases/RM/Release-1.0.2/" target="_blank">1.0.2</a> (20 Dec 2008)
-						</p>
-					</div>
 
 					<!-------------- TERM --------------->
 					<div id="term_row" class="component_row">
@@ -320,111 +152,9 @@
 			<div id="formalisms_group">
                 <p class="group_title">Formalisms</p>
 				<div class="group_box">
-                    <?=$this->fetch('component_row.phtml', $QUERY); ?>
-					<!-------------- QUERY --------------->
-					<div id="query" class="component_row">
-                        <div class="component_cell">
-                            <p id="QUERY" class="component_name">
-                                <a href="/releases/QUERY/latest/index" target="_blank">QUERY</a>
-                            </p>
-                            <p>(Query language)</p>
-                            <p>
-                                <a href="/components/QUERY/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECQUERY?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
-                            </p>
-                        </div>
-
-                        <div class="specs_cell" style="background-color:#D9D9D9;">                                                
-                            <p class="specs_item_wide">
-                                <a href="/releases/QUERY/latest/AQL.html" target="_blank">AQL</a><br>Archetype Querying Language
-                            </p>
-                        </div>
-                        
-						<p class="releases">
-							<a href="/releases/QUERY/Release-1.0.0/" target="_blank">1.0.0</a> (15 Nov 2017)
-						</p>
-					</div>
-
-
-                    <?=$this->fetch('component_row.phtml', $AM); ?>
-                    <!-------------- AM --------------->
-					<div id="am" class="component_row">
-                        <div class="component_cell">
-                            <p id="AM" class="component_name">
-                                <a href="/releases/AM/latest/index" target="_blank">AM</a>
-                            </p>
-                            <p>(Archetype Model)</p>
-                            <p>
-                                <a href="/components/AM/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECAM?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
-                            </p>
-                            <p>
-                                <a href="/releases/AM/latest/UML/openEHR_UML-AM.mdzip">AOM2 UML</a><br>
-                                <a href="/releases/AM/latest/UML/openEHR_UML-AM-14.mdzip">AOM1.4 UML</a>
-
-                            </p>
-                        </div>
-
-                        <div class="specs_cell" style="background-color:#D9D9D9;">                                                
-                            <p class="specs_item_narrow">
-                                <a href="/releases/AM/latest/ADL2.html" target="_blank">ADL 2</a><br>Archetype Definition Language 2
-                            </p>
-                            <p class="specs_item">
-                                <a href="/releases/AM/latest/AOM2.html" target="_blank">AOM 2</a><br>Archetype, AuthoredArchetype, Template, OperationalTemplate, CObject, ArchetypeSlot, CAttribute, CPrimitive
-                            </p>
-                            <p class="specs_item_narrow">
-                                <a href="/releases/AM/latest/OPT2.html" target="_blank">OPT 2</a><br>Operational Template 2
-                            </p>
-                            <p class="specs_item_narrow">
-                                <a href="/releases/AM/latest/ADL1.4.html" target="_blank">ADL 1.4</a><br>Archetype Definition Language 1.4
-                            </p>
-                            <p class="specs_item">
-                                <a href="/releases/AM/latest/AOM1.4.html" target="_blank">AOM 1.4</a><br>Archetype, CObject, ArchetypeSlot, CAttribute, CPrimitive
-                            </p>
-                            <p class="specs_item_narrow">
-                                <a href="" target="_blank">OPT 1.4</a><br>Operational Template 1.4
-                            </p>
-                            <p class="specs_item">
-                                <a href="/releases/AM/latest/Identification.html" target="_blank">Identification</a><br>archetype / template identifiers; versioning rules
-                            </p>
-                        </div>
-                        
-						<p class="releases">
-							<a href="/releases/AM/Release-2.0.6/" target="_blank">2.0.6</a> (07 Jan 2017)<br>
-							<a href="/releases/AM/Release-2.0.6/" target="_blank">1.4</a> (31 Dec 2008)
-						</p>
-					</div>
-
-					<!-------------- LANG --------------->
-					<div id="lang" class="component_row">
-                        <div class="component_cell">
-                            <p id="LANG" class="component_name">
-                                <a href="/releases/LANG/latest/index" target="_blank">LANG</a>
-                            </p>
-                            <p>(Generic Languages)</p>
-                            <p>
-                                <a href="/components/LANG/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECLANG?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
-                            </p>
-                            <p><a href="/releases/LANG/latest/UML/openEHR_UML-LANG.mdzip">UML</a></p>
-                        </div>
-                        
-                        <div class="specs_cell" style="background-color:#D9D9D9;">                                                
-                            <p class="specs_item">
-                                <a href="/releases/LANG/latest/expression_language.html" target="_blank">Expression Language</a><br>a syntax for formal expressions
-                            </p>
-                            <p class="specs_item">
-                                <a href="/releases/LANG/latest/bmm.html" target="_blank">BMM</a><br>Basic Meta-Model - BmmSchema, BmmModel, BmmClass, BmmType, BmmProperty
-                            </p>
-                            <p class="specs_item">
-                                <a href="/releases/LANG/latest/bmm_persistence.html" target="_blank">P_BMM</a><br>BMM Human-readable serial format - PBmmSchema, P_xxx types
-                            </p>
-                            <p class="specs_item">
-                                <a href="/releases/LANG/latest/odin.html" target="_blank">ODIN</a><br>Object Data Instance Notation
-                            </p>
-                        </div>
-                        
-						<p class="releases">
-							<a href="https://openehr.atlassian.net/projects/SPECLANG/versions/12518/tab/release-report-all-issues" target="_blank">1.0.0</a> (cooking)
-						</p>
-					</div>
+                    <?= $this->fetch('component_row.phtml', $QUERY)  ?>
+                    <?= $this->fetch('component_row.phtml', $AM) ?>
+                    <?= $this->fetch('component_row.phtml', $LANG) ?>
 				</div>
 			</div>
 			
@@ -433,36 +163,6 @@
                 <p class="group_title">Foundations</p>
 				<div class="group_box">
                     <?= $this->fetch('component_row.phtml', $BASE) ?>
-					<!-------------- BASE --------------->
-					<div id="base_row" class="component_row">
-                        <div class="component_cell">
-                            <p id="BASE" class="component_name">
-                                <a href="/releases/BASE/latest/index" target="_blank">BASE</a>
-                            </p>
-                            <p>(Base models)</p>
-                            <p>
-							     <a href="/components/BASE/open_issues" target="_blank">PRs</a> | <a href="https://openehr.atlassian.net/projects/SPECBASE?   orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=released-unreleased" target="_blank">CRs</a>
-                            </p>
-                            <p><a href="/releases/BASE/latest/UML/openEHR_UML-Base.mdzip">UML</a></p>
-                        </div>
-                        
-                        <div class="specs_cell" style="background-color:#F3F4F5;">                                                
-                            <p class="specs_item">
-                                <a href="/releases/BASE/latest/base_types.html" target="_blank">Base Types</a><br>Definitions, Identifiers
-                            </p>
-                            <p class="specs_item">
-                                <a href="/releases/BASE/latest/resource.html" target="_blank">Resource</a><br>AuthoredResource
-                            </p>
-                            <p class="specs_item">
-                                <a href="/releases/BASE/latest/foundation_types.html" target="_blank">Foundation Types</a><br>Values, Structures, Interval, Date/times
-                            </p>
-                        </div>
-                        
-						<p class="releases">
-							<a href="/releases/BASE/Release-1.1.0/" target="_blank">1.1.0</a> (22 Jan 2019)<br>
-							<a href="/releases/BASE/Release-1.0.3/" target="_blank">1.0.3</a> (15 Dec 2015)
-						</p>
-					</div>
 				</div>
 			</div>
 		</div>
