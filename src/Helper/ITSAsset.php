@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Domain\Data;
+namespace App\Helper;
 
+use App\Domain\Data\Component;
+use Generator;
 use FilesystemIterator;
 use SplFileInfo;
 
@@ -23,7 +25,7 @@ class ITSAsset extends SplFileInfo
         return rtrim(substr($path, stripos($path, 'components')), '/');
     }
 
-    public function getContents(): \Generator
+    public function getContents(): Generator
     {
         if ($this->isReadable() && $this->isDir()) {
             switch ($this->component->id) {

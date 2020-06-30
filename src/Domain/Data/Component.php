@@ -2,7 +2,7 @@
 
 namespace App\Domain\Data;
 
-use App\Configuration;
+use App\Helper\ITSAsset;
 
 class Component extends AbstractModel
 {

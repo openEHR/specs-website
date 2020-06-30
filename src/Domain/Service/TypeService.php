@@ -3,7 +3,7 @@
 
 namespace App\Domain\Service;
 
-use App\File;
+use App\Helper\File;
 
 class TypeService
 {
@@ -11,7 +11,7 @@ class TypeService
     /** @var string */
     protected $filename;
 
-    /** @var Type[] */
+    /** @var array */
     public $types = array();
 
     /**
