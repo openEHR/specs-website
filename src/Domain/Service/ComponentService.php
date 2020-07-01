@@ -67,7 +67,7 @@ class ComponentService
 
     /**
      * @param Component $component
-     * @return $this
+     * @return ComponentService
      */
     private function registerComponent(Component $component): ComponentService
     {

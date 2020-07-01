@@ -2,7 +2,6 @@
 
 namespace App\Domain\Data;
 
-use App\Configuration;
 use DateTime;
 
 class Release extends AbstractModel implements \JsonSerializable
@@ -51,8 +50,7 @@ class Release extends AbstractModel implements \JsonSerializable
 
     public function setJira(array $value = []): Release
     {
-        $jira = new Jira($this->settings);
-        $this->jira = $jira($value);
+        $this->jira = (new Jira())($value);
         $this->jira->release = $this;
         return $this;
     }

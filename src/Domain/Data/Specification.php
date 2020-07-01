@@ -2,8 +2,6 @@
 
 namespace App\Domain\Data;
 
-use App\Configuration;
-
 class Specification extends AbstractModel implements \JsonSerializable
 {
     /** @var string */
@@ -109,7 +107,7 @@ class Specification extends AbstractModel implements \JsonSerializable
     public function setNotes(array $value = []): Specification
     {
         foreach ($value as $i => $data) {
-            $note = (new Note($this->settings))($data);
+            $note = (new Note())($data);
             $note->specification = $this;
             $this->notes[$i] = $note;
         }

@@ -2,16 +2,8 @@
 
 namespace App\Domain\Data;
 
-use App\Configuration;
-
 abstract class AbstractModel
 {
-    protected $settings;
-
-    public function __construct(Configuration $settings)
-    {
-        $this->settings = $settings;
-    }
 
     public function __invoke(array $args = [])
     {

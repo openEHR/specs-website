@@ -7,6 +7,8 @@ use App\Action;
 
 return function (App $app) {
     $app->redirect('/releases/AA_GLOBAL/latest/[index.html]', '/classes', 301);
+    $app->get('/releases/{component}/{alias:open_issues|roadmap|history|crs}', Action\RedirectAction::class . ':jira');
+    $app->get('/releases/{component}/{release}/{alias:issues|changes}', Action\RedirectAction::class . ':jira');
     $app->get('/releases/{component}[/[{release}[/[index[.html]]]]]', Action\SpecViewerAction::class . ':index');
     $app->get('/releases/{component}/{release}/UML/{asset:.+\.mdzip}', Action\SpecViewerAction::class . ':uml');
     $app->get('/releases/{component:ITS-XML|ITS-JSON}/{release}/components[/[{asset:.+}]]', Action\ITSDirViewerAction::class);

@@ -1,10 +1,6 @@
 <?php
 
-
 namespace App\Domain\Data;
-
-
-use App\Configuration;
 
 class Jira extends AbstractModel implements \JsonSerializable
 {

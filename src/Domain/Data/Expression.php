@@ -61,7 +61,7 @@ class Expression extends AbstractModel implements \JsonSerializable
 
     public function setDependency(array $value = []): Expression
     {
-        $this->dependency = (new Dependency($this->settings))($value);
+        $this->dependency = (new Dependency())($value);
         $this->dependency->expression = $this;
         return $this;
     }

@@ -2,6 +2,7 @@
 
 namespace App\Domain\Data;
 
+use App\Configuration;
 use App\Helper\ITSAsset;
 
 class Component extends AbstractModel
@@ -24,16 +25,23 @@ class Component extends AbstractModel
     public $releases = array();
     /** @var Release */
     public $release;
-    /** @var Types[] */
+    /** @var Type[] */
     public $types = array();
     /** @var Package[] */
     public $packages = array();
+
+    protected $settings;
+
+    public function __construct(Configuration $settings)
+    {
+        $this->settings = $settings;
+    }
 
     public function __invoke(array $args = [])
     {
         parent::__invoke($args);
         if (!$this->release) {
-            $this->release = new Release($this->settings);
+            $this->release = new Release();
             $this->release->component = $this;
             $this->release->makeLatest();
         }
@@ -66,8 +74,7 @@ class Component extends AbstractModel
 
     public function setJira(array $value = []): Component
     {
-        $jira = new Jira($this->settings);
-        $this->jira = $jira($value);
+        $this->jira = (new Jira())($value);
         $this->jira->component = $this;
         return $this;
     }
@@ -75,7 +82,7 @@ class Component extends AbstractModel
     public function setSpecifications(array $value = []): Component
     {
         foreach ($value as $i => $data) {
-            $specification = (new Specification($this->settings))($data);
+            $specification = (new Specification())($data);
             $specification->component = $this;
             $this->specifications[$i] = $specification;
         }
@@ -95,7 +102,7 @@ class Component extends AbstractModel
     public function setExpressions(array $value = []): Component
     {
         foreach ($value as $i => $data) {
-            $expression = (new Expression($this->settings))($data);
+            $expression = (new Expression())($data);
             $expression->component = $this;
             $this->expressions[$i] = $expression;
         }
@@ -115,7 +122,7 @@ class Component extends AbstractModel
     public function setReleases(array $value = []): Component
     {
         foreach ($value as $i => $data) {
-            $release = (new Release($this->settings))($data);
+            $release = (new Release())($data);
             $release->component = $this;
             $this->releases[$i] = $release;
         }
@@ -170,7 +177,7 @@ class Component extends AbstractModel
                 $package = $this->getPackageByName($type->packageName);
                 $package->registerType($type);
             } catch (\Exception $e) {
-                $package = (new Package($this->settings))(['name' => $type->packageName]);
+                $package = (new Package())(['name' => $type->packageName]);
                 $this->registerPackage($package);
                 $package->registerType($type);
             }
@@ -184,7 +191,7 @@ class Component extends AbstractModel
     public function setTypes(array $types): Component
     {
         foreach ($types as $data) {
-            $type = (new Type($this->settings))($data);
+            $type = (new Type())($data);
             $this->registerType($type);
         }
         return $this;
