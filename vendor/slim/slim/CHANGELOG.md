@@ -1,9 +1,22 @@
 # Changelog
 
+## 4.5.0 - 2020-04-14
+
+### Added
+- [2928](https://github.com/slimphp/Slim/pull/2928) Test against PHP 7.4
+- [2937](https://github.com/slimphp/Slim/pull/2937) Add support for PSR-3
+
+### Fixed
+- [2916](https://github.com/slimphp/Slim/pull/2916) Rename phpcs.xml to phpcs.xml.dist
+- [2917](https://github.com/slimphp/Slim/pull/2917) Update .editorconfig
+- [2925](https://github.com/slimphp/Slim/pull/2925) ResponseEmitter: Don't remove Content-Type and Content-Length when body is empt
+- [2932](https://github.com/slimphp/Slim/pull/2932) Update the Tidelift enterprise language
+- [2938](https://github.com/slimphp/Slim/pull/2938) Modify usage of deprecated expectExceptionMessageRegExp() method
+
 ## 4.4.0 - 2020-01-04
 
 ### Added
-- [2862](https://github.com/slimphp/Slim/pull/2862) Optimize error message in error handling if displayErrorDetails was not set
+- [2862](https://github.com/slimphp/Slim/pull/2862) Optionally handle subclasses of exceptions in custom error handler
 - [2869](https://github.com/slimphp/Slim/pull/2869) php-di/php-di added in composer suggestion
 - [2874](https://github.com/slimphp/Slim/pull/2874) Add `null` to param type-hints
 - [2889](https://github.com/slimphp/Slim/pull/2889) Make `RouteContext` attributes customizable and change default to use private names
