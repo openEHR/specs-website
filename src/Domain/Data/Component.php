@@ -68,6 +68,7 @@ class Component extends AbstractModel
     {
         $jira = new Jira($this->settings);
         $this->jira = $jira($value);
+        $this->jira->component = $this;
         return $this;
     }
 

@@ -21,7 +21,7 @@
     <tr>
         <td><a href="<?= $release->getLink() ?>" target="_blank"><?= $release->component->id ?> Release <?= $release->id ?></a></td>
         <td><?= $release->date->format('d-M-Y') ?></td>
-        <td><a href="<?= $release->jira->crs ?>" target="_blank">Release notes</a></td>
+        <td><a href="<?= $release->jira->getChanges() ?>" target="_blank">Release notes</a></td>
     </tr>
     <?php } ?>
     </tbody>

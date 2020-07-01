@@ -27,10 +27,10 @@ class Specification extends AbstractModel implements \JsonSerializable
     /** @var string */
     public $link;
 
-    /** @var Types[] */
+    /** @var Type[] */
     public $types = array();
 
-    /** @var Types[] */
+    /** @var Type[] */
     public $summary_types = array();
 
     /** @var Component */

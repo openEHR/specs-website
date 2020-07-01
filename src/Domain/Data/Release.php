@@ -53,6 +53,7 @@ class Release extends AbstractModel implements \JsonSerializable
     {
         $jira = new Jira($this->settings);
         $this->jira = $jira($value);
+        $this->jira->release = $this;
         return $this;
     }
 

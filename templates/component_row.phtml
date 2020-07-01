@@ -18,8 +18,8 @@ $spec_blacklist = [
         </p>
         <p>(<?= $title ?>)</p>
         <p>
-            <a href="<?= $jira->prs ?>" target="_blank">PRs</a> |
-            <a href="<?= $jira->crs ?>" target="_blank">CRs</a>
+            <a href="<?= $jira->getOpenIssues() ?>" target="_blank">PRs</a> |
+            <a href="<?= $jira->getCrs() ?>" target="_blank">CRs</a>
         </p>
         <p>
         <?php foreach ($expressions as $expr) {
@@ -50,7 +50,7 @@ $spec_blacklist = [
     <p class="releases">
         <?php foreach ($releases as $release) {
         ?>
-            <a href="<?= $release->isReleased() ? $release->getLink() : $release->jira->crs ?>" target="_blank"><?= $release->id ?></a>
+            <a href="<?= $release->isReleased() ? $release->getLink() : $release->jira->getChanges() ?>" target="_blank"><?= $release->id ?></a>
             (<?= $release->isReleased() ? $release->date->format('d-M-Y') : 'cooking' ?>)<br/>
         <?php } ?>
     </p>

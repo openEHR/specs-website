@@ -21,8 +21,16 @@ foreach ($specifications as $spec) {
     <?= $title ?> (<?= $id ?>) Component - <?= $release->id ?>
 </h1>
 <div class="title-para">
-    <a href="<?= $release->jira->prs ?>" target="_blank"><?= $release->isLatest() ? 'Open Issues' : 'Issues Fixed' ?></a> |
-    <a href="<?= $release->jira->crs ?>" target="_blank"><?= $release->isLatest() ? 'Roadmap' : 'Changes Implemented' ?></a>
+    <?php if ($release->isLatest()) { ?>
+        <a href="<?= $jira->getOpenIssues() ?>" target="_blank">Open Issues</a> |
+        <a href="<?= $jira->getRoadmap() ?>" target="_blank">Roadmap</a> |
+        <a href="<?= $jira->getHistory() ?>" target="_blank">History</a>
+    <?php } else {?>
+        <a href="<?= $release->jira->getIssues() ?>" target="_blank">Issues Fixed</a> |
+        <a href="<?= $release->jira->getChanges() ?>" target="_blank">Changes Implemented</a> |
+        <a href="<?= $jira->getRoadmap() ?>" target="_blank">Roadmap</a> |
+        <a href="<?= $jira->getHistory() ?>" target="_blank">History</a>
+    <?php } ?>
 </div>
 <div>
     <h2><a name="_specifications"></a>Specifications</h2>
@@ -70,13 +78,13 @@ foreach ($specifications as $spec) {
             <tr>
                 <td><a>Release <?= $release->id ?></a></td>
                 <td>cooking</td>
-                <td><a href="<?= $release->jira->crs ?>" target="_blank">Release notes</a></td>
+                <td><a href="<?= $release->jira->getChanges() ?>" target="_blank">Release notes</a></td>
             </tr>
             <?php } else {?>
             <tr>
                 <td><a href="<?= $release->getLink() ?>" target="_blank">Release <?= $release->id ?></a></td>
                 <td><?= $release->date->format('d-M-Y') ?></td>
-                <td><a href="<?= $release->jira->crs ?>" target="_blank">Release notes</a></td>
+                <td><a href="<?= $release->jira->getChanges() ?>" target="_blank">Release notes</a></td>
             </tr>
             <?php } ?>
         <?php } ?>
@@ -129,4 +137,4 @@ foreach ($specifications as $spec) {
         </tbody>
     </table>
 </div>
- <?php } ?>
+<?php } ?>
