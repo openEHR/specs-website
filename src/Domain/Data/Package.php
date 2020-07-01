@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Domain\Data;
-
 
 class Package extends AbstractModel implements \JsonSerializable
 {

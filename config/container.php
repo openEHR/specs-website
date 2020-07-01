@@ -29,7 +29,8 @@ return [
     },
 
     ComponentService::class => function (ContainerInterface $container) {
-        return new ComponentService($container->get(Configuration::class));
+        $settings = $container->get(Configuration::class);
+        return new ComponentService($settings);
     },
 
 ];

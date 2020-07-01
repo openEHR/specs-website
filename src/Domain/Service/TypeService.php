@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Domain\Service;
 
 use App\Helper\File;
@@ -16,6 +15,7 @@ class TypeService
 
     /**
      * TypeService constructor.
+     * @param string $filename
      */
     public function __construct(string $filename)
     {
