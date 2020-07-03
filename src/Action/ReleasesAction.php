@@ -25,7 +25,7 @@ final class ReleasesAction
             'page' => 'latest_releases',
             'releases' => $this->componentService->getReleases(),
         ];
-        return $this->view->render($response, 'latest_releases.phtml', $data);
+        return $this->view->render($response, 'page/latest_releases.phtml', $data);
     }
 
     public function historical(ServerRequest $request, Response $response, array $args): Response
@@ -34,6 +34,6 @@ final class ReleasesAction
             'title' => 'Historical Releases',
             'page' => 'historical_releases',
         ];
-        return $this->view->render($response, 'historical_releases.phtml', $data);
+        return $this->view->render($response, 'page/historical_releases.phtml', $data);
     }
 }

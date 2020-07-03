@@ -33,7 +33,7 @@ final class SpecViewerAction
         $data = (array)$component + [
                 'page' => "{$component->id}_component",
             ];
-        return $this->view->render($response, 'component.phtml', $data);
+        return $this->view->render($response, 'page/component.phtml', $data);
     }
 
     public function specs(ServerRequest $request, Response $response, array $args): Response

@@ -24,7 +24,7 @@ final class WorkingBaselineAction
                 'title' => 'Working Baseline',
                 'page' => 'working_baseline',
             ] + $this->componentService->getComponents();
-        return $this->view->render($response, 'all_components.phtml', $data);
+        return $this->view->render($response, 'page/all_components.phtml', $data);
     }
 
     public function manifest(ServerRequest $request, Response $response): Response
@@ -51,7 +51,7 @@ final class WorkingBaselineAction
             'page' => 'class_index',
             'components' => $components,
         ];
-        return $this->view->render($response, 'class_index.phtml', $data);
+        return $this->view->render($response, 'page/class_index.phtml', $data);
     }
 
 }

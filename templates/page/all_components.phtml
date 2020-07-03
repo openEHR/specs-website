@@ -58,7 +58,7 @@ $archetype_technology = $AM->getSpecificationById('Overview');
     <div id="cnf_group">
         <p class="group_title">Conformance</p>
         <div class="group_box">
-            <?= $this->fetch('component_row.phtml', $CNF) ?>
+            <?= $this->fetch('block/component_row.phtml', $CNF) ?>
         </div>
     </div>
 </div>
@@ -68,7 +68,7 @@ $archetype_technology = $AM->getSpecificationById('Overview');
     <div id="its_group">
         <p class="group_title">Implementation Technologies</p>
         <div class="group_box">
-            <?= $this->fetch('component_row.phtml', $ITS) ?>
+            <?= $this->fetch('block/component_row.phtml', $ITS) ?>
         </div>
     </div>
 </div>
@@ -80,39 +80,39 @@ $archetype_technology = $AM->getSpecificationById('Overview');
     <div id="services_group">
         <p class="group_title">Platform Service Interface</p>
         <div class="group_box">
-            <?= $this->fetch('component_row.phtml', $SM) ?>
+            <?= $this->fetch('block/component_row.phtml', $SM) ?>
         </div>
     </div>
     <!-- =============== Formal Specs: Process & CDS =============== -->
     <div id="analytics_group">
         <p class="group_title">Process and CDS</p>
         <div class="group_box">
-            <?= $this->fetch('component_row.phtml', $CDS) ?>
-            <?= $this->fetch('component_row.phtml', $PROC) ?>
+            <?= $this->fetch('block/component_row.phtml', $CDS) ?>
+            <?= $this->fetch('block/component_row.phtml', $PROC) ?>
         </div>
     </div>
     <!-- =============== Formal Specs: Content =============== -->
     <div id="content_group">
         <p class="group_title">Content</p>
         <div class="group_box">
-            <?= $this->fetch('component_row.phtml', $RM) ?>
-            <?= $this->fetch('component_row.phtml', $TERM) ?>
+            <?= $this->fetch('block/component_row.phtml', $RM) ?>
+            <?= $this->fetch('block/component_row.phtml', $TERM) ?>
         </div>
     </div>
     <!-- =============== Formal Specs: Formalisms =============== -->
     <div id="formalisms_group">
         <p class="group_title">Formalisms</p>
         <div class="group_box">
-            <?= $this->fetch('component_row.phtml', $QUERY) ?>
-            <?= $this->fetch('component_row.phtml', $AM) ?>
-            <?= $this->fetch('component_row.phtml', $LANG) ?>
+            <?= $this->fetch('block/component_row.phtml', $QUERY) ?>
+            <?= $this->fetch('block/component_row.phtml', $AM) ?>
+            <?= $this->fetch('block/component_row.phtml', $LANG) ?>
         </div>
     </div>
     <!-- =============== Formal Specs: Foundations =============== -->
     <div id="foundations">
         <p class="group_title">Foundations</p>
         <div class="group_box">
-            <?= $this->fetch('component_row.phtml', $BASE) ?>
+            <?= $this->fetch('block/component_row.phtml', $BASE) ?>
         </div>
     </div>
 </div>
