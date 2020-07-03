@@ -40,7 +40,7 @@ $settings['jira_crs'] = $settings['jira_home'] . '/projects/%s?orderField=RANK&s
 
 $settings['view'] = [
     'templates' => $settings['root'] . '/templates',
-    'layout' => 'layout.phtml',
+    'layout' => 'layout/layout.phtml',
     'attributes' => [
         'title' => '',
         'page' => '',
