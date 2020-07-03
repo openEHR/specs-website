@@ -24,7 +24,7 @@ final class WorkingBaselineAction
                 'title' => 'Working Baseline',
                 'page' => 'working_baseline',
             ] + $this->componentService->getComponents();
-        return $this->view->render($response, 'page/all_components.phtml', $data);
+        return $this->view->render($response, 'page/working_baseline.phtml', $data);
     }
 
     public function manifest(ServerRequest $request, Response $response): Response

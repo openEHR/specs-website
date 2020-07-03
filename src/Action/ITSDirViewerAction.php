@@ -34,9 +34,9 @@ final class ITSDirViewerAction
             $data = [
                 'component' => $component,
                 'dir' => $asset,
-                'page' => "{$component->id}_its_dir",
+                'page' => "{$component->id}_its_dir_viewer",
             ];
-            return $this->view->render($response, 'page/its_dir.phtml', $data);
+            return $this->view->render($response, 'page/its_dir_viewer.phtml', $data);
         }
         $file = new File($asset->getRealPath());
         if (!$file->hasContents()) {
