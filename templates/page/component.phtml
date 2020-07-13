@@ -32,7 +32,8 @@ foreach ($specifications as $spec) {
     <span class="mx-1"><a href="<?= $release->jira->getIssues() ?>" target="_blank">Issues Fixed</a></span> |
     <span class="mx-1"><a href="<?= $release->jira->getChanges() ?>" target="_blank">Changes Implemented</a></span> |
     <span class="mx-1"><a href="<?= $jira->getRoadmap() ?>" target="_blank">Roadmap</a></span> |
-    <span class="mx-1"><a href="<?= $jira->getHistory() ?>" target="_blank">History</a></span>
+    <span class="mx-1"><a href="<?= $jira->getHistory() ?>" target="_blank">History</a></span> |
+    <span class="mx-1"><a href="<?= $release->component->getLink() ?>" target="_blank">latest</a></span>
     <?php } ?>
 </nav>
 <h2 id="_specifications">Specifications</h2>
@@ -67,7 +68,7 @@ foreach ($specifications as $spec) {
 <table class="table table-sm">
     <thead class="thead-light">
         <tr>
-            <th class="w-long">Release</th>
+            <th class="w-short">Release</th>
             <th class="w-short">Date</th>
             <th>Description</th>
         </tr>
