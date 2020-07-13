@@ -1,11 +1,12 @@
 <?php
 
 use Psr\Container\ContainerInterface;
-use App\Configuration;
-use App\Domain\Service\ComponentService;
 use Slim\App;
 use Slim\Factory\AppFactory;
+use App\Configuration;
+use App\Domain\Service\ComponentService;
 use App\View;
+use App\View\NavBar;
 
 return [
     Configuration::class => function () {
@@ -15,17 +16,18 @@ return [
     App::class => function (ContainerInterface $container) {
         AppFactory::setContainer($container);
         $app = AppFactory::create();
-
-        // Optional: Set the base path to run the app in a sub-directory
-        // The public directory must not be part of the base path
-        //$app->setBasePath('/slim4-tutorial');
-
         return $app;
     },
 
     View::class => function (ContainerInterface $container) {
         $settings = $container->get(Configuration::class)->view;
-        return new View($settings->templates, (array)$settings->attributes, $settings->layout);
+        $navbar = $container->get(NavBar::class);
+        return new View($settings, $navbar);
+    },
+
+    NavBar::class => function (ContainerInterface $container) {
+        $settings = $container->get(Configuration::class)->navbar;
+        return new NavBar($settings);
     },
 
     ComponentService::class => function (ContainerInterface $container) {

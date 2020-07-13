@@ -1,0 +1,43 @@
+<?php
+/** @var \App\View\NavItem $navItem */
+/** @var \App\View\NavItem $item */
+/** @var \App\View\NavItem $subItem */
+?>
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top border-bottom">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav"><?php
+            foreach ($this->navBar->items as $navItem) { ?>
+            <li class="nav-item dropdown px-1 <?=$navItem->isActive() ? 'active' : '' ?>">
+                <a class="nav-link dropdown-toggle" href="<?=$navItem->getLink()?>" id="<?=$navItem->getId()?>" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?=$navItem->getTitle()?>
+                </a>
+                <div class="dropdown-menu dropright shadow-sm" aria-labelledby="<?=$navItem->getId()?>"><?php
+                foreach ($navItem->items as $item) {
+                    if ($item->hasSubItems()) { ?>
+                        <a class="dropdown-item dropdown-toggle <?=$item->isActive() ? 'active' : '' ?>" id="<?=$item->getId()?>" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?=$item->getTitle()?></a>
+                        <div class="dropdown-menu" aria-labelledby="<?=$item->getId()?>"><?php
+                        foreach ($item->items as $subItem) {
+                            if ($subItem->isDivider()) { ?>
+                                <div class="dropdown-divider"></div>
+                            <?php } else { ?>
+                                <a class="dropdown-item <?=$subItem->isActive() ? 'active' : '' ?>" href="<?=$subItem->getLink()?>"><?=$subItem->getTitle()?></a>
+                            <?php } ?>
+                        <?php } ?>
+                        </div>
+                    <?php } elseif ($item->isDivider()) { ?>
+                        <div class="dropdown-divider"></div>
+                    <?php } elseif ($item->isHeader()) { ?>
+                        <div class="dropdown-header"><?=$item->getTitle()?></div>
+                    <?php } else { // this is just a normal page ?>
+                        <a class="dropdown-item <?=$item->isActive() ? 'active' : '' ?>" href="<?=$item->getLink()?>"><?=$item->getTitle()?></a>
+                    <?php } ?>
+                <?php } ?>
+                </div>
+            </li>
+            <?php } ?>
+        </ul>
+    </div>
+</nav>

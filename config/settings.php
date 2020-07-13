@@ -1,5 +1,7 @@
 <?php
 
+use App\View\Page;
+
 // Error reporting
 error_reporting(0);
 ini_set('display_errors', '0');
@@ -45,6 +47,52 @@ $settings['view'] = [
         'title' => '',
         'page' => '',
     ],
+];
+
+$settings['navbar'] = [
+    'Home' => [
+        'Working Baseline' => '/',
+        'Latest Releases' => '/latest_releases',
+        'Historical Releases' => '/historical_releases',
+        'Class Index' => '/classes',
+    ],
+    'Specifications' => [
+        'Architecture Overview' => '/releases/BASE/latest/architecture_overview.html',
+        'Archetype Technology' => '/releases/AM/latest/Overview.html',
+        Page::DIVIDER,
+        'Conformance Specifications' => '/releases/CNF/latest',
+        Page::DIVIDER,
+        'Implementation Technologies Specifications' => '/releases/ITS/latest',
+        Page::DIVIDER,
+        'Service Mode Specifications' => '/releases/SM/latest',
+        Page::DIVIDER,
+        'Clinical Decision Support' => '/releases/CDS/latest',
+        'Process Model' => '/releases/PROC/latest',
+        Page::DIVIDER,
+        'Reference Model' => '/releases/RM/latest',
+        'openEHR Terminology' => '/releases/TERM/latest',
+        Page::DIVIDER,
+        'Query Languages' => '/releases/QUERY/latest',
+        'Generic Languages' => '/releases/LANG/latest',
+        Page::DIVIDER,
+        'Base Model' => '/releases/BASE/latest',
+    ],
+    'Communication' => [
+        'Issue Trackers' => 'https://openehr.atlassian.net/secure/Dashboard.jspa?selectPageId=10190',
+        'Discourse Forum' => 'https://discourse.openehr.org/c/specifications',
+        'Wiki' => '/wiki/display/spec/Specifications+Home',
+        'Slack' => 'https://openehrspecs.slack.com/',
+    ],
+    'Governance' => [
+        'Specification Program' => 'https://www.openehr.org/programs/specification',
+        'Specification Governance' => 'https://www.openehr.org/programs/specification/governance',
+        'Change process' => 'https://www.openehr.org/programs/specification/changeprocess',
+        'Release Strategy' => 'https://www.openehr.org/programs/specification/releasestrategy',
+        'SEC Members' => 'https://www.openehr.org/programs/specification/editorialcommittee',
+        Page::DIVIDER,
+        'Organisational Structure' => 'https://www.openehr.org/governance/organisational_structure',
+        'IP and Licensing' => 'https://www.openehr.org/governance/intellectual_property',
+    ]
 ];
 
 return $settings;

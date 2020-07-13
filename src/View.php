@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\View\NavBar;
 use Psr\Http\Message\ResponseInterface;
 
 class View
@@ -22,17 +23,22 @@ class View
     protected $layout;
 
     /**
+     * @var NavBar
+     */
+    protected $navBar;
+
+    /**
      * View constructor.
      *
-     * @param string $templatePath
-     * @param array $attributes
-     * @param string $layout
+     * @param Configuration $settings
+     * @param NavBar $navBar
      */
-    public function __construct(string $templatePath = '', array $attributes = [], string $layout = '')
+    public function __construct(Configuration $settings, NavBar $navBar)
     {
-        $this->setTemplatePath($templatePath);
-        $this->setAttributes($attributes);
-        $this->setLayout($layout);
+        $this->setTemplatePath($settings->templates);
+        $this->setAttributes((array)$settings->attributes);
+        $this->setLayout($settings->layout);
+        $this->setNavBar($navBar);
     }
 
     /**
@@ -149,6 +155,28 @@ class View
     public function setTemplatePath(string $templatePath = ''): View
     {
         $this->templatePath = rtrim($templatePath, '/\\') . '/';
+        return $this;
+    }
+
+    /**
+     * Gets bounded navBar
+     *
+     * @return NavBar
+     */
+    public function getNavBar(): NavBar
+    {
+        return $this->navBar;
+    }
+
+    /**
+     * Bind a navBar to the current view
+     *
+     * @param NavBar $navBar
+     * @return View
+     */
+    public function setNavBar(NavBar $navBar): View
+    {
+        $this->navBar = $navBar;
         return $this;
     }
 
