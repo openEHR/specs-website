@@ -1,21 +1,24 @@
 ﻿<?php
-/** @var \App\Domain\Data\Release $release */
+/** @var string $title */
+/** @var \App\Domain\Data\Release[] $releases */
 ?>
-<h1><?= $title; ?></h1>
+<h1 class="text-center">
+    <?=$title?>
+</h1>
 <p>
     The following table shows releases of all openEHR specification components.
     Note that RM and BASE Release 1.0.2 are conversions of the original 'Release 1.0.2' specifications,
     available on the <a href="/historical_releases">historical releases page</a>.
 </p>
-<table class="TableBasic">
-    <thead>
+<table class="table table-sm">
+    <thead class="thead-light">
     <tr>
-        <th>Release</th>
-        <th>Date</th>
+        <th class="w-long">Release</th>
+        <th class="w-short">Date</th>
         <th>Description</th>
     </tr>
     </thead>
-    <tbody>
+    <tbody class="border-bottom">
     <?php foreach ($releases as $release) {
     ?>
     <tr>
@@ -26,3 +29,4 @@
     <?php } ?>
     </tbody>
 </table>
+<div style="height: 150px;"/>

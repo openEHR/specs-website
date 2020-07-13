@@ -1,0 +1,54 @@
+html {font-size: 0.9375rem}
+h1, h2, h3, h4, h5 {font-weight:600; line-height:120%; color:#023760; text-decoration:none;}
+
+h1 {font-size:1.9rem; margin: 1.6rem 0 0.6rem 0;}
+h2 {font-size:1.6rem; margin: 1.4rem 0 0.6rem 0;}
+h3 {font-size:1.4rem; margin: 1.2rem 0 0.6rem 0;}
+h4 {font-size:1.2rem; margin: 1.2rem 0 0.6rem 0;}
+h5 {font-size:1.0rem; margin: 0.8rem 0 0.6rem 0;}
+
+a {color: #123f6d;}
+a:hover {color: #de7d47;}
+
+
+header {
+    background: #d3e6f8; /* Old browsers */
+    background: -moz-linear-gradient(top, #feffff 0%, #d3e6f8 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #feffff 0%,#d3e6f8 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #feffff 0%,#d3e6f8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#d3e6f8',GradientType=0 ); /* IE6-9 */
+}
+header .row {
+    height: 80px;
+}
+header .logo {
+    width: 165px;
+    height: 55px;
+}
+
+main {
+    /*min-height: 1024px;*/
+}
+#page_component h1{
+
+}
+main .openehr-block-diagram {
+    height: 300px;
+}
+
+
+footer {
+    background: #d3e6f8;
+    font-size: 0.866rem;
+}
+footer .logo {
+    width: 100px;
+    height: 31px;
+}
+
+th.w-short {
+    width: 140px;
+}
+th.w-long {
+    width: 220px;
+}

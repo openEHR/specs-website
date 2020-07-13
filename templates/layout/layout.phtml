@@ -1,58 +1,81 @@
-<!DOCTYPE HTML>
-
+<!doctype html>
 <html lang="en">
-
 <head>
-
 	<title>openEHR - <?=$title?></title>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
 	<meta name="description" content="openEHR provides open source specifications and reference implementations of future proof EHR systems">
 	<meta name="keywords" content="archetypes, openEHR, EHR, electronic health record, electronic medical record, ADL, reference model, clinical models, healthcare, health informatics, medical informatics, EHR standards, ISO 18308, CEN 13606, health care software, open source software, knowledge modelling, patient-centric">
 	<meta name="author" content="openEHR Foundation">
-	<meta name="designer" content="Adriana Danilakova">
+	<meta name="designer" content="Sebastian Iancu">
 	<meta name="rating" content="General">
 	<meta name="robots" content="All">
 	<meta name="revisit-after" content="5 days">
+	<meta name="google-site-verification" content="zfPZfHQ-5oXYT119aAi7HdZELv8ubHPCxvIFANVPzcU"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<link rel="stylesheet" href="/styles/basic.css"  type="text/css">
-	<link rel="stylesheet" href="/styles/pages.css"  type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" href="/styles/specifications.css" type="text/css">
 
 	<link rel="shortcut icon" href="/favicon.ico">
     <link rel="icon" sizes="16x16 32x32" href="/favicon.ico">
 
     <link rel="home" href="/">
-
-	<meta name="google-site-verification" content="zfPZfHQ-5oXYT119aAi7HdZELv8ubHPCxvIFANVPzcU" />
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-	<script src="/functions/menu_dropdown.js"></script>
-	<script src="/functions/paragraph_dropdown.js"></script>
 </head>
-
 <body>
-
-<div id="MainFrame">
-    <?=$this->fetch('layout/top_panel.phtml', $data)?>
-    <?=$this->fetch('layout/top_menu.phtml', $data)?>
-	<div id="MainAreaContainer">
-        <div id="MainArea">
-            <div id="SideMenu">
-                <?=$this->fetch('layout/side_menu.phtml', $data)?>
-            </div>
-            <div id="Content">
-                <?=$content?>
-            </div>
+<header class="container-fluid">
+    <div class="row align-items-center">
+        <div class="col">
+            <img src="/images/Logo.png" class="logo img-fluid mx-2">
+            <h6 class="motto d-none d-sm-inline align-middle mx-2">Open industry specifications, models and software for e-health</h6>
         </div>
-        <br class="clear">
     </div>
-    <?=$this->fetch('layout/footer.phtml', $data)?>
-</div>
-<script type="text/javascript">
-    var dropdown=new MENU.dropdown.init("dropdown", {id:'menu', active:'menuhover'});
-</script>
+</header>
+<?=$this->fetch('layout/navbar.phtml', $data)?>
+<main id="page_<?=$page?>" class="container-fluid py-2">
+    <?=$content?>
+</main>
+<footer class="container-fluid py-2">
+    <div class="row">
+        <div class="col-md">
+            <nav class="nav">
+                <a href="https://www.openehr.org/using_the_site/terms_of_use" class="mr-1">Terms of use</a> |
+                <a href="https://www.openehr.org/using_the_site/privacy_policy" class="mx-1">Privacy policy</a> |
+                <a href="mailto:webmaster@openehr.org" class="mx-1">Webmaster</a>
+            </nav>
+        </div>
+        <div class="col-md">
+            <nav class="nav justify-content-end">
+                <a href="https://discourse.openehr.org" class="nav-item fa fa-comment fa-lg m-2" title="Discourse Forums"></a>
+                <a href="https://www.openehr.org/wiki" target="_blank" class="nav-item fa fa-wikipedia-w fa-lg m-2" title="Wiki"></a>
+                <a href="https://github.com/openEHR" target="_blank" class="nav-item fa fa-github fa-lg m-2" title="Github"></a>
+                <a href="https://www.openehr.org/digital_media/blogs" class="nav-item fa fa-newspaper-o fa-lg m-2" title="Blogs"></a>
+                <a href="https://www.youtube.com/openEHR" target="_blank" class="nav-item fa fa-youtube fa-lg m-2" title="YouTube"></a>
+                <a href="https://twitter.com/#!/openehr" target="_blank" class="nav-item fa fa-twitter fa-lg m-2" title="Twitter"></a>
+                <a href="https://www.facebook.com/groups/openehr/" target="_blank" class="nav-item fa fa-facebook fa-lg m-2" title="Facebook"></a>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md">
+            <span>Copyright © <?php echo date("Y");?> openEHR Foundation. All rights reserved</span>
+            <br/>
+            <img src="https://www.openehr.org/static/img/logo_bottom.png" class="logo img-fluid">
+        </div>
+        <div class="col-md">
+            <nav class="nav justify-content-end">
+                Acknowledgements:
+                <span class="mx-1"><a href="https://www.atlassian.com/" target="_blank">Atlassian</a> (Jira, Confluence)</span> |
+                <span class="mx-1"><a href="https://www.nomagic.com/" target="_blank">NoMagic</a> (MagicDraw UML)</span> |
+                <span class="mx-1"><a href="https://asciidoctor.org/" target="_blank">AsciiDoctor</a> (publishing)</span> |
+                <span class="mx-1"><a href="https://github.com/" target="_blank">GitHub</a> (DVCS)</span> |
+                <span class="mx-1"><a href="https://en.wikipedia.org/wiki/LAMP_%28software_bundle%29" target="_blank">LAMP</a> dev community</span>
+            </nav>
+        </div>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 </html>
