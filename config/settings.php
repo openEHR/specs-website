@@ -86,7 +86,7 @@ $settings['navbar'] = [
         'Foundations' => Page::HEADER,
         'Base Model' => '/releases/BASE/latest',
     ],
-    'Communication' => [
+    'Community' => [
         'Issue Trackers' => 'https://openehr.atlassian.net/secure/Dashboard.jspa?selectPageId=10190',
         'Discourse Forum' => 'https://discourse.openehr.org/c/specifications',
         'Wiki' => '/wiki/display/spec/Specifications+Home',
