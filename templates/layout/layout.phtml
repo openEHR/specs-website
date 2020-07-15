@@ -23,13 +23,9 @@
     <link rel="home" href="/">
 </head>
 <body>
-<header class="container-fluid">
-    <div class="row align-items-center">
-        <div class="col">
-            <img src="/images/Logo.png" class="logo img-fluid mx-2">
-            <h6 class="motto d-none d-sm-inline align-middle mx-2">Open industry specifications, models and software for e-health</h6>
-        </div>
-    </div>
+<header class="container-fluid d-flex flex-row justify-content-start align-items-center pt-2">
+    <img src="/images/Logo.png" alt="openEHR Specifications" class="logo img-fluid">
+    <h6 class="motto d-none d-sm-flex ml-3">Open industry specifications, models <br/>and software for e-health</h6>
 </header>
 <?=$this->fetch('layout/navbar.phtml', $data)?>
 <main id="page_<?=$page?>" class="container pt-2 pb-5">

@@ -18,21 +18,17 @@ header {
     background: -webkit-linear-gradient(top, #feffff 0%,#d3e6f8 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom, #feffff 0%,#d3e6f8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#d3e6f8',GradientType=0 ); /* IE6-9 */
-}
-header .row {
     height: 80px;
 }
 header .logo {
     width: 165px;
     height: 55px;
 }
-
-main {
-    /*min-height: 1024px;*/
+header .motto {
+    color: #314b68;
 }
-#page_component h1{
 
-}
+
 main .openehr-block-diagram {
     height: 300px;
 }
@@ -46,6 +42,9 @@ footer .logo {
     width: 100px;
     height: 31px;
 }
+
+
+
 
 th.w-short {
     width: 125px;
