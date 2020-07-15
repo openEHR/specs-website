@@ -1,8 +1,11 @@
-<?php 
+<?php
+/** @var string $id */
+/** @var string $title */
 /** @var \App\Domain\Data\Release $release */
+/** @var \App\Domain\Data\Release[] $releases */
 /** @var \App\Domain\Data\Jira $jira */
-/** @var \App\Domain\Data\Specification $spec */
-/** @var \App\Domain\Data\Expression $expr */
+/** @var \App\Domain\Data\Specification[] $specifications */
+/** @var \App\Domain\Data\Expression[] $expressions */
 /** @var \App\Domain\Data\Type $type */
 
 $spec_blacklist = [
@@ -40,7 +43,7 @@ $spec_blacklist = [
                     <?= $spec->micro_summary ?><br/>
                 <?php } ?>
                 <?php while ($type = current($spec->summary_types)) { ?>
-                    <a href="<?=$type->getLink()?>" target="_blank"><?= $type->name ?></a><?php
+                    <span class="badge badge-light"><a href="<?=$type->getLink()?>" class="text-wrap" target="_blank"><?= $type->name ?></a></span><?php
                         if (next($spec->summary_types)) {
                             ?>, <?php
                         } ?>
