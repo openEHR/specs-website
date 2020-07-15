@@ -38,7 +38,7 @@ class ComponentService
         ];
         $releasesRoot = "{$this->settings->sites_root}/releases";
         if (!is_readable($releasesRoot) || !is_dir($releasesRoot)) {
-            throw new \DomainException("Bad configuration for [sites_root={$this->settings->sites_root}].");
+            throw new \DomainException("Bad configuration for [sites_root={$this->settings->sites_root}]. Directory not found or not readable.");
         }
         foreach (glob("{$releasesRoot}/*/latest/manifest.json") as $file) {
             if (is_readable($file) && ($content = file_get_contents($file)) && ($data = json_decode($content, true))) {
