@@ -11,12 +11,12 @@ $spec_blacklist = [
     'archetype_profile',
 ]
 ?>
-<div id="<?= $id ?>" class="component_row">
-    <div class="component_cell">
-        <p class="component_name">
+<div id="<?= $id ?>" class="d-flex component_row">
+    <div class="flex-shrink-0 component_cell">
+        <h6>
             <a href="<?= $release->getLink() ?>" target="_blank"><?= $id ?></a>
-        </p>
-        <p>(<?= $title ?>)</p>
+        </h6>
+        <small>(<?= $title ?>)</small>
         <p>
             <a href="<?= $jira->getOpenIssues() ?>" target="_blank">PRs</a> |
             <a href="<?= $jira->getCrs() ?>" target="_blank">CRs</a>
@@ -30,11 +30,12 @@ $spec_blacklist = [
         } ?>
         </p>
     </div>
-    <div class="specs_cell">
+    <div class="flex-grow-1 d-grid specs_cell">
+        <div class="row no-gutters">
         <?php foreach ($specifications as $spec) {
             if (!in_array($spec->id, $spec_blacklist)) { ?>
-            <p class="specs_item" title="<?= $spec->summary ?>">
-                <a href="<?= $spec->getLink() ?>" target="_blank"><?= $spec->title_short ?></a><br/>
+            <div class="col specs_item" title="<?= $spec->summary ?>">
+                <h6><a href="<?= $spec->getLink() ?>" target="_blank"><?= $spec->title_short ?></a></h6>
                 <?php if ($spec->micro_summary) { ?>
                     <?= $spec->micro_summary ?><br/>
                 <?php } ?>
@@ -44,14 +45,15 @@ $spec_blacklist = [
                             ?>, <?php
                         } ?>
                 <?php } ?>
-            </p><?php }
+            </div><?php }
         } ?>
+        </div>
     </div>
-    <p class="releases">
+    <div class="d-none d-md-block flex-shrink-0 releases">
         <?php foreach ($releases as $release) {
         ?>
             <a href="<?= $release->isReleased() ? $release->getLink() : $release->jira->getChanges() ?>" target="_blank"><?= $release->id ?></a>
             (<?= $release->isReleased() ? $release->date->format('d-M-Y') : 'cooking' ?>)<br/>
         <?php } ?>
-    </p>
+    </div>
 </div>

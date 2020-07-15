@@ -1,10 +1,11 @@
 html {font-size: 0.9375rem}
+body {font-family: -apple-system, BlinkMacSystemFont, "Proxima Nova Regular","Segoe UI", Roboto, "Helvetica Neue", Arial, "Droid Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;}
 h1, h2, h3, h4, h5 {font-weight:600; line-height:120%; color:#023760; text-decoration:none;}
 
 h1 {font-size:1.9rem; margin: 1.6rem 0 0.6rem 0;}
 h2 {font-size:1.6rem; margin: 1.4rem 0 0.6rem 0;}
 h3 {font-size:1.4rem; margin: 1.2rem 0 0.6rem 0;}
-h4 {font-size:1.2rem; margin: 1.2rem 0 0.6rem 0;}
+h4 {font-size:1.2rem; margin: 1.0rem 0 0.6rem 0;}
 h5 {font-size:1.0rem; margin: 0.8rem 0 0.6rem 0;}
 
 a {color: #123f6d;}
@@ -51,4 +52,107 @@ th.w-short {
 }
 th.w-long {
     width: 250px;
+}
+
+
+
+
+
+.specs_category_box {
+    font-size: 0.867rem;
+    min-width: 305px;
+    padding: 0.5rem;
+    margin: 1rem;
+    border: 1px solid #123f6d;
+    border-radius: 0.3rem;
+    background-color: #ffeecc;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+.specs_category_box#global_box {
+    background-color: #C6F0FA;
+}
+.specs_category_box h4,
+.specs_category_box h5,
+.specs_category_box h6 {
+    color: #123f6d;
+    font-weight: bold;
+    margin: 0.2rem 0;
+}
+.specs_category_box h5 {
+    margin-top: 0.8rem;
+}
+.specs_category_box h6,
+.specs_category_box h6 a {
+    color: #3386ae;
+}
+.specs_category_box p {
+    margin: 0.2rem 0;
+}
+
+.specs_category_box .group_box {
+    border: 1px solid #123f6d;
+    border-radius: 0.3rem;
+    background-color: #ffffff;
+}
+
+
+
+
+.specs_category_box .component_row:not(:last-child) {
+    border-bottom: 1px solid #123f6d;
+}
+.specs_category_box .component_row .component_cell {
+    width: 135px;
+    margin: 0.5rem;
+}
+.specs_category_box .component_row .releases {
+    width: 135px;
+    padding: 0.5rem;
+    border-left: 1px solid #123f6d;
+}
+.specs_category_box .component_row .specs_cell {
+    border-left: 1px solid #123f6d;
+    padding: 0.25rem;
+}
+.specs_category_box .specs_item {
+    /*max-width: 19%;*/
+    min-width: 115px;
+    min-height: 90px;
+    padding: 0.5rem;
+    margin: 0.25rem;
+    border: 1px solid #123f6d;
+    border-radius: 0.3rem;
+    background-color: #ffffff;
+    line-height: 1.2;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+.specs_category_box .specs_item h6 {
+    font-size: 0.867rem;
+    margin-top: 0;
+}
+
+#global_group .specs_cell {
+    background-color: #ffeecc;
+}
+#cnf_group .specs_cell {
+    background-color: white;
+}
+#its_group .specs_cell {
+    background-color: #cda2be;
+}
+#services_group .specs_cell {
+    background-color: #ffd966;
+}
+#analytics_group .specs_cell {
+    background-color: #b9e0a5;
+}
+#content_group .specs_cell {
+    background-color: #a9c4eb;
+}
+#formalisms_group .specs_cell {
+    background-color: #d9d9d9;
+}
+#foundations_group .specs_cell {
+    background-color: #f3f4f5;
 }

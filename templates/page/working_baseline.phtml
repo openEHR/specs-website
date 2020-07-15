@@ -15,105 +15,79 @@ $architecture_overview = $BASE->getSpecificationById('architecture_overview');
 $archetype_technology = $AM->getSpecificationById('Overview');
 
 ?>
-<div class="imageblock" style="text-align: center">
-    <!-- =============== Diagram =============== -->
-    <img src="/openehr_block_diagram.svg" alt="openEHR Components" class="openehr-block-diagram">
-</div>
 
-<div class="specs_category_box" style="background-color: #C6F0FA;">
-    <!-- =============== intro Specs =============== -->
-    <div id="global_group">
-        <p class="group_title">Start Here</p>
-        <div class="group_box">
-            <div id="global_row" class="component_row">
-                <div class="specs_cell" style="background-color:#ffeecc; border-left:none; flex-flow: row;">
-                    <p class="specs_item_wide">
-                        <a href="<?= $architecture_overview->getLink() ?>" target="_blank"><?= $architecture_overview->title_short ?></a><br>
-                        <?= $architecture_overview->micro_summary ?>
-                    </p>
-                    <p class="specs_item_wide">
-                        <a href="<?= $archetype_technology->getLink() ?>" target="_blank"><?= $archetype_technology->title_short ?></a><br>
-                        <?= $archetype_technology->micro_summary ?>
-                    </p>
-                    <p class="specs_item_wide">
-                        <a href="/Services+Landscape+for+e-Health" target="_blank">Services Landscape</a><br>
-                        Map of e-health services at enterprise, community and region levels
-                    </p>
-                    <p class="specs_item">
-                        <a href="/releases/UML/latest/index.html">GLOBAL UML</a><br>
-                        Generated global UML website
-                    </p>
-                    <p class="specs_item">
-                        <a href="/classes">CLASS INDEX</a><br>
-                        Global openEHR class link list
-                    </p>
-                </div>
+<div class="d-flex flex-column">
+
+    <div class="specs_category_box d-grid" id="global_box">
+        <h5>Start Here</h5>
+        <div class="row no-gutters specs_cell">
+            <div class="col specs_item">
+                <h6><a href="<?= $architecture_overview->getLink() ?>" target="_blank"><?= $architecture_overview->title_short ?></a><br></h6>
+                <?= $architecture_overview->micro_summary ?>
+            </div>
+            <div class="col specs_item">
+                <h6><a href="<?= $archetype_technology->getLink() ?>" target="_blank"><?= $archetype_technology->title_short ?></a><br></h6>
+                <?= $archetype_technology->micro_summary ?>
+            </div>
+            <div class="col specs_item">
+                <h6><a href="/Services+Landscape+for+e-Health" target="_blank">Services Landscape</a><br></h6>
+                Map of e-health services at enterprise, community and region levels
+            </div>
+            <div class="col specs_item">
+                <h6><a href="/releases/UML/latest/index.html">GLOBAL UML</a><br></h6>
+                Generated global UML website
+            </div>
+            <div class="col specs_item">
+                <h6><a href="/classes">CLASS INDEX</a><br></h6>
+                Global openEHR class link list
             </div>
         </div>
     </div>
-</div>
 
-<div class="specs_category_box">
-    <!-- =============== Conformance Specs =============== -->
-    <div id="cnf_group">
-        <p class="group_title">Conformance</p>
-        <div class="group_box">
+    <img src="/openehr_block_diagram.svg" alt="openEHR components" class="openehr-block-diagram mx-auto d-block img-fluid mt-4">
+
+    <div class="specs_category_box">
+        <h5>Conformance</h5>
+        <div id="cnf_group" class="group_box">
             <?= $this->fetch('block/component_row.phtml', $CNF) ?>
         </div>
     </div>
-</div>
 
-<div class="specs_category_box">
-    <!-- =============== ITS Specs =============== -->
-    <div id="its_group">
-        <p class="group_title">Implementation Technologies</p>
-        <div class="group_box">
+    <div class="specs_category_box">
+        <h5>Implementation Technologies</h5>
+        <div id="its_group" class="group_box">
             <?= $this->fetch('block/component_row.phtml', $ITS) ?>
         </div>
     </div>
-</div>
 
-<div class="specs_category_box">
-    <p class="category_title">Abstract Specifications</p>
-    <p class="category_sub_title">Technology-independent primary specifications for the openEHR health computing platform</p>
-    <!-- =============== Formal Specs: Service Models =============== -->
-    <div id="services_group">
-        <p class="group_title">Platform Service Interface</p>
-        <div class="group_box">
+    <div class="specs_category_box">
+        <h4 class="text-center">Abstract Specifications</h4>
+        <p class="text-center">Technology-independent primary specifications for the openEHR health computing platform</p>
+
+        <h5>Platform Service Interface</h5>
+        <div id="services_group" class="group_box">
             <?= $this->fetch('block/component_row.phtml', $SM) ?>
         </div>
-    </div>
-    <!-- =============== Formal Specs: Process & CDS =============== -->
-    <div id="analytics_group">
-        <p class="group_title">Process and CDS</p>
-        <div class="group_box">
+        <h5>Process and CDS</h5>
+        <div id="analytics_group" class="group_box">
             <?= $this->fetch('block/component_row.phtml', $CDS) ?>
             <?= $this->fetch('block/component_row.phtml', $PROC) ?>
         </div>
-    </div>
-    <!-- =============== Formal Specs: Content =============== -->
-    <div id="content_group">
-        <p class="group_title">Content</p>
-        <div class="group_box">
+        <h5>Content</h5>
+        <div id="content_group" class="group_box">
             <?= $this->fetch('block/component_row.phtml', $RM) ?>
             <?= $this->fetch('block/component_row.phtml', $TERM) ?>
         </div>
-    </div>
-    <!-- =============== Formal Specs: Formalisms =============== -->
-    <div id="formalisms_group">
-        <p class="group_title">Formalisms</p>
-        <div class="group_box">
+        <h5>Formalisms</h5>
+        <div id="formalisms_group" class="group_box">
             <?= $this->fetch('block/component_row.phtml', $QUERY) ?>
             <?= $this->fetch('block/component_row.phtml', $AM) ?>
             <?= $this->fetch('block/component_row.phtml', $LANG) ?>
         </div>
-    </div>
-    <!-- =============== Formal Specs: Foundations =============== -->
-    <div id="foundations">
-        <p class="group_title">Foundations</p>
-        <div class="group_box">
+        <h5>Foundations</h5>
+        <div id="foundations_group" class="group_box">
             <?= $this->fetch('block/component_row.phtml', $BASE) ?>
         </div>
     </div>
-</div>
 
+</div>
