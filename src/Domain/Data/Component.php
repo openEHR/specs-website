@@ -204,7 +204,7 @@ class Component extends AbstractModel
 
     public function getTypeByName(string $typeName): Type
     {
-        if ($this->types[$typeName]) {
+        if (isset($this->types[$typeName])) {
             return $this->types[$typeName];
         }
         foreach ($this->types as $type) {
