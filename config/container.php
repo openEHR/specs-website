@@ -30,9 +30,4 @@ return [
         return new NavBar($settings);
     },
 
-    ComponentService::class => function (ContainerInterface $container) {
-        $settings = $container->get(Configuration::class);
-        return new ComponentService($settings);
-    },
-
 ];
