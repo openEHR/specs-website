@@ -17,9 +17,11 @@ return function (App $app) {
     $app->get('/', Action\WorkingBaselineAction::class);
     $app->get('/classes[/{class}]', Action\WorkingBaselineAction::class . ':classes');
     $app->get('/manifest', Action\WorkingBaselineAction::class . ':manifest');
+    $app->get('/search', Action\SearchAction::class);
     $app->get('/latest_releases', Action\ReleasesAction::class);
     $app->get('/historical_releases', Action\ReleasesAction::class . ':historical');
     // redirects
     $app->redirect('/wiki/display/spec/Specifications+Home', 'https://openehr.atlassian.net/wiki/spaces/spec/overview', 301);
     $app->redirect('/Services+Landscape+for+e-Health', 'https://openehr.atlassian.net/wiki/spaces/spec/pages/357957633/Services+Landscape+for+e-Health', 301);
 };
+

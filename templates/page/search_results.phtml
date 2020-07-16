@@ -1,0 +1,117 @@
+<?php
+/** @var string $title */
+/** @var string $keyword */
+/** @var int $count */
+/** @var int $count_types */
+/** @var array $types */
+/** @var \App\Domain\Data\Component[] $components */
+/** @var \App\Domain\Data\Specification[] $specifications */
+/** @var \App\Domain\Data\Expression[] $expressions */
+/** @var \App\Domain\Data\Package $package */
+/** @var \App\Domain\Data\Type $type */
+
+
+?>
+<h1 class="text-center">
+    <?=$title?>
+</h1>
+<p>
+<?php if (!empty($count)) { ?>
+    The following <span class="badge badge-secondary"><?=$count?></span> result(s) found while searching
+    for "<code><?=$keyword?></code>" in <a href="/">working baseline</a> specifications.
+<?php } else { ?>
+    No results found while searching for "<code><?=$keyword?></code>"
+    in <a href="/">working baseline</a> specifications.
+<?php } ?>
+</p>
+
+<?php if (!empty($components)) { ?>
+<h2 id="_components">Components <span class="badge badge-secondary"><?=count($components)?></span></h2>
+    <?php foreach ($components as $component) {?>
+    <div class="specs_category_box">
+        <div id="its_group" class="group_box">
+            <?= $this->fetch('block/component_row.phtml', $component) ?>
+        </div>
+    </div>
+    <?php } ?>
+<?php } ?>
+
+
+<?php if (!empty($specifications)) { ?>
+<h2 id="_specifications">Specifications <span class="badge badge-secondary"><?=count($specifications)?></span></h2>
+<table class="table table-sm">
+    <thead class="thead-light">
+    <tr>
+        <th class="w-long">Specification</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody class="border-bottom">
+    <?php foreach ($specifications as $spec) {
+        ?>
+        <tr>
+            <td>
+                <a href="<?= $spec->component->getLink() ?>" title="<?= $spec->component->description ?>" target="_blank"><?= $spec->component->id ?></a> /
+                <a href="<?= $spec->getLink() ?>" title="<?= $spec->description ?>" target="_blank"><?= $spec->title_short ?></a>
+            </td>
+            <td><?= $spec->summary ?></td>
+        </tr>
+    <?php } ?>
+    </tbody>
+</table>
+<?php } ?>
+
+<?php if (!empty($expressions)) { ?>
+<h2 id="_computable_expressions">Computable Expressions <span class="badge badge-secondary"><?=count($expressions)?></span></h2>
+<table class="table table-sm">
+    <thead class="thead-light">
+    <tr>
+        <th class="w-long">Resource</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody class="border-bottom">
+    <?php foreach ($expressions as $expr) {
+        ?>
+        <tr>
+            <td>
+                <a href="<?= $expr->component->getLink() ?>" title="<?= $expr->component->description ?>" target="_blank"><?= $expr->component->id ?></a> /
+                <a href="<?= $expr->getLink() ?>" title="<?= $expr->title ?>" target="_blank"><?= $expr->id ?></a>
+            </td>
+            <td><?= $expr->description ?></td>
+        </tr>
+    <?php } ?>
+    </tbody>
+</table>
+<?php } ?>
+
+<?php if ($types) { ?>
+    <h2 id="_class_index">Class Index <span class="badge badge-secondary"><?=$count_types?></span></h2>
+    <table class="table table-sm">
+        <thead class="thead-light">
+        <tr>
+            <th class="w-long">Packages</th>
+            <th>Classes</th>
+        </tr>
+        </thead>
+        <tbody class="border-bottom">
+        <?php foreach ($types as $typeSet) {
+            $package = $typeSet['package'];
+            $spec = $typeSet['specification'];
+            ?>
+            <tr>
+                <td>
+                    <a href="<?= $spec->component->getLink() ?>" title="<?= $spec->component->description ?>" target="_blank"><?= $spec->component->id ?></a> /
+                    <a href="<?= $spec->getLink() ?>" title="<?= $spec->description ?>" target="_blank"><?= $spec->title_short ?></a> /
+                    <?= $package->name ?>
+                </td>
+                <td>
+                    <?php foreach ($typeSet['types'] as $type) { ?>
+                        <span class="badge badge-light"><a id="<?= $type->fragment ?>" href="<?= $type->getLink() ?>" target="_blank"><?= $type->name ?></a></span>
+                    <?php } ?>
+                </td>
+            </tr>
+        <?php } ?>
+        </tbody>
+    </table>
+<?php } ?>

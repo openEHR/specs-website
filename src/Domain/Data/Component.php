@@ -54,6 +54,11 @@ class Component extends AbstractModel
         return $this;
     }
 
+    public function is(string $id): bool
+    {
+        return strcasecmp($this->id, $id) === 0;
+    }
+
     public function setTitle(string $value = null): Component
     {
         $this->title = $value;
