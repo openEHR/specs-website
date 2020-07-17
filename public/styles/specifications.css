@@ -130,6 +130,9 @@ th.w-long {
     font-size: 0.867rem;
     margin-top: 0;
 }
+.specs_category_box .specs_item span {
+    max-width: 100%;
+}
 
 #global_group .specs_cell {
     background-color: #ffeecc;

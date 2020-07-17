@@ -42,11 +42,8 @@ $spec_blacklist = [
                 <?php if ($spec->micro_summary) { ?>
                     <?= $spec->micro_summary ?><br/>
                 <?php } ?>
-                <?php while ($type = current($spec->summary_types)) { ?>
-                    <span class="badge badge-light"><a href="<?=$type->getLink()?>" class="text-wrap" target="_blank"><?= $type->name ?></a></span><?php
-                        if (next($spec->summary_types)) {
-                            ?>, <?php
-                        } ?>
+                <?php foreach ($spec->summary_types as $type) { ?>
+                    <span class="badge badge-light text-truncate"><a href="<?= $type->getLink() ?>" target="_blank"><?= $type->name ?></a></span>
                 <?php } ?>
             </div><?php }
         } ?>
