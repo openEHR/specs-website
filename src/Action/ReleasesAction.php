@@ -27,13 +27,4 @@ final class ReleasesAction
         ];
         return $this->view->render($response, 'page/latest_releases.phtml', $data);
     }
-
-    public function historical(ServerRequest $request, Response $response, array $args): Response
-    {
-        $data = [
-            'title' => 'Historical Releases',
-            'page' => 'historical_releases',
-        ];
-        return $this->view->render($response, 'page/historical_releases.phtml', $data);
-    }
 }
