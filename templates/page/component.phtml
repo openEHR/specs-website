@@ -51,7 +51,10 @@ foreach ($specifications as $spec) {
     <?php foreach ($specifications as $spec) {
         ?>
         <tr>
-            <td><a href="<?= $spec->getLink() ?>" title="<?= $spec->description ?>" target="_blank"><?= $spec->title_short ?></a></td>
+            <td>
+                <a href="<?= $spec->getLink() ?>" title="<?= $spec->description ?>" target="_blank"><?= $spec->title_short ?></a>
+                <?= $this->fetch('block/spec_status.phtml', $spec) ?>
+            </td>
             <td><?= $spec->summary ?></td>
             <?php if ($hasSpecificationsWithNotes) { ?>
             <td>

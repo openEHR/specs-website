@@ -19,6 +19,10 @@ class Specification extends AbstractModel implements \JsonSerializable
     /** @var array */
     public $classes;
     /** @var string */
+    public $spec_status;
+    /** @var string */
+    public $copyright_year;
+    /** @var string */
     public $keywords;
     /** @var Note[] */
     public $notes = array();
@@ -42,6 +46,12 @@ class Specification extends AbstractModel implements \JsonSerializable
         }
         if (isset($args['micro_summary'])) {
             $this->setMicroSummary($args['micro_summary']);
+        }
+        if (isset($args['spec_status'])) {
+            $this->setSpecStatus($args['spec_status']);
+        }
+        if (isset($args['copyright_year'])) {
+            $this->setCopyrightYear($args['copyright_year']);
         }
         return $this;
     }
@@ -95,6 +105,18 @@ class Specification extends AbstractModel implements \JsonSerializable
     public function setClasses(array $value = []): Specification
     {
         $this->classes = $value;
+        return $this;
+    }
+
+    public function setSpecStatus(string $value = null): Specification
+    {
+        $this->spec_status = $value;
+        return $this;
+    }
+
+    public function setCopyrightYear(string $value = null): Specification
+    {
+        $this->copyright_year = $value;
         return $this;
     }
 
@@ -174,6 +196,8 @@ class Specification extends AbstractModel implements \JsonSerializable
             'summary' => $this->summary,
             'micro_summary' => $this->micro_summary,
             'classes' => $this->classes,
+            'spec_status' => $this->spec_status,
+            'copyright_year' => $this->copyright_year,
             'keywords' => $this->keywords,
             'notes' => $this->notes,
             'types' => $this->types,

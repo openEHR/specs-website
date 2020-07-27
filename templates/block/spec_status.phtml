@@ -1,0 +1,27 @@
+<?php
+/** @var string $spec_status */
+/** @var string $copyright_year */
+
+
+switch ($spec_status) {
+    case 'STABLE':
+        $badge = 'badge-success';
+        break;
+    case 'TRIAL':
+        $badge = 'badge-primary';
+        break;
+    case 'DEVELOPMENT':
+        $badge = 'badge-secondary';
+        break;
+    case 'SUPERSEDED':
+        $badge = 'badge-warning';
+        break;
+    case 'OBSOLETE':
+    case 'ARCHIVED':
+        $badge = 'badge-danger';
+        break;
+    default:
+        $badge = 'badge-light';
+}
+?>
+<sup><span class="badge <?= $badge ?>" title="Specification status is <?= $spec_status ?>, copyright <?= $copyright_year ?>."><?= $spec_status ?></span></sup>
