@@ -19,11 +19,11 @@ final class UMLViewerAction
 
     public function assets(ServerRequest $request, Response $response, array $args): Response
     {
-        $args['asset'] = $args['asset'] ?? 'index.html';
-        $filename = "{$this->settings->sites_root}/releases/UML/latest/{$args['asset']}";
+        $asset = $args['asset'] ?? 'index.html';
+        $filename = "{$this->settings->sites_root}/releases/UML/latest/$asset";
         $file = new File($filename);
         if (!$file->hasContents()) {
-            throw new HttpNotFoundException($request, "Asset file ({$args['asset']}) from (UML Viewer) not found.");
+            throw new HttpNotFoundException($request, "Asset file ($asset) from (UML Viewer) not found.");
         }
         $response->getBody()->write($file->getContents());
         return $response->withHeader('Last-Modified', gmdate('D, d M Y H:i:s T', $file->getLastModified()))
