@@ -41,8 +41,7 @@ class Component extends AbstractModel
     {
         parent::__invoke($args);
         if (!$this->release) {
-            $this->release = new Release();
-            $this->release->component = $this;
+            $this->registerRelease(new Release());
             $this->release->makeLatest();
         }
         return $this;
@@ -150,6 +149,13 @@ class Component extends AbstractModel
     public function useRelease(string $releaseId): Component
     {
         $this->release = $this->getReleaseById($releaseId ?: Release::LATEST);
+        return $this;
+    }
+
+    public function registerRelease(Release $release): Component
+    {
+        $this->release = $release;
+        $this->release->component = $this;
         return $this;
     }
 

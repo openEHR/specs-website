@@ -6,6 +6,7 @@ use App\Configuration;
 use App\Domain\Data\Expression;
 use App\Domain\Data\Release;
 use App\Domain\Data\Component;
+use App\Helper\File;
 
 class ComponentService
 {
@@ -107,6 +108,12 @@ class ComponentService
     {
         if ($release->isReleased()) {
             $this->data['releases'][] = $release;
+            $file = new File($release->getDirectory(). '/manifest.json');
+            if ($file->hasContents() && ($data = json_decode($file->getContents(), true))) {
+                $component = (new Component($this->settings));
+                $component->registerRelease($release);
+                $component($data);
+            }
         }
         return $this;
     }
@@ -153,15 +160,33 @@ class ComponentService
      */
     private function buildExpressions(): ComponentService
     {
+        /** @var Component $component */
         foreach ($this->data['components'] as $component) {
             foreach ($component->expressions as $expression) {
                 if (!$expression->isOwned()) {
-                    $supplierComponent = clone $this->getComponent($expression->dependency->component);
-                    $supplierComponent->useRelease($expression->dependency->release);
-                    $supplierExpression = $supplierComponent->getExpressionById($expression->id);
-                    $expression->depends($supplierExpression);
+                    $this->buildDependentExpression($expression);
                 }
             }
+            foreach ($component->releases as $release) {
+                if ($release->isReleased()) {
+                    foreach ($release->component->expressions as $expression) {
+                        if (!$expression->title && !$expression->isOwned()) {
+                            $this->buildDependentExpression($expression);
+                        }
+                    }
+                }
+            }
+        }
+        return $this;
+    }
+
+    private function buildDependentExpression(Expression $expression) : ComponentService
+    {
+        if ($expression->dependency) {
+            $supplierComponent = clone $this->getComponent($expression->dependency->component);
+            $supplierComponent->useRelease($expression->dependency->release);
+            $supplierExpression = $supplierComponent->getExpressionById($expression->id);
+            $expression->depends($supplierExpression);
         }
         return $this;
     }

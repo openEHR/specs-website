@@ -27,10 +27,11 @@ final class SpecViewerAction
     {
         $args['release'] = $args['release'] ?? '';
         $component = $this->componentService->getComponent($args['component'])->useRelease($args['release']);
-        if ($request->getRequestTarget() !== $component->release->getLink()) {
-            return $response->withHeader('Location', $component->release->getLink())->withStatus(301);
+        $release = $component->release;
+        if ($request->getRequestTarget() !== $release->getLink()) {
+            return $response->withHeader('Location', $release->getLink())->withStatus(301);
         }
-        $data = (array)$component + [
+        $data = (array)$release->component + [
                 'page' => "{$component->id}_component",
             ];
         return $this->view->render($response, 'page/component.phtml', $data);

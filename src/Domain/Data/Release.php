@@ -93,6 +93,11 @@ class Release extends AbstractModel implements \JsonSerializable
             'date' => $this->date,
             'jira' => $this->jira,
             '_component' => $this->component->id,
+            '_releaseInfo' => !$this->isReleased() ? null : [
+                'released' => true,
+                'specifications' => $this->component->specifications,
+                'expressions' => $this->component->expressions,
+            ],
             '_getLink()' => $this->getLink(),
         ];
     }
