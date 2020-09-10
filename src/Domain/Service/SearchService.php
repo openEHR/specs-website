@@ -84,7 +84,10 @@ class SearchService
         ksort($results['specifications']);
         ksort($results['types']);
         ksort($results['expressions']);
-        $results['count'] = count($results['components']) + count($results['specifications']) + count($results['types']) + count($results['expressions']);
+        $results['count'] = $results['count_types']
+            + count($results['components'])
+            + count($results['specifications'])
+            + count($results['expressions']);
         return $results;
     }
 }
