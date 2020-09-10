@@ -34,7 +34,7 @@ class SearchService
                 $results['components']['0_'.$component->id] = $component;
             } elseif ((strpos($component->title, $keyword) !== false) || (strpos($component->description, $keyword) !== false)) {
                 $results['components']['1_'.$component->id] = $component;
-            } elseif (strpos($component->keywords, $keyword) !== false) {
+//            } elseif (strpos($component->keywords, $keyword) !== false) {
 //                $results['components']['2_'.$component->id] = $component;
             }
             // searching for specifications
@@ -47,7 +47,7 @@ class SearchService
                     $results['specifications']['2_'.$spec->id] = $spec;
                 } elseif (stripos($spec->summary, $keyword) !== false) {
                     $results['specifications']['3_'.$spec->id] = $spec;
-                } elseif (stripos($spec->keywords, $keyword) !== false) {
+//                } elseif (stripos($spec->keywords, $keyword) !== false) {
 //                    $results['specifications']['4_'.$spec->id] = $spec;
                 }
             }
@@ -56,7 +56,7 @@ class SearchService
                 if (!$type->package || !$type->specification) {
                     continue;
                 }
-                if ((stripos($type->name, $keyword) !== false) || (stripos($type->packageName, $keyword) !== false)) {
+                if ((stripos($type->name, $keyword) !== false)/* || (stripos($type->packageName, $keyword) !== false)*/) {
                     $results['types'][$type->packageName]['package'] = $type->package;
                     $results['types'][$type->packageName]['specification'] = $type->specification;
                     $results['types'][$type->packageName]['types']['0_'.$type->name] = $type;
