@@ -4,10 +4,9 @@
 namespace App\Action;
 
 use App\Configuration;
-use App\Helper\File;
+use App\Domain\Service\ComponentService;
 use App\View;
 use Slim\Exception\HttpBadRequestException;
-use Slim\Exception\HttpNotFoundException;
 use Slim\Http\Response;
 use Slim\Http\ServerRequest;
 
@@ -15,11 +14,13 @@ final class HookAction
 {
     protected $view;
     protected $settings;
+    protected $componentService;
 
-    public function __construct(View $view, Configuration $settings)
+    public function __construct(View $view, Configuration $settings, ComponentService $componentService)
     {
         $this->view = $view;
         $this->settings = $settings;
+        $this->componentService = $componentService;
     }
 
     public function populate_releases(ServerRequest $request, Response $response, array $args): Response
@@ -63,6 +64,8 @@ final class HookAction
 
         exec($command, $cmd_output);
         $output = implode(PHP_EOL, $cmd_output);
+
+        $this->componentService->build();
 
         $response->getBody()->write($output);
         return $response
