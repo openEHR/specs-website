@@ -159,6 +159,21 @@ th.w-long {
     background-color: #f3f4f5;
 }
 
+@media (min-width: 576px) {
+    html {
+        min-height: 100%;
+        position: relative;
+    }
+    body {
+        margin-bottom: 100px;
+    }
+    footer {
+        height: 95px;
+        position: absolute;
+        bottom: 0;
+    }
+}
+
 @media (min-width: 768px) {
     .specs_category_box .component_row .component_cell {
         width: 135px;
