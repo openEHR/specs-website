@@ -1,0 +1,137 @@
+<?php
+/** @var string $title */
+/** @var string $id */
+/** @var \App\Domain\Data\Release $release */
+/** @var \App\Domain\Data\Release[] $releases */
+/** @var \App\Domain\Data\Jira $jira */
+/** @var \App\Domain\Data\Specification[] $specifications */
+/** @var \App\Domain\Data\Expression[] $expressions */
+/** @var \App\Domain\Data\Note $note */
+/** @var \App\Domain\Data\Package[] $packages */
+/** @var \App\Domain\Data\Type $type */
+
+$hasSpecificationsWithNotes = false;
+foreach ($specifications as $spec) {
+    if ($spec->notes) {
+        $hasSpecificationsWithNotes = true;
+        break;
+    }
+}
+
+?>
+<img src="<?= $release->getLink() ?>/openehr_block_diagram.svg" alt="openEHR components" class="openehr-block-diagram mx-auto d-block img-fluid mt-5">
+<h1 class="text-center">
+    <?= $title ?> (<?= $id ?>) Component - <?= $release->id ?>
+</h1>
+<nav class="nav justify-content-center">
+    <?php if ($release->isLatest()) { ?>
+    <span class="mx-1"><a href="<?= $jira->getOpenIssues() ?>" target="_blank">Open Issues</a></span> |
+    <span class="mx-1"><a href="<?= $jira->getRoadmap() ?>" target="_blank">Roadmap</a></span> |
+        <span class="mx-1"><a href="<?= $jira->getHistory() ?>" target="_blank">History</a></span>
+    <?php } else {?>
+    <span class="mx-1"><a href="<?= $release->jira->getIssues() ?>" target="_blank">Issues Fixed</a></span> |
+    <span class="mx-1"><a href="<?= $release->jira->getChanges() ?>" target="_blank">Changes Implemented</a></span> |
+    <span class="mx-1"><a href="<?= $jira->getRoadmap() ?>" target="_blank">Roadmap</a></span> |
+    <span class="mx-1"><a href="<?= $jira->getHistory() ?>" target="_blank">History</a></span> |
+    <span class="mx-1"><a href="<?= $release->component->getLink() ?>" target="_blank">latest</a></span>
+    <?php } ?>
+</nav>
+<h2 id="_specifications">Specifications</h2>
+<table class="table table-sm">
+    <thead class="thead-light">
+        <tr>
+            <th class="w-long">Specification</th>
+            <th>Description</th>
+            <?php if ($hasSpecificationsWithNotes) { ?>
+            <th class="w-short">Notes</th>
+            <?php } ?>
+        </tr>
+    </thead>
+    <tbody class="border-bottom">
+    <?php foreach ($specifications as $spec) {
+        ?>
+        <tr>
+            <td>
+                <a href="<?= $spec->getLink() ?>" title="<?= $spec->description ?>" target="_blank"><?= $spec->title_short ?></a>
+                <?= $this->fetch('block/spec_status.phtml', $spec) ?>
+            </td>
+            <td><?= $spec->summary ?></td>
+            <?php if ($hasSpecificationsWithNotes) { ?>
+            <td>
+                <?php foreach ($spec->notes as $note) { ?>
+                <a href="<?= $note->link ?>" target="_blank"><?= $note->text ?></a><br/>
+                <?php } ?>
+            </td>
+            <?php } ?>
+        </tr>
+    <?php } ?>
+    </tbody>
+</table>
+<h2 id="_releases">Releases</h2>
+<table class="table table-sm">
+    <thead class="thead-light">
+        <tr>
+            <th class="w-short">Release</th>
+            <th class="w-short">Date</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody class="border-bottom">
+    <?php foreach ($releases as $release) {
+        if (!$release->isReleased()) { ?>
+        <tr>
+            <td><a>Release <?= $release->id ?></a></td>
+            <td>cooking</td>
+            <td><a href="<?= $release->jira->getChanges() ?>" target="_blank">Release notes</a></td>
+        </tr>
+        <?php } else {?>
+        <tr>
+            <td><a href="<?= $release->getLink() ?>" target="_blank">Release <?= $release->id ?></a></td>
+            <td><?= $release->date->format('d-M-Y') ?></td>
+            <td><a href="<?= $release->jira->getChanges() ?>" target="_blank">Release notes</a></td>
+        </tr>
+        <?php } ?>
+    <?php } ?>
+    </tbody>
+</table>
+<h2 id="_computable_expressions">Computable Expressions</h2>
+<table class="table table-sm">
+    <thead class="thead-light">
+        <tr>
+            <th class="w-long">Resource</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody class="border-bottom">
+    <?php foreach ($expressions as $expr) {
+        ?>
+        <tr>
+            <td><a href="<?= $expr->getLink() ?>" title="<?= $expr->title ?>" target="_blank"><?= $expr->id ?></a></td>
+            <td><?= $expr->description ?></td>
+        </tr>
+    <?php } ?>
+    </tbody>
+</table>
+<?php if ($packages) { ?>
+<h2 id="_class_index">Class Index</h2>
+<table class="table table-sm">
+    <thead class="thead-light">
+        <tr>
+            <th class="w-long">Packages</th>
+            <th>Classes</th>
+        </tr>
+    </thead>
+    <tbody class="border-bottom">
+    <?php foreach ($packages as $package) { ?>
+        <tr id="_package_<?= $package->name ?>">
+            <td><?= $package->name ?></td>
+            <td>
+            <?php foreach ($package->types as $type) { ?>
+                <span class="badge badge-light"><a id="<?= $type->fragment ?>" href="<?= $type->getLink() ?>" target="_blank"><?= $type->name ?></a></span>
+            <?php } ?>
+            </td>
+        </tr>
+    <?php } ?>
+    </tbody>
+</table>
+<?php } ?>
