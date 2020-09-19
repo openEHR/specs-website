@@ -1,0 +1,59 @@
+<?php
+/** @var string $id */
+/** @var string $title */
+/** @var \App\Domain\Data\Release $release */
+/** @var \App\Domain\Data\Release[] $releases */
+/** @var \App\Domain\Data\Jira $jira */
+/** @var \App\Domain\Data\Specification[] $specifications */
+/** @var \App\Domain\Data\Expression[] $expressions */
+/** @var \App\Domain\Data\Type $type */
+
+$spec_blacklist = [
+    'architecture_overview',
+    'iso_18308_conformance_statement',
+    'archetype_profile',
+]
+?>
+<div id="<?= $id ?>" class="d-flex component_row">
+    <div class="flex-shrink-0 component_cell">
+        <h6>
+            <a href="<?= $release->getLink() ?>" target="_blank"><?= $id ?></a>
+        </h6>
+        <small>(<?= $title ?>)</small>
+        <p>
+            <a href="<?= $jira->getOpenIssues() ?>" target="_blank">PRs</a> |
+            <a href="<?= $jira->getCrs() ?>" target="_blank">CRs</a>
+        </p>
+        <p>
+        <?php foreach ($expressions as $expr) {
+            if ($expr->isOwned() && $expr->isUML()) {
+            ?>
+            <a href="<?= $expr->getLink() ?>" target="_blank" title="<?= $expr->description ?>"><?= $expr->title ?></a><br/>
+            <?php }
+        } ?>
+        </p>
+    </div>
+    <div class="flex-grow-1 d-grid specs_cell">
+        <div class="row no-gutters">
+        <?php foreach ($specifications as $spec) {
+            if (!in_array($spec->id, $spec_blacklist)) { ?>
+            <div class="col specs_item" title="<?= $spec->summary ?>">
+                <h6><a href="<?= $spec->getLink() ?>" target="_blank"><?= $spec->title_short ?></a></h6>
+                <?php if ($spec->micro_summary) { ?>
+                    <?= $spec->micro_summary ?><br/>
+                <?php } ?>
+                <?php foreach ($spec->summary_types as $type) { ?>
+                    <span class="badge badge-light text-truncate"><a href="<?= $type->getLink() ?>" target="_blank"><?= $type->name ?></a></span>
+                <?php } ?>
+            </div><?php }
+        } ?>
+        </div>
+    </div>
+    <div class="d-none d-md-block flex-shrink-0 releases">
+        <?php foreach ($releases as $release) {
+        ?>
+            <a href="<?= $release->isReleased() ? $release->getLink() : $release->jira->getChanges() ?>" target="_blank"><?= $release->id ?></a>
+            (<?= $release->isReleased() ? $release->date->format('d-M-Y') : 'cooking' ?>)<br/>
+        <?php } ?>
+    </div>
+</div>

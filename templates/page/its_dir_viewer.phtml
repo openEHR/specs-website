@@ -1,0 +1,17 @@
+<?php
+/** @var \App\Domain\Data\Component $component */
+/** @var \App\Helper\ITSAsset $dir */
+
+?>
+<h1 class="text-center">
+    <?= $component->title ?> (<?= $component->id ?>) Component - <?= $component->release->id ?>
+</h1>
+<p>
+    The followings are part of the <a href="<?=$component->release->getLink()?>"><?= $component->title ?></a>
+    specifications under <a href="<?=$dir->getLink()?>"><?=$dir->getName()?></a> section:
+</p>
+<ul>
+<?php foreach ($dir->getContents() as $item) { ?>
+    <li><a href="<?=$item->getLink()?>"><?=$item->getBasename()?></a></li>
+<?php } ?>
+</ul>
