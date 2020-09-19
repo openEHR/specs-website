@@ -11,7 +11,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_header.php');
 <!-- ================================= Content starts here ============================== -->
 		
 			<h1><?php echo "$PageName";?></h1>
-			<p>The following table shows releases of all openEHR specification components. Note that RM and BASE Release 1.0.2 are conversions of the original 'Release 1.0.2' specifications, available on the <a href="/historical_releases">historical releases page</a>.</p>
+			<p>The table below shows releases of all openEHR specification components. Note that RM and BASE Release 1.0.2 are conversions of the original 'Release 1.0.2' specifications, available on the <a href="/historical_releases">historical releases page</a>.</p>
 			
 			<table class="TableBasic">
 				<tbody>
