@@ -159,6 +159,10 @@ th.w-long {
     background-color: #f3f4f5;
 }
 
+.badge {
+    min-width: 48px;
+}
+
 @media (min-width: 576px) {
     html {
         min-height: 100%;
