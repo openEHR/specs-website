@@ -39,6 +39,7 @@ $settings['jira_open_issues'] = $settings['jira_home'] . '/issues/?filter=%s';
 $settings['jira_roadmap'] = $settings['jira_home'] . '/projects/%s?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&status=unreleased';
 $settings['jira_history'] = $settings['jira_home'] . '/projects/%s?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&status=released';
 $settings['jira_crs'] = $settings['jira_home'] . '/projects/%s?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&status=released-unreleased';
+$settings['jira_tickets'] = $settings['jira_home'] . '/browse/%s';
 $settings['wiki_home'] = 'https://openehr.atlassian.net/wiki';
 
 $settings['view'] = [

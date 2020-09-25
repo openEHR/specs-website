@@ -46,6 +46,12 @@ final class RedirectAction
         return $response->withRedirect($location);
     }
 
+    public function tickets(ServerRequest $request, Response $response, array $args): Response
+    {
+        $location = sprintf($this->settings->jira_tickets, $args['issue'] ?? '');
+        return $response->withRedirect($location);
+    }
+
     public function wiki(ServerRequest $request, Response $response, array $args): Response
     {
         $location = $this->settings->wiki_home . '/' . ($args['wiki'] ?? '');
