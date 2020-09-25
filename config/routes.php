@@ -1,7 +1,5 @@
 <?php
 
-use Slim\Http\Response;
-use Slim\Http\ServerRequest;
 use Slim\App;
 use App\Action;
 
@@ -27,6 +25,7 @@ return function (App $app) {
     $app->post('/hook/populate_releases', Action\HookAction::class . ':populate_releases');
     $app->post('/scripts/spec_populate_releases[.php]', Action\HookAction::class . ':populate_releases');
     // redirects
+    $app->get('/components/{asset:.+}', Action\RedirectAction::class . ':components');
     $app->get('/tickets/{issue:.+}', Action\RedirectAction::class . ':tickets');
     $app->get('/wiki/{wiki:.+}', Action\RedirectAction::class . ':wiki');
     $app->redirect('/Services+Landscape+for+e-Health', 'https://openehr.atlassian.net/wiki/spaces/spec/pages/357957633/Services+Landscape+for+e-Health', 302);

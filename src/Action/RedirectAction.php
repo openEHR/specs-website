@@ -46,6 +46,12 @@ final class RedirectAction
         return $response->withRedirect($location);
     }
 
+    public function components(ServerRequest $request, Response $response, array $args): Response
+    {
+        $location = '/releases/' . ($args['asset'] ?? '');
+        return $response->withRedirect($location, 301);
+    }
+
     public function tickets(ServerRequest $request, Response $response, array $args): Response
     {
         $location = sprintf($this->settings->jira_tickets, $args['issue'] ?? '');
