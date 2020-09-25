@@ -43,6 +43,13 @@ final class RedirectAction
             default:
                 $location = $component->release->getLink();
         }
-        return $response->withHeader('Location', $location)->withStatus(301);
+        return $response->withRedirect($location);
     }
+
+    public function wiki(ServerRequest $request, Response $response, array $args): Response
+    {
+        $location = $this->settings->wiki_home . '/' . ($args['wiki'] ?? '');
+        return $response->withRedirect($location);
+    }
+
 }
