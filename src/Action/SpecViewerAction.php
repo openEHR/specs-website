@@ -53,7 +53,10 @@ final class SpecViewerAction
         $component = $this->componentService->getComponent($args['component'])->useRelease($args['release']);
         $file = new File($component->getAssetFilename($args['asset']));
         if (!$file->hasContents()) {
-            throw new HttpNotFoundException($request, "Asset file ({$args['component']},{$args['release']},{$args['asset']}) not found.");
+            $file = new File($component->getScriptsAssetFilename($args['asset']));
+            if (!$file->hasContents()) {
+                throw new HttpNotFoundException($request, "Asset file ({$args['component']},{$args['release']},{$args['asset']}) not found.");
+            }
         }
         $response->getBody()->write($file->getContents());
         return $response->withHeader('Last-Modified', gmdate('D, d M Y H:i:s T', $file->getLastModified()))

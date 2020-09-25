@@ -255,6 +255,15 @@ class Component extends AbstractModel
         return '';
     }
 
+    public function getScriptsAssetFilename(string $asset = ''): string
+    {
+        if ($asset) {
+            $asset = preg_replace('/^scripts\//', '', $asset);
+            return $this->getFilename("scripts/{$asset}");
+        }
+        return '';
+    }
+
     public function getUMLFilename(string $asset = ''): string
     {
         if ($asset) {
