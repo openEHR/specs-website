@@ -13,7 +13,7 @@ return function (App $app) {
     $app->get('/releases/{component}/{release}/{alias:issues|changes}', Action\RedirectAction::class . ':jira');
     $app->get('/releases/{component}[/[{release}[/[index[.html]]]]]', Action\SpecViewerAction::class . ':index');
     $app->get('/releases/{component}/{release}/UML/{asset:.+\.mdzip}', Action\SpecViewerAction::class . ':uml');
-    $app->get('/releases/{component}/{release}/{asset:.+\.(?:png|svg|html|xml|drawio|docx|g|jj|txt)}', Action\SpecViewerAction::class . ':assets');
+    $app->get('/releases/{component}/{release}/{asset:.+\.(?:png|svg|html|xml|xsd|drawio|docx|g|jj|txt)}', Action\SpecViewerAction::class . ':assets');
     $app->get('/releases/{component}/{release}/{spec}', Action\SpecViewerAction::class . ':specs');
     $app->get('/[working_baseline]', Action\WorkingBaselineAction::class);
     $app->get('/classes[/{class}]', Action\WorkingBaselineAction::class . ':classes');

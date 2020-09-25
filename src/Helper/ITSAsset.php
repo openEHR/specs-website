@@ -35,6 +35,9 @@ class ITSAsset extends SplFileInfo
                 case 'ITS-JSON':
                     $whitelist = ['json'];
                     break;
+                case 'ITS-BMM':
+                    $whitelist = ['bmm'];
+                    break;
                 default:
                     $whitelist = [];
             }

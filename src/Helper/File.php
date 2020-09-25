@@ -39,6 +39,12 @@ class File
                 case 'htm':
                     $this->contentType = 'text/html';
                     break;
+                case 'bmm':
+                case 'txt':
+                case 'jj':
+                case 'g':
+                    $this->contentType = 'text/plain';
+                    break;
                 case 'js':
                     $this->contentType = 'application/javascript';
                     break;
