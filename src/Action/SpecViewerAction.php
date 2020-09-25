@@ -29,7 +29,7 @@ final class SpecViewerAction
         $component = $this->componentService->getComponent($args['component'])->useRelease($args['release']);
         $release = $component->release;
         if ($request->getRequestTarget() !== $release->getLink()) {
-            return $response->withHeader('Location', $release->getLink())->withStatus(301);
+            return $response->withRedirect($release->getLink(), 301);
         }
         $data = (array)$release->component + [
                 'page' => "{$component->id}_component",

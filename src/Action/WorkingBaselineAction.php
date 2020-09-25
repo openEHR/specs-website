@@ -40,7 +40,7 @@ final class WorkingBaselineAction
             foreach ($components as $component) {
                 try {
                     $type = $component->getTypeByName($args['class']);
-                    return $response->withStatus(301)->withHeader('Location', $type->getLink());
+                    return $response->withRedirect($type->getLink());
                 } catch (\Exception $e) {
                     // silently do nothing
                 }
