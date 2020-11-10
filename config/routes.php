@@ -30,5 +30,6 @@ return function (App $app) {
     $app->get('/tickets/{issue:.+}', Action\RedirectAction::class . ':tickets');
     $app->get('/wiki/{wiki:.+}', Action\RedirectAction::class . ':wiki');
     $app->redirect('/Services+Landscape+for+e-Health', 'https://openehr.atlassian.net/wiki/spaces/spec/pages/357957633/Services+Landscape+for+e-Health', 302);
+    $app->redirect('/UML', '/releases/UML/latest/index.html', 301);
 };
 

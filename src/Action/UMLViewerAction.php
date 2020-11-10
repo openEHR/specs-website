@@ -19,7 +19,7 @@ final class UMLViewerAction
 
     public function assets(ServerRequest $request, Response $response, array $args): Response
     {
-        $asset = $args['asset'] ?? 'index.html';
+        $asset = !empty($args['asset']) ? $args['asset'] : 'index.html';
         $filename = "{$this->settings->sites_root}/releases/UML/latest/$asset";
         $file = new File($filename);
         if (!$file->hasContents()) {
