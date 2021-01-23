@@ -50,7 +50,7 @@ th.w-short {
     width: 125px;
 }
 th.w-long {
-    width: 125px;
+    width: 250px;
 }
 
 
@@ -159,7 +159,7 @@ th.w-long {
     background-color: #f3f4f5;
 }
 
-.badge {
+.spec-status {
     min-width: 48px;
 }
 
