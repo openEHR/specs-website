@@ -15,12 +15,12 @@ return function (App $app) {
     $app->get('/releases/{component}/{release}/UML/{asset:.+\.mdzip}', Action\SpecViewerAction::class . ':uml');
     $app->get('/releases/{component}/{release}/{asset:.+\.(?:png|svg|html|xml|xsd|drawio|docx|g|jj|txt)}', Action\SpecViewerAction::class . ':assets');
     $app->get('/releases/{component}/{release}/{spec}', Action\SpecViewerAction::class . ':specs');
-    $app->get('/[working_baseline]', Action\WorkingBaselineAction::class);
+    $app->get('/[working_baseline[/]]', Action\WorkingBaselineAction::class);
     $app->get('/classes[/{class}]', Action\WorkingBaselineAction::class . ':classes');
     $app->get('/manifest', Action\WorkingBaselineAction::class . ':manifest');
     $app->get('/search', Action\SearchAction::class);
-    $app->get('/latest_releases', Action\ReleasesAction::class);
-    $app->get('/historical_releases', Action\HistoricalReleasesAction::class);
+    $app->get('/latest_releases[/]', Action\ReleasesAction::class);
+    $app->get('/historical_releases[/]', Action\HistoricalReleasesAction::class);
     // hooks
     $app->post('/hook/populate_releases', Action\HookAction::class . ':populate_releases');
     $app->post('/scripts/spec_populate_releases[.php]', Action\HookAction::class . ':populate_releases');
@@ -30,6 +30,6 @@ return function (App $app) {
     $app->get('/tickets/{issue:.+}', Action\RedirectAction::class . ':tickets');
     $app->get('/wiki/{wiki:.+}', Action\RedirectAction::class . ':wiki');
     $app->redirect('/Services+Landscape+for+e-Health', 'https://openehr.atlassian.net/wiki/spaces/spec/pages/357957633/Services+Landscape+for+e-Health', 302);
-    $app->redirect('/UML', '/releases/UML/latest/index.html', 301);
+    $app->redirect('/UML[/]', '/releases/UML/latest/index.html', 301);
 };
 
