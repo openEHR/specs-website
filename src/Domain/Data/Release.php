@@ -8,6 +8,8 @@ class Release extends AbstractModel implements \JsonSerializable
 {
     public const LATEST = 'latest';
 
+    public const STABLE = 'stable';
+
     /** @var string */
     public $id;
     /** @var DateTime */
@@ -84,6 +86,22 @@ class Release extends AbstractModel implements \JsonSerializable
     }
 
     /**
+     * @return Specification[]
+     */
+    public function getSpecifications(): array
+    {
+        return $this->component ? $this->component->specifications : [];
+    }
+
+    /**
+     * @return Expression[]
+     */
+    public function getExpressions(): array
+    {
+        return $this->component ? $this->component->expressions : [];
+    }
+
+    /**
      * @inheritDoc
      */
     public function jsonSerialize()
@@ -95,8 +113,8 @@ class Release extends AbstractModel implements \JsonSerializable
             '_component' => $this->component->id,
             '_releaseInfo' => !$this->isReleased() ? null : [
                 'released' => true,
-                'specifications' => $this->component->specifications,
-                'expressions' => $this->component->expressions,
+                'specifications' => $this->getSpecifications(),
+                'expressions' => $this->getExpressions(),
             ],
             '_getLink()' => $this->getLink(),
         ];

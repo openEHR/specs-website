@@ -135,6 +135,14 @@ class Component extends AbstractModel
 
     public function getReleaseById(string $id): Release
     {
+        if ($id === Release::STABLE) {
+            foreach ($this->releases as $release) {
+                if ($release->isReleased()) {
+                    return $release;
+                }
+            }
+            $id = Release::LATEST;
+        }
         if ($this->release && $this->release->is($id)) {
             return $this->release;
         }
@@ -148,7 +156,7 @@ class Component extends AbstractModel
 
     public function useRelease(string $releaseId): Component
     {
-        $this->release = $this->getReleaseById($releaseId ?: Release::LATEST);
+        $this->release = $this->getReleaseById($releaseId ?: Release::STABLE);
         return $this;
     }
 

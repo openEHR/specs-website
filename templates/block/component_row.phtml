@@ -25,7 +25,7 @@ $spec_blacklist = [
             <a href="<?= $jira->getCrs() ?>" target="_blank">CRs</a>
         </p>
         <p>
-        <?php foreach ($expressions as $expr) {
+        <?php foreach ($release->getExpressions() as $expr) {
             if ($expr->isOwned() && $expr->isUML()) {
             ?>
             <a href="<?= $expr->getLink() ?>" target="_blank" title="<?= $expr->description ?>"><?= $expr->title ?></a><br/>
@@ -35,7 +35,7 @@ $spec_blacklist = [
     </div>
     <div class="flex-grow-1 d-grid specs_cell">
         <div class="row no-gutters">
-        <?php foreach ($specifications as $spec) {
+        <?php foreach ($release->getSpecifications() as $spec) {
             if (!in_array($spec->id, $spec_blacklist)) { ?>
             <div class="col specs_item" title="<?= $spec->summary ?>">
                 <h6><a href="<?= $spec->getLink() ?>" target="_blank"><?= $spec->title_short ?></a></h6>
@@ -50,10 +50,10 @@ $spec_blacklist = [
         </div>
     </div>
     <div class="d-none d-md-block flex-shrink-0 releases">
-        <?php foreach ($releases as $release) {
+        <?php foreach ($releases as $rel) {
         ?>
-            <a href="<?= $release->isReleased() ? $release->getLink() : $release->jira->getChanges() ?>" target="_blank"><?= $release->id ?></a>
-            (<?= $release->isReleased() ? $release->date->format('d-M-Y') : 'cooking' ?>)<br/>
+            <a href="<?= $rel->isReleased() ? $rel->getLink() : $rel->jira->getChanges() ?>" class="<?= (!$rel->isReleased() || $rel->is($release->id)) ? 'font-weight-bold' : '' ?>" target="_blank"><?= $rel->id ?></a>
+            (<?= $rel->isReleased() ? $rel->date->format('d-M-Y') : 'cooking' ?>)<br/>
         <?php } ?>
     </div>
 </div>

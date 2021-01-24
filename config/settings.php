@@ -53,7 +53,8 @@ $settings['view'] = [
 
 $settings['navbar'] = [
     'Home' => [
-        'Working Baseline' => '/',
+        'Stable Baseline' => '/',
+        'Working Baseline' => '/working_baseline',
         'Latest Releases' => '/latest_releases',
         'Historical Releases' => '/historical_releases',
         'Global UML' => '/releases/UML/latest/index.html',
