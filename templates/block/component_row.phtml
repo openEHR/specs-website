@@ -1,6 +1,7 @@
 <?php
 /** @var string $id */
 /** @var string $title */
+/** @var string $page */
 /** @var \App\Domain\Data\Release $release */
 /** @var \App\Domain\Data\Release[] $releases */
 /** @var \App\Domain\Data\Jira $jira */
@@ -54,9 +55,16 @@ $spec_blacklist = [
     </div>
     <div class="d-none d-md-block flex-shrink-0 releases">
         <?php foreach ($releases as $rel) {
+            if ($page === 'release_baseline' && $rel->is($release->id)) {
+                $cssClass = 'font-weight-bold';
+            } elseif ($page === 'working_baseline' && !$rel->isReleased()) {
+                $cssClass = 'font-weight-bold';
+            } else {
+                $cssClass = '';
+            }
         ?>
-            <a href="<?= $rel->isReleased() ? $rel->getLink() : $rel->jira->getChanges() ?>" class="<?= (!$rel->isReleased() || $rel->is($release->id)) ? 'font-weight-bold' : '' ?>" target="_blank"><?= $rel->id ?></a>
-            (<?= $rel->isReleased() ? $rel->date->format('d-M-Y') : 'cooking' ?>)<br/>
+            <a href="<?= $rel->isReleased() ? $rel->getLink() : $rel->jira->getChanges() ?>" class="<?= $cssClass ?>" target="_blank"><?= $rel->id ?></a>
+            (<?= $rel->isReleased() ? $rel->date->format('d-M-Y') : 'in progress' ?>)<br/>
         <?php } ?>
     </div>
 </div>

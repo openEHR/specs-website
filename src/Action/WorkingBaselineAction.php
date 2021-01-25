@@ -20,11 +20,10 @@ final class WorkingBaselineAction
 
     public function __invoke(ServerRequest $request, Response $response): Response
     {
-        $data = [
-                'title' => 'Working Baseline',
-                'page' => 'working_baseline',
-            ] + $this->componentService->getComponents();
-        return $this->view->render($response, 'page/all_components.phtml', $data);
+        $data = $this->componentService->getComponents();
+        return $this->view->addAttribute('page', 'working_baseline')
+            ->addAttribute('title', 'Working Baseline')
+            ->render($response, 'page/all_components.phtml', $data);
     }
 
     public function manifest(ServerRequest $request, Response $response): Response
@@ -47,11 +46,11 @@ final class WorkingBaselineAction
             }
         }
         $data = [
-            'title' => 'Class Index',
-            'page' => 'class_index',
             'components' => $components,
         ];
-        return $this->view->render($response, 'page/class_index.phtml', $data);
+        return $this->view->addAttribute('page', 'class_index')
+            ->addAttribute('title', 'Class Index')
+            ->render($response, 'page/class_index.phtml', $data);
     }
 
 }

@@ -82,26 +82,35 @@ foreach ($specifications as $spec) {
         </tr>
     </thead>
     <tbody class="border-bottom">
-    <?php if (!$release->isLatest()) { ?>
-        <tr>
-            <td><a href="<?= $release->getLinkOfLatest() ?>">Latest</a></td>
-            <td><?= (new DateTime())->format('d-M-Y') ?></td>
-            <td>Latest of <?= $title ?> (<?= $id ?>) Component</td>
-        </tr>
-    <?php
-    }
-    foreach ($releases as $release) {
-        if (!$release->isReleased()) { ?>
-        <tr>
-            <td><a>Release <?= $release->id ?></a></td>
-            <td>cooking</td>
-            <td><a href="<?= $release->jira->getChanges() ?>" target="_blank">Changes</a></td>
-        </tr>
-        <?php } else {?>
+    <?php foreach ($releases as $release) {
+        if ($release->isReleased()) { ?>
         <tr>
             <td><a href="<?= $release->getLink() ?>">Release <?= $release->id ?></a></td>
             <td><?= $release->date->format('d-M-Y') ?></td>
             <td><a href="<?= $release->jira->getChanges() ?>" target="_blank">Release notes</a></td>
+        </tr>
+        <?php } ?>
+    <?php } ?>
+    </tbody>
+</table>
+<h2 id="_releases">Work In Progress</h2>
+<table class="table table-sm">
+    <thead class="thead-light">
+        <tr>
+            <th class="w-long">Release</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody class="border-bottom">
+        <tr>
+            <td><a href="<?= $release->getLinkOfLatest() ?>">Latest</a></td>
+            <td>Latest of <?= $title ?> (<?= $id ?>) Component</td>
+        </tr>
+    <?php foreach ($releases as $release) {
+        if (!$release->isReleased()) { ?>
+        <tr>
+            <td><a>Release <?= $release->id ?></a></td>
+            <td><a href="<?= $release->jira->getChanges() ?>" target="_blank">Changes</a></td>
         </tr>
         <?php } ?>
     <?php } ?>

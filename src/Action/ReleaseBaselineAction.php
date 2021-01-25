@@ -8,7 +8,7 @@ use App\View;
 use Slim\Http\Response;
 use Slim\Http\ServerRequest;
 
-final class StableBaselineAction
+final class ReleaseBaselineAction
 {
     protected $view;
     protected $componentService;
@@ -24,11 +24,10 @@ final class StableBaselineAction
         foreach ($this->componentService->getComponents() as $component) {
             $component->useRelease(Release::STABLE);
         }
-        $data = [
-                'title' => 'Stable Baseline',
-                'page' => 'stable_baseline',
-            ] + $this->componentService->getComponents();
-        return $this->view->render($response, 'page/all_components.phtml', $data);
+        $data = $this->componentService->getComponents();
+        return $this->view->addAttribute('page', 'release_baseline')
+            ->addAttribute('title', 'Release Baseline')
+            ->render($response, 'page/all_components.phtml', $data);
     }
 
 }
