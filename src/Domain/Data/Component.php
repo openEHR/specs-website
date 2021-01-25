@@ -135,6 +135,8 @@ class Component extends AbstractModel
 
     public function getReleaseById(string $id): Release
     {
+        // if the current stable release is asked, need to get it from list of releases
+        // in case any is released, otherwise fallback to 'latest'
         if ($id === Release::STABLE) {
             foreach ($this->releases as $release) {
                 if ($release->isReleased()) {
@@ -143,8 +145,17 @@ class Component extends AbstractModel
             }
             $id = Release::LATEST;
         }
+        // return the current if matches the criteria
         if ($this->release && $this->release->is($id)) {
             return $this->release;
+        }
+        // if latest is requested, but for some reaons does not exist, then we need to create one
+        // this is needed to make sure links of latest are always available
+        if ($id === Release::LATEST) {
+            $release = new Release();
+            $release->makeLatest();
+            $release->component = $this;
+            return $release;
         }
         foreach ($this->releases as $release) {
             if ($release->is($id)) {

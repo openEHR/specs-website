@@ -31,9 +31,13 @@ final class SpecViewerAction
         if ($request->getRequestTarget() !== $release->getLink()) {
             return $response->withRedirect($release->getLink(), 301);
         }
-        $data = (array)$release->component + [
+        $data = array_merge(
+            (array)$release->component,
+            [
                 'page' => "{$component->id}_component",
-            ];
+                'releases' => $component->releases
+            ]
+        );
         return $this->view->render($response, 'page/component_index.phtml', $data);
     }
 

@@ -77,6 +77,11 @@ class Release extends AbstractModel implements \JsonSerializable
         return '';
     }
 
+    public function getLinkOfLatest(): string
+    {
+        return $this->component ? ($this->component->getLink() . '/' . self::LATEST) : '';
+    }
+
     public function getDirectory(): string
     {
         if ($this->id && $this->component) {
@@ -90,7 +95,7 @@ class Release extends AbstractModel implements \JsonSerializable
      */
     public function getSpecifications(): array
     {
-        return $this->component ? $this->component->specifications : [];
+        return $this->component->specifications ?? [];
     }
 
     /**
@@ -98,7 +103,7 @@ class Release extends AbstractModel implements \JsonSerializable
      */
     public function getExpressions(): array
     {
-        return $this->component ? $this->component->expressions : [];
+        return $this->component->expressions ?? [];
     }
 
     /**

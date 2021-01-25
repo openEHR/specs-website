@@ -17,7 +17,6 @@ foreach ($specifications as $spec) {
         break;
     }
 }
-
 ?>
 <img src="<?= $release->getLink() ?>/openehr_block_diagram.svg" alt="openEHR components" class="openehr-block-diagram mx-auto d-block img-fluid mt-5">
 <h1 class="text-center">
@@ -33,7 +32,7 @@ foreach ($specifications as $spec) {
     <span class="mx-1"><a href="<?= $release->jira->getChanges() ?>" target="_blank">Changes Implemented</a></span> |
     <span class="mx-1"><a href="<?= $jira->getRoadmap() ?>" target="_blank">Roadmap</a></span> |
     <span class="mx-1"><a href="<?= $jira->getHistory() ?>" target="_blank">History</a></span> |
-    <span class="mx-1"><a href="<?= $release->component->getLink() ?>" target="_blank">latest</a></span>
+    <span class="mx-1"><a href="<?= $release->getLinkOfLatest() ?>" target="_blank">Latest</a></span>
     <?php } ?>
 </nav>
 <h2 id="_specifications">Specifications</h2>
@@ -77,16 +76,24 @@ foreach ($specifications as $spec) {
         </tr>
     </thead>
     <tbody class="border-bottom">
-    <?php foreach ($releases as $release) {
+    <?php if (!$release->isLatest()) { ?>
+        <tr>
+            <td><a href="<?= $release->getLinkOfLatest() ?>">Latest</a></td>
+            <td><?= (new DateTime())->format('d-M-Y') ?></td>
+            <td>Latest of <?= $title ?> (<?= $id ?>) Component</td>
+        </tr>
+    <?php
+    }
+    foreach ($releases as $release) {
         if (!$release->isReleased()) { ?>
         <tr>
             <td><a>Release <?= $release->id ?></a></td>
             <td>cooking</td>
-            <td><a href="<?= $release->jira->getChanges() ?>" target="_blank">Release notes</a></td>
+            <td><a href="<?= $release->jira->getChanges() ?>" target="_blank">Changes</a></td>
         </tr>
         <?php } else {?>
         <tr>
-            <td><a href="<?= $release->getLink() ?>" target="_blank">Release <?= $release->id ?></a></td>
+            <td><a href="<?= $release->getLink() ?>">Release <?= $release->id ?></a></td>
             <td><?= $release->date->format('d-M-Y') ?></td>
             <td><a href="<?= $release->jira->getChanges() ?>" target="_blank">Release notes</a></td>
         </tr>
