@@ -19,8 +19,15 @@ foreach ($specifications as $spec) {
         break;
     }
 }
+
+$diagramFile = new File($release->component->getAssetFilename('openehr_block_diagram.svg'));
+if ($diagramFile->isValid()) {
+    $diagramLink = $release->getLink() . '/openehr_block_diagram.svg';
+} else {
+    $diagramLink = $release->getLinkOfLatest() . '/openehr_block_diagram.svg';
+}
 ?>
-<img src="<?= $release->getLink() ?>/openehr_block_diagram.svg" alt="openEHR components" class="openehr-block-diagram mx-auto d-block img-fluid mt-5">
+<img src="<?= $diagramLink ?>" alt="openEHR components" class="openehr-block-diagram mx-auto d-block img-fluid mt-5">
 <h1 class="text-center">
     <?= $title ?> (<?= $id ?>) Component - <?= $release->id ?>
 </h1>
@@ -50,9 +57,11 @@ foreach ($specifications as $spec) {
     </thead>
     <tbody class="border-bottom">
     <?php foreach ($specifications as $spec) {
-        $file = new File($spec->getFilename());
-        if (!$file->isValid()) {
-            continue;
+        if (!$spec->hasExplicitLink()) {
+            $file = new File($spec->getFilename());
+            if (!$file->isValid()) {
+                continue;
+            }
         }
         ?>
         <tr>

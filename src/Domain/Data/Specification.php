@@ -178,6 +178,11 @@ class Specification extends AbstractModel implements \JsonSerializable
         return '';
     }
 
+    public function hasExplicitLink(): bool
+    {
+        return (bool)$this->link;
+    }
+
     public function getDirectory(): string
     {
         if ($this->id && $this->component && $this->component->release) {
