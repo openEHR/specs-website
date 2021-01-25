@@ -41,7 +41,7 @@ $spec_blacklist = [
             <div class="col specs_item" title="<?= $spec->summary ?>">
                 <h6>
                     <a href="<?= $spec->getLink() ?>" target="_blank"><?= $spec->title_short ?></a>
-                    <sup class="badge badge-<?= $spec->getStatusBadge() ?> spec-status-sup" title="Specification status is <?= $spec->getStatusTitle() ?>, copyright <?= $spec->copyright_year ?>."><?= $spec->getStatusShort() ?></sup>
+                    <span class="align-top badge badge-<?= $spec->getStatusBadge() ?> spec-status-short mr-1" title="Specification status is <?= $spec->getStatusTitle() ?>, copyright <?= $spec->copyright_year ?>."><?= $spec->getStatusShort() ?></span>
                 </h6>
                 <?php if ($spec->micro_summary) { ?>
                     <?= $spec->micro_summary ?><br/>
