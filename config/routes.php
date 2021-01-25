@@ -20,8 +20,9 @@ return function (App $app) {
     $app->get('/classes[/{class}]', Action\WorkingBaselineAction::class . ':classes');
     $app->get('/manifest', Action\WorkingBaselineAction::class . ':manifest');
     $app->get('/search', Action\SearchAction::class);
+    $app->get('/releases[/]', Action\ReleasesAction::class);
     $app->get('/latest_releases[/]', Action\ReleasesAction::class);
-    $app->get('/historical_releases[/]', Action\HistoricalReleasesAction::class);
+    $app->get('/historical_releases[/]', Action\ReleasesAction::class);
     // hooks
     $app->post('/hook/populate_releases', Action\HookAction::class . ':populate_releases');
     $app->post('/scripts/spec_populate_releases[.php]', Action\HookAction::class . ':populate_releases');

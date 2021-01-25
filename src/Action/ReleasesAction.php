@@ -22,9 +22,9 @@ final class ReleasesAction
     {
         $data = [
             'title' => 'Latest Releases',
-            'page' => 'latest_releases',
+            'page' => 'releases',
             'releases' => $this->componentService->getReleases(),
         ];
-        return $this->view->render($response, 'page/latest_releases.phtml', $data);
+        return $this->view->render($response, 'page/releases.phtml', $data);
     }
 }

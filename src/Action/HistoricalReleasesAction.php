@@ -20,15 +20,6 @@ final class HistoricalReleasesAction
         $this->settings = $settings;
     }
 
-    public function __invoke(ServerRequest $request, Response $response, array $args): Response
-    {
-        $data = [
-            'title' => 'Historical Releases',
-            'page' => 'historical_releases',
-        ];
-        return $this->view->render($response, 'page/historical_releases.phtml', $data);
-    }
-
     public function index(ServerRequest $request, Response $response, array $args): Response
     {
         $template = "page/historical_releases/{$args['release']}.phtml";

@@ -55,8 +55,7 @@ $settings['navbar'] = [
     'Home' => [
         'Stable Baseline' => '/',
         'Working Baseline' => '/working_baseline',
-        'Latest Releases' => '/latest_releases',
-        'Historical Releases' => '/historical_releases',
+        'Releases' => '/releases',
         'Global UML' => '/releases/UML/latest/index.html',
         'Class Index' => '/classes',
     ],
