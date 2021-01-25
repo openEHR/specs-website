@@ -1,0 +1,13 @@
+<div class="text-right">
+    <h5>Legend:
+<?php
+foreach (\App\Domain\Data\Specification::STATUSES as $key => $status) {
+    if ($key === '_' || $key === 'DEV') {
+        continue;
+    } ?>
+        <span class="align-top badge badge-light mx-1 p-1 border">
+            <span class="align-top badge badge-<?= $status['badge'] ?>"><?= $status['short'] ?></span> - <?= $status['title'] ?>
+        </span>
+<?php } ?>
+    </h5>
+</div>

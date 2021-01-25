@@ -38,7 +38,7 @@ class Specification extends AbstractModel implements \JsonSerializable
     /** @var Component */
     public $component;
 
-    private const STATUSES = array(
+    public const STATUSES = array(
         'STABLE' => ['badge' => 'success', 'short' => 'S', 'title' => 'STABLE'],
         'TRIAL' => ['badge' => 'primary', 'short' => 'T', 'title' => 'TRIAL'],
         'DEV' => ['badge' => 'secondary', 'short' => 'D', 'title' => 'DEV'],
