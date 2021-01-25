@@ -11,6 +11,7 @@ return function (App $app) {
     $app->get('/releases/{component:ITS-XML|ITS-JSON|ITS-BMM}/{release}/components[/[{asset:.+}]]', Action\ITSDirViewerAction::class);
     $app->get('/releases/{component}/{alias:open_issues|roadmap|history|crs}', Action\RedirectAction::class . ':jira');
     $app->get('/releases/{component}/{release}/{alias:issues|changes}', Action\RedirectAction::class . ':jira');
+    $app->get('/releases/{component:(?:ITS-REST)}/{release}/{asset:index\.html}', Action\SpecViewerAction::class . ':assets');
     $app->get('/releases/{component}[/[{release}[/[index[.html]]]]]', Action\SpecViewerAction::class . ':index');
     $app->get('/releases/{component}/{release}/UML/{asset:.+\.mdzip}', Action\SpecViewerAction::class . ':uml');
     $app->get('/releases/{component}/{release}/{asset:.+\.(?:png|svg|html|xml|xsd|drawio|docx|g4|g|jj|txt)}', Action\SpecViewerAction::class . ':assets');
