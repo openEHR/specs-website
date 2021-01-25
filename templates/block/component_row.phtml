@@ -38,7 +38,10 @@ $spec_blacklist = [
         <?php foreach ($release->getSpecifications() as $spec) {
             if (!in_array($spec->id, $spec_blacklist)) { ?>
             <div class="col specs_item" title="<?= $spec->summary ?>">
-                <h6><a href="<?= $spec->getLink() ?>" target="_blank"><?= $spec->title_short ?></a></h6>
+                <h6>
+                    <a href="<?= $spec->getLink() ?>" target="_blank"><?= $spec->title_short ?></a>
+                    <sup class="badge badge-<?= $spec->getStatusBadge() ?> spec-status-sup" title="Specification status is <?= $spec->getStatusTitle() ?>, copyright <?= $spec->copyright_year ?>."><?= $spec->getStatusShort() ?></sup>
+                </h6>
                 <?php if ($spec->micro_summary) { ?>
                     <?= $spec->micro_summary ?><br/>
                 <?php } ?>

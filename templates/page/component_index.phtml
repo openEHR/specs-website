@@ -57,7 +57,7 @@ foreach ($specifications as $spec) {
         ?>
         <tr>
             <td>
-                <?= $this->fetch('block/spec_status.phtml', $spec) ?>
+                <span class="badge badge-<?= $spec->getStatusBadge() ?> spec-status" title="Specification status is <?= $spec->getStatusTitle() ?>, copyright <?= $spec->copyright_year ?>."><?= $spec->getStatusTitle() ?></span>
                 <a href="<?= $spec->getLink() ?>" title="<?= $spec->description ?>" target="_blank"><?= $spec->title_short ?></a>
             </td>
             <td><?= $spec->summary ?></td>

@@ -53,7 +53,7 @@
             <td>
                 <a href="<?= $spec->component->getLink() ?>" title="<?= $spec->component->description ?>" target="_blank"><?= $spec->component->id ?></a> /
                 <a href="<?= $spec->getLink() ?>" title="<?= $spec->description ?>" target="_blank"><?= $spec->title_short ?></a>
-                <?= $this->fetch('block/spec_status.phtml', $spec) ?>
+                <sup class="badge badge-<?= $spec->getStatusBadge() ?> spec-status-sup" title="Specification status is <?= $spec->getStatusTitle() ?>, copyright <?= $spec->copyright_year ?>."><?= $spec->getStatusShort() ?></sup>
             </td>
             <td><?= $spec->summary ?></td>
         </tr>

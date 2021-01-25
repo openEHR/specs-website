@@ -162,6 +162,9 @@ th.w-long {
 .spec-status {
     min-width: 48px;
 }
+.spec-status-sup {
+    line-height: 1.1;
+}
 
 @media (min-width: 576px) {
     html {
