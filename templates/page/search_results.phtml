@@ -53,7 +53,7 @@
             <td>
                 <a href="<?= $spec->component->getLink() ?>" title="<?= $spec->component->description ?>" target="_blank"><?= $spec->component->id ?></a> /
                 <a href="<?= $spec->getLink() ?>" title="<?= $spec->description ?>" target="_blank"><?= $spec->title_short ?></a>
-                <span class="align-top badge badge-<?= $spec->getStatusBadge() ?> spec-status-short" title="Specification status is <?= $spec->getStatusTitle() ?>, copyright <?= $spec->copyright_year ?>."><?= $spec->getStatusShort() ?></span>
+                <span class="align-top badge badge-<?= $spec->getStatusBadge() ?> spec-status-short" title="Specification status is <?= $spec->getStatusTitle() ?>."><?= $spec->getStatusShort() ?></span>
             </td>
             <td><?= $spec->summary ?></td>
         </tr>
