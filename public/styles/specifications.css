@@ -166,6 +166,11 @@ th.w-long {
     line-height: 1.1;
 }
 
+.jumbotron-start {
+    background-color: #d3e6f8;
+    border: 1px solid #dee2e6;
+}
+
 @media (min-width: 576px) {
     html {
         min-height: 100%;

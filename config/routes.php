@@ -16,6 +16,7 @@ return function (App $app) {
     $app->get('/releases/{component}/{release}/UML/{asset:.+\.mdzip}', Action\SpecViewerAction::class . ':uml');
     $app->get('/releases/{component}/{release}/{asset:.+\.(?:png|svg|html|xml|xsd|drawio|docx|g4|g|jj|txt)}', Action\SpecViewerAction::class . ':assets');
     $app->get('/releases/{component}/{release}/{spec}', Action\SpecViewerAction::class . ':specs');
+    $app->get('/start[/]', Action\StartAction::class);
     $app->get('/[release_baseline[/]]', Action\ReleaseBaselineAction::class);
     $app->get('/working_baseline[/]', Action\WorkingBaselineAction::class);
     $app->get('/classes[/{class}]', Action\WorkingBaselineAction::class . ':classes');
