@@ -4,22 +4,23 @@
 /** @var \App\Domain\Data\Component[] $components */
 ?>
 
-<div class="jumbotron jumbotron-start bg-light pt-3 pb-4 mb-1 row">
+<div class="jumbotron jumbotron-start bg-light pt-2 pb-4 mt-0 mb-0 row">
     <div class="col-12 order-first">
         <h1 class="display-4 font-weight-normal"><em>openEHR</em> Specifications</h1>
     </div>
-    <div class="col-12 col-md-5 order-md-last">
-        <img class="img-fluid rounded my-2" src="/releases/BASE/latest/architecture_overview/diagrams/openehr_block_diagram.svg" width="100%">
+    <div class="col-12 col-md-6 order-md-last p-1">
+        <img class="img-fluid rounded my-3 my-md-0" src="/releases/BASE/latest/architecture_overview/diagrams/openehr_block_diagram.svg" width="100%">
     </div>
     <div class="col">
-        <p class="lead">Home of open specifications that can be used to create standards, and build information and interoperability solutions for healthcare.</p>
-        <hr>
+        <p class="lead d-none d-md-block">for an interoperable healthcare information platform</p>
+        <hr class="d-none d-md-block">
         <p>
-            The <a href="/release_baseline">openEHR specifications</a> consists of information models for healthcare data,
+            The <a href="/release_baseline">openEHR specifications</a> consist of information models for healthcare data,
             including the <a href="/releases/RM/latest/ehr.html">EHR</a> (how to record clinical observations?)
             and <a href="/releases/RM/latest/demographics.html">demographics</a> (parties, roles and relationships),
             a portable <a href="/releases/QUERY/latest/AQL.html">query language (AQL)</a>,
-            the <a href="/releases/AM/latest">archetype formalism</a> (adopted by ISO) for expressing domain content,
+            the <a href="/releases/AM/latest">archetype formalism</a> (adopted by <a href="https://www.iso.org/standard/62305.html" target="_blank">ISO 13606-2:2019</a>) for expressing domain content,
+            the <a href="/releases/CDS/latest">CDS Guidelines and Care Pathways</a>,
             and an <a href="/releases/AM/latest">open API specification</a>.
         </p>
         <a class="btn btn-secondary btn-lg" href="https://www.openehr.org/about/what_is_openehr" role="button">Learn more about <em><strong>openEHR</strong></em></a>
@@ -28,33 +29,38 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
-            <h2>Architecture Overview</h2>
+        <div class="col-md">
+            <h3>Architecture Overview</h3>
             <p>Global description of openEHR design principles and architecture</p>
-            <p><a class="btn btn-outline-secondary" href="/releases/BASE/latest/architecture_overview.html" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-outline-secondary btn-sm" href="/releases/BASE/latest/architecture_overview.html" role="button">View details &raquo;</a></p>
         </div>
-        <div class="col-md-4">
-            <h2>Archetype Technology</h2>
+        <div class="col-md">
+            <h3>Archetype Technology</h3>
             <p>Business case for archetyping; overview of archetype specifications</p>
-            <p><a class="btn btn-outline-secondary" href="/releases/AM/latest/Overview.html" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-outline-secondary btn-sm" href="/releases/AM/latest/Overview.html" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md">
+            <h3>CDS & Guidelines</h3>
+            <p>Overview of design approach and specifications for CDS, guidelines and care pathways</p>
+            <p><a class="btn btn-outline-secondary btn-sm" href="/releases/PROC/latest/overview.html" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
-            <h2>Specifications</h2>
+            <h3>Specifications</h3>
             <p>The openEHR Specifications Program manages and maintains specifications and their computable expressions.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">Release baseline</a>
-            <a class="btn btn-secondary" href="#" role="button">Working baseline</a></p>
+                <a class="btn btn-success tn-sm" href="/release_baseline" role="button">Release baseline</a>
+                <a class="btn btn-primary tn-sm" href="/working_baseline" role="button">Working baseline</a>
         </div>
     </div>
 
-    <hr>
+    <hr class="mb-3">
 
     <div class="row">
         <div class="col-12 col-md">
             <span class="align-middle">Links:</span>
-            <a role="button" class="btn btn-outline-primary btn-sm my-1" href="/releases/UML/latest/index.html">Global UML</a>
-            <a role="button" class="btn btn-outline-primary btn-sm my-1" href="/classes">Class Index</a>
-            <a role="button" class="btn btn-outline-primary btn-sm my-1" href="https://openehr.atlassian.net/secure/Dashboard.jspa?selectPageId=10190">Issue trackers</a>
-            <a role="button" class="btn btn-outline-primary btn-sm my-1" href="https://discourse.openehr.org/c/specifications">Discourse</a>
+            <a role="button" class="btn btn-outline-primary btn-sm mb-1" href="/releases/UML/latest/index.html">Global UML</a>
+            <a role="button" class="btn btn-outline-primary btn-sm mb-1" href="/classes">Class Index</a>
+            <a role="button" class="btn btn-outline-primary btn-sm mb-1" href="https://openehr.atlassian.net/secure/Dashboard.jspa?selectPageId=10190">Issue trackers</a>
+            <a role="button" class="btn btn-outline-primary btn-sm mb-1" href="https://discourse.openehr.org/c/specifications">Discourse</a>
         </div>
         <div class="col-auto">
             <span class="align-middle">Latest releases:</span>
@@ -63,11 +69,10 @@
                     break;
                 }
                 ?>
-                <a role="button" class="btn btn-outline-success btn-sm my-1" href="<?= $release->getLink() ?>"><?= $release->component->id ?> v<?= $release->id ?> (<?= $release->date->format("M Y") ?>)</a>
+                <a role="button" class="btn btn-outline-success btn-sm mb-1" href="<?= $release->getLink() ?>"><?= $release->component->id ?> v<?= $release->id ?> (<?= $release->date->format("M Y") ?>)</a>
             <?php } ?>
-            <a role="button" class="btn btn-outline-primary btn-sm my-1" href="/releases">more...</a>
+            <a role="button" class="btn btn-outline-primary btn-sm mb-1" href="/releases">more...</a>
         </div>
-
     </div>
 
 </div>
