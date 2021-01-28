@@ -11,38 +11,9 @@
 /** @var \App\Domain\Data\Component $LANG */
 /** @var \App\Domain\Data\Component $BASE */
 
-$architecture_overview = $BASE->getSpecificationById('architecture_overview');
-$archetype_technology = $AM->getSpecificationById('Overview');
-
 ?>
 
 <div class="d-flex flex-column">
-
-    <div class="specs_category_box d-grid" id="global_box">
-        <h5>Start Here</h5>
-        <div class="row no-gutters specs_cell">
-            <div class="col specs_item">
-                <h6><a href="<?= $architecture_overview->getLink() ?>" target="_blank"><?= $architecture_overview->title_short ?></a><br></h6>
-                <?= $architecture_overview->micro_summary ?>
-            </div>
-            <div class="col specs_item">
-                <h6><a href="<?= $archetype_technology->getLink() ?>" target="_blank"><?= $archetype_technology->title_short ?></a><br></h6>
-                <?= $archetype_technology->micro_summary ?>
-            </div>
-            <div class="col specs_item">
-                <h6><a href="/Services+Landscape+for+e-Health" target="_blank">Services Landscape</a><br></h6>
-                Map of e-health services at enterprise, community and region levels
-            </div>
-            <div class="col specs_item">
-                <h6><a href="/releases/UML/latest/index.html">GLOBAL UML</a><br></h6>
-                Generated global UML website
-            </div>
-            <div class="col specs_item">
-                <h6><a href="/classes">CLASS INDEX</a><br></h6>
-                Global openEHR class link list
-            </div>
-        </div>
-    </div>
 
     <object type="image/svg+xml" data="/openehr_block_diagram.svg" alt="openEHR components" class="openehr-block-diagram mx-auto my-4 d-block img-fluid">
     </object>
