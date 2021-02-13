@@ -3,11 +3,10 @@
 /** @var \App\Domain\Data\Release[] $releases */
 ?>
 <h1 class="text-center">
-    <?=$title?>
+    Latest Releases
 </h1>
 <p>
     The following table shows releases of all openEHR specification components.
-    Note that RM and BASE Release 1.0.2 are conversions of the original 'openEHR Release 1.0.2' specifications.
 </p>
 <table class="table table-sm">
     <thead class="thead-light">
@@ -21,11 +20,77 @@
     <?php foreach ($releases as $release) {
     ?>
     <tr>
-        <td><a href="<?= $release->getLink() ?>" target="_blank"><?= $release->component->id ?> Release <?= $release->id ?></a></td>
+        <td><a href="<?= $release->getLink() ?>"><?= $release->component->id ?> Release <?= $release->id ?></a></td>
         <td><?= $release->date->format('d-M-Y') ?></td>
-        <td><a href="<?= $release->jira->getChanges() ?>" target="_blank">Release notes</a></td>
+        <td>
+            <?php if ($release->is('1.0.2') && ($release->component->is('RM') || $release->component->is('BASE'))) { ?>
+                Conversion of the original <a href="/releases/1.0.2">openEHR Release 1.0.2</a> specification.
+            <?php } ?>
+            <a href="<?= $release->jira->getChanges() ?>" target="_blank">Release notes</a>
+        </td>
     </tr>
     <?php } ?>
     </tbody>
 </table>
-<?= $this->fetch('page/historical_releases.phtml', ['title' => 'Historical Releases']); ?>
+
+<h1 class="text-center">Historical Releases</h1>
+<p>
+    The following releases were of all openEHR specifications, prior to components being created.
+    All releases are now published as part of a component.
+</p>
+<table class="table table-sm">
+    <thead class="thead-light">
+    <tr>
+        <th class="w-long">Release</th>
+        <th class="w-short">Date</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody class="border-bottom">
+    <tr>
+        <td><a href="/releases/1.0.2">openEHR Release 1.0.2</a></td>
+        <td>31-Dec-2008</td>
+        <td>22 Change Requests.
+            <a href="https://openehr.atlassian.net/projects/SPEC/versions/10030" target="_blank">Release notes.</a>
+        </td>
+    </tr>
+    <tr>
+        <td><a href="/releases/1.0.1">openEHR Release 1.0.1</a></td>
+        <td>15-Apr-2007</td>
+        <td>56 Change Requests.
+            <a href="https://openehr.atlassian.net/projects/SPEC/versions/10019" target="_blank">Release notes.</a>
+        </td>
+    </tr>
+    <tr>
+        <td><a href="/releases/1.0">openEHR Release 1.0</a></td>
+        <td>07-Feb-2006</td>
+        <td>54 Change Requests.
+            <a href="https://openehr.atlassian.net/projects/SPEC/versions/10018" target="_blank">Release notes.</a>
+        </td>
+    </tr>
+    <tr>
+        <td>openEHR Release 0.96</td>
+        <td>01-Aug-2005</td>
+        <td>Error correction release.
+            12 Change Requests.
+            <a href="https://openehr.atlassian.net/projects/SPEC/versions/10017" target="_blank">Release notes.</a>
+        </td>
+    </tr>
+    <tr>
+        <td><a href="/releases/0.95">openEHR Release 0.95</a></td>
+        <td>15-Mar-2005</td>
+        <td>Basic modelling changes.
+            17 Change Requests.
+            <a href="https://openehr.atlassian.net/projects/SPEC/versions/10016" target="_blank">Release notes.</a>
+        </td>
+    </tr>
+    <tr>
+        <td><a href="/releases/0.9">openEHR Release 0.9</a></td>
+        <td>04-May-2004</td>
+        <td>First complete release of openEHR.
+            84 Change Requests.
+            <a href="https://openehr.atlassian.net/projects/SPEC/versions/10015" target="_blank">Release notes.</a>
+        </td>
+    </tr>
+    </tbody>
+</table>

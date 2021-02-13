@@ -21,7 +21,6 @@ final class ReleasesAction
     public function __invoke(ServerRequest $request, Response $response, array $args): Response
     {
         $data = [
-            'title' => 'Latest Releases',
             'page' => 'releases',
             'releases' => $this->componentService->getReleases(),
         ];
