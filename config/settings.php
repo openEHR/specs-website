@@ -55,7 +55,7 @@ $settings['navbar'] = [
     'Home' => [
         'Start' => '/start',
         'Release Baseline' => '/release_baseline',
-        'Working Baseline' => '/working_baseline',
+        'Development Baseline' => '/development_baseline',
         Page::DIVIDER,
         'All Releases' => '/releases',
         'Global UML' => '/releases/UML/latest/index.html',

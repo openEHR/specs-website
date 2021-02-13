@@ -7,7 +7,7 @@ use App\View;
 use Slim\Http\Response;
 use Slim\Http\ServerRequest;
 
-final class WorkingBaselineAction
+final class DevelopmentBaselineAction
 {
     protected $view;
     protected $componentService;
@@ -21,8 +21,8 @@ final class WorkingBaselineAction
     public function __invoke(ServerRequest $request, Response $response): Response
     {
         $data = $this->componentService->getComponents();
-        return $this->view->addAttribute('page', 'working_baseline')
-            ->addAttribute('title', 'Working Baseline')
+        return $this->view->addAttribute('page', 'development_baseline')
+            ->addAttribute('title', 'Development Baseline')
             ->render($response, 'page/all_components.phtml', $data);
     }
 

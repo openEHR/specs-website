@@ -54,17 +54,27 @@ $spec_blacklist = [
         </div>
     </div>
     <div class="d-none d-md-block flex-shrink-0 releases">
-        <?php foreach ($releases as $rel) {
-            if ($page === 'release_baseline' && $rel->is($release->id)) {
-                $cssClass = 'font-weight-bold';
-            } elseif ($page === 'working_baseline' && !$rel->isReleased()) {
-                $cssClass = 'font-weight-bold';
-            } else {
-                $cssClass = '';
-            }
-        ?>
-            <a href="<?= $rel->isReleased() ? $rel->getLink() : $rel->jira->getChanges() ?>" class="<?= $cssClass ?>" target="_blank"><?= $rel->id ?></a>
-            (<?= $rel->isReleased() ? $rel->date->format('d-M-Y') : 'in progress' ?>)<br/>
+        <?php if ($page === 'release_baseline') { ?>
+            <?php foreach ($releases as $rel) {
+                if (!$rel->isReleased()) {
+                    continue;
+                }
+                $cssClass = $rel->is($release->id) ? 'font-weight-bold' : '';
+                ?>
+                    <a href="<?= $rel->getLink() ?>" class="<?= $cssClass ?>" target="_blank"><?= $rel->id ?></a>
+                    (<?= $rel->date->format('d-M-Y')?>)<br/>
+            <?php } ?>
+        <?php } else { ?>
+            <a href="<?= $release->getLink() ?>" xxclass="font-weight-bold" target="_blank">latest</a><br/>
+            <?php foreach ($releases as $rel) {
+                if ($rel->isReleased()) { ?>
+                    <a href="<?= $rel->getLink() ?>" target="_blank"><?= $rel->id ?></a>
+                    (<?= $rel->date->format('d-M-Y')?>)<br/>
+                <?php } else { ?>
+                    <a href="<?= $rel->jira->getChanges() ?>" target="_blank"><?= $rel->id ?></a>
+                    (in progress)<br/>
+                <?php } ?>
+            <?php } ?>
         <?php } ?>
     </div>
 </div>
