@@ -193,11 +193,17 @@ class ComponentService
 
     private function buildTypes(): ComponentService
     {
+        /** @var Component $component */
         foreach ($this->data['components'] as $component) {
             $typeService = new TypeService($component->getAssetFilename('UML/class_index.adoc'));
             $typeService->build();
             $component->setTypes($typeService->types);
         }
+        // special case of AOM1.4
+        $component = $this->data['components']['AM'];
+        $typeService = new TypeService($component->getAssetFilename('UML/AOM1.4/class_index.adoc'));
+        $typeService->build();
+        $component->setTypes($typeService->types);
         return $this;
     }
 
