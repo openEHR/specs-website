@@ -20,6 +20,14 @@ foreach ($specifications as $spec) {
     }
 }
 
+$hasReleasedReleases = false;
+foreach ($releases as $rel) {
+    if ($rel->isReleased()) {
+        $hasReleasedReleases = true;
+        break;
+    }
+}
+
 $diagramFile = new File($release->component->getAssetFilename('openehr_block_diagram.svg'));
 if ($diagramFile->isValid()) {
     $diagramLink = $release->getLink() . '/openehr_block_diagram.svg';
@@ -28,9 +36,11 @@ if ($diagramFile->isValid()) {
 }
 ?>
 <img src="<?= $diagramLink ?>" alt="openEHR components" class="openehr-block-diagram mx-auto d-block img-fluid mt-5">
+
 <h1 class="text-center">
     <?= $title ?> (<?= $id ?>) Component - <?= $release->id ?>
 </h1>
+
 <nav class="nav justify-content-center">
     <?php if ($release->isLatest()) { ?>
     <span class="mx-1"><a href="<?= $jira->getOpenIssues() ?>" target="_blank">Open Issues</a></span> |
@@ -43,6 +53,7 @@ if ($diagramFile->isValid()) {
     <span class="mx-1"><a href="<?= $jira->getHistory() ?>" target="_blank">History</a></span>
     <?php } ?>
 </nav>
+
 <h2 id="_specifications">Specifications</h2>
 <table class="table table-sm">
     <thead class="thead-light">
@@ -80,6 +91,8 @@ if ($diagramFile->isValid()) {
     <?php } ?>
     </tbody>
 </table>
+
+<?php if ($hasReleasedReleases) { ?>
 <h2 id="_releases">Releases</h2>
 <table class="table table-sm">
     <thead class="thead-light">
@@ -90,17 +103,19 @@ if ($diagramFile->isValid()) {
         </tr>
     </thead>
     <tbody class="border-bottom">
-    <?php foreach ($releases as $release) {
-        if ($release->isReleased()) { ?>
+    <?php foreach ($releases as $rel) {
+            if ($rel->isReleased()) { ?>
         <tr>
-            <td><a href="<?= $release->getLink() ?>">Release <?= $release->id ?></a></td>
-            <td><?= $release->date->format('d-M-Y') ?></td>
-            <td><a href="<?= $release->jira->getChanges() ?>" target="_blank">Release notes</a></td>
+            <td><a href="<?= $rel->getLink() ?>">Release <?= $rel->id ?></a></td>
+            <td><?= $rel->date->format('d-M-Y') ?></td>
+            <td><a href="<?= $rel->jira->getChanges() ?>" target="_blank">Release notes</a></td>
         </tr>
         <?php } ?>
     <?php } ?>
     </tbody>
 </table>
+<?php } ?>
+
 <h2 id="_latest">Work In Progress</h2>
 <table class="table table-sm">
     <thead class="thead-light">
@@ -130,6 +145,7 @@ if ($diagramFile->isValid()) {
     <?php } ?>
     </tbody>
 </table>
+
 <h2 id="_computable_expressions">Computable Expressions</h2>
 <table class="table table-sm">
     <thead class="thead-light">
@@ -148,6 +164,7 @@ if ($diagramFile->isValid()) {
     <?php } ?>
     </tbody>
 </table>
+
 <?php if ($packages) { ?>
 <h2 id="_class_index">Class Index</h2>
 <table class="table table-sm">
