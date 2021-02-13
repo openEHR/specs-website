@@ -35,13 +35,12 @@ if ($diagramFile->isValid()) {
     <?php if ($release->isLatest()) { ?>
     <span class="mx-1"><a href="<?= $jira->getOpenIssues() ?>" target="_blank">Open Issues</a></span> |
     <span class="mx-1"><a href="<?= $jira->getRoadmap() ?>" target="_blank">Roadmap</a></span> |
-        <span class="mx-1"><a href="<?= $jira->getHistory() ?>" target="_blank">History</a></span>
+    <span class="mx-1"><a href="<?= $jira->getHistory() ?>" target="_blank">History</a></span>
     <?php } else {?>
     <span class="mx-1"><a href="<?= $release->jira->getIssues() ?>" target="_blank">Issues Fixed</a></span> |
     <span class="mx-1"><a href="<?= $release->jira->getChanges() ?>" target="_blank">Changes Implemented</a></span> |
     <span class="mx-1"><a href="<?= $jira->getRoadmap() ?>" target="_blank">Roadmap</a></span> |
-    <span class="mx-1"><a href="<?= $jira->getHistory() ?>" target="_blank">History</a></span> |
-    <span class="mx-1"><a href="<?= $release->getLinkOfLatest() ?>" target="_blank">Latest</a></span>
+    <span class="mx-1"><a href="<?= $jira->getHistory() ?>" target="_blank">History</a></span>
     <?php } ?>
 </nav>
 <h2 id="_specifications">Specifications</h2>
@@ -102,7 +101,7 @@ if ($diagramFile->isValid()) {
     <?php } ?>
     </tbody>
 </table>
-<h2 id="_releases">Work In Progress</h2>
+<h2 id="_latest">Work In Progress</h2>
 <table class="table table-sm">
     <thead class="thead-light">
         <tr>
@@ -113,13 +112,19 @@ if ($diagramFile->isValid()) {
     <tbody class="border-bottom">
         <tr>
             <td><a href="<?= $release->getLinkOfLatest() ?>">Latest</a></td>
-            <td>Latest of <?= $title ?> (<?= $id ?>) Component</td>
+            <td>
+                Latest specifications of <?= $title ?> (<?= $id ?>) Component |
+                <a href="https://github.com/openEHR/specifications-<?=$id?>" target="_blank">GitHub repo</a>
+            </td>
         </tr>
     <?php foreach ($releases as $release) {
         if (!$release->isReleased()) { ?>
         <tr>
             <td><a>Release <?= $release->id ?></a></td>
-            <td><a href="<?= $release->jira->getChanges() ?>" target="_blank">Changes</a></td>
+            <td>
+                <a href="<?= $release->jira->getIssues() ?>" target="_blank">Issues</a> |
+                <a href="<?= $release->jira->getChanges() ?>" target="_blank">Changes</a>
+            </td>
         </tr>
         <?php } ?>
     <?php } ?>
