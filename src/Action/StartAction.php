@@ -21,7 +21,7 @@ final class StartAction
     public function __invoke(ServerRequest $request, Response $response, array $args): Response
     {
         $data = [
-            'title' => 'Start',
+            'title' => 'Specifications Start Page',
             'page' => 'start',
             'releases' => $this->componentService->getReleases(),
             'components' => $this->componentService->getComponents(),

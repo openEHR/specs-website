@@ -35,6 +35,8 @@ final class SpecViewerAction
             (array)$release->component,
             [
                 'page' => "{$component->id}_component",
+                'title' => "{$component->title} ({$component->id}) Component - {$component->release->id}",
+                'component' => $component,
                 'releases' => $component->releases
             ]
         );

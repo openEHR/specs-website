@@ -9,6 +9,7 @@
 /** @var \App\Domain\Data\Note $note */
 /** @var \App\Domain\Data\Package[] $packages */
 /** @var \App\Domain\Data\Type $type */
+/** @var \App\Domain\Data\Component $component */
 
 use App\Helper\File;
 
@@ -28,7 +29,7 @@ foreach ($releases as $rel) {
     }
 }
 
-$diagramFile = new File($release->component->getAssetFilename('openehr_block_diagram.svg'));
+$diagramFile = new File($component->getAssetFilename('openehr_block_diagram.svg'));
 if ($diagramFile->isValid()) {
     $diagramLink = $release->getLink() . '/openehr_block_diagram.svg';
 } else {
@@ -38,7 +39,7 @@ if ($diagramFile->isValid()) {
 <img src="<?= $diagramLink ?>" alt="openEHR components" class="openehr-block-diagram mx-auto d-block img-fluid mt-5">
 
 <h1 class="text-center">
-    <?= $title ?> (<?= $id ?>) Component - <?= $release->id ?>
+    <?= $title ?>
 </h1>
 
 <nav class="nav justify-content-center">
@@ -128,7 +129,7 @@ if ($diagramFile->isValid()) {
         <tr>
             <td><a href="<?= $release->getLinkOfLatest() ?>">Latest</a></td>
             <td>
-                Latest specifications of <?= $title ?> (<?= $id ?>) Component |
+                Latest specifications of <?= $component->title ?> (<?= $id ?>) Component |
                 <a href="https://github.com/openEHR/specifications-<?=$id?>" target="_blank">GitHub repo</a>
             </td>
         </tr>

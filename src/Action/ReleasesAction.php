@@ -22,6 +22,7 @@ final class ReleasesAction
     {
         $data = [
             'page' => 'releases',
+            'title' => 'Latest Releases',
             'releases' => $this->componentService->getReleases(),
         ];
         return $this->view->render($response, 'page/releases.phtml', $data);

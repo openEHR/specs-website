@@ -23,7 +23,10 @@ final class HistoricalReleasesAction
     public function index(ServerRequest $request, Response $response, array $args): Response
     {
         $template = "page/historical_releases/{$args['release']}.phtml";
-        return $this->view->render($response, $template);
+        $data = [
+            'title' => "Release {$args['release']}",
+        ];
+        return $this->view->render($response, $template, $data);
     }
 
     public function assets(ServerRequest $request, Response $response, array $args): Response
