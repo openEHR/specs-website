@@ -35,6 +35,7 @@ final class ITSDirViewerAction
                 'component' => $component,
                 'dir' => $asset,
                 'page' => "{$component->id}_its_dir_viewer",
+                'title' => "{$component->title} ({$component->id}) Component - {$component->release->id}",
             ];
             return $this->view->render($response, 'page/its_dir_viewer.phtml', $data);
         }

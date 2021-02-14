@@ -38,6 +38,18 @@ class Specification extends AbstractModel implements \JsonSerializable
     /** @var Component */
     public $component;
 
+    public const STATUSES = array(
+        'STABLE' => ['badge' => 'success', 'short' => 'S', 'title' => 'STABLE'],
+        'TRIAL' => ['badge' => 'primary', 'short' => 'T', 'title' => 'TRIAL'],
+        'DEV' => ['badge' => 'secondary', 'short' => 'D', 'title' => 'DEV'],
+        'DEVELOPMENT' => ['badge' => 'secondary', 'short' => 'D', 'title' => 'DEV'],
+        'RETIRED' => ['badge' => 'danger', 'short' => 'R', 'title' => 'RETIRED'],
+        'SUPERSEDED' => ['badge' => 'danger', 'short' => 'E', 'title' => 'SUPERSEDED'],
+        'OBSOLETE' => ['badge' => 'danger', 'short' => 'O', 'title' => 'OBSOLETE'],
+        'ARCHIVED' => ['badge' => 'danger', 'short' => 'A', 'title' => 'ARCHIVED'],
+        '_' => ['badge' => 'light', 'short' => 'N', 'title' => 'UNKNOWN'],
+    );
+
     public function __invoke(array $args = [])
     {
         parent::__invoke($args);
@@ -110,7 +122,7 @@ class Specification extends AbstractModel implements \JsonSerializable
 
     public function setSpecStatus(string $value = null): Specification
     {
-        $this->spec_status = $value;
+        $this->spec_status = $value && isset(self::STATUSES[$value]) ? $value : '_';
         return $this;
     }
 
@@ -167,6 +179,11 @@ class Specification extends AbstractModel implements \JsonSerializable
         return '';
     }
 
+    public function hasExplicitLink(): bool
+    {
+        return (bool)$this->link;
+    }
+
     public function getDirectory(): string
     {
         if ($this->id && $this->component && $this->component->release) {
@@ -181,6 +198,21 @@ class Specification extends AbstractModel implements \JsonSerializable
             return "{$this->component->release->getDirectory()}/docs/{$this->getBasename()}";
         }
         return '';
+    }
+
+    public function getStatusBadge(): string
+    {
+        return self::STATUSES[$this->spec_status]['badge'];
+    }
+
+    public function getStatusShort(): string
+    {
+        return self::STATUSES[$this->spec_status]['short'];
+    }
+
+    public function getStatusTitle(): string
+    {
+        return self::STATUSES[$this->spec_status]['title'];
     }
 
     /**
@@ -203,6 +235,11 @@ class Specification extends AbstractModel implements \JsonSerializable
             'types' => $this->types,
             'summary_types' => $this->summary_types,
             '_component' => $this->component->id,
+            '_status' => [
+                'badge' => $this->getStatusBadge(),
+                'short' => $this->getStatusShort(),
+                'title' => $this->getStatusTitle(),
+            ],
             '_getLink()' => $this->getLink(),
         ];
     }

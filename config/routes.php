@@ -11,25 +11,31 @@ return function (App $app) {
     $app->get('/releases/{component:ITS-XML|ITS-JSON|ITS-BMM}/{release}/components[/[{asset:.+}]]', Action\ITSDirViewerAction::class);
     $app->get('/releases/{component}/{alias:open_issues|roadmap|history|crs}', Action\RedirectAction::class . ':jira');
     $app->get('/releases/{component}/{release}/{alias:issues|changes}', Action\RedirectAction::class . ':jira');
+    $app->get('/releases/{component:(?:ITS-REST)}/{release}/{asset:index\.html}', Action\SpecViewerAction::class . ':assets');
     $app->get('/releases/{component}[/[{release}[/[index[.html]]]]]', Action\SpecViewerAction::class . ':index');
     $app->get('/releases/{component}/{release}/UML/{asset:.+\.mdzip}', Action\SpecViewerAction::class . ':uml');
-    $app->get('/releases/{component}/{release}/{asset:.+\.(?:png|svg|html|xml|xsd|drawio|docx|g|jj|txt)}', Action\SpecViewerAction::class . ':assets');
+    $app->get('/releases/{component}/{release}/{asset:.+\.(?:png|svg|html|xml|xsd|drawio|docx|g4|g|jj|txt)}', Action\SpecViewerAction::class . ':assets');
     $app->get('/releases/{component}/{release}/{spec}', Action\SpecViewerAction::class . ':specs');
-    $app->get('/[working_baseline]', Action\WorkingBaselineAction::class);
-    $app->get('/classes[/{class}]', Action\WorkingBaselineAction::class . ':classes');
-    $app->get('/manifest', Action\WorkingBaselineAction::class . ':manifest');
+    $app->get('/[start[/]]', Action\StartAction::class);
+    $app->get('/release_baseline[/]', Action\ReleaseBaselineAction::class);
+    $app->get('/development_baseline[/]', Action\DevelopmentBaselineAction::class);
+    $app->get('/classes[/{class}]', Action\DevelopmentBaselineAction::class . ':classes');
+    $app->get('/manifest', Action\DevelopmentBaselineAction::class . ':manifest');
     $app->get('/search', Action\SearchAction::class);
-    $app->get('/latest_releases', Action\ReleasesAction::class);
-    $app->get('/historical_releases', Action\HistoricalReleasesAction::class);
+    $app->get('/releases[/]', Action\ReleasesAction::class);
     // hooks
     $app->post('/hook/populate_releases', Action\HookAction::class . ':populate_releases');
     $app->post('/scripts/spec_populate_releases[.php]', Action\HookAction::class . ':populate_releases');
     // redirects
     $app->get('/components/{asset:.+}', Action\RedirectAction::class . ':components');
-    $app->get('/components[/]', Action\WorkingBaselineAction::class);
     $app->get('/tickets/{issue:.+}', Action\RedirectAction::class . ':tickets');
     $app->get('/wiki/{wiki:.+}', Action\RedirectAction::class . ':wiki');
     $app->redirect('/Services+Landscape+for+e-Health', 'https://openehr.atlassian.net/wiki/spaces/spec/pages/357957633/Services+Landscape+for+e-Health', 302);
-    $app->redirect('/UML', '/releases/UML/latest/index.html', 301);
+    $app->redirect('/UML[/]', '/releases/UML/latest/index.html', 301);
+    // legacy
+    $app->get('/latest_releases[/]', Action\ReleasesAction::class);
+    $app->get('/historical_releases[/]', Action\ReleasesAction::class);
+    $app->get('/components[/]', Action\DevelopmentBaselineAction::class);
+    $app->get('/working_baseline[/]', Action\DevelopmentBaselineAction::class);
 };
 

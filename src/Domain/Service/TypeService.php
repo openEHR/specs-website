@@ -36,7 +36,11 @@ class TypeService
                 preg_match_all('/==== Package (\w+)\s+(.*?)(?====|\Z)/s', $modelPart, $packageParts, PREG_PATTERN_ORDER);
                 foreach ($packageParts[2] as $pIndex => $packagePart) {
                     $package = $packageParts[1][$pIndex];
-                    preg_match_all('/\/(\w+)\/([\w.{}]+)\/(\w+)\.html\#(\w+)\[(\w+)\^\]/', $packagePart, $types, PREG_PATTERN_ORDER);
+                    if ($package === 'archetype' && $model === 'am') {
+                        $package = 'aom1.4';
+                        $packagePart = str_replace('AM/1.4/archetype.html', 'AM/{am_release}/AOM1.4.html', $packagePart);
+                    }
+                    preg_match_all('/\/(\w+)\/([\w.{}]+)\/([\w.]+)\.html\#(\w+)\[(\w+)\^\]/', $packagePart, $types, PREG_PATTERN_ORDER);
                     foreach ($types[0] as $tIndex => $match) {
                         $this->types[] = [
                             'componentId' => $types[1][$tIndex],

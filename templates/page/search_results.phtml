@@ -18,10 +18,10 @@
 <p>
 <?php if (!empty($count)) { ?>
     The following <span class="badge badge-secondary"><?=$count?></span> result(s) found while searching
-    for "<code><?=$keyword?></code>" in <a href="/">working baseline</a> specifications.
+    for "<code><?=$keyword?></code>" in <a href="/development_baseline">development baseline</a> specifications.
 <?php } else { ?>
     No results found while searching for "<code><?=$keyword?></code>"
-    in <a href="/">working baseline</a> specifications.
+    in <a href="/development_baseline">development baseline</a> specifications.
 <?php } ?>
 </p>
 
@@ -53,13 +53,14 @@
             <td>
                 <a href="<?= $spec->component->getLink() ?>" title="<?= $spec->component->description ?>" target="_blank"><?= $spec->component->id ?></a> /
                 <a href="<?= $spec->getLink() ?>" title="<?= $spec->description ?>" target="_blank"><?= $spec->title_short ?></a>
-                <?= $this->fetch('block/spec_status.phtml', $spec) ?>
+                <span class="align-top badge badge-<?= $spec->getStatusBadge() ?> spec-status-short" title="Specification status is <?= $spec->getStatusTitle() ?>."><?= $spec->getStatusShort() ?></span>
             </td>
             <td><?= $spec->summary ?></td>
         </tr>
     <?php } ?>
     </tbody>
 </table>
+<?= $this->fetch('block/status_legend.phtml') ?>
 <?php } ?>
 
 <?php if (!empty($expressions)) { ?>

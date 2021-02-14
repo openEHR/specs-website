@@ -1,6 +1,7 @@
 <?php
 /** @var string $id */
 /** @var string $title */
+/** @var string $page */
 /** @var \App\Domain\Data\Release $release */
 /** @var \App\Domain\Data\Release[] $releases */
 /** @var \App\Domain\Data\Jira $jira */
@@ -25,7 +26,7 @@ $spec_blacklist = [
             <a href="<?= $jira->getCrs() ?>" target="_blank">CRs</a>
         </p>
         <p>
-        <?php foreach ($expressions as $expr) {
+        <?php foreach ($release->getExpressions() as $expr) {
             if ($expr->isOwned() && $expr->isUML()) {
             ?>
             <a href="<?= $expr->getLink() ?>" target="_blank" title="<?= $expr->description ?>"><?= $expr->title ?></a><br/>
@@ -35,10 +36,13 @@ $spec_blacklist = [
     </div>
     <div class="flex-grow-1 d-grid specs_cell">
         <div class="row no-gutters">
-        <?php foreach ($specifications as $spec) {
+        <?php foreach ($release->getSpecifications() as $spec) {
             if (!in_array($spec->id, $spec_blacklist)) { ?>
             <div class="col specs_item" title="<?= $spec->summary ?>">
-                <h6><a href="<?= $spec->getLink() ?>" target="_blank"><?= $spec->title_short ?></a></h6>
+                <h6>
+                    <a href="<?= $spec->getLink() ?>" target="_blank"><?= $spec->title_short ?></a>
+                    <span class="align-top badge badge-<?= $spec->getStatusBadge() ?> spec-status-short mr-1" title="Specification status is <?= $spec->getStatusTitle() ?>."><?= $spec->getStatusShort() ?></span>
+                </h6>
                 <?php if ($spec->micro_summary) { ?>
                     <?= $spec->micro_summary ?><br/>
                 <?php } ?>
@@ -50,10 +54,27 @@ $spec_blacklist = [
         </div>
     </div>
     <div class="d-none d-md-block flex-shrink-0 releases">
-        <?php foreach ($releases as $release) {
-        ?>
-            <a href="<?= $release->isReleased() ? $release->getLink() : $release->jira->getChanges() ?>" target="_blank"><?= $release->id ?></a>
-            (<?= $release->isReleased() ? $release->date->format('d-M-Y') : 'cooking' ?>)<br/>
+        <?php if ($page === 'release_baseline') { ?>
+            <?php foreach ($releases as $rel) {
+                if (!$rel->isReleased()) {
+                    continue;
+                }
+                $cssClass = $rel->is($release->id) ? 'font-weight-bold' : '';
+                ?>
+                    <a href="<?= $rel->getLink() ?>" class="<?= $cssClass ?>" target="_blank"><?= $rel->id ?></a>
+                    (<?= $rel->date->format('d-M-Y')?>)<br/>
+            <?php } ?>
+        <?php } else { ?>
+            <a href="<?= $release->getLink() ?>" xxclass="font-weight-bold" target="_blank">latest</a><br/>
+            <?php foreach ($releases as $rel) {
+                if ($rel->isReleased()) { ?>
+                    <a href="<?= $rel->getLink() ?>" target="_blank"><?= $rel->id ?></a>
+                    (<?= $rel->date->format('d-M-Y')?>)<br/>
+                <?php } else { ?>
+                    <a href="<?= $rel->jira->getChanges() ?>" target="_blank"><?= $rel->id ?></a>
+                    (in progress)<br/>
+                <?php } ?>
+            <?php } ?>
         <?php } ?>
     </div>
 </div>

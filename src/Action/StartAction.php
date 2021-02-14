@@ -7,7 +7,7 @@ use App\View;
 use Slim\Http\Response;
 use Slim\Http\ServerRequest;
 
-final class ReleasesAction
+final class StartAction
 {
     protected $view;
     protected $componentService;
@@ -21,10 +21,11 @@ final class ReleasesAction
     public function __invoke(ServerRequest $request, Response $response, array $args): Response
     {
         $data = [
-            'page' => 'releases',
-            'title' => 'Latest Releases',
+            'title' => 'Specifications Start Page',
+            'page' => 'start',
             'releases' => $this->componentService->getReleases(),
+            'components' => $this->componentService->getComponents(),
         ];
-        return $this->view->render($response, 'page/releases.phtml', $data);
+        return $this->view->render($response, 'page/start.phtml', $data);
     }
 }
