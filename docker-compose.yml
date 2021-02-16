@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  openehr-specifications-website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "84:80"
+      - "9000:9000"
+    volumes:
+      - .:/var/www/html
+      - ./git:/var/www/git
+      - ./vhosts:/var/www/vhosts
