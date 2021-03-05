@@ -23,7 +23,7 @@ final class DevelopmentBaselineAction
         $data = $this->componentService->getComponents();
         return $this->view->addAttribute('page', 'development_baseline')
             ->addAttribute('title', 'Development Baseline')
-            ->render($response, 'page/all_components.phtml', $data);
+            ->render($response, 'page/baseline.phtml', $data);
     }
 
     public function manifest(ServerRequest $request, Response $response): Response

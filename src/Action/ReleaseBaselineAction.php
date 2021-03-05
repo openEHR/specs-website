@@ -27,7 +27,7 @@ final class ReleaseBaselineAction
         $data = $this->componentService->getComponents();
         return $this->view->addAttribute('page', 'release_baseline')
             ->addAttribute('title', 'Release Baseline')
-            ->render($response, 'page/all_components.phtml', $data);
+            ->render($response, 'page/baseline.phtml', $data);
     }
 
 }
