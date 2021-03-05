@@ -23,6 +23,7 @@ return function (App $app) {
     $app->get('/manifest', Action\DevelopmentBaselineAction::class . ':manifest');
     $app->get('/search', Action\SearchAction::class);
     $app->get('/releases[/]', Action\ReleasesAction::class);
+    $app->get('/components[/]', Action\ComponentsAction::class);
     // hooks
     $app->post('/hook/populate_releases', Action\HookAction::class . ':populate_releases');
     $app->post('/scripts/spec_populate_releases[.php]', Action\HookAction::class . ':populate_releases');
@@ -35,7 +36,6 @@ return function (App $app) {
     // legacy
     $app->get('/latest_releases[/]', Action\ReleasesAction::class);
     $app->get('/historical_releases[/]', Action\ReleasesAction::class);
-    $app->get('/components[/]', Action\DevelopmentBaselineAction::class);
     $app->get('/working_baseline[/]', Action\DevelopmentBaselineAction::class);
 };
 

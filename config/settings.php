@@ -57,6 +57,7 @@ $settings['navbar'] = [
         'Release Baseline' => '/release_baseline',
         'Development Baseline' => '/development_baseline',
         Page::DIVIDER,
+        'All Components' => '/components',
         'All Releases' => '/releases',
         'Global UML' => '/releases/UML/latest/index.html',
         'Class Index' => '/classes',
