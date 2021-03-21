@@ -171,8 +171,10 @@ class Specification extends AbstractModel implements \JsonSerializable
 
     public function getLink(): string
     {
-        if ($this->link) {
+        if ($this->link && preg_match('#^(https://|/)#i', $this->link)) {
             return $this->link;
+        } elseif ($this->link && $this->id && $this->component && $this->component->release) {
+            return "{$this->component->release->getLink()}/{$this->link}";
         } elseif ($this->id && $this->component && $this->component->release) {
             return "{$this->component->release->getLink()}/{$this->getBasename()}";
         }
