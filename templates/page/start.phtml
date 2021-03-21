@@ -4,78 +4,122 @@
 /** @var \App\Domain\Data\Component[] $components */
 ?>
 
-<div class="jumbotron jumbotron-start bg-light pt-2 pb-4 mt-0 mb-0 row">
-    <div class="col-12 order-first">
-        <h1 class="display-4 font-weight-normal"><em>open</em>EHR Specifications</h1>
-    </div>
-    <div class="col-12 col-md-6 order-md-last p-1">
-        <img class="img-fluid rounded my-3 my-md-0" src="/releases/BASE/latest/architecture_overview/diagrams/openehr_block_diagram.svg" width="100%">
-    </div>
-    <div class="col">
-        <p class="lead d-none d-md-block">for an interoperable healthcare information platform</p>
-        <hr class="d-none d-md-block">
+
+<h1 class="h_start"><em>open</em>EHR Specifications</h1>
+<p class="lead d-none d-md-block">for an interoperable healthcare information platform</p>
+
+<div class="jumbotron jumbotron-start bg-white py-5 px-4 m-0 row">
+    <div class="col-12 col-md-6">
+        <p class="d-none d-lg-block">
+            'openEHR' is the name of a technology, consisting of open specifications,
+            clinical models and software that can be used to create standards,
+            and build information and interoperability solutions for healthcare.
+            It is <strong>completely model-driven</strong>, and separates domain semantics out from software, into <strong>models created by domain professionals</strong>.
+        </p>
         <p>
             The <a href="/release_baseline">openEHR specifications</a> consist of information models for healthcare data,
             including the <a href="/releases/RM/latest/ehr.html">EHR</a> (how to record clinical observations?)
-            and <a href="/releases/RM/latest/demographics.html">demographics</a> (parties, roles and relationships),
-            a portable <a href="/releases/QUERY/latest/AQL.html">query language (AQL)</a>,
-            the <a href="/releases/AM/latest">archetype formalism</a> (adopted by <a href="https://www.iso.org/standard/62305.html" target="_blank">ISO 13606-2:2019</a>) for expressing domain content,
+            and <a href="/releases/RM/latest/demographics.html">Demographics</a> (parties, roles and relationships),
+            a portable <a href="/releases/QUERY/latest/AQL.html">Query Language (AQL)</a>,
+            the <a href="/releases/AM/latest">Archetype formalism</a> (adopted by <a href="https://www.iso.org/standard/62305.html" target="_blank">ISO 13606-2:2019</a>) for expressing domain content,
             the <a href="/releases/CDS/latest">CDS Guidelines and Care Pathways</a>,
-            and an <a href="/releases/AM/latest">open API specification</a>.
+            and an <a href="/releases/ITS-REST/latest">open API specification</a>.
         </p>
-        <a class="btn btn-secondary btn-lg" href="https://www.openehr.org/about/what_is_openehr" role="button"><strong><em>open</em>EHR</strong> Primer</a>
+        <a class="btn btn-secondary" href="https://www.openehr.org/about/what_is_openehr" target="_blank" role="button" title="Try the openEHR Primer to get a global overview of openEHR"><strong><em>open</em>EHR</strong> Primer</a>
+    </div>
+    <div class="d-none d-md-block col-md-6">
+        <img class="img-fluid rounded align-middle" src="https://www.openehr.org/media/uploads/2019/02/24/openehr-what_is_it-architecture.png" width="100%">
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <h3>Specifications</h3>
-            <p>The openEHR Specifications Program manages and maintains specifications and their computable expressions.</p>
-                <a class="btn btn-success tn-sm" href="/release_baseline" role="button">Release baseline</a>
-                <a class="btn btn-primary tn-sm" href="/development_baseline" role="button">Development baseline</a>
-        </div>
-        <div class="col-md">
-            <h3>Architecture Overview</h3>
-            <p>Global description of openEHR design principles and architecture</p>
-            <p class="text-right"><a class="btn btn-outline-secondary btn-sm" href="/releases/BASE/latest/architecture_overview.html" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md">
-            <h3>Archetype Technology</h3>
-            <p>Business case for archetyping; overview of archetype specifications</p>
-            <p class="text-right"><a class="btn btn-outline-secondary btn-sm" href="/releases/AM/latest/Overview.html" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md">
-            <h3>CDS & Guidelines</h3>
-            <p>Overview of design approach and specifications for CDS, guidelines and care pathways</p>
-            <p class="text-right"><a class="btn btn-outline-secondary btn-sm" href="/releases/PROC/latest/overview.html" role="button">View details &raquo;</a></p>
-        </div>
+<h3 class="h_start">What should I read first?</h3>
+<p>
+    If <strong>you are a developer</strong> and want to get to work right away, we recommend the following:
+    <ul>
+        <li>skim the <a href="/releases/BASE/latest/architecture_overview.html" target="_blank">Architecture Overview</a>,</li>
+        <li>browse through the <a href="/releases/UML/latest/index.html" target="_blank">global UML site</a> or <a href="/classes" target="_blank">class index</a>,</li>
+        <li>make the <a href="/its" target="_blank">ITS page</a> or the <a href="/releases/ITS-REST/latest/overview.html" target="_blank">REST API</a> your home.</li>
+    </ul>
+</p>
+<p>
+    If <strong>you are an architect</strong> or just <strong>want to understand the platform</strong> architecture properly, we recommend reading/skimming the following guides:
+    <ul>
+        <li><a href="/releases/BASE/latest/architecture_overview.html" target="_blank">Architecture Overview</a></li>
+        <li><a href="/releases/AM/latest/Overview.html" target="_blank">Archetype Technology Overview</a></li>
+        <li><a href="/releases/PROC/latest/overview.html" target="_blank">CDS, Guidelines and Planning Overview</a></li>
+    </ul>
+</p>
+<p>
+    The specifications are managed by the <a href="https://www.openehr.org/programs/specification/editorialcommittee" target="_blank">Specifications Editorial Committee (SEC)</a>, with extensive input from the community. If you are interested in details of the governance process, see <a href="https://www.openehr.org/programs/specification/" target="_blank">the governance and change management pages</a>.
+</p>
+<p>
+    If you are mainly interested in open source implementations and code bases, see the <a href="/its" target="_blank">implementation page</a> or go straight to <a href="https://github.com/openEHR" target="_blank">openEHR@Github</a>.
+</p>
+
+<h3 class="h_start">How are the Specifications organised?</h3>
+<div class="jumbotron jumbotron-start bg-light p-4 pt-5 m-0 row">
+    <div class="d-none d-md-block mb-md-4 mb-lg-0 col-md-12 col-lg-7">
+        <img class="img-fluid rounded align-middle" src="/releases/BASE/latest/architecture_overview/diagrams/openehr_block_diagram.svg" target="_blank" width="100%">
     </div>
-
-    <hr class="mb-3">
-
-    <div class="row">
-        <div class="col-12 col-md">
-            <span class="align-middle">Links:</span>
-            <a role="button" class="btn btn-outline-primary btn-sm mb-1" href="/releases/UML/latest/index.html">Global UML</a>
-            <a role="button" class="btn btn-outline-primary btn-sm mb-1" href="/classes">Class Index</a>
-            <a role="button" class="btn btn-outline-primary btn-sm mb-1" href="https://openehr.atlassian.net/secure/Dashboard.jspa?selectPageId=10190">Issue trackers</a>
-            <a role="button" class="btn btn-outline-primary btn-sm mb-1" href="https://discourse.openehr.org/c/specifications">Discourse</a>
-        </div>
-        <div class="col-auto">
-            <span class="align-middle">Latest releases:</span>
-            <?php foreach ($releases as $i => $release) {
-                if ($i >= 3) {
-                    break;
-                }
-                ?>
-                <a role="button" class="btn btn-outline-success btn-sm mb-1" href="<?= $release->getLink() ?>"><?= $release->component->id ?> v<?= $release->id ?> (<?= $release->date->format("M Y") ?>)</a>
-            <?php } ?>
-            <a role="button" class="btn btn-outline-primary btn-sm mb-1" href="/releases">more...</a>
-        </div>
+    <div class="col-12 col-lg-5">
+        <p>
+            The specifications come in 3 categories:
+            <ul>
+                <li><strong>abstract specifications:</strong> platform-independent UML information models, service interfaces, Antlr grammars etc;</li>
+                <li><strong>implementation technology specifications (ITS):</strong> platform-specific specs, including XSDs, JSON-schema, REST APIs</li>
+                <li><strong>conformance specification:</strong> defining the basis of conformance testing and product profiling.</li>
+            </ul>
+        </p>
+        <p>
+            Within these categories are separate <a href="/components" target="_blank">components</a>, each containing specifications on a specific topic. For convenience, some of the components are in groups, as visualise with this diagram.
+        </p>
+        <p class="text-right">
+            <a class="btn btn-success btn-sm m-1" href="/release_baseline" target="_blank" role="button">Release baseline</a>
+            <a class="btn btn-primary btn-sm m-1" href="/development_baseline" target="_blank" role="button">Development baseline</a>
+        </p>
     </div>
-
 </div>
+
+<h3 class="h_start">Where can I discuss Specifications and Implementation?</h3>
+<p>
+    We have extensive discussion groups at the <a href="https://discourse.openehr.org/" target="_blank">openEHR Discourse site</a>, particularly the following categories:
+    <ul>
+        <li><a href="https://discourse.openehr.org/c/tool-support/29" target="_blank">Tool support</a> - for reporting issues with tools</li>
+        <li><a href="https://discourse.openehr.org/c/implem/39" target="_blank">Implementation</a>
+            <ul>
+                <li><a href="https://discourse.openehr.org/c/implem/app-dev/8" target="_blank">Apps</a></li>
+                <li><a href="https://discourse.openehr.org/c/implem/platform-implem/7" target="_blank">Platform</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="https://discourse.openehr.org/c/specifications/6">Specifications</a>
+            <ul>
+                <li><a href="https://discourse.openehr.org/c/specifications/its/41" target="_blank">ITS</a></li>
+                <li><a href="https://discourse.openehr.org/c/specifications/rm/42" target="_blank">Reference Model</a></li>
+                <li><a href="https://discourse.openehr.org/c/specifications/adl/40" target="_blank">Archetypes and ADL</a></li>
+                <li><a href="https://discourse.openehr.org/c/specifications/aql/43" target="_blank">AQL / Querying</a></li>
+                <li><a href="https://discourse.openehr.org/c/specifications/task-planning-gdl/27" target="_blank">Process/CDS/Guidelines</a></li>
+            </ul>
+        </li>
+    </ul>
+</p>
+<p>
+    See also the openEHR Wiki - <a href="https://openehr.atlassian.net/wiki/spaces/spec/overview" target="_blank">specifications space</a> and openEHR <a href="https://openehr.atlassian.net/secure/Dashboard.jspa?selectPageId=10190" target="_blank">Jira specification projects</a>.
+</p>
+
+<div class="text-center pt-3">
+    <hr class="mt-5">
+    <span class="align-middle">Latest releases:</span>
+    <?php foreach ($releases as $i => $release) {
+        if ($i >= 6) {
+            break;
+        }
+        ?>
+        <a role="button" class="btn btn-outline-success btn-sm mb-1" href="<?= $release->getLink() ?>"><?= $release->component->id ?> v<?= $release->id ?> (<?= $release->date->format("M Y") ?>)</a>
+    <?php } ?>
+    <a role="button" class="btn btn-outline-primary btn-sm mb-1" href="/releases">more...</a>
+</div>
+
 
 
 

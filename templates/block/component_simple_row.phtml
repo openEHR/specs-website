@@ -1,0 +1,16 @@
+<?php
+/** @var \App\Domain\Data\Component $component */
+/** @var string $category */
+/** @var string $group */
+
+$release = $component->getReleaseById(\App\Domain\Data\Release::STABLE);
+$releaseCss = $release->isReleased() ? 'btn-outline-success' : 'btn-outline-primary';
+$releaseText = $release->isReleased() ? $release->id .' ('.$release->date->format("M Y").')' : 'development';
+?>
+<tr>
+    <td><?=$category?></td>
+    <td><?=$group?></td>
+    <td><a href="<?= $component->getLink() ?>"><?= $component->id?></a>: <?= $component->title?></td>
+    <td><?= $component->description?></td>
+    <td class="p-0"><a role="button" class="btn <?=$releaseCss?> btn-sm m-0" href="<?= $release->getLink() ?>"><?= $releaseText?></a></td>
+</tr>

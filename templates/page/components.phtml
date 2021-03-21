@@ -1,0 +1,116 @@
+﻿<?php
+/** @var \App\Domain\Data\Component $CNF */
+/** @var \App\Domain\Data\Component $ITS */
+/** @var \App\Domain\Data\Component $ITS_REST */
+/** @var \App\Domain\Data\Component $ITS_XML */
+/** @var \App\Domain\Data\Component $ITS_JSON */
+/** @var \App\Domain\Data\Component $ITS_BMM */
+/** @var \App\Domain\Data\Component $SM */
+/** @var \App\Domain\Data\Component $CDS */
+/** @var \App\Domain\Data\Component $PROC */
+/** @var \App\Domain\Data\Component $RM */
+/** @var \App\Domain\Data\Component $TERM */
+/** @var \App\Domain\Data\Component $QUERY */
+/** @var \App\Domain\Data\Component $AM */
+/** @var \App\Domain\Data\Component $LANG */
+/** @var \App\Domain\Data\Component $BASE */
+/** @var string $title */
+
+?>
+<h1 class="text-center">
+    <?= $title ?>
+</h1>
+<p>
+    The following table shows all openEHR <strong>components</strong>, each containing specifications on a particular topic. For convenience, some of the components are in <strong>groups</strong>.
+</p>
+<table class="table table-sm">
+    <thead class="thead-light">
+    <tr>
+        <th class="w-short">Category</th>
+        <th class="w-short">Group</th>
+        <th>Component</th>
+        <th>Description</th>
+        <th class="w-short">Release</th>
+    </tr>
+    </thead>
+    <tbody class="border-bottom"><?php
+    echo $this->fetch('block/component_simple_row.phtml', [
+        'category' => 'Conformance',
+        'group' => '',
+        'component' => $CNF,
+    ]);
+    echo $this->fetch('block/component_simple_row.phtml', [
+        'category' => 'ITS',
+        'group' => '',
+        'component' => $ITS_REST,
+    ]);
+    echo $this->fetch('block/component_simple_row.phtml', [
+        'category' => '',
+        'group' => '',
+        'component' => $ITS_JSON,
+    ]);
+    echo $this->fetch('block/component_simple_row.phtml', [
+        'category' => '',
+        'group' => '',
+        'component' => $ITS_XML,
+    ]);
+    echo $this->fetch('block/component_simple_row.phtml', [
+        'category' => '',
+        'group' => '',
+        'component' => $ITS_BMM,
+    ]);
+    echo $this->fetch('block/component_simple_row.phtml', [
+        'category' => 'Abstract',
+        'group' => '',
+        'component' => $SM,
+    ]);
+    echo $this->fetch('block/component_simple_row.phtml', [
+        'category' => '',
+        'group' => 'Process & CDS',
+        'component' => $PROC,
+    ]);
+    echo $this->fetch('block/component_simple_row.phtml', [
+        'category' => '',
+        'group' => '',
+        'component' => $CDS,
+    ]);
+    echo $this->fetch('block/component_simple_row.phtml', [
+        'category' => '',
+        'group' => 'Content',
+        'component' => $RM,
+    ]);
+    echo $this->fetch('block/component_simple_row.phtml', [
+        'category' => '',
+        'group' => '',
+        'component' => $TERM,
+    ]);
+    echo $this->fetch('block/component_simple_row.phtml', [
+        'category' => '',
+        'group' => 'Formalisms',
+        'component' => $QUERY,
+    ]);
+    echo $this->fetch('block/component_simple_row.phtml', [
+        'category' => '',
+        'group' => '',
+        'component' => $AM,
+    ]);
+    echo $this->fetch('block/component_simple_row.phtml', [
+        'category' => '',
+        'group' => '',
+        'component' => $LANG,
+    ]);
+    echo $this->fetch('block/component_simple_row.phtml', [
+        'category' => '',
+        'group' => 'Foundation',
+        'component' => $BASE,
+    ]);
+    ?>
+    </tbody>
+</table>
+
+<div class="pt-2">
+    <span class="align-middle">All specifications:</span>
+    <a class="btn btn-outline-success btn-sm" href="/release_baseline" target="_blank" role="button">Release baseline</a>
+    <a class="btn btn-outline-primary btn-sm" href="/development_baseline" target="_blank" role="button">Development baseline</a>
+</div>
+

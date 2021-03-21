@@ -1,0 +1,41 @@
+<?php
+/** @var \App\Domain\Data\Component $ITS */
+/** @var \App\Domain\Data\Component $ITS_REST */
+/** @var \App\Domain\Data\Component $ITS_XML */
+/** @var \App\Domain\Data\Component $ITS_JSON */
+/** @var \App\Domain\Data\Component $ITS_BMM */
+/** @var string $title */
+
+?>
+<h1 class="text-center">
+    <?= $title ?>
+</h1>
+
+<div class="d-flex flex-column">
+
+    <div class="specs_category_box">
+        <h5>APIs</h5>
+        <div id="its_group" class="group_box">
+            <?= $this->fetch('block/component_row.phtml', $ITS_REST) ?>
+        </div>
+        <h5>Schemas</h5>
+        <div id="its_group" class="group_box">
+            <?= $this->fetch('block/component_row.phtml', $ITS_XML) ?>
+            <?= $this->fetch('block/component_row.phtml', $ITS_JSON) ?>
+            <?= $this->fetch('block/component_row.phtml', $ITS_BMM) ?>
+        </div>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col pt-2">
+        <span class="align-middle">All specifications:</span>
+        <a class="btn btn-outline-success btn-sm" href="/release_baseline" target="_blank" role="button">Release baseline</a>
+        <a class="btn btn-outline-primary btn-sm" href="/development_baseline" target="_blank" role="button">Development baseline</a>
+    </div>
+    <div class="col">
+        <?= $this->fetch('block/status_legend.phtml') ?>
+    </div>
+</div>
+

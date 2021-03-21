@@ -203,7 +203,12 @@ class View
         }
         $data = array_merge($this->attributes, (array)$data);
         try {
-            extract($data, EXTR_SKIP & EXTR_PREFIX_INVALID, 'var');
+            foreach ($data as $k => $v) {
+                $k = preg_replace('/[\W]+/', '_', $k);
+                if (!in_array($k, ['this', 'template', 'data', 'k', 'v'])) {
+                    $$k = $v;
+                }
+            }
             ob_start();
             include $template;
             $output = ob_get_clean();

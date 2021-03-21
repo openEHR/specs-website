@@ -4,10 +4,10 @@
 /** @var \App\View\NavItem $subItem */
 ?>
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top border-bottom">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTop" aria-controls="navbarTop" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse" id="navbarTop">
         <ul class="navbar-nav"><?php
             foreach ($this->navBar->items as $navItem) { ?>
             <li class="nav-item dropdown px-1 <?=$navItem->isActive() ? 'active' : '' ?>">
@@ -42,7 +42,7 @@
     </div>
     <form class="form-inline" action="/search">
         <div class="input-group">
-            <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="keyword" alt="dsdfsd" required>
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="keyword" alt="Search" required>
             <div class="input-group-append">
                 <button class="btn btn-secondary" type="submit">
                     <i class="fas fa-search"></i>

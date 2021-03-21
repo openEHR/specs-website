@@ -8,7 +8,7 @@ use App\View;
 use Slim\Http\Response;
 use Slim\Http\ServerRequest;
 
-final class ReleaseBaselineAction
+final class ComponentsAction
 {
     protected $view;
     protected $componentService;
@@ -19,15 +19,15 @@ final class ReleaseBaselineAction
         $this->componentService = $components;
     }
 
-    public function __invoke(ServerRequest $request, Response $response): Response
+    public function __invoke(ServerRequest $request, Response $response, array $args): Response
     {
         foreach ($this->componentService->getComponents() as $component) {
             $component->useRelease(Release::STABLE);
         }
-        $data = $this->componentService->getComponents();
-        return $this->view->addAttribute('page', 'release_baseline')
-            ->addAttribute('title', 'Release Baseline')
-            ->render($response, 'page/baseline.phtml', $data);
+        $data = [
+            'page' => 'components',
+            'title' => 'All Components',
+        ] + $this->componentService->getComponents();
+        return $this->view->render($response, 'page/components.phtml', $data);
     }
-
 }
