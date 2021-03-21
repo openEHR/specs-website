@@ -10,7 +10,7 @@ use Slim\Exception\HttpNotFoundException;
 use Slim\Http\Response;
 use Slim\Http\ServerRequest;
 
-final class ITSDirViewerAction
+final class ITSAction
 {
     protected $view;
     protected $componentService;
@@ -24,6 +24,14 @@ final class ITSDirViewerAction
     }
 
     public function __invoke(ServerRequest $request, Response $response, array $args): Response
+    {
+        $data = $this->componentService->getComponents();
+        return $this->view->addAttribute('page', 'implementation_technologies')
+            ->addAttribute('title', 'Implementation Technologies')
+            ->render($response, 'page/its.phtml', $data);
+    }
+
+    public function dir_viewer(ServerRequest $request, Response $response, array $args): Response
     {
         $component = $this->componentService->getComponent($args['component'])->useRelease($args['release']);
         $asset = $component->getITSAsset($args['asset'] ?? '');

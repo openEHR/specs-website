@@ -8,7 +8,7 @@ return function (App $app) {
     $app->get('/releases/{release:(?:0.9|0.95|1.0|1.0.1|1.0.2)}', Action\HistoricalReleasesAction::class . ':index');
     $app->get('/releases/{release:(?:0.9|0.95|1.0|1.0.1|1.0.2)}/{asset:.+}', Action\HistoricalReleasesAction::class . ':assets');
     $app->get('/releases/UML/latest/{asset:.*}', Action\UMLViewerAction::class . ':assets');
-    $app->get('/releases/{component:ITS-XML|ITS-JSON|ITS-BMM}/{release}/components[/[{asset:.+}]]', Action\ITSDirViewerAction::class);
+    $app->get('/releases/{component:ITS-XML|ITS-JSON|ITS-BMM}/{release}/components[/[{asset:.+}]]', Action\ITSAction::class . 'dir_viewer');
     $app->get('/releases/{component}/{alias:open_issues|roadmap|history|crs}', Action\RedirectAction::class . ':jira');
     $app->get('/releases/{component}/{release}/{alias:issues|changes}', Action\RedirectAction::class . ':jira');
     $app->get('/releases/{component:(?:ITS-REST)}/{release}/{asset:index\.html}', Action\SpecViewerAction::class . ':assets');
@@ -24,6 +24,7 @@ return function (App $app) {
     $app->get('/search', Action\SearchAction::class);
     $app->get('/releases[/]', Action\ReleasesAction::class);
     $app->get('/components[/]', Action\ComponentsAction::class);
+    $app->get('/its[/]', Action\ITSAction::class);
     // hooks
     $app->post('/hook/populate_releases', Action\HookAction::class . ':populate_releases');
     $app->post('/scripts/spec_populate_releases[.php]', Action\HookAction::class . ':populate_releases');
