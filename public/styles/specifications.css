@@ -173,6 +173,14 @@ th.w-long {
 .h_start {
     padding-top: 1.4em;
 }
+.btn-its {
+    background-color: #be76ad;
+    border-color: #8a4372;
+}
+.btn-its:hover {
+    background-color: #a7507d;
+    border-color: #7c3262;
+}
 
 @media (min-width: 576px) {
     html {
