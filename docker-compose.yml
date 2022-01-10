@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  openehr-specifications-website:
+  specs-website:
     build:
       context: .
       dockerfile: Dockerfile

@@ -10,7 +10,7 @@ First, in linux bash, macOS terminal or powershell build the image by running (f
 docker-compose build
 ```
 
-It will build a service name _openehr-specifications-website_. 
+It will build a service name _specs-website_. 
 
 Then run the following in order to bring up webserver:
 ```
@@ -21,7 +21,7 @@ It will run a container with Apache and PHP7.3, serving the openEHR specificatio
 
 To get access to a bash prompt and run CLI scripts inside the container, the following should be executed from linux bash, macOS terminal or powershell:
 ```
-docker-compose exec openehr-specifications-website bash
+docker-compose exec specs-website bash
 ```
 
 
