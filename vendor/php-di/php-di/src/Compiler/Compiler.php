@@ -185,7 +185,7 @@ class Compiler
 
     private function writeFileAtomic(string $fileName, string $content) : int
     {
-        $tmpFile = tempnam(dirname($fileName), 'swap-compile');
+        $tmpFile = @tempnam(dirname($fileName), 'swap-compile');
         if ($tmpFile === false) {
             throw new InvalidArgumentException(
                 sprintf('Error while creating temporary file in %s', dirname($fileName))
@@ -202,8 +202,8 @@ class Compiler
 
         @chmod($tmpFile, 0666);
         $renamed = @rename($tmpFile, $fileName);
-        @unlink($tmpFile);
         if (!$renamed) {
+            @unlink($tmpFile);
             throw new InvalidArgumentException(sprintf('Error while renaming %s to %s', $tmpFile, $fileName));
         }
 
@@ -244,7 +244,7 @@ class Compiler
                 $isOptional = $this->compileValue($definition->isOptional());
                 $defaultValue = $this->compileValue($definition->getDefaultValue());
                 $code = <<<PHP
-        \$value = getenv($variableName);
+        \$value = \$_ENV[$variableName] ?? \$_SERVER[$variableName] ?? getenv($variableName);
         if (false !== \$value) return \$value;
         if (!$isOptional) {
             throw new \DI\Definition\Exception\InvalidDefinition("The environment variable '{$definition->getVariableName()}' has not been defined");
@@ -358,7 +358,7 @@ PHP;
 
     private function createCompilationDirectory(string $directory)
     {
-        if (!is_dir($directory) && !@mkdir($directory, 0777, true)) {
+        if (!is_dir($directory) && !@mkdir($directory, 0777, true) && !is_dir($directory)) {
             throw new InvalidArgumentException(sprintf('Compilation directory does not exist and cannot be created: %s.', $directory));
         }
         if (!is_writable($directory)) {
