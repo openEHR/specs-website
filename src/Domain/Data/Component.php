@@ -283,6 +283,15 @@ class Component extends AbstractModel
         return '';
     }
 
+    public function getTestsAssetFilename(string $asset = ''): string
+    {
+        if ($asset) {
+            $asset = preg_replace('/^tests\//', '', $asset);
+            return $this->getFilename("tests/{$asset}");
+        }
+        return '';
+    }
+
     public function getUMLFilename(string $asset = ''): string
     {
         if ($asset) {

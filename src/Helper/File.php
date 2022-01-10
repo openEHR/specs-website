@@ -43,6 +43,7 @@ class File
                 case 'txt':
                 case 'jj':
                 case 'g':
+                case 'robot':
                     $this->contentType = 'text/plain';
                     break;
                 case 'js':
