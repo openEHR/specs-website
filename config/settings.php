@@ -96,6 +96,7 @@ $settings['navbar'] = [
         'Issue Trackers' => 'https://openehr.atlassian.net/secure/Dashboard.jspa?selectPageId=10190',
         'Discourse Forum' => 'https://discourse.openehr.org/c/specifications',
         'Wiki' => '/wiki/display/spec/Specifications+Home',
+        'GitHub' => 'https://github.com/openEHR',
         'Slack' => 'https://openehrspecs.slack.com/',
     ],
     'Governance' => [
