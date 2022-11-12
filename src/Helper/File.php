@@ -56,6 +56,10 @@ class File
                 case 'xsd':
                     $this->contentType = 'application/xml';
                     break;
+                case 'yml':
+                case 'yaml':
+                    $this->contentType = 'application/yaml';
+                    break;
                 case 'css':
                     $this->contentType = 'text/css';
                     break;
