@@ -25,6 +25,11 @@ class File
         $this->filename = $filename;
     }
 
+    public function getFileName(): string
+    {
+        return $this->filename;
+    }
+
     public function isValid(): bool
     {
         return $this->filename && is_readable($this->filename) && is_file($this->filename);

@@ -3,7 +3,7 @@
 use Slim\App;
 use App\Action;
 
-return function (App $app) {
+return static function (App $app) {
     $app->redirect('/releases/AA_GLOBAL/latest[/[index.html]]', '/classes', 301);
     $app->get('/releases/{release:(?:0.9|0.95|1.0|1.0.1|1.0.2)}', Action\HistoricalReleasesAction::class . ':index');
     $app->get('/releases/{release:(?:0.9|0.95|1.0|1.0.1|1.0.2)}/{asset:.+}', Action\HistoricalReleasesAction::class . ':assets');
@@ -13,8 +13,7 @@ return function (App $app) {
     $app->get('/releases/{component}/{release}/{alias:issues|changes}', Action\RedirectAction::class . ':jira');
     $app->get('/releases/{component:(?:ITS-REST)}/{release}/{asset:index\.html}', Action\SpecViewerAction::class . ':assets');
     $app->get('/releases/{component}[/[{release}[/[index[.html]]]]]', Action\SpecViewerAction::class . ':index');
-    $app->get('/releases/{component}/{release}/UML/{asset:.+\.mdzip}', Action\SpecViewerAction::class . ':uml');
-    $app->get('/releases/{component}/{release}/{asset:.+\.(?:png|svg|html|xml|xsd|yaml|yml|drawio|docx|g4|g|jj|json|txt|robot)}', Action\SpecViewerAction::class . ':assets');
+    $app->get('/releases/{component}/{release}/{asset:.+\.(?:png|svg|html|xml|xsd|yaml|yml|drawio|docx|g4|g|jj|json|txt|robot|mdzip)}', Action\SpecViewerAction::class . ':assets');
     $app->get('/releases/{component}/{release}/{spec}', Action\SpecViewerAction::class . ':specs');
     $app->get('/[start[/]]', Action\StartAction::class);
     $app->get('/release_baseline[/]', Action\ReleaseBaselineAction::class);

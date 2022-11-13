@@ -63,22 +63,12 @@ final class SpecViewerAction
             if (!$file->hasContents()) {
                 $file = new File($component->getTestsAssetFilename($args['asset']));
                 if (!$file->hasContents()) {
-                    throw new HttpNotFoundException($request, "Asset file ({$args['component']},{$args['release']},{$args['asset']}) not found.");
+                    $file = new File($component->getComputableAssetFilename($args['asset']));
+                    if (!$file->hasContents()) {
+                        throw new HttpNotFoundException($request, "Asset file ({$args['component']},{$args['release']},{$args['asset']}) not found.");
+                    }
                 }
             }
-        }
-        $response->getBody()->write($file->getContents());
-        return $response->withHeader('Last-Modified', gmdate('D, d M Y H:i:s T', $file->getLastModified()))
-            ->withHeader('Cache-Control', 'public, max-age=' . (int)$this->settings->cache_max_age)
-            ->withHeader('Content-Type', $file->getContentType());
-    }
-
-    public function uml(ServerRequest $request, Response $response, array $args): Response
-    {
-        $component = $this->componentService->getComponent($args['component'])->useRelease($args['release']);
-        $file = new File($component->getUMLFilename($args['asset']));
-        if (!$file->hasContents()) {
-            throw new HttpNotFoundException($request, "UML file ({$args['component']},{$args['release']},{$args['asset']}) not found.");
         }
         $response->getBody()->write($file->getContents());
         return $response->withHeader('Last-Modified', gmdate('D, d M Y H:i:s T', $file->getLastModified()))

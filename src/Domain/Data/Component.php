@@ -292,10 +292,11 @@ class Component extends AbstractModel
         return '';
     }
 
-    public function getUMLFilename(string $asset = ''): string
+    public function getComputableAssetFilename(string $asset = ''): string
     {
         if ($asset) {
-            return $this->getFilename("computable/UML/{$asset}");
+            $asset = preg_replace('/^computable\//', '', $asset);
+            return $this->getFilename("computable/{$asset}");
         }
         return '';
     }
