@@ -11,3 +11,4 @@ services:
       - .:/var/www/html
       - ./git:/var/www/git
       - ./vhosts:/var/www/vhosts
+    user: 1000:1000
