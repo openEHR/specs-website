@@ -16,7 +16,7 @@ $settings = [];
 $settings['root'] = dirname(__DIR__);
 $settings['temp'] = '/tmp';
 $settings['git_root'] = '/var/www/git';
-$settings['sites_root'] = '/var/www/vhosts/openehr.org/specifications-test.openehr.org';
+$settings['sites_root'] = '/var/www/vhosts/openehr.org/specifications.openehr.org';
 $settings['cache_max_age'] = 3600;
 $settings['hook_secret'] = '';
 
