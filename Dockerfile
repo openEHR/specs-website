@@ -38,3 +38,11 @@ EXPOSE 9000
 VOLUME /var/www/html
 VOLUME /var/www/git
 VOLUME /var/www/vhosts
+
+
+ARG user=guest
+ARG group=guests
+ARG uid=1000
+ARG gid=1000
+RUN groupadd -g ${gid} ${group}
+RUN useradd -u ${uid} -g ${group} -s /bin/sh -m ${user} # <--- the '-m' create a user home directory
