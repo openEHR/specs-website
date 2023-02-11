@@ -31,9 +31,9 @@ Various scripts are located under `/var/www/html/scripts/`directory.
 
 The `init.sh` script should be used to clone all specifications repositories under `/var/www/html/git` subdirectory.
 
-The `spec_populate_releases_all.sh` should be used to generate an export of all tags and releases under `/var/www/hosts/openehr.org/releases` which is use by the website to serve static content (html pages, diagrams, expressions, etc).
+The `spec_populate_releases_all.sh` should be used to generate an export of all tags and releases under `/var/www/hosts/openehr.org/releases` which is used by the website to serve static content (html pages, diagrams, expressions, etc).
 
-The `/var/www/config/settings.php` file should be changed to set few local variables. Examples (to be appended in teh file):
+The `/var/www/config/settings.php` file should be changed to set few local variables. Examples (to be appended in the file):
 ```php
 ini_set('display_errors', 'On');
 $settings['sites_root'] = '/var/www/vhosts/openehr.org';

@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Action\\ComponentsAction' => $baseDir . '/src/Action/ComponentsAction.php',
     'App\\Action\\DevelopmentBaselineAction' => $baseDir . '/src/Action/DevelopmentBaselineAction.php',
+    'App\\Action\\FHIRViewerAction' => $baseDir . '/src/Action/FHIRViewerAction.php',
     'App\\Action\\HistoricalReleasesAction' => $baseDir . '/src/Action/HistoricalReleasesAction.php',
     'App\\Action\\HookAction' => $baseDir . '/src/Action/HookAction.php',
     'App\\Action\\ITSAction' => $baseDir . '/src/Action/ITSAction.php',

@@ -121,6 +121,7 @@ class ComposerStaticInitc751b30f6291bba9d9805118bb568491
     public static $classMap = array (
         'App\\Action\\ComponentsAction' => __DIR__ . '/../..' . '/src/Action/ComponentsAction.php',
         'App\\Action\\DevelopmentBaselineAction' => __DIR__ . '/../..' . '/src/Action/DevelopmentBaselineAction.php',
+        'App\\Action\\FHIRViewerAction' => __DIR__ . '/../..' . '/src/Action/FHIRViewerAction.php',
         'App\\Action\\HistoricalReleasesAction' => __DIR__ . '/../..' . '/src/Action/HistoricalReleasesAction.php',
         'App\\Action\\HookAction' => __DIR__ . '/../..' . '/src/Action/HookAction.php',
         'App\\Action\\ITSAction' => __DIR__ . '/../..' . '/src/Action/ITSAction.php',
