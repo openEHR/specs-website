@@ -2,9 +2,9 @@
     "name": "openehr/specs-website",
     "type": "project",
     "require": {
-        "php": "^7.3",
-        "ext-fileinfo": "^7.3",
-        "ext-json": "^1.7",
+        "php": "^8.1",
+        "ext-fileinfo": "*",
+        "ext-json": "*",
         "php-di/php-di": "^6.3",
         "slim/http": "^1.2",
         "slim/psr7": "^1.5",

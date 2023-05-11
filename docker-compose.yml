@@ -1,14 +1,16 @@
 version: "3.8"
 services:
-  specs-website-php7:
+  specs-website-8:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - "84:80"
-      - "9000:9000"
+      - "9003:9003"
     volumes:
       - .:/var/www/html
       - ./git:/var/www/git
       - ./vhosts:/var/www/vhosts
-    user: 1000:1000
+#    user: 1000:1000
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
