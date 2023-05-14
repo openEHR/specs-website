@@ -4,22 +4,22 @@ namespace App\Domain\Data;
 
 class Jira extends AbstractModel implements \JsonSerializable
 {
-    /** @var string */
-    public $open_issues;
-    /** @var string */
-    public $roadmap;
-    /** @var string */
-    public $crs;
-    /** @var string */
-    public $prs;
+    /** @var ?string */
+    public ?string $open_issues = null;
+    /** @var ?string */
+    public ?string $roadmap = null;
+    /** @var ?string */
+    public ?string $crs = null;
+    /** @var ?string */
+    public ?string $prs = null;
 
-    /** @var Component */
-    public $component;
+    /** @var ?Component */
+    public ?Component $component = null;
 
-    /** @var Release */
-    public $release;
+    /** @var ?Release */
+    public ?Release $release = null;
 
-    public function __invoke(array $args = []): Jira
+    public function __invoke(array $args = []): static
     {
         parent::__invoke($args);
         if (isset($args['open_issues'])) {
@@ -64,13 +64,13 @@ class Jira extends AbstractModel implements \JsonSerializable
 
     public function getHistory(): string
     {
-        $component = $this->component ?? ($this->release ? $this->release->component : null);
+        $component = $this->component ?? ($this->release->component ?? null);
         return $component ? "{$component->getLink()}/history" : '';
     }
 
     public function getRoadmap(): string
     {
-        $component = $this->component ?? ($this->release ? $this->release->component : null);
+        $component = $this->component ?? ($this->release?->component);
         return $component ? "{$component->getLink()}/roadmap" : '';
     }
 
@@ -87,15 +87,15 @@ class Jira extends AbstractModel implements \JsonSerializable
     /**
      * @inheritDoc
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [
             'crs' => $this->crs,
             'prs' => $this->prs,
             'open_issues' => $this->open_issues,
             'roadmap' => $this->roadmap,
-            '_component' => $this->component ? $this->component->id : null,
-            '_release' => $this->release ? $this->release->id : null,
+            '_component' => $this->component->id ?? null,
+            '_release' => $this->release->id ?? null,
         ];
     }
 }

@@ -7,11 +7,7 @@ namespace App\View;
 class Page
 {
     /** @var string */
-    public $id;
-    /** @var string */
-    public $title;
-    /** @var string */
-    public $link;
+    public string $id;
 
     public const DIVIDER = 'DIVIDER';
     public const HEADER = 'HEADER';
@@ -19,13 +15,11 @@ class Page
     /**
      * Page constructor.
      * @param string $title
-     * @param string $link
+     * @param ?string $link
      */
-    public function __construct(string $title, string $link = null)
+    public function __construct(public string $title, public ?string $link = null)
     {
-        $this->id = strtolower(preg_replace('/[\W]/', '_', $title));
-        $this->title = $title;
-        $this->link = $link;
+        $this->id = strtolower(preg_replace('/\W+/', '_', $title));
     }
 
     /**

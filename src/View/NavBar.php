@@ -10,7 +10,7 @@ class NavBar
 {
 
     /** @var NavItem[] */
-    public $items = array();
+    public array $items = [];
 
     /**
      * NavBar constructor.

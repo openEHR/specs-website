@@ -12,15 +12,9 @@ use Slim\Http\ServerRequest;
 
 final class SpecViewerAction
 {
-    protected $view;
-    protected $componentService;
-    protected $settings;
 
-    public function __construct(View $view, ComponentService $components, Configuration $settings)
+    public function __construct(protected View $view, protected ComponentService $componentService, protected Configuration $settings)
     {
-        $this->view = $view;
-        $this->componentService = $components;
-        $this->settings = $settings;
     }
 
     public function index(ServerRequest $request, Response $response, array $args): Response

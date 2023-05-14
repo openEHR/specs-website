@@ -11,13 +11,9 @@ use Slim\Http\ServerRequest;
 
 final class HistoricalReleasesAction
 {
-    protected $view;
-    protected $settings;
 
-    public function __construct(View $view, Configuration $settings)
+    public function __construct(protected View $view, protected Configuration $settings)
     {
-        $this->view = $view;
-        $this->settings = $settings;
     }
 
     public function index(ServerRequest $request, Response $response, array $args): Response

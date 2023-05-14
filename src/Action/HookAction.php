@@ -12,15 +12,9 @@ use Slim\Http\ServerRequest;
 
 final class HookAction
 {
-    protected $view;
-    protected $settings;
-    protected $componentService;
 
-    public function __construct(View $view, Configuration $settings, ComponentService $componentService)
+    public function __construct(protected View $view, protected Configuration $settings, protected ComponentService $componentService)
     {
-        $this->view = $view;
-        $this->settings = $settings;
-        $this->componentService = $componentService;
     }
 
     public function populate_releases(ServerRequest $request, Response $response, array $args): Response
@@ -43,7 +37,7 @@ final class HookAction
         }
 
         $payload = $request->getParam('payload');
-        $payload = $payload ? json_decode($payload, true) : null;
+        $payload = $payload ? json_decode($payload, true, 512, JSON_THROW_ON_ERROR) : null;
         if (empty($payload)) {
             if (json_last_error()) {
                 $err = ' (JSON error: ' . json_last_error_msg() . ')';

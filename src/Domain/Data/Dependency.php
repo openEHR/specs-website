@@ -4,13 +4,13 @@ namespace App\Domain\Data;
 
 class Dependency extends AbstractModel implements \JsonSerializable
 {
-    /** @var string */
-    public $component;
-    /** @var string */
-    public $release;
+    /** @var ?string */
+    public ?string $component = null;
+    /** @var ?string */
+    public ?string $release = null;
 
-    /** @var Expression */
-    public $expression;
+    /** @var ?Expression */
+    public ?Expression $expression = null;
 
     public function setComponent(string $value = null): Dependency
     {
@@ -27,7 +27,7 @@ class Dependency extends AbstractModel implements \JsonSerializable
     /**
      * @inheritDoc
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [
             'component' => $this->component,
