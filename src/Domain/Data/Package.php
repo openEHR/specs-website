@@ -4,11 +4,11 @@ namespace App\Domain\Data;
 
 class Package extends AbstractModel implements \JsonSerializable
 {
-    /** @var string */
-    public $name;
+    /** @var ?string */
+    public ?string $name = null;
 
     /** @var Type[] */
-    public $types;
+    public array $types = [];
 
     /**
      * @param string $name
@@ -43,7 +43,7 @@ class Package extends AbstractModel implements \JsonSerializable
     /**
      * @inheritDoc
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [
             'name' => $this->name,

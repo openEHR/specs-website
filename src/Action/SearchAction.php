@@ -12,13 +12,8 @@ use Slim\Http\ServerRequest;
 class SearchAction
 {
 
-    protected $view;
-    protected $searchService;
-
-    public function __construct(View $view, SearchService $searchService)
+    public function __construct(protected View $view, protected SearchService $searchService)
     {
-        $this->view = $view;
-        $this->searchService = $searchService;
     }
 
     public function __invoke(ServerRequest $request, Response $response, array $args): Response

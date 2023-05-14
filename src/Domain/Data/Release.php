@@ -1,4 +1,5 @@
 <?php
+/** @noinspection PhpUnnecessaryCurlyVarSyntaxInspection */
 
 namespace App\Domain\Data;
 
@@ -10,15 +11,15 @@ class Release extends AbstractModel implements \JsonSerializable
 
     public const STABLE = 'stable';
 
-    /** @var string */
-    public $id;
-    /** @var DateTime */
-    public $date;
-    /** @var Jira */
-    public $jira;
+    /** @var ?string */
+    public ?string $id = null;
+    /** @var ?DateTime */
+    public ?DateTime $date = null;
+    /** @var ?Jira */
+    public ?Jira $jira = null;
 
-    /** @var Component */
-    public $component;
+    /** @var ?Component */
+    public ?Component $component = null;
 
     public function setId($value): Release
     {
@@ -45,7 +46,7 @@ class Release extends AbstractModel implements \JsonSerializable
     {
         try {
             $this->date = $value ? new DateTime($value) : null;
-        } catch (\Exception $e) {
+        } catch (\Exception) {
         }
         return $this;
     }
@@ -109,7 +110,7 @@ class Release extends AbstractModel implements \JsonSerializable
     /**
      * @inheritDoc
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [
             'id' => $this->id,

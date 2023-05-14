@@ -3,7 +3,7 @@
 use App\Configuration;
 use Slim\App;
 
-return function (App $app) {
+return static function (App $app) {
     // Parse json, form data and xml
     $app->addBodyParsingMiddleware();
 

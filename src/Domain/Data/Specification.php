@@ -1,42 +1,43 @@
 <?php
+/** @noinspection PhpUnnecessaryCurlyVarSyntaxInspection */
 
 namespace App\Domain\Data;
 
 class Specification extends AbstractModel implements \JsonSerializable
 {
     /** @var string */
-    public $id;
+    public string $id;
     /** @var string */
-    public $title;
+    public string $title;
     /** @var string */
-    public $title_short;
+    public string $title_short;
     /** @var string */
-    public $description;
+    public string $description;
     /** @var string */
-    public $summary;
-    /** @var string */
-    public $micro_summary;
+    public string $summary;
+    /** @var ?string */
+    public ?string $micro_summary = null;
     /** @var array */
-    public $classes;
+    public array $classes = [];
+    /** @var ?string */
+    public ?string $spec_status = '_';
     /** @var string */
-    public $spec_status;
+    public string $copyright_year;
     /** @var string */
-    public $copyright_year;
-    /** @var string */
-    public $keywords;
+    public string $keywords;
     /** @var Note[] */
-    public $notes = array();
-    /** @var string */
-    public $link;
+    public array $notes = [];
+    /** @var ?string */
+    public ?string $link = null;
 
     /** @var Type[] */
-    public $types = array();
+    public array $types = [];
 
     /** @var Type[] */
-    public $summary_types = array();
+    public array $summary_types = [];
 
-    /** @var Component */
-    public $component;
+    /** @var ?Component */
+    public ?Component $component = null;
 
     public const STATUSES = array(
         'STABLE' => ['badge' => 'success', 'short' => 'S', 'title' => 'STABLE'],
@@ -50,7 +51,7 @@ class Specification extends AbstractModel implements \JsonSerializable
         '_' => ['badge' => 'light', 'short' => 'N', 'title' => 'UNKNOWN'],
     );
 
-    public function __invoke(array $args = [])
+    public function __invoke(array $args = []): static
     {
         parent::__invoke($args);
         if (isset($args['title_short'])) {
@@ -173,9 +174,11 @@ class Specification extends AbstractModel implements \JsonSerializable
     {
         if ($this->link && preg_match('#^(https://|/)#i', $this->link)) {
             return $this->link;
-        } elseif ($this->link && $this->id && $this->component && $this->component->release) {
+        }
+        if ($this->link && $this->id && $this->component && $this->component->release) {
             return "{$this->component->release->getLink()}/{$this->link}";
-        } elseif ($this->id && $this->component && $this->component->release) {
+        }
+        if ($this->id && $this->component && $this->component->release) {
             return "{$this->component->release->getLink()}/{$this->getBasename()}";
         }
         return '';
@@ -220,7 +223,7 @@ class Specification extends AbstractModel implements \JsonSerializable
     /**
      * @inheritDoc
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [
             'id' => $this->id,

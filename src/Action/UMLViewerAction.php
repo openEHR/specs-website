@@ -10,11 +10,9 @@ use Slim\Http\ServerRequest;
 
 final class UMLViewerAction
 {
-    protected $settings;
 
-    public function __construct(Configuration $settings)
+    public function __construct(protected Configuration $settings)
     {
-        $this->settings = $settings;
     }
 
     public function assets(ServerRequest $request, Response $response, array $args): Response

@@ -9,23 +9,22 @@ use App\View;
 use App\View\NavBar;
 
 return [
-    Configuration::class => function () {
+    Configuration::class => static function () {
         return new Configuration(require __DIR__ . '/settings.php');
     },
 
-    App::class => function (ContainerInterface $container) {
+    App::class => static function (ContainerInterface $container) {
         AppFactory::setContainer($container);
-        $app = AppFactory::create();
-        return $app;
+        return AppFactory::create();
     },
 
-    View::class => function (ContainerInterface $container) {
+    View::class => static function (ContainerInterface $container) {
         $settings = $container->get(Configuration::class)->view;
         $navbar = $container->get(NavBar::class);
         return new View($settings, $navbar);
     },
 
-    NavBar::class => function (ContainerInterface $container) {
+    NavBar::class => static function (ContainerInterface $container) {
         $settings = $container->get(Configuration::class)->navbar;
         return new NavBar($settings);
     },

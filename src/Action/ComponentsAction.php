@@ -10,13 +10,9 @@ use Slim\Http\ServerRequest;
 
 final class ComponentsAction
 {
-    protected $view;
-    protected $componentService;
 
-    public function __construct(View $view, ComponentService $components)
+    public function __construct(protected View $view, protected ComponentService $componentService)
     {
-        $this->view = $view;
-        $this->componentService = $components;
     }
 
     public function __invoke(ServerRequest $request, Response $response, array $args): Response
