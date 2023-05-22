@@ -792,16 +792,16 @@
         },
         {
             "name": "slim/psr7",
-            "version": "1.5",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/slimphp/Slim-Psr7.git",
-                "reference": "a47b43a8da7c0208b4c228af0cb29ea36080635a"
+                "reference": "2867758fcd4c92c6c767df7c3f5f28ab2df40c1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/slimphp/Slim-Psr7/zipball/a47b43a8da7c0208b4c228af0cb29ea36080635a",
-                "reference": "a47b43a8da7c0208b4c228af0cb29ea36080635a",
+                "url": "https://api.github.com/repos/slimphp/Slim-Psr7/zipball/2867758fcd4c92c6c767df7c3f5f28ab2df40c1b",
+                "reference": "2867758fcd4c92c6c767df7c3f5f28ab2df40c1b",
                 "shasum": ""
             },
             "require": {
@@ -868,9 +868,9 @@
             ],
             "support": {
                 "issues": "https://github.com/slimphp/Slim-Psr7/issues",
-                "source": "https://github.com/slimphp/Slim-Psr7/tree/1.5"
+                "source": "https://github.com/slimphp/Slim-Psr7/tree/1.5.1"
             },
-            "time": "2021-09-22T04:33:00+00:00"
+            "time": "2023-05-10T04:00:28+00:00"
         },
         {
             "name": "slim/slim",
