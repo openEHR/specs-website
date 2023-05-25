@@ -3,7 +3,7 @@
         'name' => 'openehr/specs-website',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '66ad9695b9f3dc82e31cd1573bc9fec0ce4d9891',
+        'reference' => '9298aa1d33c84ceb013142a5aad2f310a74cf17a',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -40,7 +40,7 @@
         'openehr/specs-website' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '66ad9695b9f3dc82e31cd1573bc9fec0ce4d9891',
+            'reference' => '9298aa1d33c84ceb013142a5aad2f310a74cf17a',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -157,7 +157,7 @@
         'roave/security-advisories' => array(
             'pretty_version' => 'dev-latest',
             'version' => 'dev-latest',
-            'reference' => '4897b9c8b04ee19dd3d5cc40a2f35a77672bbe49',
+            'reference' => '2d9146bd69addfbd99652930a825c8ba7b8ea13c',
             'type' => 'metapackage',
             'install_path' => NULL,
             'aliases' => array(
