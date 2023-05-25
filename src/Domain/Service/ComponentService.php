@@ -1,4 +1,6 @@
 <?php
+/** @noinspection PhpReturnValueOfMethodIsNeverUsedInspection */
+/** @noinspection PhpUnnecessaryCurlyVarSyntaxInspection */
 
 namespace App\Domain\Service;
 
@@ -10,15 +12,14 @@ use App\Helper\File;
 
 class ComponentService
 {
-    /** @var Configuration */
-    protected $settings;
-    /** @var array */
-    protected $data;
 
-    public function __construct(Configuration $settings)
+    /** @var array */
+    protected array $data;
+
+    public function __construct(protected Configuration $settings)
     {
-        $this->settings = $settings;
         $file = $this->getCacheFile();
+        /** @noinspection UnserializeExploitsInspection */
         if (!is_readable($file) || !($data = file_get_contents($file)) || !($this->data = unserialize($data))) {
             $this->build();
         }
@@ -26,10 +27,13 @@ class ComponentService
 
     private function getCacheFile(): string
     {
-        $file = "{$this->settings->temp}/ComponentService.sdata";
-        return $file;
+        return "{$this->settings->temp}/ComponentService.sdata";
     }
 
+    /**
+     * @throws \JsonException
+     * @throws \DomainException
+     */
     public function build(): ComponentService
     {
         $this->data = [
@@ -42,7 +46,7 @@ class ComponentService
             throw new \DomainException("Bad configuration for [sites_root={$this->settings->sites_root}]. Directory not found or not readable.");
         }
         foreach (glob("{$releasesRoot}/*/latest/manifest.json") as $file) {
-            if (is_readable($file) && ($content = file_get_contents($file)) && ($data = json_decode($content, true))) {
+            if (is_readable($file) && ($content = file_get_contents($file)) && ($data = json_decode($content, true, 512, JSON_THROW_ON_ERROR))) {
                 $component = (new Component($this->settings))($data);
                 $this->registerComponent($component);
             }
@@ -86,6 +90,7 @@ class ComponentService
 
     /**
      * @return ComponentService
+     * @throws \JsonException
      */
     private function buildComponents(): ComponentService
     {
@@ -103,13 +108,14 @@ class ComponentService
     /**
      * @param Release $release
      * @return ComponentService
+     * @throws \JsonException
      */
     private function registerRelease(Release $release): ComponentService
     {
         if ($release->isReleased()) {
             $this->data['releases'][] = $release;
             $file = new File($release->getDirectory(). '/manifest.json');
-            if ($file->hasContents() && ($data = json_decode($file->getContents(), true))) {
+            if ($file->hasContents() && ($data = json_decode($file->getContents(), true, 512, JSON_THROW_ON_ERROR))) {
                 $component = (new Component($this->settings));
                 $component->registerRelease($release);
                 $component($data);
@@ -133,7 +139,7 @@ class ComponentService
     {
         usort(
             $this->data['releases'],
-            function ($r1, $r2) {
+            static function ($r1, $r2) {
                 if ($r1->date === $r2->date) {
                     return 0;
                 }

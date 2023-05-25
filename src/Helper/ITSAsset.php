@@ -11,7 +11,7 @@ class ITSAsset extends SplFileInfo
 {
 
     /** @var Component */
-    public $component;
+    public Component $component;
 
     public function setComponent(Component $component): ITSAsset
     {
@@ -28,21 +28,14 @@ class ITSAsset extends SplFileInfo
     public function getContents(): Generator
     {
         if ($this->isReadable() && $this->isDir()) {
-            switch ($this->component->id) {
-                case 'ITS-XML':
-                    $whitelist = ['xsd'];
-                    break;
-                case 'ITS-JSON':
-                    $whitelist = ['json'];
-                    break;
-                case 'ITS-BMM':
-                    $whitelist = ['bmm'];
-                    break;
-                default:
-                    $whitelist = [];
-            }
+            $whitelist = match ($this->component->id) {
+                'ITS-XML' => ['xsd'],
+                'ITS-JSON' => ['json'],
+                'ITS-BMM' => ['bmm'],
+                default => [],
+            };
             foreach (new FilesystemIterator($this->getPathname()) as $fsItem) {
-                if (!$fsItem->isDir() && !in_array($fsItem->getExtension(), $whitelist)) {
+                if (!$fsItem->isDir() && !in_array($fsItem->getExtension(), $whitelist, true)) {
                     continue;
                 }
                 $item = new self($fsItem->getPathname());

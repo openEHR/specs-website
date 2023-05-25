@@ -5,7 +5,7 @@ namespace App\Domain\Data;
 abstract class AbstractModel
 {
 
-    public function __invoke(array $args = [])
+    public function __invoke(array $args = []): static
     {
         foreach ($args as $key => $value) {
             $method = 'set' . ucfirst($key);

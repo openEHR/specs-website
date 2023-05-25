@@ -7,37 +7,34 @@ use App\Helper\ITSAsset;
 
 class Component extends AbstractModel
 {
-    /** @var string */
-    public $id;
-    /** @var string */
-    public $title;
-    /** @var string */
-    public $description;
-    /** @var string */
-    public $keywords;
-    /** @var Jira */
-    public $jira;
+    /** @var ?string */
+    public ?string $id = null;
+    /** @var ?string */
+    public ?string $title = null;
+    /** @var ?string */
+    public ?string $description = null;
+    /** @var ?string */
+    public ?string $keywords = null;
+    /** @var ?Jira */
+    public ?Jira $jira = null;
     /** @var Specification[] */
-    public $specifications = array();
+    public array $specifications = [];
     /** @var Expression[] */
-    public $expressions = array();
+    public array $expressions = [];
     /** @var Release[] */
-    public $releases = array();
-    /** @var Release */
-    public $release;
+    public array $releases = [];
+    /** @var ?Release */
+    public ?Release $release = null;
     /** @var Type[] */
-    public $types = array();
+    public array $types = [];
     /** @var Package[] */
-    public $packages = array();
+    public array $packages = [];
 
-    protected $settings;
-
-    public function __construct(Configuration $settings)
+    public function __construct(protected Configuration $settings)
     {
-        $this->settings = $settings;
     }
 
-    public function __invoke(array $args = [])
+    public function __invoke(array $args = []): static
     {
         parent::__invoke($args);
         if (!$this->release) {
@@ -206,13 +203,13 @@ class Component extends AbstractModel
             try {
                 $package = $this->getPackageByName($type->packageName);
                 $package->registerType($type);
-            } catch (\Exception $e) {
+            } catch (\Exception) {
                 $package = (new Package())(['name' => $type->packageName]);
                 $this->registerPackage($package);
                 $package->registerType($type);
             }
             $type->component = $this;
-        } catch (\Exception $e) {
+        } catch (\Exception) {
             // silently do nothing
         }
         return $this;

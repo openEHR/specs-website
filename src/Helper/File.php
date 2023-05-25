@@ -4,25 +4,22 @@ namespace App\Helper;
 
 class File
 {
-    /** @var string */
-    protected $filename;
 
-    /** @var string */
-    protected $content;
+    /** @var ?string */
+    protected ?string $content = null;
 
-    /** @var int */
-    protected $lastModified;
+    /** @var ?int */
+    protected ?int $lastModified = null;
 
-    /** @var string */
-    protected $contentType;
+    /** @var ?string */
+    protected ?string $contentType = null;
 
     /**
      * File constructor.
      * @param string $filename
      */
-    public function __construct(string $filename = '')
+    public function __construct(protected string $filename = '')
     {
-        $this->filename = $filename;
     }
 
     public function getFileName(): string

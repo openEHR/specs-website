@@ -4,13 +4,13 @@ namespace App\Domain\Data;
 
 class Note extends AbstractModel implements \JsonSerializable
 {
-    /** @var string */
-    public $link;
-    /** @var string */
-    public $text;
+    /** @var ?string */
+    public ?string $link = null;
+    /** @var ?string */
+    public ?string $text = null;
 
-    /** @var Specification */
-    public $specification;
+    /** @var ?Specification */
+    public ?Specification $specification = null;
 
     public function setLink(string $value = null): Note
     {
@@ -27,7 +27,7 @@ class Note extends AbstractModel implements \JsonSerializable
     /**
      * @inheritDoc
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [
             'link' => $this->link,

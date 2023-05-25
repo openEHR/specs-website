@@ -12,13 +12,9 @@ use Slim\Http\ServerRequest;
 
 final class FHIRViewerAction
 {
-    protected $componentService;
-    protected $settings;
 
-    public function __construct(ComponentService $components, Configuration $settings)
+    public function __construct(protected ComponentService $componentService, protected Configuration $settings)
     {
-        $this->componentService = $components;
-        $this->settings = $settings;
     }
 
     public function assets(ServerRequest $request, Response $response, array $args): Response

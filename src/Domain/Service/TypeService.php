@@ -7,19 +7,15 @@ use App\Helper\File;
 class TypeService
 {
 
-    /** @var string */
-    protected $filename;
-
     /** @var array */
-    public $types = array();
+    public array $types = [];
 
     /**
      * TypeService constructor.
      * @param string $filename
      */
-    public function __construct(string $filename)
+    public function __construct(protected string $filename)
     {
-        $this->filename = $filename;
     }
 
     /**

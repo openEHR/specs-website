@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace Slim\Http;
 
 use InvalidArgumentException;
+use Slim\Http\Interfaces\ResponseInterface as DecoratedResponseInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 use Psr\Http\Message\StreamInterface;
@@ -34,17 +35,11 @@ use function substr;
 
 use const JSON_ERROR_NONE;
 
-class Response implements ResponseInterface
+class Response implements DecoratedResponseInterface
 {
-    /**
-     * @var ResponseInterface
-     */
-    protected $response;
+    protected ResponseInterface $response;
 
-    /**
-     * @var StreamFactoryInterface
-     */
-    protected $streamFactory;
+    protected StreamFactoryInterface $streamFactory;
 
     /**
      * EOL characters used for HTTP response.
@@ -71,7 +66,6 @@ class Response implements ResponseInterface
      */
     public function __set($name, $value)
     {
-        return;
     }
 
     /**
@@ -208,7 +202,7 @@ class Response implements ResponseInterface
      */
     public function withJson($data, ?int $status = null, int $options = 0, int $depth = 512): ResponseInterface
     {
-        $json = (string) json_encode($data, $options, $depth);
+        $json = (string) json_encode($data, $options, $depth > 0 ? $depth : 512);
 
         if (json_last_error() !== JSON_ERROR_NONE) {
             throw new RuntimeException(json_last_error_msg(), json_last_error());
@@ -503,7 +497,7 @@ class Response implements ResponseInterface
         }
 
         $output .= self::EOL;
-        $output .= (string) $this->response->getBody();
+        $output .= $this->response->getBody();
 
         return $output;
     }
