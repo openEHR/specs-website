@@ -21,7 +21,7 @@ It will run a container with Apache and PHP7.3, serving the openEHR specificatio
 
 To get access to a bash prompt and run CLI scripts inside the container, the following should be executed from linux bash, macOS terminal or powershell:
 ```
-docker-compose exec specs-website-php7 bash
+docker-compose exec -u 1000:1000 specs-website bash
 ```
 
 
