@@ -12,7 +12,7 @@ return static function (App $app) {
     $app->get('/releases/{component}/{alias:open_issues|roadmap|history|crs}', Action\RedirectAction::class . ':jira');
     $app->get('/releases/{component}/{release}/{alias:issues|changes}', Action\RedirectAction::class . ':jira');
     $app->get('/releases/{component:(?:ITS-REST)}/{release}/{asset:index\.html}', Action\SpecViewerAction::class . ':assets');
-    $app->get('/releases/{component}[/[{release}[/[index[.html]]]]]', Action\SpecViewerAction::class . ':index');
+    $app->get('/releases/{component}[/[{release}[{idx:(?:/(?:docs/?)?(?:index(?:\.html)?)?)}]]]', Action\SpecViewerAction::class . ':index');
     $app->get('/releases/{component}/{release}/{asset:.+\.(?:png|svg|html|xml|xsd|yaml|yml|drawio|docx|g4|g|jj|json|txt|robot|mdzip)}', Action\SpecViewerAction::class . ':assets');
     $app->get('/fhir/{asset}', Action\FHIRViewerAction::class . ':assets');
     $app->get('/releases/{component}/{release}/{spec}', Action\SpecViewerAction::class . ':specs');
