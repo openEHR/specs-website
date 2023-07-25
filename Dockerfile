@@ -2,8 +2,9 @@ FROM php:7.3-apache
 
 LABEL name='Specifications server' vendor="openEHR"
 
-RUN apt-get update; exit 0
-RUN apt-get install -y wget curl \
+RUN apt-get update \
+ && apt-get install -y \
+    wget curl \
     git \
     zlib1g-dev libzip-dev unzip \
     libwebp-dev libjpeg62-turbo-dev libpng-dev libxpm-dev libfreetype6-dev zlib1g-dev \
