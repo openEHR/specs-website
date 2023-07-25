@@ -3,7 +3,7 @@
         'name' => 'openehr/specs-website',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '85a5f2ac41374c635aa34fa09d2d7e82f4394c20',
+        'reference' => '66ad9695b9f3dc82e31cd1573bc9fec0ce4d9891',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -31,7 +31,7 @@
         'openehr/specs-website' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '85a5f2ac41374c635aa34fa09d2d7e82f4394c20',
+            'reference' => '66ad9695b9f3dc82e31cd1573bc9fec0ce4d9891',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -157,7 +157,7 @@
         'roave/security-advisories' => array(
             'pretty_version' => 'dev-latest',
             'version' => 'dev-latest',
-            'reference' => 'c0e29643df152bd7fbe3de189f6c2c16c7d4c2a2',
+            'reference' => '69dafab8a5dffa4d6a4d6dab1ebadf48aca449c7',
             'type' => 'metapackage',
             'install_path' => NULL,
             'aliases' => array(
@@ -175,9 +175,9 @@
             'dev_requirement' => false,
         ),
         'slim/psr7' => array(
-            'pretty_version' => '1.5',
-            'version' => '1.5.0.0',
-            'reference' => 'a47b43a8da7c0208b4c228af0cb29ea36080635a',
+            'pretty_version' => '1.5.1',
+            'version' => '1.5.1.0',
+            'reference' => '2867758fcd4c92c6c767df7c3f5f28ab2df40c1b',
             'type' => 'library',
             'install_path' => __DIR__ . '/../slim/psr7',
             'aliases' => array(),
