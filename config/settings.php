@@ -71,6 +71,7 @@ $settings['navbar'] = [
         'Conformance Specifications' => '/releases/CNF/stable',
         Page::DIVIDER,
         'Implementation Technologies' => Page::HEADER,
+        'ITS Overview' => '/its',
         'ITS Specifications' => '/releases/ITS/stable',
         'REST APIs' => '/releases/ITS-REST/stable',
         'JSON Schema' => '/releases/ITS-JSON/stable',
