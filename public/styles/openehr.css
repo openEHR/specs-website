@@ -766,7 +766,7 @@ td.tableblock .hdlist > table { margin-bottom: 0; }
   .show-for-print { display: inherit !important; } }
 
 #smart_logo > div.content {
-  padding-top: 30px;
-  padding-bottom: 10px;
+  padding-top: 50px;
+  padding-bottom: 20px;
 }
 
