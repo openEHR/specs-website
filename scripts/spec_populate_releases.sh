@@ -88,7 +88,7 @@ echo "================ Component: $component ================"
 
 # get Git repo up to date
 cd $git_component_repo
-#do_cmd "$git_remove_local_changes"
+do_cmd "$git_remove_local_changes"
 do_cmd "$git_fetch_cmd"
 do_cmd "$git_merge_cmd"
 
