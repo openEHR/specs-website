@@ -4,6 +4,7 @@
 namespace App\Action;
 
 use App\Configuration;
+use App\Context;
 use App\Domain\Service\ComponentService;
 use App\View;
 use Slim\Exception\HttpBadRequestException;
@@ -13,7 +14,7 @@ use Slim\Http\ServerRequest;
 final class HookAction
 {
 
-    public function __construct(protected View $view, protected Configuration $settings, protected ComponentService $componentService)
+    public function __construct(protected View $view, protected Configuration $settings, protected Context $appContext, protected ComponentService $componentService)
     {
     }
 
@@ -54,7 +55,7 @@ final class HookAction
         }
 
         $repo_name = $payload['repository']['name'];
-        $command = $this->settings->root . "/scripts/spec_populate_releases.sh $repo_name 2>&1";
+        $command = $this->appContext->dir . "/scripts/spec_populate_releases.sh $repo_name 2>&1";
 
         exec($command, $cmd_output);
         $output = implode(PHP_EOL, $cmd_output);

@@ -4,7 +4,7 @@
 
 namespace App\Domain\Service;
 
-use App\Configuration;
+use App\Context;
 use App\Domain\Data\Expression;
 use App\Domain\Data\Release;
 use App\Domain\Data\Component;
@@ -16,7 +16,7 @@ class ComponentService
     /** @var array */
     protected array $data;
 
-    public function __construct(protected Configuration $settings)
+    public function __construct(protected Context $appContext)
     {
         $file = $this->getCacheFile();
         /** @noinspection UnserializeExploitsInspection */
@@ -27,7 +27,7 @@ class ComponentService
 
     private function getCacheFile(): string
     {
-        return "{$this->settings->temp}/ComponentService.sdata";
+        return "{$this->appContext->cacheDir}/ComponentService.sdata";
     }
 
     /**
@@ -41,13 +41,9 @@ class ComponentService
             'releases' => [],
             'expressions' => [],
         ];
-        $releasesRoot = "{$this->settings->sites_root}/releases";
-        if (!is_readable($releasesRoot) || !is_dir($releasesRoot)) {
-            throw new \DomainException("Bad configuration for [sites_root={$this->settings->sites_root}]. Directory not found or not readable.");
-        }
-        foreach (glob("{$releasesRoot}/*/latest/manifest.json") as $file) {
+        foreach (glob("{$this->appContext->releasesDir}/*/latest/manifest.json") as $file) {
             if (is_readable($file) && ($content = file_get_contents($file)) && ($data = json_decode($content, true, 512, JSON_THROW_ON_ERROR))) {
-                $component = (new Component($this->settings))($data);
+                $component = (new Component($this->appContext))($data);
                 $this->registerComponent($component);
             }
         }
@@ -116,7 +112,7 @@ class ComponentService
             $this->data['releases'][] = $release;
             $file = new File($release->getDirectory(). '/manifest.json');
             if ($file->hasContents() && ($data = json_decode($file->getContents(), true, 512, JSON_THROW_ON_ERROR))) {
-                $component = (new Component($this->settings));
+                $component = (new Component($this->appContext));
                 $component->registerRelease($release);
                 $component($data);
             }

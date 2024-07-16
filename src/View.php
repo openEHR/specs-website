@@ -33,9 +33,9 @@ class View
      * @param Configuration $settings
      * @param NavBar $navBar
      */
-    public function __construct(Configuration $settings, NavBar $navBar)
+    public function __construct(string $templatePath, Configuration $settings, NavBar $navBar)
     {
-        $this->setTemplatePath($settings->templates);
+        $this->setTemplatePath($templatePath);
         $this->setAttributes((array)$settings->attributes);
         $this->setLayout($settings->layout);
         $this->setNavBar($navBar);

@@ -2,7 +2,7 @@
 
 namespace App\Domain\Data;
 
-use App\Configuration;
+use App\Context;
 use App\Helper\ITSAsset;
 
 class Component extends AbstractModel
@@ -30,7 +30,7 @@ class Component extends AbstractModel
     /** @var Package[] */
     public array $packages = [];
 
-    public function __construct(protected Configuration $settings)
+    public function __construct(protected Context $appContext)
     {
     }
 
@@ -248,7 +248,7 @@ class Component extends AbstractModel
     public function getDirectory(): string
     {
         if ($this->id) {
-            return "{$this->settings->sites_root}/releases/{$this->id}";
+            return "{$this->appContext->releasesDir}/{$this->id}";
         }
         return '';
     }
