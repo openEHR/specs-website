@@ -3,3 +3,4 @@
 /vhosts/
 /.idea/
 /vendor
+/.env

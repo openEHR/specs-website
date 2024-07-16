@@ -13,17 +13,19 @@ date_default_timezone_set('UTC');
 $settings = [];
 
 // Path settings
+$settings['environment'] = (string)getenv('APP_ENV') ?: 'production';
+$settings['debug'] = (bool)filter_var((string)getenv('APP_DEBUG'), FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE);
 $settings['root'] = dirname(__DIR__);
 $settings['temp'] = '/tmp';
 $settings['git_root'] = '/data/repos';
 $settings['sites_root'] = '/data';
 $settings['cache_max_age'] = 3600;
-$settings['hook_secret'] = '';
+$settings['hook_secret'] = (string)getenv('APP_HOOK_SECRET');
 
 // Error Handling Middleware settings
 $settings['error_handler_middleware'] = [
     // Should be set to false in production
-    'display_error_details' => false,
+    'display_error_details' => $settings['debug'],
     // Parameter is passed to the default ErrorHandler
     // View in rendered output by enabling the "displayErrorDetails" setting.
     // For the console and unit tests we also disable it

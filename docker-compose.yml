@@ -23,6 +23,9 @@ services:
       - web-releases:/data/releases
     depends_on:
       - caddy
+    env_file:
+      - path: ./.env
+        required: false
 
   web-dev:
     <<: *global
@@ -36,6 +39,9 @@ services:
       - web-releases:/data/releases
     depends_on:
       - caddy
+    env_file:
+      - path: ./.env
+        required: false
 
 
 volumes:
