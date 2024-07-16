@@ -1,0 +1,10 @@
+.idea
+.git*
+.env
+docker-compose.yml
+.dockerignore
+*Dockerfile
+Caddyfile
+git
+vhosts
+vendor
