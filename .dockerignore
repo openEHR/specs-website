@@ -3,6 +3,7 @@
 .env
 docker-compose.yml
 .dockerignore
+.editorconfig
 *Dockerfile
 Caddyfile
 git
