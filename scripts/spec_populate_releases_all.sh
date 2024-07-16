@@ -1,13 +1,14 @@
 #!/bin/bash
 #
-# Populate the releases directory from /var/www/git/specifications-XX component repos,
+# Populate the releases directory from /data/repos/specifications-XX component repos,
 #
 
 #
 # ============== Definitions =============
 #
-populate_releases=$PWD/spec_populate_releases.sh
-git_root=/var/www/git/
+ROOT_DIR="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+populate_releases=$ROOT_DIR/spec_populate_releases.sh
+git_root=/data/repos/
 
 #
 # ============= Do the extraction from 'specifications-*' repos =============

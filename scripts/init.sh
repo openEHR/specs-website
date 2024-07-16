@@ -1,7 +1,9 @@
 #!/bin/bash
 
 url_root="https://github.com/openEHR/"
-declare -a components=("specifications-AA_GLOBAL"
+declare -a components=(
+                      "specifications"
+                      "specifications-AA_GLOBAL"
                       "specifications-BASE"
                       "specifications-LANG"
                       "specifications-AM"
@@ -19,7 +21,7 @@ declare -a components=("specifications-AA_GLOBAL"
                       "specifications-CNF"
                       "specifications-UML"
                       )
-cd /var/www/git
+cd /data/repos
 
 for component_dir in "${components[@]}"
   do
@@ -29,7 +31,7 @@ for component_dir in "${components[@]}"
     else
         echo "component $component_dir exists"
         cd $component_dir
-#        git clean -d -f
+        git clean -d -f
         git fetch --tags
         git pull
         cd ..
