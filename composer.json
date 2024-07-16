@@ -5,10 +5,10 @@
         "php": "^8.1",
         "ext-fileinfo": "*",
         "ext-json": "*",
-        "php-di/php-di": "^6.3",
-        "slim/http": "^1.2",
-        "slim/psr7": "^1.5",
-        "slim/slim": "^4.9"
+        "php-di/php-di": "^7.0",
+        "slim/http": "^1.4",
+        "slim/psr7": "^1.7",
+        "slim/slim": "^4.14"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest"
