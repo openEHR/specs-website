@@ -1,3 +1,6 @@
+specifications-test.openehr.org {
+    reverse_proxy web
+}
 specifications.openehr.local {
     reverse_proxy web
 }
