@@ -1,7 +1,14 @@
 <?php
 
 use App\Domain\Service\ComponentService;
+use App\Domain\Service\SearchService;
+use Nyholm\Psr7\Factory\Psr17Factory;
 use Psr\Container\ContainerInterface;
+use Psr\Http\Message\ResponseFactoryInterface;
+use Psr\Http\Message\ServerRequestFactoryInterface;
+use Psr\Http\Message\StreamFactoryInterface;
+use Psr\Http\Message\UploadedFileFactoryInterface;
+use Psr\Http\Message\UriFactoryInterface;
 use Slim\App;
 use Slim\Factory\AppFactory;
 use App\Configuration;
@@ -9,6 +16,11 @@ use App\View;
 use App\View\NavBar;
 use App\Context;
 use App\Environment;
+use Slim\Http\Factory\DecoratedResponseFactory;
+use Slim\Http\Factory\DecoratedServerRequestFactory;
+use Slim\Http\Factory\DecoratedUriFactory;
+
+use function DI\autowire;
 
 return [
     // Notice: The following are contained implicitly by default:
@@ -30,11 +42,28 @@ return [
         return AppFactory::create();
     },
 
-    ComponentService::class => static function (ContainerInterface $container) {
-        /** @var Context $appContext */
-        $appContext = $container->get(Context::class);
-        return new ComponentService($appContext);
+    ComponentService::class => autowire(),
+    SearchService::class => autowire(),
+
+    // HTTP interfaces
+    Psr17Factory::class => autowire(),
+    DecoratedResponseFactory::class => autowire(),
+    DecoratedServerRequestFactory::class => autowire(),
+    DecoratedUriFactory::class => autowire(),
+    ResponseFactoryInterface::class => static function (ContainerInterface $container) {
+        $psr17Factory = $container->get(Psr17Factory::class);
+        return new DecoratedResponseFactory($psr17Factory, $psr17Factory);
     },
+    ServerRequestFactoryInterface::class => static function (ContainerInterface $container) {
+        $psr17Factory = $container->get(Psr17Factory::class);
+        return new DecoratedServerRequestFactory($psr17Factory);
+    },
+    StreamFactoryInterface::class => static function (ContainerInterface $container) {
+        $psr17Factory = $container->get(Psr17Factory::class);
+        return new DecoratedUriFactory($psr17Factory);
+    },
+    UploadedFileFactoryInterface::class => DI\get(Psr17Factory::class),
+    UriFactoryInterface::class => DI\get(Psr17Factory::class),
 
     View::class => static function (ContainerInterface $container) {
         /** @var Context $appContext */

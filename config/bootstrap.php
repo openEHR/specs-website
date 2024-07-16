@@ -14,6 +14,7 @@ $appContext->install();
 $containerBuilder = new ContainerBuilder();
 if ($appContext->isProduction()) {
     $containerBuilder->enableCompilation($appContext->cacheDir);
+    $containerBuilder->writeProxiesToFile(true, $appContext->cacheDir);
 }
 $containerBuilder->addDefinitions([Context::class => $appContext]);
 $containerBuilder->addDefinitions(__DIR__ . '/container.php');
