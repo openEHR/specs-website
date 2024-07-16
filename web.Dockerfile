@@ -19,10 +19,10 @@ RUN apt-get update -qy \
  && rm -rf /var/lib/apt/lists/* /var/log/apt/*
 
 ENV APACHE_DOCUMENT_ROOT /data/website/public
-
 RUN a2enmod rewrite \
     && sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf \
-    && sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+    && sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf \
+    && mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 EXPOSE 80
 
 COPY . /data/website
@@ -30,7 +30,7 @@ WORKDIR /data/website
 
 ENV COMPOSER_HOME /data/composer
 RUN mv ./entrypoint.sh /entrypoint.sh && chmod +x /entrypoint.sh \
-  && install -d -m 0755 -o 33 -g 33 /data/website/vendor /data/composer /data/repos /data/releases \
+  && install -d -m 0755 -o 33 -g 33 /tmp/cache /data/website/vendor /data/composer /data/repos /data/releases \
   && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 USER 33:33

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "Installing PHP external libraries"
-composer install -o
+composer install --no-dev --no-interaction --no-progress --no-ansi --classmap-authoritative
 
 echo "Cloning source repositories"
 /data/website/scripts/init.sh
