@@ -30,7 +30,7 @@ WORKDIR /data/website
 
 ENV COMPOSER_HOME /data/composer
 RUN mv ./entrypoint.sh /entrypoint.sh && chmod +x /entrypoint.sh \
-  && install -d -m 0755 -o 33 -g 33 /data/website/vendor /data/composer \
+  && install -d -m 0755 -o 33 -g 33 /data/website/vendor /data/composer /data/repos /data/releases \
   && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 USER 33:33
