@@ -1,12 +1,8 @@
-specifications-test.openehr.org {
-    reverse_proxy web
-}
-specifications-dev.openehr.org {
-    reverse_proxy web
-}
+specifications-test.openehr.org,
+specifications-dev.openehr.org,
 specifications.openehr.local {
     reverse_proxy web
 }
-specifications-test.openehr.local {
+specifications-dev.openehr.local {
     reverse_proxy web-dev
 }
