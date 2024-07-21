@@ -6,6 +6,6 @@ docker-compose.yml
 .editorconfig
 *Dockerfile
 Caddyfile
-git
-vhosts
+repos
+releases
 vendor
