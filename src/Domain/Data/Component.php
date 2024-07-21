@@ -39,7 +39,7 @@ class Component extends AbstractModel
         parent::__invoke($args);
         if (!$this->release) {
             $this->registerRelease(new Release());
-            $this->release->makeLatest();
+            $this->release->makeItDevelopment();
         }
         return $this;
     }
@@ -133,24 +133,24 @@ class Component extends AbstractModel
     public function getReleaseById(string $id): Release
     {
         // if the current stable release is asked, need to get it from list of releases
-        // in case any is released, otherwise fallback to 'latest'
-        if ($id === Release::STABLE) {
+        // in case any is released, otherwise fallback to 'development'
+        if ($id === Release::LATEST) {
             foreach ($this->releases as $release) {
                 if ($release->isReleased()) {
                     return $release;
                 }
             }
-            $id = Release::LATEST;
+            $id = Release::DEVELOPMENT;
         }
         // return the current if matches the criteria
         if ($this->release && $this->release->is($id)) {
             return $this->release;
         }
-        // if latest is requested, but for some reaons does not exist, then we need to create one
-        // this is needed to make sure links of latest are always available
-        if ($id === Release::LATEST) {
+        // if 'development' is requested, but for some reason does not exist, then we need to create one
+        // this is needed to make sure links of 'development' are always available
+        if ($id === Release::DEVELOPMENT) {
             $release = new Release();
-            $release->makeLatest();
+            $release->makeItDevelopment();
             $release->component = $this;
             return $release;
         }
@@ -164,7 +164,7 @@ class Component extends AbstractModel
 
     public function useRelease(string $releaseId): Component
     {
-        $this->release = $this->getReleaseById($releaseId ?: Release::STABLE);
+        $this->release = $this->getReleaseById($releaseId ?: Release::LATEST);
         return $this;
     }
 

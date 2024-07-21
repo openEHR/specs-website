@@ -11,6 +11,7 @@
 /** @var \App\Domain\Data\Type $type */
 /** @var \App\Domain\Data\Component $component */
 
+use App\Domain\Data\Release;
 use App\Helper\File;
 
 $hasSpecificationsWithNotes = false;
@@ -28,12 +29,13 @@ foreach ($releases as $rel) {
         break;
     }
 }
+$latestRelease = $component->getReleaseById(Release::LATEST);
 
 $diagramFile = new File($component->getAssetFilename('openehr_block_diagram.svg'));
 if ($diagramFile->isValid()) {
     $diagramLink = $release->getLink() . '/openehr_block_diagram.svg';
 } else {
-    $diagramLink = $release->getLinkOfLatest() . '/openehr_block_diagram.svg';
+    $diagramLink = $release->getLinkOfDevelopment() . '/openehr_block_diagram.svg';
 }
 ?>
 <img src="<?= $diagramLink ?>" alt="openEHR components" class="openehr-block-diagram mx-auto d-block img-fluid mt-5">
@@ -43,7 +45,7 @@ if ($diagramFile->isValid()) {
 </h1>
 
 <nav class="nav justify-content-center">
-    <?php if ($release->isLatest()) { ?>
+    <?php if ($release->isDevelopment()) { ?>
     <span class="mx-1"><a href="<?= $jira->getOpenIssues() ?>" target="_blank">Open Issues</a></span> |
     <span class="mx-1"><a href="<?= $jira->getRoadmap() ?>" target="_blank">Roadmap</a></span> |
     <span class="mx-1"><a href="<?= $jira->getHistory() ?>" target="_blank">History</a></span>
@@ -104,20 +106,32 @@ if ($diagramFile->isValid()) {
         </tr>
     </thead>
     <tbody class="border-bottom">
-    <?php foreach ($releases as $rel) {
-            if ($rel->isReleased()) { ?>
+    <?php
+    foreach ($releases as $rel) {
+        if ($rel->isReleased()) {
+            if ($rel->is($latestRelease->getId())) { ?>
+        <tr>
+            <td class="font-weight-bold"><a href="<?= $rel->getLink() ?>">Release <?= $rel->id ?></a></td>
+            <td><?= $rel->date->format('d-M-Y') ?></td>
+            <td id="_latest">
+                The latest released specifications of <?= $component->title ?> (<?= $id ?>) Component |
+                <a href="<?= $rel->jira->getChanges() ?>" target="_blank">Release notes</a>
+            </td>
+        </tr>
+            <?php } else { ?>
         <tr>
             <td><a href="<?= $rel->getLink() ?>">Release <?= $rel->id ?></a></td>
             <td><?= $rel->date->format('d-M-Y') ?></td>
             <td><a href="<?= $rel->jira->getChanges() ?>" target="_blank">Release notes</a></td>
         </tr>
+            <?php } ?>
         <?php } ?>
     <?php } ?>
     </tbody>
 </table>
 <?php } ?>
 
-<h2 id="_latest">Work In Progress</h2>
+<h2 id="_development">Work In Progress</h2>
 <table class="table table-sm">
     <thead class="thead-light">
         <tr>
@@ -127,9 +141,9 @@ if ($diagramFile->isValid()) {
     </thead>
     <tbody class="border-bottom">
         <tr>
-            <td><a href="<?= $release->getLinkOfLatest() ?>">Latest</a></td>
+            <td><a href="<?= $release->getLinkOfDevelopment() ?>">Development</a></td>
             <td>
-                Latest specifications of <?= $component->title ?> (<?= $id ?>) Component |
+                The development version of specifications of <?= $component->title ?> (<?= $id ?>) Component |
                 <a href="https://github.com/openEHR/specifications-<?=$id?>" target="_blank">GitHub repo</a>
             </td>
         </tr>

@@ -18,7 +18,7 @@ final class ComponentsAction
     public function __invoke(ServerRequest $request, Response $response, array $args): Response
     {
         foreach ($this->componentService->getComponents() as $component) {
-            $component->useRelease(Release::STABLE);
+            $component->useRelease(Release::LATEST);
         }
         $data = [
             'page' => 'components',

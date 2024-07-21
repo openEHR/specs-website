@@ -65,7 +65,7 @@ $spec_blacklist = [
                     (<?= $rel->date->format('d-M-Y')?>)<br/>
             <?php } ?>
         <?php } else { ?>
-            <a href="<?= $release->getLink() ?>" xxclass="font-weight-bold" target="_blank">latest</a><br/>
+            <a href="<?= $release->getLink() ?>" target="_blank"><?= App\Domain\Data\Release::DEVELOPMENT ?></a><br/>
             <?php foreach ($releases as $rel) {
                 if ($rel->isReleased()) { ?>
                     <a href="<?= $rel->getLink() ?>" target="_blank"><?= $rel->id ?></a>

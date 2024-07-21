@@ -3,9 +3,11 @@
 /** @var string $category */
 /** @var string $group */
 
-$release = $component->getReleaseById(\App\Domain\Data\Release::STABLE);
+use App\Domain\Data\Release;
+
+$release = $component->getReleaseById(Release::LATEST);
 $releaseCss = $release->isReleased() ? 'btn-outline-success' : 'btn-outline-primary';
-$releaseText = $release->isReleased() ? $release->id .' ('.$release->date->format("M Y").')' : 'development';
+$releaseText = $release->isReleased() ? $release->id .' ('.$release->date->format("M Y").')' : Release::DEVELOPMENT;
 ?>
 <tr>
     <td><?=$category?></td>

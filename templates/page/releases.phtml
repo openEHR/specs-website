@@ -20,11 +20,13 @@
     <?php foreach ($releases as $release) {
     ?>
     <tr>
-        <td><a href="<?= $release->getLink() ?>"><?= $release->component->id ?> Release <?= $release->id ?></a></td>
+        <td><a href="<?= $release->getLink() ?>"><?= $release->component->id ?> Release-<?= $release->id ?></a></td>
         <td><?= $release->date->format('d-M-Y') ?></td>
         <td>
             <?php if ($release->is('1.0.2') && ($release->component->is('RM') || $release->component->is('BASE'))) { ?>
                 Conversion of the original <a href="/releases/1.0.2">openEHR Release 1.0.2</a> specification.
+            <?php } else { ?>
+                <?= $release->component->description ?> |
             <?php } ?>
             <a href="<?= $release->jira->getChanges() ?>" target="_blank">Release notes</a>
         </td>

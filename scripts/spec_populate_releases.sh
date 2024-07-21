@@ -82,8 +82,8 @@ if [ ! -d $component_dir ]; then
 	mkdir -pv $component_dir
 fi
 
-# do checkout of working baseline into 'latest'
-work_area=$component_dir/latest
+# do checkout of working baseline into 'development'
+work_area=$component_dir/development
 echo "Refreshing dir $work_area"
 rm -rf $work_area
 mkdir -p $work_area

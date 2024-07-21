@@ -18,7 +18,7 @@ final class ReleaseBaselineAction
     public function __invoke(ServerRequest $request, Response $response): Response
     {
         foreach ($this->componentService->getComponents() as $component) {
-            $component->useRelease(Release::STABLE);
+            $component->useRelease(Release::LATEST);
         }
         $data = $this->componentService->getComponents();
         return $this->view->addAttribute('page', 'release_baseline')

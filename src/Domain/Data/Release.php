@@ -7,9 +7,9 @@ use DateTime;
 
 class Release extends AbstractModel implements \JsonSerializable
 {
-    public const LATEST = 'latest';
+    public const DEVELOPMENT = 'development';
 
-    public const STABLE = 'stable';
+    public const LATEST = 'latest';
 
     /** @var ?string */
     public ?string $id = null;
@@ -27,14 +27,14 @@ class Release extends AbstractModel implements \JsonSerializable
         return $this;
     }
 
-    public function isLatest(): bool
+    public function isDevelopment(): bool
     {
-        return $this->id === self::LATEST;
+        return $this->id === self::DEVELOPMENT;
     }
 
     public function getId(): string
     {
-        return $this->id === self::LATEST ? self::LATEST : "Release-{$this->id}";
+        return $this->id === self::DEVELOPMENT ? self::DEVELOPMENT : "Release-{$this->id}";
     }
 
     public function is(string $id): bool
@@ -63,9 +63,9 @@ class Release extends AbstractModel implements \JsonSerializable
         return $this->id && ($this->date instanceof DateTime);
     }
 
-    public function makeLatest(): Release
+    public function makeItDevelopment(): Release
     {
-        $this->id = self::LATEST;
+        $this->id = self::DEVELOPMENT;
         $this->jira = $this->component->jira;
         return $this;
     }
@@ -78,9 +78,9 @@ class Release extends AbstractModel implements \JsonSerializable
         return '';
     }
 
-    public function getLinkOfLatest(): string
+    public function getLinkOfDevelopment(): string
     {
-        return $this->component ? ($this->component->getLink() . '/' . self::LATEST) : '';
+        return $this->component ? ($this->component->getLink() . '/' . self::DEVELOPMENT) : '';
     }
 
     public function getDirectory(): string

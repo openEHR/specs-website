@@ -19,7 +19,7 @@ final class FHIRViewerAction
 
     public function assets(ServerRequest $request, Response $response, array $args): Response
     {
-        $component = $this->componentService->getComponent('TERM')->useRelease(Release::LATEST);
+        $component = $this->componentService->getComponent('TERM')->useRelease(Release::DEVELOPMENT);
         $file = new File($component->getComputableAssetFilename('fhir/'.$args['asset'].'.xml'));
         if (!$file->hasContents()) {
             throw new HttpNotFoundException($request, "FHIR Asset file ({$args['asset']}) not found.");
