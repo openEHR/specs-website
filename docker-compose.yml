@@ -30,7 +30,7 @@ services:
   web-dev:
     <<: *global
     build:
-      dockerfile: web.Dockerfile
+      dockerfile: web-dev.Dockerfile
     profiles:
       - dev
     volumes:
@@ -39,6 +39,8 @@ services:
       - web-releases:/data/releases
     depends_on:
       - caddy
+    ports:
+      - "9003:9003"
     env_file:
       - path: ./.env
         required: false
