@@ -15,6 +15,8 @@ class Component extends AbstractModel
     public ?string $description = null;
     /** @var ?string */
     public ?string $keywords = null;
+    /** @var Status */
+    public Status $status = Status::UNKNOWN;
     /** @var ?Jira */
     public ?Jira $jira = null;
     /** @var Specification[] */
@@ -70,6 +72,12 @@ class Component extends AbstractModel
     public function setKeywords(string $value = null): Component
     {
         $this->keywords = $value;
+        return $this;
+    }
+
+    public function setStatus(string $value = null): Component
+    {
+        $this->status = Status::tryfrom(ucfirst(strtolower($value))) ?? Status::UNKNOWN;
         return $this;
     }
 

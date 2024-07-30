@@ -35,6 +35,26 @@ enum Status: string implements \JsonSerializable
         };
     }
 
+    public function getCssClass(string $page): string
+    {
+        $ownClass = 'toggleable_status status_' . $this->name;
+        $visibility = '';
+        switch ($page) {
+            case 'release_baseline':
+                $visibility = match ($this) {
+                    Status::STABLE, Status::TRIAL, Status::UNKNOWN => '',
+                    Status::RETIRED, Status::DEVELOPMENT => 'd-none',
+                };
+                break;
+            case 'development_baseline':
+                $visibility = match ($this) {
+                    Status::STABLE, Status::TRIAL, Status::DEVELOPMENT, Status::UNKNOWN => '',
+                    Status::RETIRED => 'd-none',
+                };
+        }
+        return "$ownClass $visibility";
+    }
+
     public function jsonSerialize(): array
     {
         return [
