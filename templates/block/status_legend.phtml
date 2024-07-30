@@ -1,19 +1,21 @@
 <?php
-    $statuses = \App\Domain\Data\Specification::STATUSES;
+
+use App\Domain\Data\Status;
+
 ?>
 <div class="text-right">
     <h5><a href="https://www.openehr.org/programs/specification/changeprocess" target="_blank">Legend:</a>
         <span class="align-top badge badge-light mx-1 p-1 border">
-            <span class="align-top badge badge-<?= $statuses['DEV']['badge'] ?>"><?= $statuses['DEV']['short'] ?></span> - Development
+            <span class="align-top badge badge-<?= Status::DEVELOPMENT->getBadge(); ?>"><?= Status::DEVELOPMENT->getShort() ?></span> - <?= Status::DEVELOPMENT->value ?>
         </span>
         <span class="align-top badge badge-light mx-1 p-1 border">
-            <span class="align-top badge badge-<?= $statuses['TRIAL']['badge'] ?>"><?= $statuses['TRIAL']['short'] ?></span> - Trial
+            <span class="align-top badge badge-<?= Status::TRIAL->getBadge(); ?>"><?= Status::TRIAL->getShort() ?></span> - <?= Status::TRIAL->value ?>
         </span>
         <span class="align-top badge badge-light mx-1 p-1 border">
-            <span class="align-top badge badge-<?= $statuses['STABLE']['badge'] ?>"><?= $statuses['STABLE']['short'] ?></span> - Stable
+            <span class="align-top badge badge-<?= Status::STABLE->getBadge(); ?>"><?= Status::STABLE->getShort() ?></span> - <?= Status::STABLE->value ?>
         </span>
         <span class="align-top badge badge-light mx-1 p-1 border">
-            <span class="align-top badge badge-<?= $statuses['RETIRED']['badge'] ?>"><?= $statuses['RETIRED']['short'] ?></span> - Retired
+            <span class="align-top badge badge-<?= Status::RETIRED->getBadge(); ?>"><?= Status::RETIRED->getShort() ?></span> - <?= Status::RETIRED->value ?>
         </span>
     </h5>
 </div>

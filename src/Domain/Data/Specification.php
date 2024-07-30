@@ -19,8 +19,8 @@ class Specification extends AbstractModel implements \JsonSerializable
     public ?string $micro_summary = null;
     /** @var array */
     public array $classes = [];
-    /** @var ?string */
-    public ?string $spec_status = '_';
+    /** @var Status */
+    public Status $spec_status = Status::UNKNOWN;
     /** @var string */
     public string $copyright_year;
     /** @var string */
@@ -38,18 +38,6 @@ class Specification extends AbstractModel implements \JsonSerializable
 
     /** @var ?Component */
     public ?Component $component = null;
-
-    public const STATUSES = array(
-        'STABLE' => ['badge' => 'success', 'short' => 'S', 'title' => 'STABLE'],
-        'TRIAL' => ['badge' => 'primary', 'short' => 'T', 'title' => 'TRIAL'],
-        'DEV' => ['badge' => 'secondary', 'short' => 'D', 'title' => 'DEV'],
-        'DEVELOPMENT' => ['badge' => 'secondary', 'short' => 'D', 'title' => 'DEV'],
-        'RETIRED' => ['badge' => 'danger', 'short' => 'R', 'title' => 'RETIRED'],
-        'SUPERSEDED' => ['badge' => 'danger', 'short' => 'E', 'title' => 'SUPERSEDED'],
-        'OBSOLETE' => ['badge' => 'danger', 'short' => 'O', 'title' => 'OBSOLETE'],
-        'ARCHIVED' => ['badge' => 'danger', 'short' => 'A', 'title' => 'ARCHIVED'],
-        '_' => ['badge' => 'light', 'short' => 'N', 'title' => 'UNKNOWN'],
-    );
 
     public function __invoke(array $args = []): static
     {
@@ -123,7 +111,7 @@ class Specification extends AbstractModel implements \JsonSerializable
 
     public function setSpecStatus(string $value = null): Specification
     {
-        $this->spec_status = $value && isset(self::STATUSES[$value]) ? $value : '_';
+        $this->spec_status = Status::tryfrom(ucfirst(strtolower($value))) ?? Status::UNKNOWN;
         return $this;
     }
 
@@ -205,21 +193,6 @@ class Specification extends AbstractModel implements \JsonSerializable
         return '';
     }
 
-    public function getStatusBadge(): string
-    {
-        return self::STATUSES[$this->spec_status]['badge'];
-    }
-
-    public function getStatusShort(): string
-    {
-        return self::STATUSES[$this->spec_status]['short'];
-    }
-
-    public function getStatusTitle(): string
-    {
-        return self::STATUSES[$this->spec_status]['title'];
-    }
-
     /**
      * @inheritDoc
      */
@@ -233,18 +206,13 @@ class Specification extends AbstractModel implements \JsonSerializable
             'summary' => $this->summary,
             'micro_summary' => $this->micro_summary,
             'classes' => $this->classes,
-            'spec_status' => $this->spec_status,
+            'status' => $this->spec_status,
             'copyright_year' => $this->copyright_year,
             'keywords' => $this->keywords,
             'notes' => $this->notes,
             'types' => $this->types,
             'summary_types' => $this->summary_types,
             '_component' => $this->component->id,
-            '_status' => [
-                'badge' => $this->getStatusBadge(),
-                'short' => $this->getStatusShort(),
-                'title' => $this->getStatusTitle(),
-            ],
             '_getLink()' => $this->getLink(),
         ];
     }

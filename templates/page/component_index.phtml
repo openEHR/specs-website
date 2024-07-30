@@ -79,7 +79,7 @@ if ($diagramFile->isValid()) {
         ?>
         <tr>
             <td>
-                <span class="badge badge-<?= $spec->getStatusBadge() ?> spec-status" title="Specification status is <?= $spec->getStatusTitle() ?>, copyright <?= $spec->copyright_year ?>-<?= date('Y') ?>."><?= $spec->getStatusTitle() ?></span>
+                <span class="badge badge-<?= $spec->spec_status->getBadge() ?> spec-status" title="Specification status is <?= $spec->spec_status->name ?>, copyright <?= $spec->copyright_year ?>-<?= date('Y') ?>."><?= $spec->spec_status->name ?></span>
                 <a href="<?= $spec->getLink() ?>" title="<?= $spec->description ?>" target="_blank"><?= $spec->title_short ?></a>
             </td>
             <td><?= $spec->summary ?></td>
