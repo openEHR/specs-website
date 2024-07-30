@@ -3,6 +3,7 @@
 namespace App\Action;
 
 use App\Configuration;
+use App\Context;
 use App\Helper\File;
 use Slim\Exception\HttpNotFoundException;
 use Slim\Http\Response;
@@ -10,17 +11,15 @@ use Slim\Http\ServerRequest;
 
 final class UMLViewerAction
 {
-    protected $settings;
 
-    public function __construct(Configuration $settings)
+    public function __construct(protected Configuration $settings, protected Context $appContext)
     {
-        $this->settings = $settings;
     }
 
     public function assets(ServerRequest $request, Response $response, array $args): Response
     {
         $asset = !empty($args['asset']) ? $args['asset'] : 'index.html';
-        $filename = "{$this->settings->sites_root}/releases/UML/latest/$asset";
+        $filename = "{$this->appContext->releasesDir}/UML/latest/$asset";
         $file = new File($filename);
         if (!$file->hasContents()) {
             throw new HttpNotFoundException($request, "Asset file ($asset) from (UML Viewer) not found.");

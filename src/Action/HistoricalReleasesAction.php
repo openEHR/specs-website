@@ -3,6 +3,7 @@
 namespace App\Action;
 
 use App\Configuration;
+use App\Context;
 use App\Helper\File;
 use App\View;
 use Slim\Exception\HttpNotFoundException;
@@ -11,13 +12,9 @@ use Slim\Http\ServerRequest;
 
 final class HistoricalReleasesAction
 {
-    protected $view;
-    protected $settings;
 
-    public function __construct(View $view, Configuration $settings)
+    public function __construct(protected View $view, protected Configuration $settings, protected Context $appContext)
     {
-        $this->view = $view;
-        $this->settings = $settings;
     }
 
     public function index(ServerRequest $request, Response $response, array $args): Response
@@ -31,7 +28,7 @@ final class HistoricalReleasesAction
 
     public function assets(ServerRequest $request, Response $response, array $args): Response
     {
-        $filename = "{$this->settings->sites_root}/releases/{$args['release']}/{$args['asset']}";
+        $filename = "{$this->appContext->releasesDir}/{$args['release']}/{$args['asset']}";
         $file = new File($filename);
         if (!$file->hasContents()) {
             throw new HttpNotFoundException($request, "Asset file ({$args['asset']}) from historical release ({$args['release']}) not found.");

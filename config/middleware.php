@@ -1,9 +1,9 @@
 <?php
 
-use App\Configuration;
+use App\Context;
 use Slim\App;
 
-return function (App $app) {
+return static function (App $app) {
     // Parse json, form data and xml
     $app->addBodyParsingMiddleware();
 
@@ -11,10 +11,13 @@ return function (App $app) {
     $app->addRoutingMiddleware();
 
     // Add error handler middleware
-    $settings = $app->getContainer()->get(Configuration::class)->error_handler_middleware;
-    $displayErrorDetails = (bool)$settings->display_error_details;
-    $logErrors = (bool)$settings->log_errors;
-    $logErrorDetails = (bool)$settings->log_error_details;
-
-    $app->addErrorMiddleware($displayErrorDetails, $logErrors, $logErrorDetails);
+    $appContext = $app->getContainer()->get(Context::class);
+    $app->addErrorMiddleware(
+        // displayErrorDetails: Should be set to false for the production environment
+        displayErrorDetails: !$appContext->isProduction() || $appContext->debug,
+        // logErrors: Should be set to false for the test environment
+        logErrors: !$appContext->isTest(),
+        // logErrorDetails: Display error details in error log;
+        logErrorDetails: true
+    );
 };

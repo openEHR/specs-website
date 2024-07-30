@@ -3,29 +3,29 @@
 namespace App;
 
 use App\View\NavBar;
-use Psr\Http\Message\ResponseInterface;
+use Slim\Http\Response;
 
 class View
 {
     /**
      * @var string
      */
-    protected $templatePath;
+    protected string $templatePath;
 
     /**
      * @var array
      */
-    protected $attributes;
+    protected array $attributes;
 
     /**
      * @var string
      */
-    protected $layout;
+    protected string $layout;
 
     /**
      * @var NavBar
      */
-    protected $navBar;
+    protected NavBar $navBar;
 
     /**
      * View constructor.
@@ -33,9 +33,9 @@ class View
      * @param Configuration $settings
      * @param NavBar $navBar
      */
-    public function __construct(Configuration $settings, NavBar $navBar)
+    public function __construct(string $templatePath, Configuration $settings, NavBar $navBar)
     {
-        $this->setTemplatePath($settings->templates);
+        $this->setTemplatePath($templatePath);
         $this->setAttributes((array)$settings->attributes);
         $this->setLayout($settings->layout);
         $this->setNavBar($navBar);
@@ -46,21 +46,20 @@ class View
      *
      * $data cannot contain template as a key
      *
-     * @param ResponseInterface $response
+     * @param Response $response
      * @param string $template
-     * @param array|mixed $data
+     * @param array $data
      *
-     * @return ResponseInterface
+     * @return Response
      *
      * @throws \InvalidArgumentException
      * @throws \RuntimeException if $templatePath . $template does not exist
      * @throws \Throwable
      */
-    public function render(ResponseInterface $response, string $template, $data = []): ResponseInterface
+    public function render(Response $response, string $template, array $data = []): Response
     {
         $output = $this->fetch($template, $data);
         if ($this->layout) {
-            $data = (array)$data;
             $data['content'] = $output;
             $output = $this->fetch($this->layout, $data);
         }
@@ -119,7 +118,7 @@ class View
      * @param mixed $value
      * @return View
      */
-    public function addAttribute(string $key, $value): View
+    public function addAttribute(string $key, mixed $value): View
     {
         $this->attributes[$key] = $value;
         return $this;
@@ -131,7 +130,7 @@ class View
      * @param string $key
      * @return mixed
      */
-    public function getAttribute(string $key)
+    public function getAttribute(string $key): mixed
     {
         return $this->attributes[$key] ?? null;
     }
@@ -192,7 +191,7 @@ class View
      *
      * @throws \Throwable
      */
-    public function fetch(string $template, $data = []): string
+    public function fetch(string $template, mixed $data = []): string
     {
         if (!$template) {
             throw new \RuntimeException("View cannot render unspecified template `$template`.");
@@ -204,7 +203,7 @@ class View
         $data = array_merge($this->attributes, (array)$data);
         try {
             foreach ($data as $k => $v) {
-                $k = preg_replace('/[\W]+/', '_', $k);
+                $k = preg_replace('/\W+/', '_', $k);
                 if (!in_array($k, ['this', 'template', 'data', 'k', 'v'])) {
                     $$k = $v;
                 }

@@ -7,17 +7,17 @@ namespace App\View;
 class NavItem
 {
     /** @var Page */
-    public $page;
+    public Page $page;
 
     /** @var NavItem[] */
-    public $items = array();
+    public array $items = [];
 
     /**
      * NavItem constructor.
      * @param string $title
      * @param string|array|null $data
      */
-    public function __construct(string $title, $data = null)
+    public function __construct(string $title, mixed $data = null)
     {
         if (is_iterable($data)) {
             $this->page = new Page($title);
@@ -75,6 +75,5 @@ class NavItem
     {
         return $this->page->isHeader();
     }
-
 
 }

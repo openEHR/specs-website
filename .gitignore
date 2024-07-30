@@ -1,4 +1,5 @@
-/git/
-/tmp/
-/vhosts/
 /.idea/
+/vendor/
+/.env
+/repos/
+/releases/

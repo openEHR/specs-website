@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Populate the releases directory from /var/www/git/specifications-XX component repo
+# Populate the releases directory from /data/repos/specifications-XX component repo
 # specified in $1
 # creating the following directory structure:
 #	COMPONENT
@@ -10,13 +10,13 @@
 
 #
 # ============== Definitions =============
+#
 USAGE="Usage: ${0} -v repo_name # matches 'specifications-*'
   -v : turn on verbose mode
 "
 
-#
-git_root=/var/www/git/
-sites_root=/var/www/vhosts/openehr.org/
+repos_root=/data/repos
+releases_root=/data/releases
 
 git_remove_local_changes="git clean -d -f"
 git_fetch_cmd="git fetch --tags"
@@ -24,7 +24,6 @@ git_merge_cmd="git pull"
 git_archive_cmd="git archive"
 git_checkout_cmd="git --work-tree=work_area checkout -f"
 
-release_dir=releases
 spec_component_dir_leader="specifications-"
 
 # =========== process command line ===========
@@ -61,49 +60,33 @@ do_cmd () {
 }
 
 #
-# ============== Set up paths =============
-#
-site=${PWD#$sites_root}	# strip $sites_root from the front
-site=${site%%/*}		# remove any trailing slash
-
-echo "checking existence of $site_dir$release_dir"
-site_dir=$sites_root$site
-cd $site_dir
-if [ ! -d $release_dir ]; then
-    mkdir $release_dir
-    echo "created $release_dir in $site_dir"
-fi
-
-dest_parent_dir=$site_dir/$release_dir
-echo "Target location: $dest_parent_dir"
-
-#
 # ============= Do the extraction from repo =============
 #
-cd $git_root
+cd $repos_root
 
 component=${git_component_repo##$spec_component_dir_leader}
 echo 
 echo "================ Component: $component ================"
 
 # get Git repo up to date
-cd $git_component_repo
+cd $repos_root/$git_component_repo
+echo "Source dir: $PWD"
 do_cmd "$git_remove_local_changes"
 do_cmd "$git_fetch_cmd"
 do_cmd "$git_merge_cmd"
 
-# create any directories if this is the first time
-site_component_dir=$dest_parent_dir/$component
-if [ ! -d $site_component_dir ]; then
-	mkdir $site_component_dir
-	echo "created $site_component_dir"
+# create directories if this is the first time
+component_dir=$releases_root/$component
+echo "Target dir: $component_dir"
+if [ ! -d $component_dir ]; then
+	mkdir -pv $component_dir
 fi
 
 # do checkout of working baseline into 'latest'
-work_area=$site_component_dir/latest
+work_area=$component_dir/latest
+echo "Refreshing dir $work_area"
 rm -rf $work_area
-mkdir $work_area
-echo "created $work_area"
+mkdir -p $work_area
 do_cmd "${git_checkout_cmd/work_area/$work_area}"
 
 # cycle through all releases and check out into release dirs
@@ -145,20 +128,20 @@ for release_name in "${!tagnames_table[@]}" ; do
 	echo "For $release_name using $release_tag"
 
 	# don't bother if it is already there
-	targ_dir=$site_component_dir/$release_tag
+	targ_dir=$component_dir/$release_tag
 	if [ -d $targ_dir ]; then
 		echo "$targ_dir already extracted; nothing to do"
 	else
 		# first, delete any existing directories for this release
-		do_cmd "rm -rf $site_component_dir/${release_name}*"
+		do_cmd "rm -rf $component_dir/${release_name}*"
 
 		# make a new directory with the concrete name of the release, which might be the canonical form
 		echo "extracting $release_tag to $targ_dir"
-		mkdir $targ_dir
+		mkdir -p $targ_dir
 		do_cmd "$git_archive_cmd $release_tag | tar -x -C $targ_dir"
 
 		# if it is not the canonical form, we need to add a relative symlink with the canonical name
-		canonical_targ_dir=$site_component_dir/$release_name
+		canonical_targ_dir=$component_dir/$release_name
 		if [ ! -d $canonical_targ_dir ]; then
 			do_cmd "ln -sr $targ_dir $canonical_targ_dir"
 		fi

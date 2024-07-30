@@ -9,13 +9,9 @@ use Slim\Http\ServerRequest;
 
 final class DevelopmentBaselineAction
 {
-    protected $view;
-    protected $componentService;
 
-    public function __construct(View $view, ComponentService $components)
+    public function __construct(protected View $view, protected ComponentService $componentService)
     {
-        $this->view = $view;
-        $this->componentService = $components;
     }
 
     public function __invoke(ServerRequest $request, Response $response): Response
@@ -40,7 +36,7 @@ final class DevelopmentBaselineAction
                 try {
                     $type = $component->getTypeByName($args['class']);
                     return $response->withRedirect($type->getLink());
-                } catch (\Exception $e) {
+                } catch (\Exception) {
                     // silently do nothing
                 }
             }

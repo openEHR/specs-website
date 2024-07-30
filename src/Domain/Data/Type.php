@@ -1,4 +1,5 @@
 <?php
+/** @noinspection PhpUnnecessaryCurlyVarSyntaxInspection */
 
 namespace App\Domain\Data;
 
@@ -6,25 +7,28 @@ class Type extends AbstractModel implements \JsonSerializable
 {
 
     /** @var string */
-    public $name;
+    public string $name;
 
     /** @var string */
-    public $fragment;
+    public string $fragment;
 
     /** @var string */
-    public $packageName;
+    public string $packageName;
 
     /** @var string */
-    public $releaseId;
+    public string $releaseId;
 
     /** @var string */
-    public $specificationId;
+    public string $specificationId;
 
-    /** @var Package */
-    public $package;
+    /** @var ?Package */
+    public ?Package $package = null;
 
-    /** @var Specification */
-    public $specification;
+    /** @var ?Specification */
+    public ?Specification $specification = null;
+
+    /** @var ?Component */
+    public ?Component $component = null;
 
     /**
      * @param string $name
@@ -99,7 +103,7 @@ class Type extends AbstractModel implements \JsonSerializable
     /**
      * @inheritDoc
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [
             'name' => $this->name,

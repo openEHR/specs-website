@@ -6,11 +6,9 @@ namespace App\Domain\Service;
 
 class SearchService
 {
-    protected $componentService;
 
-    public function __construct(ComponentService $componentService)
+    public function __construct(protected ComponentService $componentService)
     {
-        $this->componentService = $componentService;
     }
 
     public function query(string $keyword): array
@@ -28,17 +26,17 @@ class SearchService
         if (!$keyword) {
             return $results;
         }
-        foreach ($this->componentService->getComponents() as $key => $component) {
+        foreach ($this->componentService->getComponents() as $component) {
             // trying to see if there is a match on Component
             if ($component->is($keyword)) {
                 $results['components']['0_'.$component->id] = $component;
-            } elseif ((strpos($component->title, $keyword) !== false) || (strpos($component->description, $keyword) !== false)) {
+            } elseif ((str_contains($component->title, $keyword)) || (str_contains($component->description, $keyword))) {
                 $results['components']['1_'.$component->id] = $component;
 //            } elseif (strpos($component->keywords, $keyword) !== false) {
 //                $results['components']['2_'.$component->id] = $component;
             }
             // searching for specifications
-            foreach ($component->specifications as $subKey => $spec) {
+            foreach ($component->specifications as $spec) {
                 if ($spec->is($keyword)) {
                     $results['specifications']['0_'.$spec->id] = $spec;
                 } elseif (stripos($spec->id, $keyword) !== false) {
@@ -52,7 +50,7 @@ class SearchService
                 }
             }
             // searching for types
-            foreach ($component->types as $subKey => $type) {
+            foreach ($component->types as $type) {
                 if (!$type->package || !$type->specification) {
                     continue;
                 }
@@ -64,7 +62,7 @@ class SearchService
                 }
             }
             // searching for expressions
-            foreach ($component->expressions as $subKey => $expr) {
+            foreach ($component->expressions as $expr) {
                 // trying to see if there is a match on Expressions
                 if (!$expr->isOwned()) {
                     continue;

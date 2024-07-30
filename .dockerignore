@@ -1,0 +1,11 @@
+.idea
+.git*
+.env
+docker-compose.yml
+.dockerignore
+.editorconfig
+*Dockerfile
+Caddyfile
+repos
+releases
+vendor

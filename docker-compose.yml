@@ -1,14 +1,55 @@
-version: "3.8"
+x-global-environment: &global
+  networks:
+    - caddy
+  restart: unless-stopped
+
 services:
-  specs-website-php7:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  caddy:
+    <<: *global
+    image: caddy
     ports:
-      - "84:80"
-      - "9000:9000"
+      - "80:80"
+      - "443:443"
     volumes:
-      - .:/var/www/html
-      - ./git:/var/www/git
-      - ./vhosts:/var/www/vhosts
-    user: 1000:1000
+      - caddy-data:/data/
+      - ./Caddyfile:/etc/caddy/Caddyfile
+
+  web:
+    <<: *global
+    build:
+      dockerfile: web.Dockerfile
+    volumes:
+      - web-repos:/data/repos
+      - web-releases:/data/releases
+    depends_on:
+      - caddy
+    env_file:
+      - path: ./.env
+        required: false
+
+  web-dev:
+    <<: *global
+    build:
+      dockerfile: web-dev.Dockerfile
+    profiles:
+      - dev
+    volumes:
+      - .:/data/website
+      - web-repos:/data/repos
+      - web-releases:/data/releases
+    depends_on:
+      - caddy
+    ports:
+      - "9003:9003"
+    env_file:
+      - path: ./.env
+        required: false
+
+
+volumes:
+  caddy-data:
+  web-repos:
+  web-releases:
+
+networks:
+  caddy:

@@ -1,17 +1,14 @@
 #!/bin/bash
 #
-# Populate the site releases directory from original specifications /var/www/git/specifications
+# Populate the releases directory from original specifications /data/repos/specifications
 # Only populates releases not already there. To force repopulation, manually delete relevant directories.
 #
 
 #
 # ============== Definitions =============
 #
-git_root=/var/www/git/
-old_specs_git_repo=specifications
-old_specs_git_repo_clone_dir=$git_root$old_specs_git_repo
-old_specs_git_repo_pub_dir=publishing
-sites_root=/var/www/vhosts/openehr.org/
+repos_root=/data/repos
+releases_root=/data/releases
 
 git_remove_local_changes="git clean -d -f"
 git_fetch_cmd="git fetch --tags"
@@ -19,7 +16,9 @@ git_merge_cmd="git pull"
 git_archive_cmd="git archive"
 git_checkout_cmd="git --work-tree=work_area checkout -f"
 
-release_dir=releases
+old_specs_git_repo=specifications
+old_specs_git_repo_clone_dir=$repos_root/$old_specs_git_repo
+old_specs_git_repo_pub_dir=publishing
 
 #
 # ============== functions =============
@@ -33,29 +32,19 @@ do_cmd () {
 }
 
 #
-# ============== Set up paths =============
-#
-site=${PWD#$sites_root}	# strip $sites_root from the front
-site=${site%%/*}		# remove any trailing slash
-
-echo "checking existence of $release_dir"
-site_dir=$sites_root$site
-cd $site_dir
-if [ ! -d $release_dir ]; then
-    mkdir $release_dir
-    echo "created $release_dir in $site_dir"
-fi
-
-dest_parent_dir=$site_dir/$release_dir
-echo "Target location: $dest_parent_dir"
-
-#
 # ============= get old specifcations Git repo up to date ============
 #
-cd $old_specs_git_repo_clone_dir
+cd $repos_root/$old_specs_git_repo
+echo "Source dir: $PWD"
 do_cmd "$git_remove_local_changes"
 do_cmd "$git_fetch_cmd"
 do_cmd "$git_merge_cmd"
+
+# create directories if this is the first time
+echo "Target dir: $releases_root"
+if [ ! -d $releases_root ]; then
+	mkdir -pv $releases_root
+fi
 
 #
 # ============= Do the extraction from 'specifications' repo =============
@@ -67,19 +56,19 @@ do_cmd "$git_merge_cmd"
 # and after extracted, rename it to the numerical part of the release
 #
 
-echo "------ exporting $old_specs_git_repo Git repo to site $site"
+echo "------ exporting $old_specs_git_repo Git repo "
 git tag | grep Release | while read tagname; do
 
     # convert tagname like "Release-0.9" into targ dir name like "0.9"
     tag_version=${tagname#Release-}
 
     # don't bother if it is already there
-    targ_dir=$dest_parent_dir/$tag_version
+    targ_dir=$releases_root/$tag_version
     if [ ! -d $targ_dir ]; then
-        do_cmd "$git_archive_cmd $tagname $old_specs_git_repo_pub_dir | tar -x -C $dest_parent_dir"
+        do_cmd "$git_archive_cmd $tagname $old_specs_git_repo_pub_dir | tar -x -C $releases_root"
 
         # now rename the output dir to its release tag name
-        do_cmd "mv $dest_parent_dir/$old_specs_git_repo_pub_dir $targ_dir"
+        do_cmd "mv $releases_root/$old_specs_git_repo_pub_dir $targ_dir"
     else
         echo "$targ_dir already extracted"
     fi

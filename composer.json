@@ -2,13 +2,14 @@
     "name": "openehr/specs-website",
     "type": "project",
     "require": {
-        "php": "^7.3",
-        "ext-fileinfo": "^7.3",
-        "ext-json": "^1.7",
-        "php-di/php-di": "^6.3",
-        "slim/http": "^1.2",
-        "slim/psr7": "^1.5",
-        "slim/slim": "^4.9"
+        "php": "^8.1",
+        "ext-fileinfo": "*",
+        "ext-json": "*",
+        "nyholm/psr7": "^1.8",
+        "nyholm/psr7-server": "^1.1",
+        "php-di/php-di": "^7.0",
+        "slim/http": "^1.4",
+        "slim/slim": "^4.14"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest"

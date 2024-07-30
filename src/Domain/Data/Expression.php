@@ -4,21 +4,21 @@ namespace App\Domain\Data;
 
 class Expression extends AbstractModel implements \JsonSerializable
 {
-    /** @var string */
-    public $id;
-    /** @var string */
-    public $type;
-    /** @var string */
-    public $title;
-    /** @var string */
-    public $description;
-    /** @var string */
-    public $link;
-    /** @var Dependency */
-    public $dependency;
+    /** @var ?string */
+    public ?string $id = null;
+    /** @var ?string */
+    public ?string $type = null;
+    /** @var ?string */
+    public ?string $title = null;
+    /** @var ?string */
+    public ?string $description = null;
+    /** @var ?string */
+    public ?string $link = null;
+    /** @var ?Dependency */
+    public ?Dependency $dependency = null;
 
-    /** @var Component */
-    public $component;
+    /** @var ?Component */
+    public ?Component $component = null;
 
     public function setId(string $value = null): Expression
     {
@@ -87,14 +87,11 @@ class Expression extends AbstractModel implements \JsonSerializable
             switch ($this->type) {
                 case 'uml':
                     return "{$this->component->release->getLink()}/UML/{$file}";
-                    break;
                 case 'file':
                     return "{$this->component->release->getLink()}/docs/{$file}";
-                    break;
                 case 'url':
                 case 'dependency':
                     return $this->link;
-                    break;
             }
         }
         return '';
@@ -103,7 +100,7 @@ class Expression extends AbstractModel implements \JsonSerializable
     /**
      * @inheritDoc
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [
             'id' => $this->id,
