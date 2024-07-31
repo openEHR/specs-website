@@ -5,15 +5,8 @@ LABEL name='Specifications website' vendor="openEHR"
 RUN apt-get update -qy \
  && DEBIAN_FRONTEND=noninteractive apt-get install -qy \
     git \
-    zlib1g-dev libzip-dev unzip \
-    libwebp-dev libjpeg62-turbo-dev libpng-dev libxpm-dev libfreetype6-dev \
-    libonig-dev \
- && docker-php-source extract \
+    libzip-dev unzip \
  && docker-php-ext-install zip \
- && docker-php-ext-install mbstring \
- && docker-php-ext-configure gd --enable-gd --with-webp --with-jpeg --with-xpm --with-freetype \
- && docker-php-ext-install gd \
- && docker-php-source delete \
  && apt-get autoremove -qy \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /var/log/apt/*
