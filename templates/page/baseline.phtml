@@ -12,15 +12,46 @@
 /** @var \App\Domain\Data\Component $LANG */
 /** @var \App\Domain\Data\Component $BASE */
 /** @var string $title */
+/** @var string $page */
+
+use App\Domain\Data\Status;
+
+switch ($page) {
+    case 'release_baseline':
+        $statuses = [
+            'Retired' => '',
+            'Development' => '',
+        ];
+        break;
+    case 'development_baseline':
+        $statuses = [
+            'Retired' => '',
+            'Development' => 'checked',
+        ];
+        break;
+}
 
 ?>
 <h1 class="text-center">
     <?= $title ?>
 </h1>
 
+<div class="text-right mt-5 px-2"><h5>
+    <?php foreach ($statuses as $statusText => $checked) {
+        $status = Status::from($statusText);
+    ?>
+    <span class="align-top badge badge-light mx-1 px-1 border">
+        <label for="toggle-<?= $status->name ?>" class="form-check-label align-middle mr-1">
+            <span class="badge align-text-bottom badge-<?= $status->getBadge() ?>"><?= $status->getShort() ?></span> - <?= $status->value ?>
+        </label>
+        <input type="checkbox" class="align-middle" <?= $checked ?> id="toggle-<?= $status->name ?>" data-toggle="toggle" data-size="xs">
+    </span>
+    <?php } ?>
+</h5></div>
+
 <div class="d-flex flex-column">
 
-    <div class="specs_category_box">
+    <div class="specs_category_box <?= $CNF->status->getCssClass($page) ?>">
         <h5>Conformance</h5>
         <div id="cnf_group" class="group_box">
             <?= $this->fetch('block/component_row.phtml', $CNF) ?>

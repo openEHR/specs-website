@@ -97,7 +97,7 @@ th.w-long {
 
 
 
-.specs_category_box .component_row:not(:last-child) {
+.specs_category_box .component_row:has(+ .d-flex.component_row) {
     border-bottom: 1px solid #123f6d;
 }
 .specs_category_box .component_row .component_cell {

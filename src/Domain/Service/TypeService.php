@@ -2,6 +2,7 @@
 
 namespace App\Domain\Service;
 
+use App\Domain\Data\Release;
 use App\Helper\File;
 
 class TypeService
@@ -40,7 +41,7 @@ class TypeService
                     foreach ($types[0] as $tIndex => $match) {
                         $this->types[] = [
                             'componentId' => $types[1][$tIndex],
-                            'releaseId' => is_numeric($types[2][$tIndex]) ? $types[2][$tIndex] : 'latest',
+                            'releaseId' => is_numeric($types[2][$tIndex]) ? $types[2][$tIndex] : Release::DEVELOPMENT,
                             'specificationId' => $types[3][$tIndex],
                             'fragment' => $types[4][$tIndex],
                             'name' => $types[5][$tIndex],

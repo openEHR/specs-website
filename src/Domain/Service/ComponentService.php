@@ -41,7 +41,7 @@ class ComponentService
             'releases' => [],
             'expressions' => [],
         ];
-        foreach (glob("{$this->appContext->releasesDir}/*/latest/manifest.json") as $file) {
+        foreach (glob("{$this->appContext->releasesDir}/*/" . Release::DEVELOPMENT . "/manifest.json") as $file) {
             if (is_readable($file) && ($content = file_get_contents($file)) && ($data = json_decode($content, true, 512, JSON_THROW_ON_ERROR))) {
                 $component = (new Component($this->appContext))($data);
                 $this->registerComponent($component);
