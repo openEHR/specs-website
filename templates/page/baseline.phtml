@@ -69,8 +69,8 @@ switch ($page) {
         <h4 class="text-center">Abstract Specifications</h4>
         <p class="text-center">Technology-independent primary specifications for the openEHR health computing platform</p>
 
-        <h5>Platform Service Interface</h5>
-        <div id="services_group" class="group_box">
+        <h5 class="<?= $SM->status->getCssClass($page) ?>">Platform Service Interface</h5>
+        <div id="services_group" class="group_box <?= $SM->status->getCssClass($page) ?>">
             <?= $this->fetch('block/component_row.phtml', $SM) ?>
         </div>
         <h5>Process and CDS</h5>
