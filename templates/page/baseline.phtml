@@ -44,7 +44,7 @@ switch ($page) {
         <label for="toggle-<?= $status->name ?>" class="form-check-label align-middle mr-1">
             <span class="badge align-text-bottom badge-<?= $status->getBadge() ?>"><?= $status->getShort() ?></span> - <?= $status->value ?>
         </label>
-        <input type="checkbox" class="align-middle" <?= $checked ?> id="toggle-<?= $status->name ?>" data-toggle="toggle" data-size="xs">
+        <input type="checkbox" class="align-middle" <?= $checked ?> id="toggle-<?= $status->name ?>" data-toggle="toggle" data-size="xs" data-on="Shown" data-off="Hidden">
     </span>
     <?php } ?>
 </h5></div>
