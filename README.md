@@ -45,13 +45,16 @@ To (re)build cache of all manifest files, a simple `GET` action is required on h
 In order to configure some aspects of the website, the `/data/website/.env` file should be changed (or created based on `.env.dist`):
 ```ini
 APP_ENV=production
-APP_DEBUG=true
+APP_DEBUG=false
 APP_HOOK_SECRET=abc
 RELEASES_ROOT=
+SPEC_POPULATE_RELEASES=true
 ```
 
 By default, the website runs in production mode and debug mode is off, which means some files are cached; it is recommended to change this in development mode 
-by setting the `APP_ENV` to `development` adn `APP_DEBUG` to `true` . 
+by setting the `APP_ENV=development` and `APP_DEBUG=true`. 
+
+The `SPEC_POPULATE_RELEASES=true` can be used to checkout the git `repos` and populate `releases` accordingly.
 
 ### Development
 For local development purpose, another variant of the website can be used, which has the website source code and the git repose mounted as volumes:
@@ -63,4 +66,6 @@ CLI will be available through:
 ```bash
 docker-compose --profile dev exec web-dev bash
 ```
-This will be available as https://specifications-dev.openehr.local
+This website will be available as https://specifications-dev.openehr.local
+
+
