@@ -8,6 +8,8 @@ return static function (App $app) {
     $app->redirect('/releases/AA_GLOBAL/latest[/[index.html]]', '/classes', 301);
     $app->get('/releases/{release:(?:0.9|0.95|1.0|1.0.1|1.0.2)}', Action\HistoricalReleasesAction::class . ':index');
     $app->get('/releases/{release:(?:0.9|0.95|1.0|1.0.1|1.0.2)}/{asset:.+}', Action\HistoricalReleasesAction::class . ':assets');
+    $app->get('/releases/UML/' . Release::LATEST . '[/{asset:.*}]', Action\RedirectAction::class . ':latest_uml');
+    $app->redirect('/releases/UML[/[' . Release::DEVELOPMENT . ']]', '/releases/UML/' . Release::DEVELOPMENT . '/index.html', 301);
     $app->get('/releases/UML/' . Release::DEVELOPMENT . '/{asset:.*}', Action\UMLViewerAction::class . ':assets');
     $app->get('/releases/{component:ITS-XML|ITS-JSON|ITS-BMM}/{release}/components[/[{asset:.+}]]', Action\ITSAction::class . ':dir_viewer');
     $app->get('/releases/{component}/{alias:open_issues|roadmap|history|crs}', Action\RedirectAction::class . ':jira');

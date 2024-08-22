@@ -66,7 +66,7 @@ class Release extends AbstractModel implements \JsonSerializable
     public function makeItDevelopment(): Release
     {
         $this->id = self::DEVELOPMENT;
-        $this->jira = $this->component->jira;
+        $this->jira = $this->component?->jira;
         return $this;
     }
 

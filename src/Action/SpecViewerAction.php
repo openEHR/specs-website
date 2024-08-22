@@ -3,6 +3,7 @@
 namespace App\Action;
 
 use App\Configuration;
+use App\Domain\Data\Release;
 use App\Domain\Service\ComponentService;
 use App\Helper\File;
 use App\View;
@@ -42,6 +43,10 @@ final class SpecViewerAction
         $specification = $this->componentService->getComponent($args['component'])->useRelease($args['release'])->getSpecificationById($args['spec']);
         $file = new File($specification->getFilename());
         if (!$file->hasContents()) {
+            if ($args['release'] === Release::LATEST) {
+                $location = str_replace('/' . Release::LATEST, '/' . Release::DEVELOPMENT, (string)$request->getUri());
+                return $response->withRedirect($location, 302);
+            }
             throw new HttpNotFoundException($request, "Specification file ({$args['component']},{$args['release']},{$args['spec']}) not found.");
         }
         $response->getBody()->write($file->getContents());
@@ -59,6 +64,10 @@ final class SpecViewerAction
                 if (!$file->hasContents()) {
                     $file = new File($component->getComputableAssetFilename($args['asset']));
                     if (!$file->hasContents()) {
+                        if ($args['release'] === Release::LATEST) {
+                            $location = str_replace('/' . Release::LATEST, '/' . Release::DEVELOPMENT, (string)$request->getUri());
+                            return $response->withRedirect($location, 302);
+                        }
                         throw new HttpNotFoundException($request, "Asset file ({$args['component']},{$args['release']},{$args['asset']}) not found.");
                     }
                 }

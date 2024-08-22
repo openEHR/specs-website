@@ -1,11 +1,22 @@
-x-global-environment: &global
+x-web-environment: &web
   networks:
     - caddy
+    - monitor
+  depends_on:
+    - caddy
+  env_file:
+    - path: ./.env
+      required: false
+  restart: unless-stopped
+x-monitor-environment: &monitor
+  networks:
+    - monitor
+  profiles:
+    - monitor
   restart: unless-stopped
 
 services:
   caddy:
-    <<: *global
     image: caddy
     ports:
       - "80:80"
@@ -13,22 +24,21 @@ services:
     volumes:
       - caddy-data:/data/
       - ./Caddyfile:/etc/caddy/Caddyfile
+    networks:
+      - caddy
+    restart: unless-stopped
 
   web:
-    <<: *global
+    <<: *web
     build:
       dockerfile: web.Dockerfile
     volumes:
       - web-repos:/data/repos
       - web-releases:/data/releases
-    depends_on:
-      - caddy
-    env_file:
-      - path: ./.env
-        required: false
+
 
   web-dev:
-    <<: *global
+    <<: *web
     build:
       dockerfile: web-dev.Dockerfile
     profiles:
@@ -37,14 +47,37 @@ services:
       - .:/data/website
       - web-repos:/data/repos
       - web-releases:/data/releases
-    depends_on:
-      - caddy
     ports:
       - "9003:9003"
-    env_file:
-      - path: ./.env
-        required: false
 
+  prometheus:
+    <<: *monitor
+    image: prom/prometheus
+    volumes:
+      - ./prometheus.yaml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9522:9090"
+  cadvisor:
+    <<: *monitor
+    image: gcr.io/cadvisor/cadvisor:latest
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+    devices:
+      - /dev/kmsg
+    privileged: true
+    ports:
+      - "9724:8080"
+  node-exporter:
+    <<: *monitor
+    image: prom/node-exporter
+  apache-exporter:
+    <<: *monitor
+    image: bitnami/apache-exporter:latest
+    command: --scrape_uri="http://web/server-status?auto"
 
 volumes:
   caddy-data:
@@ -53,3 +86,4 @@ volumes:
 
 networks:
   caddy:
+  monitor:
