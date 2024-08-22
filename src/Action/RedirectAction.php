@@ -3,6 +3,7 @@
 namespace App\Action;
 
 use App\Configuration;
+use App\Domain\Data\Release;
 use App\Domain\Service\ComponentService;
 use Slim\Http\Response;
 use Slim\Http\ServerRequest;
@@ -32,6 +33,12 @@ final class RedirectAction
     public function components(ServerRequest $request, Response $response, array $args): Response
     {
         $location = '/releases/' . ($args['asset'] ?? '');
+        return $response->withRedirect($location, 301);
+    }
+
+    public function latest_uml(ServerRequest $request, Response $response, array $args): Response
+    {
+        $location = '/releases/UML/' . Release::DEVELOPMENT . '/' . (!empty($args['asset']) ? $args['asset'] : 'index.html');
         return $response->withRedirect($location, 301);
     }
 
