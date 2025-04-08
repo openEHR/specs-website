@@ -7,3 +7,13 @@ specifications.openehr.local {
 specifications-dev.openehr.local {
     reverse_proxy web-dev
 }
+
+mon-prometheus.specifications.openehr.org,
+mon-prometheus.specifications.openehr.local {
+    reverse_proxy prometheus:9090
+}
+
+mon-cadvisor.specifications.openehr.org,
+mon-cadvisor.specifications.openehr.local {
+    reverse_proxy cadvisor:8080
+}

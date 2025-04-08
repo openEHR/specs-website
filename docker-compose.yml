@@ -26,6 +26,7 @@ services:
       - ./Caddyfile:/etc/caddy/Caddyfile
     networks:
       - caddy
+      - monitor
     restart: unless-stopped
 
   web:
@@ -55,8 +56,6 @@ services:
     image: prom/prometheus
     volumes:
       - ./prometheus.yaml:/etc/prometheus/prometheus.yml
-    ports:
-      - "9522:9090"
   cadvisor:
     <<: *monitor
     image: gcr.io/cadvisor/cadvisor:latest
@@ -69,8 +68,6 @@ services:
     devices:
       - /dev/kmsg
     privileged: true
-    ports:
-      - "9724:8080"
   node-exporter:
     <<: *monitor
     image: prom/node-exporter

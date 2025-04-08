@@ -68,4 +68,11 @@ docker-compose --profile dev exec web-dev bash
 ```
 This website will be available as https://specifications-dev.openehr.local
 
-
+### Monitoring
+Start docker compose with `--profile monitor`, e.g. 
+```bash
+docker compose --profile dev --profile monitor up web-dev prometheus cadvisor node_exporter -d
+```
+then you can access:
+ - Prometheus at https://mon-prometheus.specifications-dev.openehr.local/ and 
+ - cadvisor at https://mon-cadvisor.specifications-dev.openehr.local/ 
