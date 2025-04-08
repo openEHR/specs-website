@@ -1,11 +1,61 @@
+{
+    # https://caddyserver.com/docs/caddyfile/options#log
+    log {
+        level INFO
+        output stdout
+        format console
+    }
+
+    # https://caddyserver.com/docs/caddyfile/options#admin
+    admin off
+    persist_config off
+}
+
+
 specifications.openehr.org,
 specifications-test.openehr.org,
-specifications-dev.openehr.org,
 specifications.openehr.local {
+    log
+    encode zstd gzip
+    header -Server
     reverse_proxy web
 }
+
+specifications-dev.openehr.org,
 specifications-dev.openehr.local {
-    reverse_proxy web-dev
+    root * /app/public
+    log
+    encode zstd gzip
+    header -Server
+
+    # Prevents unnecessarily invoking PHP
+    @static_404 {
+        path_regexp ^/(images|js|styles|fontawesome)/
+        not file
+    }
+    handle @static_404 {
+        log_skip
+        respond "" 404 {
+            close
+        }
+    }
+    @static {
+        path_regexp \.(jpg|jpeg|png|webp|gif|avif|ico|svg|css|js|gz|eot|ttf|otf|woff|woff2|pdf)$
+        file {
+            try_files {path}
+        }
+    }
+    handle @static {
+        header {
+            Cache-Control "max-age=3600, public, must-revalidate"
+        }
+        log_skip
+        file_server
+    }
+
+    handle {
+        reverse_proxy web-dev
+    }
 }
 
 mon-prometheus.specifications.openehr.org,

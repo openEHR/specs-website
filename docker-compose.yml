@@ -21,9 +21,12 @@ services:
     ports:
       - "80:80"
       - "443:443"
+      - "443:443/udp"
     volumes:
-      - caddy-data:/data/
-      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy-data:/data
+      - caddy-config:/config
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./public:/app/public:ro
     networks:
       - caddy
       - monitor
@@ -46,10 +49,8 @@ services:
       - dev
     volumes:
       - .:/data/website
-      - web-repos:/data/repos
-      - web-releases:/data/releases
-    ports:
-      - "9003:9003"
+      - ./repos:/data/repos
+      - ./releases:/data/releases
 
   prometheus:
     <<: *monitor
@@ -78,6 +79,7 @@ services:
 
 volumes:
   caddy-data:
+  caddy-config:
   web-repos:
   web-releases:
 
