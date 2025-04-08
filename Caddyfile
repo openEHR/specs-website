@@ -11,18 +11,7 @@
     persist_config off
 }
 
-
-specifications.openehr.org,
-specifications-test.openehr.org,
-specifications.openehr.local {
-    log
-    encode zstd gzip
-    header -Server
-    reverse_proxy web
-}
-
-specifications-dev.openehr.org,
-specifications-dev.openehr.local {
+(webserver_defaults) {
     root * /app/public
     log
     encode zstd gzip
@@ -52,9 +41,22 @@ specifications-dev.openehr.local {
         log_skip
         file_server
     }
+}
 
+specifications.openehr.org,
+specifications-test.openehr.org,
+specifications.openehr.local {
+    import webserver_defaults
     handle {
-        reverse_proxy web-dev
+        php_fastcgi web:9000
+    }
+}
+
+specifications-dev.openehr.org,
+specifications-dev.openehr.local {
+    import webserver_defaults
+    handle {
+        php_fastcgi web-dev:9000
     }
 }
 

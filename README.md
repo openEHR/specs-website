@@ -3,7 +3,7 @@
 This is the `specifications.openehr.org` website source code repository.
 It can be run as the following variants:
  - production https://specifications.openehr.org
- - test https://specifications-test.openehr.org or https://specifications-dev.openehr.org
+ - (deprecated) test https://specifications-test.openehr.org or https://specifications-dev.openehr.org
  - development (local) https://specifications.openehr.local as built image
  - development (local) https://specifications-dev.openehr.local using mounted source code
 
@@ -28,21 +28,22 @@ To get access to a bash prompt and run CLI scripts inside the container, the fol
 docker-compose exec web bash
 ```
 
-The _web_ service will run Apache and PHP; the DocumentRoot is set to be `/data/website/public`.
+The _web_ service will run Apache and PHP; the DocumentRoot is set to be `/app/public`.
 
-The source code is located under the `/data/website/src`, whereas the main application configuration 
-is stored under `/data/website/config`.
+The source code is located under the `/app/src`, whereas the main application configuration 
+is stored under `/app/config`.
 
-Various scripts are located under `/data/website/scripts` directory:
+Various scripts are located under `/app/scripts` directory:
 - The `init.sh` script should be used to clone all specifications repositories under `/data/repos` subdirectory.
 - The `spec_populate_releases_all.sh` should be used to generate an export of all tags and releases under `/data/releases`
 which is used by the website to serve static content (html pages, diagrams, expressions, etc).
+- The `spec_populate_original_releases` should generate original (old) releases
 
 To (re)build cache of all manifest files, a simple `GET` action is required on http://specifications.openehr.local/manifest url.
 
 ### Configuration
 
-In order to configure some aspects of the website, the `/data/website/.env` file should be changed (or created based on `.env.dist`):
+In order to configure some aspects of the website, the `/app/.env` file should be changed (or created based on `.env.dist`):
 ```ini
 APP_ENV=production
 APP_DEBUG=false

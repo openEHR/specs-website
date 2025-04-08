@@ -17,7 +17,7 @@ x-monitor-environment: &monitor
 
 services:
   caddy:
-    image: caddy
+    image: caddy:2-alpine
     ports:
       - "80:80"
       - "443:443"
@@ -35,22 +35,22 @@ services:
   web:
     <<: *web
     build:
-      dockerfile: web.Dockerfile
+      target: production
     volumes:
       - web-repos:/data/repos
       - web-releases:/data/releases
 
-
   web-dev:
     <<: *web
     build:
-      dockerfile: web-dev.Dockerfile
+      target: development
     profiles:
       - dev
     volumes:
-      - .:/data/website
+      - ./:/app
       - ./repos:/data/repos
       - ./releases:/data/releases
+      - composer-cache:/data/.cache/composer
 
   prometheus:
     <<: *monitor
@@ -80,6 +80,7 @@ services:
 volumes:
   caddy-data:
   caddy-config:
+  composer-cache:
   web-repos:
   web-releases:
 
