@@ -72,10 +72,12 @@ services:
   node-exporter:
     <<: *monitor
     image: prom/node-exporter
-  apache-exporter:
+  php-fpm-exporter:
     <<: *monitor
-    image: bitnami/apache-exporter:latest
-    command: --scrape_uri="http://web/server-status?auto"
+    image: hipages/php-fpm_exporter:latest
+    environment:
+      PHP_FPM_SCRAPE_URI: "tcp://web:9000/status,tcp://web-dev:9000/status"
+      PHP_FPM_LOG_LEVEL: "debug"
 
 volumes:
   caddy-data:
