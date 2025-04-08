@@ -48,14 +48,23 @@ In order to configure some aspects of the website, the `/app/.env` file should b
 APP_ENV=production
 APP_DEBUG=false
 APP_HOOK_SECRET=abc
-RELEASES_ROOT=
-SPEC_POPULATE_RELEASES=true
 ```
 
 By default, the website runs in production mode and debug mode is off, which means some files are cached; it is recommended to change this in development mode 
 by setting the `APP_ENV=development` and `APP_DEBUG=true`. 
 
-The `SPEC_POPULATE_RELEASES=true` can be used to checkout the git `repos` and populate `releases` accordingly.
+### Initializing
+In order to work the websites needs all openEHR git repositories under `/data/repos` and releases under `\data\releases`.
+The necessary commands to run this in the `web` (or `web-dev`) as `www-data` user container are:
+```bash
+cd /app/scripts
+echo "Cloning source repositories"
+./init.sh
+echo "Generate original (old) releases"
+./spec_populate_original_releases.sh
+echo "Generate current releases"
+./spec_populate_releases_all.sh
+```
 
 ### Development
 For local development purpose, another variant of the website can be used, which has the website source code and the git repose mounted as volumes:
