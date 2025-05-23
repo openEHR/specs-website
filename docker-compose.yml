@@ -17,46 +17,46 @@ x-monitor-environment: &monitor
 
 services:
   caddy:
-    image: caddy
+    image: caddy:2-alpine
     ports:
       - "80:80"
       - "443:443"
+      - "443:443/udp"
     volumes:
-      - caddy-data:/data/
-      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy-data:/data
+      - caddy-config:/config
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./public:/app/public:ro
     networks:
       - caddy
+      - monitor
     restart: unless-stopped
 
   web:
     <<: *web
     build:
-      dockerfile: web.Dockerfile
+      target: production
     volumes:
       - web-repos:/data/repos
       - web-releases:/data/releases
-
 
   web-dev:
     <<: *web
     build:
-      dockerfile: web-dev.Dockerfile
+      target: development
     profiles:
       - dev
     volumes:
-      - .:/data/website
-      - web-repos:/data/repos
-      - web-releases:/data/releases
-    ports:
-      - "9003:9003"
+      - ./:/app
+      - ./repos:/data/repos
+      - ./releases:/data/releases
+      - composer-cache:/data/.cache/composer
 
   prometheus:
     <<: *monitor
     image: prom/prometheus
     volumes:
       - ./prometheus.yaml:/etc/prometheus/prometheus.yml
-    ports:
-      - "9522:9090"
   cadvisor:
     <<: *monitor
     image: gcr.io/cadvisor/cadvisor:latest
@@ -69,18 +69,20 @@ services:
     devices:
       - /dev/kmsg
     privileged: true
-    ports:
-      - "9724:8080"
   node-exporter:
     <<: *monitor
     image: prom/node-exporter
-  apache-exporter:
+  php-fpm-exporter:
     <<: *monitor
-    image: bitnami/apache-exporter:latest
-    command: --scrape_uri="http://web/server-status?auto"
+    image: hipages/php-fpm_exporter:latest
+    environment:
+      PHP_FPM_SCRAPE_URI: "tcp://web:9000/status,tcp://web-dev:9000/status"
+      PHP_FPM_LOG_LEVEL: "debug"
 
 volumes:
   caddy-data:
+  caddy-config:
+  composer-cache:
   web-repos:
   web-releases:
 
