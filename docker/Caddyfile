@@ -43,29 +43,25 @@
     }
 }
 
-specifications.openehr.org,
-specifications-test.openehr.org,
-specifications.openehr.local {
+specifications-test.{$SUBDOMAIN},
+specifications.{$SUBDOMAIN} {
     import webserver_defaults
     handle {
         php_fastcgi web:9000
     }
 }
 
-specifications-dev.openehr.org,
-specifications-dev.openehr.local {
+specifications-dev.{$SUBDOMAIN} {
     import webserver_defaults
     handle {
         php_fastcgi web-dev:9000
     }
 }
 
-mon-prometheus.specifications.openehr.org,
-mon-prometheus.specifications.openehr.local {
+mon-prometheus.specifications.{$SUBDOMAIN} {
     reverse_proxy prometheus:9090
 }
 
-mon-cadvisor.specifications.openehr.org,
-mon-cadvisor.specifications.openehr.local {
+mon-cadvisor.specifications.{$SUBDOMAIN} {
     reverse_proxy cadvisor:8080
 }
