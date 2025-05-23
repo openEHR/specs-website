@@ -1,0 +1,109 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Anonymous function should return Slim\\App\<Psr\\Container\\ContainerInterface\|null\> but returns Slim\\App\<Psr\\Container\\ContainerInterface\|null\>\.$#'
+			identifier: return.type
+			count: 1
+			path: ../config/container.php
+
+		-
+			message: '#^Access to an undefined property App\\Configuration\:\:\$cache_max_age\.$#'
+			identifier: property.notFound
+			count: 1
+			path: ../src/Action/FHIRViewerAction.php
+
+		-
+			message: '#^Access to an undefined property App\\Configuration\:\:\$cache_max_age\.$#'
+			identifier: property.notFound
+			count: 1
+			path: ../src/Action/HistoricalReleasesAction.php
+
+		-
+			message: '#^Access to an undefined property App\\Configuration\:\:\$hook_secret\.$#'
+			identifier: property.notFound
+			count: 1
+			path: ../src/Action/HookAction.php
+
+		-
+			message: '#^Access to an undefined property App\\Configuration\:\:\$repository\.$#'
+			identifier: property.notFound
+			count: 1
+			path: ../src/Action/HookAction.php
+
+		-
+			message: '#^Access to an undefined property App\\Configuration\:\:\$cache_max_age\.$#'
+			identifier: property.notFound
+			count: 1
+			path: ../src/Action/ITSAction.php
+
+		-
+			message: '#^Access to an undefined property App\\Configuration\:\:\$jira_changes\.$#'
+			identifier: property.notFound
+			count: 1
+			path: ../src/Action/RedirectAction.php
+
+		-
+			message: '#^Access to an undefined property App\\Configuration\:\:\$jira_crs\.$#'
+			identifier: property.notFound
+			count: 1
+			path: ../src/Action/RedirectAction.php
+
+		-
+			message: '#^Access to an undefined property App\\Configuration\:\:\$jira_history\.$#'
+			identifier: property.notFound
+			count: 1
+			path: ../src/Action/RedirectAction.php
+
+		-
+			message: '#^Access to an undefined property App\\Configuration\:\:\$jira_issues\.$#'
+			identifier: property.notFound
+			count: 1
+			path: ../src/Action/RedirectAction.php
+
+		-
+			message: '#^Access to an undefined property App\\Configuration\:\:\$jira_open_issues\.$#'
+			identifier: property.notFound
+			count: 1
+			path: ../src/Action/RedirectAction.php
+
+		-
+			message: '#^Access to an undefined property App\\Configuration\:\:\$jira_roadmap\.$#'
+			identifier: property.notFound
+			count: 1
+			path: ../src/Action/RedirectAction.php
+
+		-
+			message: '#^Access to an undefined property App\\Configuration\:\:\$jira_tickets\.$#'
+			identifier: property.notFound
+			count: 1
+			path: ../src/Action/RedirectAction.php
+
+		-
+			message: '#^Access to an undefined property App\\Configuration\:\:\$wiki_home\.$#'
+			identifier: property.notFound
+			count: 1
+			path: ../src/Action/RedirectAction.php
+
+		-
+			message: '#^Access to an undefined property App\\Configuration\:\:\$cache_max_age\.$#'
+			identifier: property.notFound
+			count: 1
+			path: ../src/Action/SpecViewerAction.php
+
+		-
+			message: '#^Access to an undefined property App\\Configuration\:\:\$cache_max_age\.$#'
+			identifier: property.notFound
+			count: 1
+			path: ../src/Action/UMLViewerAction.php
+
+		-
+			message: '#^Access to an undefined property App\\Configuration\:\:\$attributes\.$#'
+			identifier: property.notFound
+			count: 1
+			path: ../src/View.php
+
+		-
+			message: '#^Access to an undefined property App\\Configuration\:\:\$layout\.$#'
+			identifier: property.notFound
+			count: 1
+			path: ../src/View.php
