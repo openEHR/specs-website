@@ -27,7 +27,7 @@ parameters:
 		-
 			message: '#^Access to an undefined property App\\Configuration\:\:\$repository\.$#'
 			identifier: property.notFound
-			count: 1
+			count: 3
 			path: ../src/Action/HookAction.php
 
 		-
