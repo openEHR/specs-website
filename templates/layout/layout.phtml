@@ -23,16 +23,17 @@
     <link rel="stylesheet" href="/styles/specifications.css" type="text/css">
     <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
 
-    <link rel="icon" sizes="any" href="https://openehr.org/static/img/favicon/favicon.ico">
-    <link rel="icon" type="image/svg+xml" href="https://openehr.org/static/img/favicon/icon.svg">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://openehr.org/static/img/favicon/apple-touch-icon.png">
-    <link rel="manifest" href="https://openehr.org/static/img/favicon/site.webmanifest">
+    <link rel="icon" sizes="any" href="/images/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/images/icon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icon.png">
+    <link rel="manifest" href="/site.webmanifest.json">
 
     <link rel="home" href="/">
 </head>
 <body>
 <header class="container-fluid d-flex flex-row justify-content-start align-items-center pt-2">
     <a href="/"><img src="/images/Logo.png" alt="openEHR Specifications" class="logo img-fluid"></a>
+<!--    <a href="/"><img src="/openehr_block_diagram.xml" alt="openEHR Specifications" class="logo img-fluid"></a>-->
     <h6 class="motto d-none d-sm-flex ml-3">Open industry specifications, models <br/>and software for e-health</h6>
 </header>
 <?=$this->fetch('layout/navbar.phtml', $data)?>
@@ -44,26 +45,25 @@
         <div class="col-sm-auto order-sm-last">
             <nav class="nav">
                 <a href="https://discourse.openehr.org" class="fab fa-discourse fa-lg mt-2 mr-2" title="Discourse Forums"></a>
-                <a href="https://www.openehr.org/wiki" target="_blank" class="fab fa-wikipedia-w fa-lg m-2" title="Wiki"></a>
+                <a href="https://openehr.atlassian.net/wiki" target="_blank" class="fab fa-wikipedia-w fa-lg m-2" title="Wiki"></a>
                 <a href="https://github.com/openEHR" target="_blank" class="fab fa-github-square fa-lg m-2" title="Github"></a>
-                <a href="https://www.openehr.org/digital_media/blogs" class="far fa-newspaper fa-lg m-2" title="Blogs"></a>
-                <a href="https://www.youtube.com/openEHR" target="_blank" class="fab fa-youtube fa-lg m-2" title="YouTube"></a>
+                <a href="https://www.openehr.org/blog" class="far fa-newspaper fa-lg m-2" title="Blogs"></a>
+                <a href="https://www.youtube.com/@openEHR" target="_blank" class="fab fa-youtube fa-lg m-2" title="YouTube"></a>
                 <a href="https://www.linkedin.com/groups/144276" target="_blank" class="fab fa-linkedin fa-lg m-2" title="LinkedIn"></a>
-                <a href="https://twitter.com/#!/openehr" target="_blank" class="fab fa-twitter-square fa-lg m-2" title="Twitter"></a>
-                <a href="https://www.facebook.com/groups/openehr/" target="_blank" class="fab fa-facebook-square fa-lg m-2" title="Facebook"></a>
             </nav>
         </div>
         <div class="col-sm order-sm-first">
             <nav class="nav">
-                <a href="https://www.openehr.org/using_the_site/terms_of_use" class="mr-1">Terms of use</a> |
-                <a href="https://www.openehr.org/using_the_site/privacy_policy" class="mx-1">Privacy policy</a> |
-                <a href="mailto:webmaster@openehr.org" class="mx-1">Webmaster</a>
+                <a href="https://www.openehr.org/terms-of-use" class="mr-1">Terms of use</a> |
+                <a href="https://www.openehr.org/privacy-policy" class="mx-1">Privacy policy</a> |
+                <a href="https://www.openehr.org/privacy-policy" class="mx-1">Logos &amp; Trademarks</a> |
+                <a href="https://www.openehr.org/contact-us" class="mx-1">Contact</a>
             </nav>
         </div>
     </div>
     <div class="row">
         <div class="col-md">
-            <img src="https://www.openehr.org/static/img/logo.svg" class="logo img-fluid">
+            <img src="/images/openEHR_logo_RGB.svg" alt="openEHR Logo" class="logo img-fluid">
             <br/>
             <span>Copyright © <?php echo date("Y");?> openEHR International. All rights reserved.</span>
         </div>
@@ -82,6 +82,6 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
-<script src="js/toggle-specs.js"></script>
+<script src="/js/toggle-specs.js"></script>
 </body>
 </html>

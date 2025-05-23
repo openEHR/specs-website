@@ -78,14 +78,14 @@ $settings['navbar'] = [
 //        'Slack' => 'https://openehrspecs.slack.com/',
     ],
     'Governance' => [
-        'Specification Program' => 'https://www.openehr.org/programs/specification',
+        'Specification Program' => 'https://www.openehr.org/specification-program',
         'Specification Governance' => 'https://www.openehr.org/programs/specification/governance',
         'Change process' => 'https://www.openehr.org/programs/specification/changeprocess',
         'Release Strategy' => 'https://www.openehr.org/programs/specification/releasestrategy',
-        'SEC Members' => 'https://www.openehr.org/programs/specification/editorialcommittee',
+        'SEC Members' => 'https://www.openehr.org/specification-program',
         Page::DIVIDER,
-        'Organisational Structure' => 'https://www.openehr.org/governance/organisational_structure',
-        'IP and Licensing' => 'https://www.openehr.org/governance/intellectual_property',
+        'Organisational Structure' => 'https://www.openehr.org/governance',
+        'IP and Licensing' => 'https://www.openehr.org/governance',
     ]
 ];
 
