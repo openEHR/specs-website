@@ -1,11 +1,10 @@
 .idea
 .git*
 .env
-docker-compose.yml
 .dockerignore
 .editorconfig
-*Dockerfile
-Caddyfile
+docker-compose.yml
+Dockerfile
 repos
 releases
 vendor

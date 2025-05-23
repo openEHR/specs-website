@@ -40,8 +40,8 @@ class Component extends AbstractModel
     {
         parent::__invoke($args);
         if (!$this->release) {
-            $this->registerRelease(new Release());
-            $this->release->makeItDevelopment();
+            $development = (new Release())->makeItDevelopment();
+            $this->registerRelease($development);
         }
         return $this;
     }

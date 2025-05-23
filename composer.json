@@ -12,6 +12,8 @@
         "slim/slim": "^4.14"
     },
     "require-dev": {
+        "php-parallel-lint/php-parallel-lint": "^1.4",
+        "phpstan/phpstan": "^2.1",
         "roave/security-advisories": "dev-latest"
     },
     "autoload": {
@@ -22,5 +24,16 @@
     "config": {
         "process-timeout": 0,
         "sort-packages": true
+    },
+    "scripts": {
+        "check:lint": "vendor/bin/parallel-lint . --exclude vendor --exclude var --show-deprecated",
+        "check:phpstan": "XDEBUG_MODE=off vendor/bin/phpstan analyse --configuration tests/phpstan.neon --memory-limit 2G",
+        "check:phpstan-baseline": "@check:phpstan --generate-baseline tests/phpstan-baseline.neon"
+
+    },
+    "scripts-descriptions": {
+        "check:lint": "Checks the PHP syntax of some relevant project files. (runs in parallel threads).",
+        "check:phpstan": "Runs static analizer based on tests/phpstan.neon file configration.",
+        "check:phpstan-baseline": "Generates a new baseline for the static analizer in the tests/phpstan-baseline.neon file."
     }
 }

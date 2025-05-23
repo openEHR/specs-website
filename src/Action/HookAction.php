@@ -67,11 +67,11 @@ final class HookAction
         exec($command, $cmd_output, $result_code);
         if ($this->appContext->debug) {
             $output .= PHP_EOL. implode(PHP_EOL, $cmd_output);
-            $response = $response->withHeader('X-HOOK-UPDATING-LOG', strlen($output));
+            $response = $response->withHeader('X-HOOK-UPDATING-LOG', (string)strlen($output));
         } else {
             $output .= ' ok';
         }
-        $response = $response->withHeader('X-HOOK-RESULT-CODE', $result_code);
+        $response = $response->withHeader('X-HOOK-RESULT-CODE', (string)$result_code);
 
         $this->componentService->build();
 

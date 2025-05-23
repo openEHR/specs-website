@@ -25,11 +25,13 @@ services:
     volumes:
       - caddy-data:/data
       - caddy-config:/config
-      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./docker/Caddyfile:/etc/caddy/Caddyfile:ro
       - ./public:/app/public:ro
     networks:
       - caddy
       - monitor
+    environment:
+      SUBDOMAIN: ${SUBDOMAIN:-openehr.org}
     restart: unless-stopped
 
   web:
@@ -56,7 +58,7 @@ services:
     <<: *monitor
     image: prom/prometheus
     volumes:
-      - ./prometheus.yaml:/etc/prometheus/prometheus.yml
+      - ./docker/prometheus.yaml:/etc/prometheus/prometheus.yml
   cadvisor:
     <<: *monitor
     image: gcr.io/cadvisor/cadvisor:latest
